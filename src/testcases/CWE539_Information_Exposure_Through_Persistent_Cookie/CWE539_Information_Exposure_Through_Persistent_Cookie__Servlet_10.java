@@ -27,7 +27,7 @@ public class CWE539_Information_Exposure_Through_Persistent_Cookie__Servlet_10 e
         {
             Cookie cookie = new Cookie("SecretMessage", "test");
                                                                                         
-            cookie.setMaxAge(60*60*24*365*5);
+            cookie.setMaxAge(-1);
         }
     }
 
