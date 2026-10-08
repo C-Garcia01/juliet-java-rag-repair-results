@@ -26,8 +26,7 @@ public class CWE698_Redirect_Without_Exit__Servlet_14 extends AbstractTestCaseSe
         if (IO.staticFive == 5)
         {
             response.sendRedirect("/test");
-                                                            
-            IO.writeLine("doing some more things here after the redirect");
+            return;
         }
     }
 
