@@ -32,12 +32,6 @@ public class CWE586_Explicit_Call_to_Finalize__basic_01 extends AbstractTestCase
         {
             IO.writeLine("An error occurred.");
         }
-        finally
-        {
-                         
-                                                                                  
-            badObj.finalize();
-        }
 
     }
 
