@@ -15,11 +15,20 @@ public class CWE571_Expression_Always_True__class_getClass_not_equal_01 extends 
     {
                                             
         Random random = new Random();
-        SecureRandom secureRandom = new SecureRandom();
+        Random secondRandom;
 
-        if (!random.getClass().equals(secureRandom.getClass()))
+        if (IO.staticReturnsTrueOrFalse())
         {
-            IO.writeLine("always prints");
+            secondRandom = new SecureRandom();
+        }
+        else
+        {
+            secondRandom = new Random();
+        }
+
+        if (!random.getClass().equals(secondRandom.getClass()))
+        {
+            IO.writeLine("classes differ");
         }
     }
     
