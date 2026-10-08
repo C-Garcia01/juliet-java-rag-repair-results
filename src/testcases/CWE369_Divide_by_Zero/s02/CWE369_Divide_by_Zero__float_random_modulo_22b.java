@@ -24,9 +24,15 @@ public class CWE369_Divide_by_Zero__float_random_modulo_22b
     {
         if (CWE369_Divide_by_Zero__float_random_modulo_22a.badPublicStatic)
         {
-                                                         
-            int result = (int)(100.0 % data);
-            IO.writeLine(result);
+            if (data != 0.0f)
+            {
+                int result = (int)(100.0 % data);
+                IO.writeLine(result);
+            }
+            else
+            {
+                IO.writeLine("This would result in a divide by zero");
+            }
         }
         else
         {
