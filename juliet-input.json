@@ -1,0 +1,26 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE81_XSS_Error_Message__Servlet_connect_tcp_67",
+  "cwe": "CWE-81",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_connect_tcp_67a.java",
+      "repository_path": "src/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_connect_tcp_67a.java",
+      "original_sha256": "30c4077f024f00340273ffabcff16592236e4a12e55af5e73b93622e99e58928",
+      "input_sha256": "0ae2c72439c5912599885413dfb9b2095fdb200f94d9213bb902ba7605b230a0"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_connect_tcp_67b.java",
+      "repository_path": "src/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_connect_tcp_67b.java",
+      "original_sha256": "9d1e4acfc243b853f77a23547dabcec918ffb2b99c2f691c80f179ffe7f965e0",
+      "input_sha256": "d067cd13cb4209a93e237e2236507d98eb6ea5d5683015ee9bdeb8cbbb299a3e"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
