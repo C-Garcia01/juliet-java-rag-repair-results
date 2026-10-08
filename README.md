@@ -12,6 +12,44 @@ This repository preserves the **exact original and generated repair commits** re
 
 The CSV's `evidence` paths resolve to per-case result reports in this repository. A `repair.patch` sits next to each report. Raw CLI sessions and credentials are not part of the export.
 
+## Dataset column definitions
+
+Each row describes one changed source file and its original/repair commit pair. This pilot has 10 rows: one file from one testcase per CWE. A multi-file repair can produce multiple rows with the same `case_id` and commit pair.
+
+### Columns shared by both CSV files
+
+| Column | Meaning |
+| --- | --- |
+| `case_id` | Juliet testcase identifier, including its input/source variant and flow number. Identifies the case within this run. |
+| `cwe` | Common Weakness Enumeration identifier for the case, such as `CWE-89` for SQL injection. |
+| `status` | Pipeline outcome. All published rows are `generated_unvalidated`: edits were generated, applied, and committed, but behavioral security/functional validation was not performed. |
+| `before_commit` | Full 40-character Git commit hash of the imported vulnerable snapshot. This is the original input to repair, after the documented Juliet adaptations; it is not a historical real-project VCC. |
+| `after_commit` | Full 40-character Git commit hash of the generated repair snapshot. Its parent is `before_commit` in this direct-repair pilot. A populated hash does not establish that the vulnerability is fixed. |
+| `prepared_revision` | Commit containing a separately generated test/build harness when the longer validation workflow is used. Blank in every row here because the direct-repair workflow skipped that stage. |
+| `path` | Source-file path relative to the root of the case's Git tree. Read this file at `before_commit` or `after_commit`; it is not a path to source on the repository's `main` branch. |
+| `before_sha256` | 64-character SHA-256 digest of the exact bytes of `path` at `before_commit`. A file-content fingerprint, distinct from the Git commit hash and the original ZIP member's fingerprint. |
+| `after_sha256` | 64-character SHA-256 digest of the exact bytes of `path` at `after_commit`. Use it to verify the exported repair file's contents. |
+| `provider` | CLI provider used for generation. `claude` means the Claude Code CLI in this dataset. |
+| `model` | Model identifier passed to the CLI: `claude-opus-4-8` for this run. |
+| `retrieved_examples` | JSON-encoded array of RAG repair-example IDs included in the repair prompt. These identify external reference examples, not the target testcase. `[]` means no eligible examples were retrieved. |
+| `historical_vcc` | Whether the original snapshot is a historical vulnerability-contributing commit. `False` in every row here: these are synthetic imported Juliet snapshots. |
+| `review_status` | Review label for the generated repair. `not_reviewed` means it has not received an independent human review. |
+| `validation_scope` | Text describing the checks performed or their limits. Here it is `Generated repair; behavioral validation not run`; hash verification does not change that status. |
+| `reason` | Failure or blocker explanation when a case is unsuccessful. Blank in these final rows because all cases produced a generated repair, including the three retried cases. |
+| `evidence` | Path, relative to the root of `main`, to the final per-case `result.json` report. Retried cases point into `retries/`; other cases point into `runs/`. The corresponding `repair.patch` is in the same directory. |
+
+### Extra columns in `results-linked.csv`
+
+| Column | Meaning |
+| --- | --- |
+| `original_commit_url` | GitHub page for `before_commit`, including its commit metadata and tree. |
+| `repair_commit_url` | GitHub page for `after_commit`, including the generated repair commit and its changes. |
+| `original_file_url` | GitHub source view of `path` at `before_commit`. |
+| `repair_file_url` | GitHub source view of `path` at `after_commit`. |
+| `diff_url` | GitHub comparison between the original and repair commits, showing the proposed changes. |
+
+CSV values are text. Read the CSV with a CSV parser before decoding `retrieved_examples` as JSON; that field can contain commas and quotes. Blank cells mean not applicable or not recorded, not zero or a valid empty hash. `False` is the CSV representation of a boolean. The two CSV files have identical shared-column values.
+
 ## Browse each pair
 
 Each `cases/CWE-N` branch ends at the generated repair; its parent is the original vulnerable snapshot. Tags `original/CWE-N` and `repair/CWE-N` also point to the exact hashes. These histories were imported as Git objects, without rebasing, squashing, or recreating commits.
