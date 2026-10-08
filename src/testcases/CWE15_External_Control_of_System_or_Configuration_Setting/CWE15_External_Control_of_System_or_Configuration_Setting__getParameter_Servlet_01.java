@@ -40,9 +40,16 @@ public class CWE15_External_Control_of_System_or_Configuration_Setting__getParam
         {
             dbConnection = IO.getDBConnection();
 
-                                                                          
-                                                                                                   
-            dbConnection.setCatalog(data);
+            /* Only honor the requested catalog when it is one the application
+             * is configured to serve, so a request can select a legitimate
+             * catalog but cannot steer the connection to an arbitrary one. */
+            java.util.Set<String> allowedCatalogs = new java.util.HashSet<String>(
+                java.util.Arrays.asList("inventory", "reporting", "analytics"));
+
+            if (data != null && allowedCatalogs.contains(data))
+            {
+                dbConnection.setCatalog(data);
+            }
         }
         catch (SQLException exceptSql)
         {
