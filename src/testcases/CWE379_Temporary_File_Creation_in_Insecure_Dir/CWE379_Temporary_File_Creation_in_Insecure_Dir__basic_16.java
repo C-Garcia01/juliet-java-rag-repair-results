@@ -54,7 +54,7 @@ public class CWE379_Temporary_File_Creation_in_Insecure_Dir__basic_16 extends Ab
                 if (isSuccessful)
                 {
                     IO.writeLine("Directory created");
-                    tempFile = File.createTempFile("temp", "1234", newDirectory);
+                    tempFile = File.createTempFile("temp", "1234");
                                                                                                                        
                     if (!tempFile.setWritable(true, true))
                     {
