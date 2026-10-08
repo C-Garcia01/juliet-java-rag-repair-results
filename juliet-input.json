@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE78_OS_Command_Injection__connect_tcp_07",
+  "cwe": "CWE-78",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__connect_tcp_07.java",
+      "repository_path": "src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__connect_tcp_07.java",
+      "original_sha256": "dccc9a7253ea2ad56223629055390532a11d5500615eef545102497039e4263b",
+      "input_sha256": "8fea8b3b44490101f41f7d9ec4ce515ef605410cc5b87fff14af71e26c74a591"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
