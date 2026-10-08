@@ -127,8 +127,15 @@ public class CWE190_Integer_Overflow__int_listen_tcp_add_16 extends AbstractTest
         while (true)
         {
                                                                                   
-            int result = (int)(data + 1);
-            IO.writeLine("result: " + result);
+            if (data != Integer.MAX_VALUE)
+            {
+                int result = (int)(data + 1);
+                IO.writeLine("result: " + result);
+            }
+            else
+            {
+                IO.writeLine("data value is too large to increment without overflow");
+            }
             break;
         }
     }
