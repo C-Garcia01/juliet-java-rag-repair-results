@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE477_Obsolete_Functions__URLEncoder_encode_Servlet_04",
+  "cwe": "CWE-477",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE477_Obsolete_Functions/CWE477_Obsolete_Functions__URLEncoder_encode_Servlet_04.java",
+      "repository_path": "src/testcases/CWE477_Obsolete_Functions/CWE477_Obsolete_Functions__URLEncoder_encode_Servlet_04.java",
+      "original_sha256": "89ed80c7d75c109f9708c2d2ca2fe4ca8fe23e327aa5fbeb7adfdf883f20efcd",
+      "input_sha256": "1b9b3d6c5121a34bc1382070fb9b2fec9df6fd2a330dedaee887419b7b888417"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
