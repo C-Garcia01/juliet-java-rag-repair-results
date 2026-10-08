@@ -10,9 +10,9 @@ import java.io.FileNotFoundException;
 
 public class CWE397_Throw_Generic__throw_Exception_01 extends AbstractTestCase 
 {
-    public void bad() throws Exception 
+    public void bad() throws FileNotFoundException 
     {
-        throw new Exception();                                                    
+        throw new FileNotFoundException();                                                    
     }
 
     
