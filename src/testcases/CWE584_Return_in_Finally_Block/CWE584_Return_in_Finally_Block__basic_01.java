@@ -34,7 +34,7 @@ public class CWE584_Return_in_Finally_Block__basic_01 extends AbstractTestCase
         {
             if(true)
             {
-                return;                                                                            
+                IO.writeLine("finishing up");                                                                            
             }
                                                      
                                                                                                                                       
