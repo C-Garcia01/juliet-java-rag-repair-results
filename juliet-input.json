@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE759_Unsalted_One_Way_Hash__basic_10",
+  "cwe": "CWE-759",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE759_Unsalted_One_Way_Hash/CWE759_Unsalted_One_Way_Hash__basic_10.java",
+      "repository_path": "src/testcases/CWE759_Unsalted_One_Way_Hash/CWE759_Unsalted_One_Way_Hash__basic_10.java",
+      "original_sha256": "aebcdb9d12171531059b0de51a782c018ca7ffb7c61bf03b7b7320f88b393163",
+      "input_sha256": "03480ed7f22f9cc3525247101da0a850ea37a6979af7ed6b5af3b4baf3f3d9e1"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
