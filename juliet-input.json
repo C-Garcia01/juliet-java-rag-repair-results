@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE605_Multiple_Binds_Same_Port__basic_10",
+  "cwe": "CWE-605",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE605_Multiple_Binds_Same_Port/CWE605_Multiple_Binds_Same_Port__basic_10.java",
+      "repository_path": "src/testcases/CWE605_Multiple_Binds_Same_Port/CWE605_Multiple_Binds_Same_Port__basic_10.java",
+      "original_sha256": "5bd62b2d352dab7ba39bc1702984c377272b7df8dd159daf42554e8e9a180685",
+      "input_sha256": "d2ab684e99d2b07ae103ec7d7627ba59f27205cbb4b6086723834c1352e85da3"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
