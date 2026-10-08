@@ -31,6 +31,10 @@ public class CWE563_Unused_Variable__unused_uninit_variable_int_04 extends Abstr
     {
         int data;
 
+        /* initialize and use data so it is not left unused */
+        data = 2;
+        IO.writeLine("data value: " + data);
+
                                                           
         ;                                                    
 
