@@ -19,7 +19,7 @@ public class CWE835_Infinite_Loop__do_true_01 extends AbstractTestCase
         {
             IO.writeLine(i);
             i++;
-        } while(true);
+        } while(i < IO.STATIC_FINAL_FIVE);
     }
     
     
