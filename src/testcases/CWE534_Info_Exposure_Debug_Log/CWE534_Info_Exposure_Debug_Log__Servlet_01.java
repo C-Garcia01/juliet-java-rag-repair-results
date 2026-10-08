@@ -37,7 +37,7 @@ public class CWE534_Info_Exposure_Debug_Log__Servlet_01 extends AbstractTestCase
         {
             HttpSession session = request.getSession(true);
                                                           
-            logger.log(Level.FINEST, "Username: " + username + " Session ID:" + session.getId());
+            logger.log(Level.FINEST, "Accepted a login request with valid username characters");
         }
         else
         {
