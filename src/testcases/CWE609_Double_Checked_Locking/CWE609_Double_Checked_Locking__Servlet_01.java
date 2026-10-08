@@ -17,7 +17,7 @@ public class CWE609_Double_Checked_Locking__Servlet_01 extends AbstractTestCaseS
     private static final long serialVersionUID = 1L;
 
                                                
-    private static String stringBad = null;
+    private volatile static String stringBad = null;
     
                                                                                                                                                  
                                                                                               
