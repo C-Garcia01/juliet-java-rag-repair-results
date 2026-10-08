@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE775_Missing_Release_of_File_Descriptor_or_Handle__ZipFile_01",
+  "cwe": "CWE-775",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE775_Missing_Release_of_File_Descriptor_or_Handle/CWE775_Missing_Release_of_File_Descriptor_or_Handle__ZipFile_01.java",
+      "repository_path": "src/testcases/CWE775_Missing_Release_of_File_Descriptor_or_Handle/CWE775_Missing_Release_of_File_Descriptor_or_Handle__ZipFile_01.java",
+      "original_sha256": "7ea83de90129a37e738cb28d67feec01cc7d4333953158cd73d750fed4f83d58",
+      "input_sha256": "098ef1ec88023a05bbfa0241a20a6345702143f2d34a1bf582c4a7f62525d408"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
