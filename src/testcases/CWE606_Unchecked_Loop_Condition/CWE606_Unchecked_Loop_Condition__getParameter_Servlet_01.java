@@ -42,6 +42,16 @@ public class CWE606_Unchecked_Loop_Condition__getParameter_Servlet_01 extends Ab
             numberOfLoops = 1;
         }
 
+        final int MAX_NUMBER_OF_LOOPS = 10000;
+        if (numberOfLoops < 0)
+        {
+            numberOfLoops = 0;
+        }
+        else if (numberOfLoops > MAX_NUMBER_OF_LOOPS)
+        {
+            numberOfLoops = MAX_NUMBER_OF_LOOPS;
+        }
+
         for (int i=0; i < numberOfLoops; i++)
         {
                                                                                 
