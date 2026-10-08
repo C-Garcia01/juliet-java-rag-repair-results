@@ -1,0 +1,44 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE601_Open_Redirect__Servlet_listen_tcp_54",
+  "cwe": "CWE-601",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_listen_tcp_54a.java",
+      "repository_path": "src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_listen_tcp_54a.java",
+      "original_sha256": "39f4fa64dd8c2241d413cb56c2b574d8f47edae4c5ac876b08e3026a2185719f",
+      "input_sha256": "79be0a82afc00c712ec7eff75daf82bb614032808269538b0d1cc87beb66bf14"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_listen_tcp_54b.java",
+      "repository_path": "src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_listen_tcp_54b.java",
+      "original_sha256": "39a646c77918906466a5790ec2dbedeca283f91e7906258d8e5682ea8c21d36d",
+      "input_sha256": "11c68fa8e94f09413bff32b76bf0bbf26418cf32c431e1d027132ff10efe4dcf"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_listen_tcp_54c.java",
+      "repository_path": "src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_listen_tcp_54c.java",
+      "original_sha256": "369401083b3db72c3059e3641b2712cf92701300b59af56bf0bc8a0086f202ce",
+      "input_sha256": "b7d1c55d93587955a875b0cbcf78dc86efd70b9f69655efb955bf2d412ffd77a"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_listen_tcp_54d.java",
+      "repository_path": "src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_listen_tcp_54d.java",
+      "original_sha256": "f9c64d656545f7f7d104e8eb9915e638f5c88bfa6aa2360941163fe7effaabfa",
+      "input_sha256": "1c84b30d9bef4000166de7c1a376c81c6158536a9c3682ff27392b02b48eb790"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_listen_tcp_54e.java",
+      "repository_path": "src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_listen_tcp_54e.java",
+      "original_sha256": "382bba27cf5f129d234048efa39c9b80335a1bc8479c1489b8f88e3f2f255a64",
+      "input_sha256": "d724cc4a27636bfbc99428d1dd4c6e933185fb16bc478232fc3a279940c48a85"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
