@@ -1,0 +1,32 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE190_Integer_Overflow__int_getParameter_Servlet_preinc_81",
+  "cwe": "CWE-190",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE190_Integer_Overflow/s07/CWE190_Integer_Overflow__int_getParameter_Servlet_preinc_81_bad.java",
+      "repository_path": "src/testcases/CWE190_Integer_Overflow/s07/CWE190_Integer_Overflow__int_getParameter_Servlet_preinc_81_bad.java",
+      "original_sha256": "93684335ba8d6bf07e64734ab307a25e92ec596deed9ea4d3e823773c2ce5cbe",
+      "input_sha256": "50de5d53636254d93c9d7d02538467364ab93e428ccfad09580591fa92974937"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE190_Integer_Overflow/s07/CWE190_Integer_Overflow__int_getParameter_Servlet_preinc_81_base.java",
+      "repository_path": "src/testcases/CWE190_Integer_Overflow/s07/CWE190_Integer_Overflow__int_getParameter_Servlet_preinc_81_base.java",
+      "original_sha256": "c924ecae91dae0f557a319142834c956ae4b4a11ac34d267fc0ac3dc10e06d2e",
+      "input_sha256": "18cd6fff2a63e4626b93de5acd6fc0c63db2a4d072ff61ecf60bc80532a106c9"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE190_Integer_Overflow/s07/CWE190_Integer_Overflow__int_getParameter_Servlet_preinc_81a.java",
+      "repository_path": "src/testcases/CWE190_Integer_Overflow/s07/CWE190_Integer_Overflow__int_getParameter_Servlet_preinc_81a.java",
+      "original_sha256": "8771720da6a6f6aa54c5fd5d8bd15ecc4246d63f9bc738fa605bccb9c399d86e",
+      "input_sha256": "d83417a917f810d504b78ae865d355448bf0a85ef9d4c29bbe074b5bcfc74864"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
