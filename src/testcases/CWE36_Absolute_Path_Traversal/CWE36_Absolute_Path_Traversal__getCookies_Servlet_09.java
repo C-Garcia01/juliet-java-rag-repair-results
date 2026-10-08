@@ -52,11 +52,13 @@ public class CWE36_Absolute_Path_Traversal__getCookies_Servlet_09 extends Abstra
                                                             
         if (data != null)
         {
-            File file = new File(data);
+            File baseDirectory = new File(System.getProperty("user.dir")).getCanonicalFile();
+            File file = new File(baseDirectory, data).getCanonicalFile();
             FileInputStream streamFileInputSink = null;
             InputStreamReader readerInputStreamSink = null;
             BufferedReader readerBufferdSink = null;
-            if (file.exists() && file.isFile())
+            if (file.getCanonicalPath().startsWith(baseDirectory.getCanonicalPath() + File.separator)
+                    && file.exists() && file.isFile())
             {
                 try
                 {
