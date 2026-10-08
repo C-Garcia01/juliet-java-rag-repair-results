@@ -50,7 +50,7 @@ public class CWE597_Wrong_Operator_String_Comparison__basic_04 extends AbstractT
                 if (string1 != null && string2 != null)
                 {
                                                    
-                    if (string1 == string2)                                                                     
+                    if (string1.equals(string2))                                                                     
                     {
                         IO.writeLine("bad(): Strings are equal");
                     }
