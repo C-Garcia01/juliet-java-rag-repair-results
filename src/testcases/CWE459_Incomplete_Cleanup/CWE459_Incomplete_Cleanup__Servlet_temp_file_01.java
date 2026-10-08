@@ -53,6 +53,13 @@ public class CWE459_Incomplete_Cleanup__Servlet_temp_file_01 extends AbstractTes
             {
                 IO.logger.log(Level.WARNING, "Could not set Executable permissions");
             }
+
+            /* complete the cleanup by deleting the temporary file now that we are
+             * done with it, instead of relying only on deleteOnExit() */
+            if (!tempFile.delete())
+            {
+                IO.logger.log(Level.WARNING, "Could not delete temporary file");
+            }
         }
         catch (IOException exceptIO)
         {
