@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE379_Temporary_File_Creation_in_Insecure_Dir__basic_16",
+  "cwe": "CWE-379",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE379_Temporary_File_Creation_in_Insecure_Dir/CWE379_Temporary_File_Creation_in_Insecure_Dir__basic_16.java",
+      "repository_path": "src/testcases/CWE379_Temporary_File_Creation_in_Insecure_Dir/CWE379_Temporary_File_Creation_in_Insecure_Dir__basic_16.java",
+      "original_sha256": "29d8aa9b3c4214f0bd3c6b9e902a2bea79094ba7222104b42b799e52994a131e",
+      "input_sha256": "cf0b2ea74feedbaf30be1f6a31b919dcef949239f65a3466999f32245acc1e68"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
