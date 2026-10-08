@@ -122,8 +122,11 @@ public class CWE78_OS_Command_Injection__connect_tcp_07 extends AbstractTestCase
         }
 
                                                
-        Process process = Runtime.getRuntime().exec(osCommand + data);
-        process.waitFor();
+        if (data != null && data.matches("[a-zA-Z0-9./_-]+"))
+        {
+            Process process = Runtime.getRuntime().exec(osCommand + data);
+            process.waitFor();
+        }
 
     }
 
