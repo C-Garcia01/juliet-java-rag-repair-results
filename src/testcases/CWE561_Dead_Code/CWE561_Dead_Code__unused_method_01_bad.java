@@ -17,7 +17,7 @@ public class CWE561_Dead_Code__unused_method_01_bad extends AbstractTestCaseClas
     
     public void bad() throws Throwable 
     {
-        IO.writeLine("hello");
+        IO.writeLine(calculation());
     }
 
                                                                            
