@@ -25,8 +25,12 @@ public class CWE325_Missing_Required_Cryptographic_Step__MessageDigest_update_12
     {
         if (IO.staticReturnsTrueOrFalse())
         {
+            final String HASH_INPUT = "ABCDEFG123456";
+
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-512");
-                                                                                                              
+
+            messageDigest.update(HASH_INPUT.getBytes("UTF-8"));
+
             IO.writeLine(IO.toHex(messageDigest.digest()));
         }
         else
