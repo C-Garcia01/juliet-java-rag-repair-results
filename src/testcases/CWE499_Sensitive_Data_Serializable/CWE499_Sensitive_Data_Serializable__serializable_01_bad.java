@@ -17,7 +17,7 @@ import testcasesupport.*;
 public class CWE499_Sensitive_Data_Serializable__serializable_01_bad extends CWE499_Sensitive_Data_Serializable__serializable_Helper
 {    
                          
-    private String passwordHash;
+    private transient String passwordHash;
     
     protected void setPassword(String password)
     {
