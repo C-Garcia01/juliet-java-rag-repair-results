@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE113_HTTP_Response_Splitting__console_readLine_addHeaderServlet_10",
+  "cwe": "CWE-113",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__console_readLine_addHeaderServlet_10.java",
+      "repository_path": "src/testcases/CWE113_HTTP_Response_Splitting/s01/CWE113_HTTP_Response_Splitting__console_readLine_addHeaderServlet_10.java",
+      "original_sha256": "fdd516b72979631d54cd04a479668cf0264078aa8af8569e0bb24080701ea406",
+      "input_sha256": "e5b128fe4074c6da8c369d4ed2c621354ad65e790125498c4ddfffed6eb6b974"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
