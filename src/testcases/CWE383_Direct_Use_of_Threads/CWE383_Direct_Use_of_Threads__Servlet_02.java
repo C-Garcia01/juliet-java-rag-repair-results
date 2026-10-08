@@ -40,17 +40,7 @@ public class CWE383_Direct_Use_of_Threads__Servlet_02 extends AbstractTestCaseSe
                     }
                 }
             };
-            Thread threadOne = new Thread(runnable);
-            threadOne.start();
-                                                         
-            while(true)
-            {
-                if (!threadOne.isAlive())
-                {
-                    break;
-                }
-                Thread.sleep(1000);
-            }
+            runnable.run();
             response.getWriter().write("thread is done!");
         }
     }
