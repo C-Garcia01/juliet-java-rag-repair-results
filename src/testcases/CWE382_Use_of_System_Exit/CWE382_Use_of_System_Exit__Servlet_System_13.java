@@ -25,8 +25,8 @@ public class CWE382_Use_of_System_Exit__Servlet_System_13 extends AbstractTestCa
     {
         if (IO.STATIC_FINAL_FIVE == 5)
         {
-                                          
-            System.exit(1);
+            /* Servlets must not terminate the JVM/container; log and continue instead. */
+            IO.writeLine("Reached conditional branch in bad()");
         }
     }
 
