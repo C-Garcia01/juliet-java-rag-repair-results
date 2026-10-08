@@ -81,7 +81,7 @@ public class CWE134_Uncontrolled_Format_String__console_readLine_format_01 exten
         if (data != null)
         {
                                                                 
-            System.out.format(data);
+            System.out.format("%s", data);
         }
 
     }
