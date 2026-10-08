@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE129_Improper_Validation_of_Array_Index__random_array_read_check_max_14",
+  "cwe": "CWE-129",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__random_array_read_check_max_14.java",
+      "repository_path": "src/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__random_array_read_check_max_14.java",
+      "original_sha256": "25cef7fb0fa9ecf170d7f3588c2d09c631016c3161806b6715322c92b75b7d67",
+      "input_sha256": "6da08d477454c8b3e34ddf1127847965a05032ca740d28a94fec0bfa3b0f9140"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
