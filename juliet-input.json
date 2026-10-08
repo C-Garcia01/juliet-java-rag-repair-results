@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE404_Improper_Resource_Shutdown__FileReader_01",
+  "cwe": "CWE-404",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE404_Improper_Resource_Shutdown/CWE404_Improper_Resource_Shutdown__FileReader_01.java",
+      "repository_path": "src/testcases/CWE404_Improper_Resource_Shutdown/CWE404_Improper_Resource_Shutdown__FileReader_01.java",
+      "original_sha256": "0f66d987eb8767da5e2b1ab855ad442f8f4d0439ff7dbc9c8ec50c6e92d02add",
+      "input_sha256": "0bb84e70ceb1d1a0ec05c82af5f284b7edc5444b8f4b7f6266d1705975aa201f"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
