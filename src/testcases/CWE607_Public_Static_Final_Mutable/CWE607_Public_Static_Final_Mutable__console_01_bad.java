@@ -14,7 +14,7 @@ import testcasesupport.*;
 
 public class CWE607_Public_Static_Final_Mutable__console_01_bad extends AbstractTestCaseClassIssueBad 
 {
-    public final static Date date = new Date();                                                                                  
+    private final static Date date = new Date();                                                                                  
         
     public String getHello()
     {
@@ -24,7 +24,7 @@ public class CWE607_Public_Static_Final_Mutable__console_01_bad extends Abstract
     public Date getDate()
     {
                                                                                                                     
-        return date; 
+        return new Date(date.getTime()); 
     }
     
     public void bad() 
