@@ -52,6 +52,11 @@ public class CWE23_Relative_Path_Traversal__PropertiesFile_22a extends AbstractT
         {
                                                                      
             File file = new File(root + data);
+            File uploadDir = new File(root);
+            if (!file.getCanonicalPath().startsWith(uploadDir.getCanonicalPath() + File.separator))
+            {
+                throw new IOException("Potential path traversal detected for: " + data);
+            }
             FileInputStream streamFileInputSink = null;
             InputStreamReader readerInputStreamSink = null;
             BufferedReader readerBufferdSink = null;
