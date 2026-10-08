@@ -41,7 +41,7 @@ public class CWE533_Info_Exposure_Server_Log__Servlet_05 extends AbstractTestCas
             {
                 HttpSession session = request.getSession(true);
                                                                
-                log("Username: " + username + " Session ID:" + session.getId());
+                log("Username: " + username + " logged in");
             }
             else
             {
