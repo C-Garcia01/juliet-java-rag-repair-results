@@ -31,7 +31,7 @@ public class CWE259_Hard_Coded_Password__driverManager_11 extends AbstractTestCa
         if (IO.staticReturnsTrue())
         {
                                                       
-            data = "7e5tc4s3";
+            data = System.getenv("DB_PASSWORD");
         }
         else
         {
