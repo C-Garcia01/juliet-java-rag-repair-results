@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE601_Open_Redirect__Servlet_File_04",
+  "cwe": "CWE-601",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java",
+      "repository_path": "src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java",
+      "original_sha256": "69d7f582fadcf083f9848a70ff00062dd0223193d40d279c0846b8b817723ae5",
+      "input_sha256": "a531ed8740aa6c6742c7286cf1b358342624779d1a36ff25bd2cafa1df16a8df"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
