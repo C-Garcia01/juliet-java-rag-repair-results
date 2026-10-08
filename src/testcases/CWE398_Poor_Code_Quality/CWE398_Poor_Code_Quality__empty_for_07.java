@@ -32,6 +32,7 @@ public class CWE398_Poor_Code_Quality__empty_for_07 extends AbstractTestCase
                                                             
             for (int i = 0; i < 10; i++)
             {
+                IO.writeLine("Iteration " + i);
             }
             IO.writeLine("Hello from bad()");
         }
