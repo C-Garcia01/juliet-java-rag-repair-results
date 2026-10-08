@@ -48,6 +48,11 @@ public class CWE581_Object_Model_Violation__hashCode_01_bad extends AbstractTest
             return false;
         }
     }
+
+    public int hashCode()
+    {
+        return message != null ? message.hashCode() : 0;
+    }
     
     public void bad() 
     { 
