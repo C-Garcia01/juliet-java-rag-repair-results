@@ -84,7 +84,14 @@ public class CWE197_Numeric_Truncation_Error__int_PropertiesFile_to_short_11 ext
 
         {
                                                                                               
-            IO.writeLine((short)data);
+            if (data >= Short.MIN_VALUE && data <= Short.MAX_VALUE)
+            {
+                IO.writeLine((short)data);
+            }
+            else
+            {
+                IO.writeLine("data value is out of range for the short type and cannot be safely narrowed");
+            }
         }
 
     }
