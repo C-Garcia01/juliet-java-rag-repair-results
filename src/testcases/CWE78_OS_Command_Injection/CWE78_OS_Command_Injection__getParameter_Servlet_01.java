@@ -43,6 +43,11 @@ public class CWE78_OS_Command_Injection__getParameter_Servlet_01 extends Abstrac
         }
 
                                                
+        if (data == null || !data.matches("[a-zA-Z0-9._/-]+"))
+        {
+            throw new IllegalArgumentException("The name argument contains unexpected characters");
+        }
+
         Process process = Runtime.getRuntime().exec(osCommand + data);
         process.waitFor();
 
