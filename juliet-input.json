@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE395_Catch_NullPointerException__basic_05",
+  "cwe": "CWE-395",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE395_Catch_NullPointerException/CWE395_Catch_NullPointerException__basic_05.java",
+      "repository_path": "src/testcases/CWE395_Catch_NullPointerException/CWE395_Catch_NullPointerException__basic_05.java",
+      "original_sha256": "566881b2e4299e970173301c7c48fad89e19ecd69df0bcb67c6f79a606dbd7a9",
+      "input_sha256": "8f546524b2ec9ca5803d50e4cb05100421159893e8f57bb6443342a3b5649056"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
