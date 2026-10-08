@@ -14,7 +14,11 @@ public class CWE674_Uncontrolled_Recursion__missing_base_01 extends AbstractTest
 {
     private static long helperBad(long level)
     {
-                                     
+        if (level < 0)
+        {
+            return 0;
+        }
+        
         long longSum = level + helperBad(level-1);
         return longSum;
     }
