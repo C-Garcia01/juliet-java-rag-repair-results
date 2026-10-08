@@ -28,7 +28,10 @@ public class CWE789_Uncontrolled_Mem_Alloc__random_HashMap_66b
         int data = dataArray[2];
 
                                                                                                                               
-        HashMap intHashMap = new HashMap(data);
+        if (data >= 0 && data <= 100000)
+        {
+            HashMap intHashMap = new HashMap(data);
+        }
 
     }
 
