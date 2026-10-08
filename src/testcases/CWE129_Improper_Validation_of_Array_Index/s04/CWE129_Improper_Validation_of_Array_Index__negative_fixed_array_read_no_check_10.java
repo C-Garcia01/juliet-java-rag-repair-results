@@ -42,7 +42,10 @@ public class CWE129_Improper_Validation_of_Array_Index__negative_fixed_array_rea
                                                                                                                              
             int array[] = { 0, 1, 2, 3, 4 };
                                                                                                                     
-            IO.writeLine(array[data]);
+            if (data >= 0 && data < array.length)
+            {
+                IO.writeLine(array[data]);
+            }
         }
     }
 
