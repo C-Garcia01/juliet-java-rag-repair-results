@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE484_Omitted_Break_Statement_in_Switch__basic_13",
+  "cwe": "CWE-484",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE484_Omitted_Break_Statement_in_Switch/CWE484_Omitted_Break_Statement_in_Switch__basic_13.java",
+      "repository_path": "src/testcases/CWE484_Omitted_Break_Statement_in_Switch/CWE484_Omitted_Break_Statement_in_Switch__basic_13.java",
+      "original_sha256": "cef2aa7cf456005b6b351d0b6bbbb957e19aeebced5701f1f62a1ba051f960ca",
+      "input_sha256": "807ae52b023d4910a43f44ee6ad82c00c5c343dfdaefed8607462e93ff96c7d0"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
