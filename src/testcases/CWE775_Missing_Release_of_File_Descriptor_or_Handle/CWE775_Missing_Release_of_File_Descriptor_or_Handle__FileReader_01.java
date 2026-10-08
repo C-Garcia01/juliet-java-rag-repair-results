@@ -34,6 +34,32 @@ public class CWE775_Missing_Release_of_File_Descriptor_or_Handle__FileReader_01 
         {
             IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO);
         }
+        finally
+        {
+            try
+            {
+                if (readerBuffered != null)
+                {
+                    readerBuffered.close();
+                }
+            }
+            catch (IOException exceptIO)
+            {
+                IO.logger.log(Level.WARNING, "Error closing BufferedReader", exceptIO);
+            }
+
+            try
+            {
+                if (readerFile != null)
+                {
+                    readerFile.close();
+                }
+            }
+            catch (IOException exceptIO)
+            {
+                IO.logger.log(Level.WARNING, "Error closing FileReader", exceptIO);
+            }
+        }
                                                                    
     }
     
