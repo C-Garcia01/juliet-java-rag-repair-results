@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE698_Redirect_Without_Exit__Servlet_14",
+  "cwe": "CWE-698",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE698_Redirect_Without_Exit/CWE698_Redirect_Without_Exit__Servlet_14.java",
+      "repository_path": "src/testcases/CWE698_Redirect_Without_Exit/CWE698_Redirect_Without_Exit__Servlet_14.java",
+      "original_sha256": "f066c7546d251a8d5e5451f9701b4ff5a39182a8a64484f2ec66a4de1ae8304f",
+      "input_sha256": "e3ff0bf9aa71a70116d234acfb94dbadf9ffc5f5e2da23a1f9f17cb006e48c87"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
