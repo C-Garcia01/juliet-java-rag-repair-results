@@ -47,6 +47,10 @@ public class CWE459_Incomplete_Cleanup__temp_file_17 extends AbstractTestCase
                 {
                     IO.logger.log(Level.WARNING, "Could not set Executable permissions");
                 }
+                if (!tempFile.delete())
+                {
+                    IO.logger.log(Level.WARNING, "Could not delete temporary file");
+                }
             }
             catch (IOException exceptIO)
             {
