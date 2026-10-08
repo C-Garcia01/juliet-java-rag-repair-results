@@ -24,7 +24,7 @@ public class CWE526_Info_Exposure_Environment_Variables__writeLine_09 extends Ab
         if (IO.STATIC_FINAL_TRUE)
         {
                                                                 
-            IO.writeLine("Not in path: " + System.getenv("PATH"));
+            IO.writeLine("PATH configured: " + (System.getenv("PATH") != null));
         }
     }
 
