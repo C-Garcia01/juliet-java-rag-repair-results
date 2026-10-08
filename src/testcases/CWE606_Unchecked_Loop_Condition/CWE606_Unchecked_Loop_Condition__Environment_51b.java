@@ -37,6 +37,13 @@ public class CWE606_Unchecked_Loop_Condition__Environment_51b
             numberOfLoops = 1;
         }
 
+        final int MAX_LOOPS = 100;
+        if (numberOfLoops < 0 || numberOfLoops > MAX_LOOPS)
+        {
+            IO.writeLine("Loop count out of allowed range. Assuming 1.");
+            numberOfLoops = 1;
+        }
+
         for (int i=0; i < numberOfLoops; i++)
         {
                                                                                 
