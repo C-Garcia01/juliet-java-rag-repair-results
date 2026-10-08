@@ -30,7 +30,7 @@ public class CWE129_Improper_Validation_of_Array_Index__random_array_read_check_
         int array[] = { 0, 1, 2, 3, 4 };
 
                                                                                                                                                    
-        if (data < array.length)
+        if (data >= 0 && data < array.length)
         {
             IO.writeLine(array[data]);
         }
