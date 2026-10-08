@@ -25,7 +25,7 @@ public class CWE598_Information_Exposure_QueryString__Servlet_10 extends Abstrac
     {
         if (IO.staticTrue)
         {
-            response.getWriter().println("<form id=\"form\" name=\"form\" method=\"get\" action=\"password-test-servlet\">");                                                 
+            response.getWriter().println("<form id=\"form\" name=\"form\" method=\"post\" action=\"password-test-servlet\">");                                                 
             response.getWriter().println("Username: <input name=\"username\" type=\"text\" tabindex=\"10\" /><br><br>");
             response.getWriter().println("Password: <input name=\"password\" type=\"password\" tabindex=\"10\" />");
             response.getWriter().println("<input type=\"submit\" name=\"submit\" value=\"Login-bad\" /></form>");
