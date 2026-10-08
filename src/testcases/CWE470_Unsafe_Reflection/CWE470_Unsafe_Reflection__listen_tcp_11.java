@@ -118,11 +118,25 @@ public class CWE470_Unsafe_Reflection__listen_tcp_11 extends AbstractTestCase
             data = null;
         }
 
-                                                                                                          
-        Class<?> tempClass = Class.forName(data);
-        Object tempClassObject = tempClass.newInstance();
+        /* Only allow reflection on an explicitly approved set of class names so that
+         * attacker-controlled input cannot be used to instantiate arbitrary classes. */
+        final java.util.Set<String> allowedClassNames = new java.util.HashSet<String>(java.util.Arrays.asList(
+            "java.lang.String",
+            "java.lang.Object",
+            "java.util.ArrayList",
+            "java.util.HashMap"));
 
-        IO.writeLine(tempClassObject.toString());                                      
+        if (data != null && allowedClassNames.contains(data))
+        {
+            Class<?> tempClass = Class.forName(data);
+            Object tempClassObject = tempClass.newInstance();
+
+            IO.writeLine(tempClassObject.toString());                                      
+        }
+        else
+        {
+            IO.writeLine("Requested class name is not permitted");
+        }
 
     }
 
