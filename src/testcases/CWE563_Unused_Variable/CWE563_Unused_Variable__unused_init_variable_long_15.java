@@ -28,6 +28,8 @@ public class CWE563_Unused_Variable__unused_init_variable_long_15 extends Abstra
 
         data = 5L;
 
+        IO.writeLine(data);
+
         switch (7)
         {
         case 7:
