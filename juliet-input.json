@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE369_Divide_by_Zero__int_random_divide_15",
+  "cwe": "CWE-369",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE369_Divide_by_Zero/s03/CWE369_Divide_by_Zero__int_random_divide_15.java",
+      "repository_path": "src/testcases/CWE369_Divide_by_Zero/s03/CWE369_Divide_by_Zero__int_random_divide_15.java",
+      "original_sha256": "5201d41dd1d08babfd973e14d549911d88a474fdd3317b9cff83197e6d87ee43",
+      "input_sha256": "0ce24c8a93fcbca2cc6795c94a431b327f5a7884d9b8bc9b19555c1788ce08ac"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
