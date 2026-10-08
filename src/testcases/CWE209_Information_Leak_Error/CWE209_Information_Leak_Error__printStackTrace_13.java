@@ -29,7 +29,7 @@ public class CWE209_Information_Leak_Error__printStackTrace_13 extends AbstractT
             }
             catch (UnsupportedOperationException exceptUnsupportedOperation)
             {
-                exceptUnsupportedOperation.printStackTrace();                                                  
+                IO.logger.log(java.util.logging.Level.WARNING, "An UnsupportedOperationException occurred");
             }
         }
     }
