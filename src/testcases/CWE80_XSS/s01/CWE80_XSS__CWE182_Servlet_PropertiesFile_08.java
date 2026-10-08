@@ -90,7 +90,7 @@ public class CWE80_XSS__CWE182_Servlet_PropertiesFile_08 extends AbstractTestCas
         if (data != null)
         {
                                                                                                                                                                                                                          
-            response.getWriter().println("<br>bad(): data = " + data.replaceAll("(<script>)", ""));
+            response.getWriter().println("<br>bad(): data = " + data.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;").replace("'", "&#39;"));
         }
 
     }
