@@ -12,17 +12,20 @@ import testcasesupport.IO;
 public class CWE833_Deadlock__synchronized_methods_Thread_01 extends AbstractTestCase 
 {
                                                                                                  
-    public synchronized void helperBowBad(CWE833_Deadlock__synchronized_methods_Thread_01 bower) 
+    public void helperBowBad(CWE833_Deadlock__synchronized_methods_Thread_01 bower) 
     {
-        IO.writeLine("helperBowBad");
-    
-        try 
-        { 
-            Thread.sleep(1000);                                                                                  
-        } 
-        catch (InterruptedException exceptInterrupted) 
+        synchronized(this) 
         {
-            IO.logger.log(Level.WARNING, "Sleep Interrupted", exceptInterrupted);
+            IO.writeLine("helperBowBad");
+        
+            try 
+            { 
+                Thread.sleep(1000);                                                                                  
+            } 
+            catch (InterruptedException exceptInterrupted) 
+            {
+                IO.logger.log(Level.WARNING, "Sleep Interrupted", exceptInterrupted);
+            }
         }
             
         bower.helperBowBackBad(this);                                                                                              
