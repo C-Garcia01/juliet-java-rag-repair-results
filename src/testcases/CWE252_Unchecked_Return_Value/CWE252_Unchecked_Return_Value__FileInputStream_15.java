@@ -36,9 +36,15 @@ public class CWE252_Unchecked_Return_Value__FileInputStream_15 extends AbstractT
                 int bytesToRead = 1024;
                 byte[] byteArray = new byte[bytesToRead];
                 streamFileInput = new FileInputStream("c:\\file.txt");
-                streamFileInput.read(byteArray);
-                                                                   
-                IO.writeLine(new String(byteArray, "UTF-8"));
+                int bytesRead = streamFileInput.read(byteArray);
+                if (bytesRead < 0)
+                {
+                    IO.writeLine("No data read from file");
+                }
+                else
+                {
+                    IO.writeLine(new String(byteArray, 0, bytesRead, "UTF-8"));
+                }
             }
             catch(FileNotFoundException exceptFileNotFound)
             {
