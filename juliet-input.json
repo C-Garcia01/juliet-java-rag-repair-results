@@ -1,0 +1,26 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE259_Hard_Coded_Password__driverManager_61",
+  "cwe": "CWE-259",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_61a.java",
+      "repository_path": "src/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_61a.java",
+      "original_sha256": "0c57f78c4dbbbd88728c6c05d5fe80199d35c9c64ca8a9a3825d23ec4fd43143",
+      "input_sha256": "9ec633d4a9a4ffcad5dfcb30e2288ce5bc52aa66f507c0eb917cb2b50333492c"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_61b.java",
+      "repository_path": "src/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_61b.java",
+      "original_sha256": "20c6af00197a08f26ff646139fd65b0e4231b0c47c4cb92aa373bafa970da708",
+      "input_sha256": "59930e85831397426d63e1e04aa7b0c4953f79b799cba997fd4fd66953644ca7"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
