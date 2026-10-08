@@ -27,7 +27,7 @@ public class CWE481_Assigning_Instead_of_Comparing__basic_03 extends AbstractTes
         {
             int zeroOrOne = (new SecureRandom()).nextInt(2);
             boolean isZero = (zeroOrOne == 0);
-            if(isZero = true)                                                                           
+            if(isZero == true)                                                                           
             {
                 IO.writeLine("zeroOrOne is 0");
             }
