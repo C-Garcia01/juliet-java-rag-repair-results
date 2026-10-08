@@ -32,11 +32,9 @@ public class CWE329_Not_Using_Random_IV_with_CBC_Mode__basic_02 extends Abstract
         if (true)
         {
             byte[] text = "asdf".getBytes("UTF-8");
-            byte[] initializationVector =
-            {
-                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
-                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
-            };
+            byte[] initializationVector = new byte[16];
+            SecureRandom secureRandom = new SecureRandom();
+            secureRandom.nextBytes(initializationVector);
             KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
             keyGenerator.init(128);
             SecretKey key = keyGenerator.generateKey();
