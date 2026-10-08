@@ -56,6 +56,11 @@ public class CWE226_Sensitive_Information_Uncleared_Before_Release__basic_15 ext
             }
             finally
             {
+                if (password != null)
+                {
+                    password.delete(0, password.length());
+                }
+
                                                                                                            
 
                 try
