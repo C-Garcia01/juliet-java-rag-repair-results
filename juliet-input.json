@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE226_Sensitive_Information_Uncleared_Before_Release__basic_11",
+  "cwe": "CWE-226",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE226_Sensitive_Information_Uncleared_Before_Release/CWE226_Sensitive_Information_Uncleared_Before_Release__basic_11.java",
+      "repository_path": "src/testcases/CWE226_Sensitive_Information_Uncleared_Before_Release/CWE226_Sensitive_Information_Uncleared_Before_Release__basic_11.java",
+      "original_sha256": "c3db8dd60473cc9a951a5322c1f0a9fd871eded62d88289e55ec8c6e0c94bfb0",
+      "input_sha256": "a8df9b49db08e2d402a70f7127597bf302994cf0eb33cc585749a389634ec327"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
