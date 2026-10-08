@@ -26,7 +26,7 @@ public class CWE338_Weak_PRNG__math_14 extends AbstractTestCase
         if (IO.staticFive == 5)
         {
                                                           
-            IO.writeLine("" + Math.random());
+            IO.writeLine("" + (new SecureRandom()).nextDouble());
         }
     }
 
