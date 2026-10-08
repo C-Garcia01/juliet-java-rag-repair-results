@@ -24,7 +24,10 @@ public class CWE400_Resource_Exhaustion__sleep_PropertiesFile_81_bad extends CWE
     {
 
                                                                       
-        Thread.sleep(count);
+        if (count > 0 && count <= 2000)
+        {
+            Thread.sleep(count);
+        }
 
     }
 }
