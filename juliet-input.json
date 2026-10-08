@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE772_Missing_Release_of_Resource__db_Connection_01",
+  "cwe": "CWE-772",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE772_Missing_Release_of_Resource/CWE772_Missing_Release_of_Resource__db_Connection_01.java",
+      "repository_path": "src/testcases/CWE772_Missing_Release_of_Resource/CWE772_Missing_Release_of_Resource__db_Connection_01.java",
+      "original_sha256": "2f3dde632d0ad8e095b5bbb59f395b4221421a8c5a03505025b15bcecaeaa326",
+      "input_sha256": "86d2b52f5015efcfc2dab244310f89723186ed0eb96e9a7e912064f88bb79ec7"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
