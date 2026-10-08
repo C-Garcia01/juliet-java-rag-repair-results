@@ -37,12 +37,26 @@ public class CWE256_Plaintext_Storage_of_Password__basic_74b
     {
         String password = passwordHashMap.get(2);
 
-                                                                                                      
+        String decryptedPassword = password;
+        if (password != null && password.length() != 0)
+        {
+            try
+            {
+                SecretKeySpec secretKeySpec = new SecretKeySpec("ThisIsASecretKey".getBytes("UTF-8"), "AES");
+                Cipher aesCipher = Cipher.getInstance("AES");
+                aesCipher.init(Cipher.DECRYPT_MODE, secretKeySpec);
+                decryptedPassword = new String(aesCipher.doFinal(password.getBytes("UTF-8")), "UTF-8");
+            }
+            catch (Exception exceptCrypto)
+            {
+                IO.logger.log(Level.WARNING, "Error decrypting password", exceptCrypto);
+            }
+        }
 
         Connection dBConnection = null;
         try
         {
-            dBConnection = DriverManager.getConnection("192.168.105.23", "sa", password);
+            dBConnection = DriverManager.getConnection("192.168.105.23", "sa", decryptedPassword);
         }
         catch (SQLException exceptSql)
         {
