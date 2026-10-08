@@ -50,7 +50,22 @@ public class CWE256_Plaintext_Storage_of_Password__basic_13 extends AbstractTest
             {
                 streamFileInput = new FileInputStream("../common/config.properties");
                 properties.load(streamFileInput);
-                password = properties.getProperty("password");
+                /* The configuration stores the password encrypted (hex-encoded AES
+                 * ciphertext) so it is never persisted in plaintext; decrypt it here
+                 * before handing it to the database connection. */
+                String storedPassword = properties.getProperty("password");
+                if (storedPassword != null)
+                {
+                    byte[] encryptedBytes = new byte[storedPassword.length() / 2];
+                    for (int i = 0; i < encryptedBytes.length; i++)
+                    {
+                        encryptedBytes[i] = (byte) Integer.parseInt(storedPassword.substring(2 * i, 2 * i + 2), 16);
+                    }
+                    Cipher aesCipher = Cipher.getInstance("AES");
+                    SecretKeySpec secretKeySpec = new SecretKeySpec("ThisIsASecretKey".getBytes("UTF-8"), "AES");
+                    aesCipher.init(Cipher.DECRYPT_MODE, secretKeySpec);
+                    password = new String(aesCipher.doFinal(encryptedBytes), "UTF-8");
+                }
             }
             catch (IOException exceptIO)
             {
