@@ -92,8 +92,8 @@ public class CWE643_Xpath_Injection__getQueryString_Servlet_06 extends AbstractT
                                                                                             
                                                                                    
                                                                          
-                String query = "//users/user[name/text()='" + username +
-                               "' and pass/text()='" + password + "']" +
+                String query = "//users/user[name/text()='" + StringEscapeUtils.escapeXml(username) +
+                               "' and pass/text()='" + StringEscapeUtils.escapeXml(password) + "']" +
                                "/secret/text()";
                 String secret = (String)xPath.evaluate(query, inputXml, XPathConstants.STRING);
             }
