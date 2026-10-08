@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE833_Deadlock__ReentrantLock_Servlet_01",
+  "cwe": "CWE-833",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE833_Deadlock/CWE833_Deadlock__ReentrantLock_Servlet_01.java",
+      "repository_path": "src/testcases/CWE833_Deadlock/CWE833_Deadlock__ReentrantLock_Servlet_01.java",
+      "original_sha256": "9f5f7f24ee92e50e68805367f1ac580f6e03ea930504dbb5ca0ea1705b4ac591",
+      "input_sha256": "feba4ec2d686b314ef969624026a9af1fba6596a47dea119bb022c358b64251f"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
