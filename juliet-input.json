@@ -1,0 +1,26 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE499_Sensitive_Data_Serializable__serializable_01",
+  "cwe": "CWE-499",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE499_Sensitive_Data_Serializable/CWE499_Sensitive_Data_Serializable__serializable_01_bad.java",
+      "repository_path": "src/testcases/CWE499_Sensitive_Data_Serializable/CWE499_Sensitive_Data_Serializable__serializable_01_bad.java",
+      "original_sha256": "65b56e0fec9d96c6ded1bddddb8e22c6905c1ee50337e2504d537ac2f34a73b8",
+      "input_sha256": "4954d3cf741099fbfc216ea3bd719654b39fef7017c7ad274fa054dc8cecdc78"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE499_Sensitive_Data_Serializable/CWE499_Sensitive_Data_Serializable__serializable_Helper.java",
+      "repository_path": "src/testcases/CWE499_Sensitive_Data_Serializable/CWE499_Sensitive_Data_Serializable__serializable_Helper.java",
+      "original_sha256": "5a26795c0e9cd89e5cfe1868f55950e5e530287b33898cd9be357ecf0325ea68",
+      "input_sha256": "b627bea5c1302750a1821cf1184045cb14b435e8dfc2b09ebdebc39755c22c48"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
