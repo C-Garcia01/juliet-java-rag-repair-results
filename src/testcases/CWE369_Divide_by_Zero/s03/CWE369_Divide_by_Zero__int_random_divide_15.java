@@ -46,7 +46,14 @@ public class CWE369_Divide_by_Zero__int_random_divide_15 extends AbstractTestCas
         case 7:
                                                                                               
                                       
-            IO.writeLine("bad: 100/" + data + " = " + (100 / data) + "\n");
+            if (data != 0)
+            {
+                IO.writeLine("bad: 100/" + data + " = " + (100 / data) + "\n");
+            }
+            else
+            {
+                IO.writeLine("bad: 100/" + data + " = undefined (division by zero avoided)\n");
+            }
             break;
         default:
                                                                               
