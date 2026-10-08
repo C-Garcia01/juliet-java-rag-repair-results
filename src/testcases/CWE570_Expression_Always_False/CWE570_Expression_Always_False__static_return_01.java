@@ -12,7 +12,7 @@ public class CWE570_Expression_Always_False__static_return_01 extends AbstractTe
     public void bad()
     {
                                              
-        if (IO.staticReturnsFalse())
+        if (IO.staticReturnsTrueOrFalse())
         {
             IO.writeLine("never prints");
         }
