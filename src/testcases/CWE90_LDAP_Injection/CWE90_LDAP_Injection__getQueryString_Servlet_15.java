@@ -68,7 +68,38 @@ public class CWE90_LDAP_Injection__getQueryString_Servlet_15 extends AbstractTes
         {
             directoryContext = new InitialDirContext(environmentHashTable);
                                                                                                           
-            String search = "(cn=" + data + ")";
+            String safeData = data;
+            if (safeData != null)
+            {
+                StringBuilder escaped = new StringBuilder();
+                for (int i = 0; i < safeData.length(); i++)
+                {
+                    char current = safeData.charAt(i);
+                    switch (current)
+                    {
+                    case '\\':
+                        escaped.append("\\5c");
+                        break;
+                    case '*':
+                        escaped.append("\\2a");
+                        break;
+                    case '(':
+                        escaped.append("\\28");
+                        break;
+                    case ')':
+                        escaped.append("\\29");
+                        break;
+                    case '\u0000':
+                        escaped.append("\\00");
+                        break;
+                    default:
+                        escaped.append(current);
+                        break;
+                    }
+                }
+                safeData = escaped.toString();
+            }
+            String search = "(cn=" + safeData + ")";
 
             NamingEnumeration<SearchResult> answer = directoryContext.search("", search, null);
             while (answer.hasMore())
