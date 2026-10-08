@@ -26,7 +26,7 @@ public class CWE382_Use_of_System_Exit__Servlet_Runtime_02 extends AbstractTestC
         if (true)
         {
                                                       
-            Runtime.getRuntime().exit(1);
+            IO.writeLine("Exiting due to error condition");
         }
     }
 
