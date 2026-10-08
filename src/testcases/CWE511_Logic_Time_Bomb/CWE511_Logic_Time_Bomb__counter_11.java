@@ -27,10 +27,6 @@ public class CWE511_Logic_Time_Bomb__counter_11 extends AbstractTestCase
             do
             {
                                                       
-                if (count == 20000)
-                {
-                    Runtime.getRuntime().exec("c:\\windows\\system32\\evil.exe");
-                }
                 count++;
             }
             while (count < Integer.MAX_VALUE);
