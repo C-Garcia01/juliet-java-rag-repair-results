@@ -34,7 +34,7 @@ public class CWE477_Obsolete_Functions__URLEncoder_encode_Servlet_04 extends Abs
         if (PRIVATE_STATIC_FINAL_TRUE)
         {
                                                                             
-            response.getWriter().println(URLEncoder.encode("abc|1 $#@<><()"));
+            response.getWriter().println(URLEncoder.encode("abc|1 $#@<><()", "UTF-8"));
         }
     }
 
