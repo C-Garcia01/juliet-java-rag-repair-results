@@ -40,7 +40,14 @@ public class CWE369_Divide_by_Zero__int_random_modulo_17 extends AbstractTestCas
         {
                                                                                           
                                        
-            IO.writeLine("100%" + data + " = " + (100 % data) + "\n");
+            if (data != 0)
+            {
+                IO.writeLine("100%" + data + " = " + (100 % data) + "\n");
+            }
+            else
+            {
+                IO.writeLine("100%" + data + " = undefined (divisor is zero)\n");
+            }
         }
     }
 
