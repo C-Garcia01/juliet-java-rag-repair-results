@@ -37,7 +37,10 @@ public class CWE378_Temporary_File_Creation_With_Insecure_Perms__basic_16 extend
             File tempFile = null;
             try
             {
-                tempFile = File.createTempFile("temp", "1234");
+                java.util.Set<java.nio.file.attribute.PosixFilePermission> tempFilePermissions =
+                    java.nio.file.attribute.PosixFilePermissions.fromString("rw-------");
+                tempFile = java.nio.file.Files.createTempFile("temp", "1234",
+                    java.nio.file.attribute.PosixFilePermissions.asFileAttribute(tempFilePermissions)).toFile();
                                                          
                                                  
                 streamFileOutput = new FileOutputStream(tempFile);
