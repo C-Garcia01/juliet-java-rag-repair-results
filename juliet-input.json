@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE582_Array_Public_Final_Static__basic_01",
+  "cwe": "CWE-582",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE582_Array_Public_Final_Static/CWE582_Array_Public_Final_Static__basic_01_bad.java",
+      "repository_path": "src/testcases/CWE582_Array_Public_Final_Static/CWE582_Array_Public_Final_Static__basic_01_bad.java",
+      "original_sha256": "816113a1bb9651990d3015d94c7453cabd54dcff2ecfaf7555d51b74e081ba67",
+      "input_sha256": "2c3a5eff3f3de90bb7ccfad0695dc4a50b696157cd6b626aec8398fddb29a253"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
