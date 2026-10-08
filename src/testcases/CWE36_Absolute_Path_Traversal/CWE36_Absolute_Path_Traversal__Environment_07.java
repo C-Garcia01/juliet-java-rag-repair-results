@@ -50,11 +50,16 @@ public class CWE36_Absolute_Path_Traversal__Environment_07 extends AbstractTestC
                                                             
         if (data != null)
         {
-            File file = new File(data);
+            File baseDir = new File(System.getProperty("user.dir"));
+            File file = new File(baseDir, data);
+            String canonicalBasePath = baseDir.getCanonicalPath();
+            String canonicalFilePath = file.getCanonicalPath();
             FileInputStream streamFileInputSink = null;
             InputStreamReader readerInputStreamSink = null;
             BufferedReader readerBufferdSink = null;
-            if (file.exists() && file.isFile())
+            if ((canonicalFilePath.equals(canonicalBasePath)
+                    || canonicalFilePath.startsWith(canonicalBasePath + File.separator))
+                    && file.exists() && file.isFile())
             {
                 try
                 {
