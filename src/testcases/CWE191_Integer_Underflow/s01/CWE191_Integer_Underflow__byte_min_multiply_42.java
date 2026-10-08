@@ -37,7 +37,7 @@ public class CWE191_Integer_Underflow__byte_min_multiply_42 extends AbstractTest
         if(data < 0)                                       
         {
                                                                                      
-            byte result = (byte)(data * 2);
+            int result = data * 2;
             IO.writeLine("result: " + result);
         }
 
