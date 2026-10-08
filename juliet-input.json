@@ -1,0 +1,26 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE197_Numeric_Truncation_Error__int_PropertiesFile_to_byte_71",
+  "cwe": "CWE-197",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_PropertiesFile_to_byte_71a.java",
+      "repository_path": "src/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_PropertiesFile_to_byte_71a.java",
+      "original_sha256": "3f2585ee4cbbc8e80fd6910c4cedc7c717b103c9f40a916add029e9bdf1b9a66",
+      "input_sha256": "ae3a5ef8ff4501897cda0cf03cd19a1619ce744135b0194389c5910053141286"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_PropertiesFile_to_byte_71b.java",
+      "repository_path": "src/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_PropertiesFile_to_byte_71b.java",
+      "original_sha256": "fcc5aafbb5a027113ea4996f5bac8d8b5258ad400f31f358a4af9245c867c088",
+      "input_sha256": "a3993281c1a529dd61c4d2c5d8c9478bcfcbbc140ed7e6fc46f454cc39e4d8d5"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
