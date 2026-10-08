@@ -73,6 +73,11 @@ public class CWE400_Resource_Exhaustion__getQueryString_Servlet_write_11 extends
             FileOutputStream streamFileOutput = new FileOutputStream(file);
             OutputStreamWriter writerOutputStream = new OutputStreamWriter(streamFileOutput, "UTF-8");
             BufferedWriter writerBuffered = new BufferedWriter(writerOutputStream);
+            /* Limit the number of writes to a reasonable upper bound to avoid exhausting resources */
+            if (count > 20)
+            {
+                count = 20;
+            }
             int i;
                                                                                                                   
             for (i = 0; i < count; i++)
