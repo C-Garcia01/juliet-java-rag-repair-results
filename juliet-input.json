@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE459_Incomplete_Cleanup__temp_file_17",
+  "cwe": "CWE-459",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE459_Incomplete_Cleanup/CWE459_Incomplete_Cleanup__temp_file_17.java",
+      "repository_path": "src/testcases/CWE459_Incomplete_Cleanup/CWE459_Incomplete_Cleanup__temp_file_17.java",
+      "original_sha256": "dd65112e5644f71206f33b1f84a09b2329d9014c3ac81fb458dae90a20bf9b30",
+      "input_sha256": "661c147f97a2ff4cd6317151193c659df1e72040a9a95676d3f9c123f7411f57"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
