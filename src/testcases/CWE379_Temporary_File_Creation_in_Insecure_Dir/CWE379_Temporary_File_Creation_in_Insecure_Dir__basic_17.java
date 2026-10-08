@@ -23,6 +23,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
 
+import java.nio.file.Files;
+
 import java.util.logging.Level;
 
 public class CWE379_Temporary_File_Creation_in_Insecure_Dir__basic_17 extends AbstractTestCase
@@ -54,7 +56,9 @@ public class CWE379_Temporary_File_Creation_in_Insecure_Dir__basic_17 extends Ab
                 if (isSuccessful)
                 {
                     IO.writeLine("Directory created");
-                    tempFile = File.createTempFile("temp", "1234", newDirectory);
+                }
+                {
+                    tempFile = Files.createTempFile("temp", "1234").toFile();
                                                                                                                        
                     if (!tempFile.setWritable(true, true))
                     {
