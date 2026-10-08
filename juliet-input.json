@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE328_Reversible_One_Way_Hash__MD5_10",
+  "cwe": "CWE-328",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE328_Reversible_One_Way_Hash/CWE328_Reversible_One_Way_Hash__MD5_10.java",
+      "repository_path": "src/testcases/CWE328_Reversible_One_Way_Hash/CWE328_Reversible_One_Way_Hash__MD5_10.java",
+      "original_sha256": "58fb5e3a850ce347d7e1d4a0f45ad12d9ba024bbd10a258d3dd7b57b0dc24b78",
+      "input_sha256": "06b107b8bc29c1b976b1b25d64327c6787edca1d950c4dd304d3d1db1273fb3c"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
