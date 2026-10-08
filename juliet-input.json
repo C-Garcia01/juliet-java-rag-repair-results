@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE581_Object_Model_Violation__hashCode_01",
+  "cwe": "CWE-581",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE581_Object_Model_Violation/CWE581_Object_Model_Violation__hashCode_01_bad.java",
+      "repository_path": "src/testcases/CWE581_Object_Model_Violation/CWE581_Object_Model_Violation__hashCode_01_bad.java",
+      "original_sha256": "175feb45443d09f58fd160604a84021a43087a84d8f242932347cc26962e2c24",
+      "input_sha256": "410219b68d5e1cb7f92a646d058f7b7bc5cd1421b4130034ec6b08f4ffdf16c0"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
