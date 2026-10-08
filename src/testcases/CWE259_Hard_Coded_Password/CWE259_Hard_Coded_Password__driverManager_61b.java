@@ -28,7 +28,7 @@ public class CWE259_Hard_Coded_Password__driverManager_61b
         String data;
 
                                                   
-        data = "7e5tc4s3";
+        data = System.getenv("DB_PASSWORD");
 
         return data;
     }
