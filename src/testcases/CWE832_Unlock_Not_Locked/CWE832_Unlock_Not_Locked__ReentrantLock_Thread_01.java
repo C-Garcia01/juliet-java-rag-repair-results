@@ -17,7 +17,7 @@ public class CWE832_Unlock_Not_Locked__ReentrantLock_Thread_01 extends AbstractT
 
     static public void helperBad() 
     {
-                               
+        REENTRANT_LOCK_BAD.lock();
 
                                                                
                                                                                                   
