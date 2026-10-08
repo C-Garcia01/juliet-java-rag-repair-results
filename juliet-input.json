@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE563_Unused_Variable__unused_init_variable_long_15",
+  "cwe": "CWE-563",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_15.java",
+      "repository_path": "src/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_15.java",
+      "original_sha256": "c06a2a2103be22d1831519d1fd606c2f913131566167f71a0940b4f19ec46fd4",
+      "input_sha256": "7f9064f1ecc4ace96233117db1dc39bc8e75ed217f1a40d7d5c1208bfcfe05f5"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
