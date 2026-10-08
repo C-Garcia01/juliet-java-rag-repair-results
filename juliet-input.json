@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE681_Incorrect_Conversion_Between_Numeric_Types__floatNaN2int_06",
+  "cwe": "CWE-681",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE681_Incorrect_Conversion_Between_Numeric_Types/CWE681_Incorrect_Conversion_Between_Numeric_Types__floatNaN2int_06.java",
+      "repository_path": "src/testcases/CWE681_Incorrect_Conversion_Between_Numeric_Types/CWE681_Incorrect_Conversion_Between_Numeric_Types__floatNaN2int_06.java",
+      "original_sha256": "acac84dd9de02a6803d23f719bcdfe3984a5fa42af632c34dfab41b9d64de57b",
+      "input_sha256": "f6bc5b5f92879b2257dbbc80ea7bcb63d215d77c56171abf6dbb59dfc3baae0a"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
