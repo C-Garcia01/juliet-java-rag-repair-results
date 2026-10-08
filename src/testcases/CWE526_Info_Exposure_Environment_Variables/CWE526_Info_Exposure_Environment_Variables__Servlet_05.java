@@ -33,7 +33,8 @@ public class CWE526_Info_Exposure_Environment_Variables__Servlet_05 extends Abst
         if (privateTrue)
         {
                                                     
-            response.getWriter().println("Not in path: " + System.getenv("PATH"));
+            IO.logger.fine("Not in path: " + System.getenv("PATH"));
+            response.getWriter().println("Path check complete");
         }
     }
 
