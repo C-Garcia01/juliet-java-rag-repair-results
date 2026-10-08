@@ -33,7 +33,7 @@ public class CWE328_Reversible_One_Way_Hash__MD5_06 extends AbstractTestCase
         {
             String input = "Test Input";
                                                                       
-            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+            MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
             byte[] hashValue = messageDigest.digest(input.getBytes("UTF-8"));                                                          
             IO.writeLine(IO.toHex(hashValue));
         }
