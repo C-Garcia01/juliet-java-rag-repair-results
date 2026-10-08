@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE539_Information_Exposure_Through_Persistent_Cookie__Servlet_07",
+  "cwe": "CWE-539",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE539_Information_Exposure_Through_Persistent_Cookie/CWE539_Information_Exposure_Through_Persistent_Cookie__Servlet_07.java",
+      "repository_path": "src/testcases/CWE539_Information_Exposure_Through_Persistent_Cookie/CWE539_Information_Exposure_Through_Persistent_Cookie__Servlet_07.java",
+      "original_sha256": "43b13e382bb666ea73b4c1c78faf66aed8777fe22f8920e2db68ea872a080692",
+      "input_sha256": "f2579b5667bc65e8dc4a76c94f912cb9520860ae53c48b8a8b814b64238b947e"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
