@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE89_SQL_Injection__URLConnection_executeBatch_15",
+  "cwe": "CWE-89",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__URLConnection_executeBatch_15.java",
+      "repository_path": "src/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__URLConnection_executeBatch_15.java",
+      "original_sha256": "7946484a30d529bc744c838044424a5891ab4b9c5c840bed640b790f8680d33d",
+      "input_sha256": "914a86b50583b39ef4fb0bd913cd0dc5157e4ffa00c243c475d1efcd46b687f2"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
