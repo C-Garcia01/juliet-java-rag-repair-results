@@ -123,7 +123,10 @@ public class CWE789_Uncontrolled_Mem_Alloc__connect_tcp_HashMap_04 extends Abstr
         }
 
                                                                                                                               
-        HashMap intHashMap = new HashMap(data);
+        if (data > 0 && data <= 100000)
+        {
+            HashMap intHashMap = new HashMap(data);
+        }
 
     }
 
