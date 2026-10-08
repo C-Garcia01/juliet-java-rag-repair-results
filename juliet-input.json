@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE134_Uncontrolled_Format_String__console_readLine_format_01",
+  "cwe": "CWE-134",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__console_readLine_format_01.java",
+      "repository_path": "src/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__console_readLine_format_01.java",
+      "original_sha256": "fec1f87c86440d2b844df10a4c92c561ecea79646ca2bc8406f446934a585f6d",
+      "input_sha256": "5df3ae865669430c51c602361c95c29fd1ac3449bd6bd1a46223125b8c228ed4"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
