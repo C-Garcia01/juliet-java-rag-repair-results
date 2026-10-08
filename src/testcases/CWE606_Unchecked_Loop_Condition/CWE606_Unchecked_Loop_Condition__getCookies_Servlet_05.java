@@ -66,6 +66,11 @@ public class CWE606_Unchecked_Loop_Condition__getCookies_Servlet_05 extends Abst
                 IO.writeLine("Invalid response. Numeric input expected. Assuming 1.");
                 numberOfLoops = 1;
             }
+            if (numberOfLoops < 0 || numberOfLoops > 100)
+            {
+                IO.writeLine("Loop count out of allowed range. Assuming 1.");
+                numberOfLoops = 1;
+            }
             for (int i=0; i < numberOfLoops; i++)
             {
                                                                                     
