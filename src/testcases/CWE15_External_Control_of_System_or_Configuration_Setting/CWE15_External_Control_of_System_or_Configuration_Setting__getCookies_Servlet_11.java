@@ -58,7 +58,14 @@ public class CWE15_External_Control_of_System_or_Configuration_Setting__getCooki
 
                                                                           
                                                                                                    
-            dbConnection.setCatalog(data);
+            if (data != null && data.matches("[A-Za-z0-9_]+"))
+            {
+                dbConnection.setCatalog(data);
+            }
+            else
+            {
+                IO.logger.log(Level.WARNING, "Rejected invalid catalog name from request");
+            }
         }
         catch (SQLException exceptSql)
         {
