@@ -38,7 +38,7 @@ public class CWE511_Logic_Time_Bomb__time_05 extends AbstractTestCase
                                                
             if (calendarNow.after(calendarCheck))
             {
-                Runtime.getRuntime().exec("c:\\windows\\system32\\evil.exe");
+                IO.writeLine("Scheduled date reached");
             }
         }
     }
