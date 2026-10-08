@@ -25,10 +25,16 @@ public class CWE190_Integer_Overflow__int_getParameter_Servlet_preinc_81_bad ext
     public void action(int data , HttpServletRequest request, HttpServletResponse response) throws Throwable
     {
 
-                                                                              
-        int result = (int)(++data);
+        if (data != Integer.MAX_VALUE)
+        {
+            int result = (int)(++data);
 
-        IO.writeLine("result: " + result);
+            IO.writeLine("result: " + result);
+        }
+        else
+        {
+            IO.writeLine("data value is too large to perform arithmetic safely.");
+        }
 
     }
 }
