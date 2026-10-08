@@ -27,10 +27,12 @@ public class CWE760_Predictable_Salt_One_Way_Hash__basic_17 extends AbstractTest
     {
         for(int j = 0; j < 1; j++)
         {
-            Random random = new Random();
+            SecureRandom secureRandom = new SecureRandom();
             MessageDigest hash = MessageDigest.getInstance("SHA-512");
                                                       
-            hash.update((Integer.toString(random.nextInt())).getBytes("UTF-8"));
+            byte[] salt = new byte[16];
+            secureRandom.nextBytes(salt);
+            hash.update(salt);
             byte[] hashValue = hash.digest("hash me".getBytes("UTF-8"));
             IO.writeLine(IO.toHex(hashValue));
         }
