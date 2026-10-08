@@ -27,13 +27,13 @@ public class CWE476_NULL_Pointer_Dereference__StringBuilder_13 extends AbstractT
         if (IO.STATIC_FINAL_FIVE==5)
         {
                                               
-            data = null;
+            data = new StringBuilder();
         }
         else
         {
                                                                            
                                                                                            
-            data = null;
+            data = new StringBuilder();
         }
 
         if (IO.STATIC_FINAL_FIVE==5)
