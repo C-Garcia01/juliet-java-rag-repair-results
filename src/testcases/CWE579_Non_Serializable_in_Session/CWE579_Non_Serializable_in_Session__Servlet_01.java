@@ -29,8 +29,9 @@ public class CWE579_Non_Serializable_in_Session__Servlet_01 extends AbstractTest
 {
     private static final long serialVersionUID = 1L;
 
-    static class BadObject                                                         
+    static class BadObject implements Serializable
     {
+        private static final long serialVersionUID = 7925935052619185042L;
         public String badString = "Bad";
     }
     
