@@ -1,0 +1,26 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE113_HTTP_Response_Splitting__Property_setHeaderServlet_51",
+  "cwe": "CWE-113",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE113_HTTP_Response_Splitting/s03/CWE113_HTTP_Response_Splitting__Property_setHeaderServlet_51a.java",
+      "repository_path": "src/testcases/CWE113_HTTP_Response_Splitting/s03/CWE113_HTTP_Response_Splitting__Property_setHeaderServlet_51a.java",
+      "original_sha256": "93a89746abc586c40dd81be455b925dc8aafb8a114da4e0c9b274376f179cfe8",
+      "input_sha256": "d12b78d9ccefed7dcfe954e799b5283fdc710617dcd07675e26b8cc5b86e5f43"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE113_HTTP_Response_Splitting/s03/CWE113_HTTP_Response_Splitting__Property_setHeaderServlet_51b.java",
+      "repository_path": "src/testcases/CWE113_HTTP_Response_Splitting/s03/CWE113_HTTP_Response_Splitting__Property_setHeaderServlet_51b.java",
+      "original_sha256": "b318d73048ae5b96486b51729607d140eab3723b18d5511d9df09d5dda7a8663",
+      "input_sha256": "aacaf06fa228daac90e132d49dfbb71fc3d5802e0b823aacec65d1a79aa59ed3"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
