@@ -18,6 +18,9 @@ package testcases.CWE510_Trapdoor;
 import testcasesupport.*;
 
 import java.io.OutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
 import java.io.IOException;
 
 import java.net.Socket;
@@ -54,7 +57,11 @@ public class CWE510_Trapdoor__hostname_based_logic_08 extends AbstractTestCase
                 listener = new ServerSocket(port);
                 socket = listener.accept();                                
                                                 
-                if (socket.getInetAddress().getHostName().equals("admin.google.com"))
+                InputStream streamInput = socket.getInputStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(streamInput, "UTF-8"));
+                String credential = reader.readLine();
+                String adminToken = System.getenv("ADMIN_ACCESS_TOKEN");
+                if (adminToken != null && !adminToken.isEmpty() && adminToken.equals(credential))
                 {
                     streamOutput = socket.getOutputStream();
                     streamOutput.write("Welcome, admin!".getBytes("UTF-8"));
