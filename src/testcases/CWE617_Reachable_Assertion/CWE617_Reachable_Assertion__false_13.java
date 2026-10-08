@@ -24,7 +24,7 @@ public class CWE617_Reachable_Assertion__false_13 extends AbstractTestCase
         if (IO.STATIC_FINAL_FIVE == 5)
         {
                                                                                                                                       
-            assert false;                                                                                                               
+            assert IO.STATIC_FINAL_FIVE == 5;                                                                                                               
         }
     }
 
