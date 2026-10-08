@@ -25,6 +25,7 @@ public class CWE832_Unlock_Not_Locked__ReentrantLock_Servlet_01 extends Abstract
 
                                                                
                                                                                                   
+        REENTRANT_LOCK_BAD.lock();
         try
         { 
             intBad = intBad * 2;
