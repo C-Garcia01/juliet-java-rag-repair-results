@@ -23,7 +23,6 @@ public class CWE398_Poor_Code_Quality__semicolon_17 extends AbstractTestCase
     {
         for(int j = 0; j < 1; j++)
         {
-            ;                                                             
             IO.writeLine("Hello from bad()");
         }
     }
