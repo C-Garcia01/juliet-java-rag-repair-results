@@ -54,6 +54,11 @@ public class CWE606_Unchecked_Loop_Condition__Property_15 extends AbstractTestCa
                 IO.writeLine("Invalid response. Numeric input expected. Assuming 1.");
                 numberOfLoops = 1;
             }
+            if (numberOfLoops < 0 || numberOfLoops > 10000)
+            {
+                IO.writeLine("Invalid response. Expected a value between 0 and 10000. Assuming 1.");
+                numberOfLoops = 1;
+            }
             for (int i=0; i < numberOfLoops; i++)
             {
                                                                                     
