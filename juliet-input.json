@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE80_XSS__CWE182_Servlet_PropertiesFile_08",
+  "cwe": "CWE-80",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_08.java",
+      "repository_path": "src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_08.java",
+      "original_sha256": "dc2da12a3d443d9ea179f8297d115ceb8c0267091d029449c7a2cac1f8cc3d6d",
+      "input_sha256": "2aebe1772286caec467ab28ae2b03758255e471a0466f21486d769896072f850"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
