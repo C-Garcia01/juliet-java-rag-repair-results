@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE111_Unsafe_JNI__console_01",
+  "cwe": "CWE-111",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE111_Unsafe_JNI/CWE111_Unsafe_JNI__console_01.java",
+      "repository_path": "src/testcases/CWE111_Unsafe_JNI/CWE111_Unsafe_JNI__console_01.java",
+      "original_sha256": "b3e0ecdf11defeade0c9aca1410a0a70e006b2ff4408790d540ce15cc9e1b4d8",
+      "input_sha256": "0676aa2c5ab6fa0f5aa8ab93fc260cd675b022dd38774ad43ec729e51074354d"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
