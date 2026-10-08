@@ -46,6 +46,11 @@ public class CWE23_Relative_Path_Traversal__Environment_73b
         {
                                                                      
             File file = new File(root + data);
+            File rootDir = new File(root);
+            if (!file.getCanonicalPath().startsWith(rootDir.getCanonicalPath() + File.separator))
+            {
+                return;
+            }
             FileInputStream streamFileInputSink = null;
             InputStreamReader readerInputStreamSink = null;
             BufferedReader readerBufferdSink = null;
