@@ -44,6 +44,12 @@ public class CWE601_Open_Redirect__Servlet_listen_tcp_54e
                 return;
             }
                                                                                                                                            
+            if (uri.isAbsolute() || uri.getHost() != null || uri.getAuthority() != null
+                    || data.startsWith("//") || data.startsWith("/\\") || data.startsWith("\\"))
+            {
+                response.getWriter().write("Invalid redirect URL");
+                return;
+            }
             response.sendRedirect(data);
             return;
         }
