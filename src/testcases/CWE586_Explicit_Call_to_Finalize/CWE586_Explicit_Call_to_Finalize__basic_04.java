@@ -43,7 +43,7 @@ public class CWE586_Explicit_Call_to_Finalize__basic_04 extends AbstractTestCase
             {
                              
                                                                                       
-                badObj.finalize();
+                badObj = null;
             }
         }
     }
