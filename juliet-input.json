@@ -1,0 +1,38 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE321_Hard_Coded_Cryptographic_Key__basic_53",
+  "cwe": "CWE-321",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_53a.java",
+      "repository_path": "src/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_53a.java",
+      "original_sha256": "fd1548004dcc12784ebfb945b77f586a5d3e7e60d5bc8b007234a69fb81fee48",
+      "input_sha256": "ee1e9894d94a28102f8a3e9c3dfde6bd0bd5891480d45a4dbbaeb6969ee9c48c"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_53b.java",
+      "repository_path": "src/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_53b.java",
+      "original_sha256": "722f625c490f777f01e815b1772b36a88a50d134bd89274520d65d7e30696675",
+      "input_sha256": "deb804ae45e63bf71511bf797edec40a0578724caded5222940bcb47f2360e94"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_53c.java",
+      "repository_path": "src/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_53c.java",
+      "original_sha256": "610a74df6dd2a0acf6e9a2b71f77ae8bf2f749e37fc403f5f8d5834bdf8ce8c2",
+      "input_sha256": "c16ca00b71e3a64412c32b49f433c0c77d517e0c1257f565f590c517a90fd3fe"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_53d.java",
+      "repository_path": "src/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_53d.java",
+      "original_sha256": "5f11503eaad258bffed51628a4af83521d8db60c20338bfde2112c6b8a04e20c",
+      "input_sha256": "8f4f4e890fefc4532a284adcc32625ac3da79f8cfe443d0935137bf7b38c75fd"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
