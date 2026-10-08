@@ -30,7 +30,8 @@ public class CWE526_Info_Exposure_Environment_Variables__writeLine_06 extends Ab
         if (PRIVATE_STATIC_FINAL_FIVE == 5)
         {
                                                                 
-            IO.writeLine("Not in path: " + System.getenv("PATH"));
+            String path = System.getenv("PATH");
+            IO.writeLine("PATH environment variable is " + (path != null ? "set" : "not set"));
         }
     }
 
