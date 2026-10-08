@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE15_External_Control_of_System_or_Configuration_Setting__URLConnection_09",
+  "cwe": "CWE-15",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__URLConnection_09.java",
+      "repository_path": "src/testcases/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__URLConnection_09.java",
+      "original_sha256": "f5bbb03ca22048a851f7479de3b3adc617f8704bb036533b08e5ccb3983eeb26",
+      "input_sha256": "ebfe666a8f56f09159a015df20fcab8d43234f987f4dc7b8b1fd26c251c9b173"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
