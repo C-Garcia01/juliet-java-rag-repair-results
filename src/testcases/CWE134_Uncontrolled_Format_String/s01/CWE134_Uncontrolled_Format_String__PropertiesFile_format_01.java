@@ -70,7 +70,7 @@ public class CWE134_Uncontrolled_Format_String__PropertiesFile_format_01 extends
         if (data != null)
         {
                                                                 
-            System.out.format(data);
+            System.out.format("%s", data);
         }
 
     }
