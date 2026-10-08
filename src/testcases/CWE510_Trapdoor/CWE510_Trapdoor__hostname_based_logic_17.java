@@ -40,16 +40,8 @@ public class CWE510_Trapdoor__hostname_based_logic_17 extends AbstractTestCase
                 listener = new ServerSocket(port);
                 socket = listener.accept();                                
                                                 
-                if (socket.getInetAddress().getHostName().equals("admin.google.com"))
-                {
-                    streamOutput = socket.getOutputStream();
-                    streamOutput.write("Welcome, admin!".getBytes("UTF-8"));
-                }
-                else
-                {
-                    streamOutput = socket.getOutputStream();
-                    streamOutput.write("Welcome, user.".getBytes("UTF-8"));
-                }
+                streamOutput = socket.getOutputStream();
+                streamOutput.write("Welcome, user.".getBytes("UTF-8"));
             }
             catch (IOException exceptIO)
             {
