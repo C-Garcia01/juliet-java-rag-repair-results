@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE327_Use_Broken_Crypto__DES_03",
+  "cwe": "CWE-327",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE327_Use_Broken_Crypto/CWE327_Use_Broken_Crypto__DES_03.java",
+      "repository_path": "src/testcases/CWE327_Use_Broken_Crypto/CWE327_Use_Broken_Crypto__DES_03.java",
+      "original_sha256": "9848b9f6e29d7ccf971496181511a814027ff0a310398bde4929ba105db2b30c",
+      "input_sha256": "a869e1fe033d5b68eb42a2f87d69d66037ed49a3d66e2f26af4c345b6f388b87"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
