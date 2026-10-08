@@ -27,7 +27,8 @@ public class CWE80_XSS__Servlet_getParameter_Servlet_81_bad extends CWE80_XSS__S
         if (data != null)
         {
                                                                                                 
-            response.getWriter().println("<br>bad(): data = " + data);
+            String encodedData = data.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;").replace("'", "&#39;");
+            response.getWriter().println("<br>bad(): data = " + encodedData);
         }
 
     }
