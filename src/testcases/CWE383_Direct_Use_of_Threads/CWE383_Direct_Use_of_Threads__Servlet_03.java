@@ -18,6 +18,7 @@ package testcases.CWE383_Direct_Use_of_Threads;
 import testcasesupport.*;
 
 import javax.servlet.http.*;
+import java.util.concurrent.*;
 
 public class CWE383_Direct_Use_of_Threads__Servlet_03 extends AbstractTestCaseServletBadOnly
 {
@@ -40,16 +41,20 @@ public class CWE383_Direct_Use_of_Threads__Servlet_03 extends AbstractTestCaseSe
                     }
                 }
             };
-            Thread threadOne = new Thread(runnable);
-            threadOne.start();
+            ExecutorService executor = Executors.newSingleThreadExecutor();
+            Future<?> future = executor.submit(runnable);
                                                          
-            while(true)
+            try
             {
-                if (!threadOne.isAlive())
-                {
-                    break;
-                }
-                Thread.sleep(1000);
+                future.get();
+            }
+            catch (ExecutionException exceptExecution)
+            {
+                IO.writeLine("ExecutionException");
+            }
+            finally
+            {
+                executor.shutdown();
             }
             response.getWriter().write("thread is done!");
         }
