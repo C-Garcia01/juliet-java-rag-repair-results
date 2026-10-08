@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE338_Weak_PRNG__math_14",
+  "cwe": "CWE-338",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE338_Weak_PRNG/CWE338_Weak_PRNG__math_14.java",
+      "repository_path": "src/testcases/CWE338_Weak_PRNG/CWE338_Weak_PRNG__math_14.java",
+      "original_sha256": "69413c89c9ba58f2bb84a57de0c01e525a8cf52beb10e8db0381c7b2cb2cdfde",
+      "input_sha256": "17b63f782d7ea7a224e2f46ab39fc964d8bf935de97f269e7e80de81e29e9772"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
