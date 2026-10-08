@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE523_Unprotected_Cred_Transport__Servlet_05",
+  "cwe": "CWE-523",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE523_Unprotected_Cred_Transport/CWE523_Unprotected_Cred_Transport__Servlet_05.java",
+      "repository_path": "src/testcases/CWE523_Unprotected_Cred_Transport/CWE523_Unprotected_Cred_Transport__Servlet_05.java",
+      "original_sha256": "1f080909469e7d38ae8cc4ae5ae5250cbf248e388831b56173fab6ca47a73654",
+      "input_sha256": "de5ac069a3d697c15272498b0b4ce09878a771fa1d9355b461b0369f7cd61ebd"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
