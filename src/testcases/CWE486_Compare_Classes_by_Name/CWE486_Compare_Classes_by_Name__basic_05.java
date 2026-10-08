@@ -33,7 +33,7 @@ public class CWE486_Compare_Classes_by_Name__basic_05 extends AbstractTestCase
                                                                                                                                   
             testcases.CWE486_Compare_Classes_by_Name.HelperClass.CWE486_Compare_Classes_by_Name__Helper helperClass = new testcases.CWE486_Compare_Classes_by_Name.HelperClass.CWE486_Compare_Classes_by_Name__Helper();
             testcases.CWE486_Compare_Classes_by_Name.CWE486_Compare_Classes_by_Name__Helper helperClassRoot = new testcases.CWE486_Compare_Classes_by_Name.CWE486_Compare_Classes_by_Name__Helper();
-            if (helperClassRoot.getClass().getSimpleName().equals(helperClass.getClass().getSimpleName()))
+            if (helperClassRoot.getClass().equals(helperClass.getClass()))
             {
                 IO.writeLine("Classes are the same");
             }
