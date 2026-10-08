@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE526_Info_Exposure_Environment_Variables__writeLine_09",
+  "cwe": "CWE-526",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE526_Info_Exposure_Environment_Variables/CWE526_Info_Exposure_Environment_Variables__writeLine_09.java",
+      "repository_path": "src/testcases/CWE526_Info_Exposure_Environment_Variables/CWE526_Info_Exposure_Environment_Variables__writeLine_09.java",
+      "original_sha256": "5d8cff6b0344b3f5b18cb8fb47369f8448a3e760b0e683e1b8ba40f269a0af22",
+      "input_sha256": "cbb9d15a81c7cee2a712cacbba9418100d225566f17caa7bd52d42f77b471121"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
