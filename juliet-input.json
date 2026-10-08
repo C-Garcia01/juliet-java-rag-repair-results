@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE321_Hard_Coded_Cryptographic_Key__basic_31",
+  "cwe": "CWE-321",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_31.java",
+      "repository_path": "src/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_31.java",
+      "original_sha256": "4a8f254862a1fd1ca8570b3955afd6dcc858a430725b19734d4e9a92b252efc2",
+      "input_sha256": "6ea75dc0412ee976daba183fe753c2ce8cb2461fc069d42c199e22f5e035b433"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
