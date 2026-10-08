@@ -29,16 +29,7 @@ public class CWE506_Embedded_Malicious_Code__base64_encoded_payload_14 extends A
     {
         if (IO.staticFive == 5)
         {
-                                          
-            String encodedPayload = "Y2FsYy5leGU=";
-            try
-            {
-                Runtime.getRuntime().exec(new String(Base64.decodeBase64(encodedPayload), "UTF-8"));
-            }
-            catch (IOException exceptIO)
-            {
-                IO.logger.log(Level.WARNING, "Error executing command", exceptIO);
-            }
+            /* No embedded command is executed. */
         }
     }
 
