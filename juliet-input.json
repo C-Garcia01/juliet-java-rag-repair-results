@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE617_Reachable_Assertion__length_06",
+  "cwe": "CWE-617",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE617_Reachable_Assertion/CWE617_Reachable_Assertion__length_06.java",
+      "repository_path": "src/testcases/CWE617_Reachable_Assertion/CWE617_Reachable_Assertion__length_06.java",
+      "original_sha256": "e83dd096751a3c2350715c5e5cd306354554e9806ecc20a8fb76a71c4866a38b",
+      "input_sha256": "d091f36dd302fe0c20ee060f41370217019ba1badf88a7b7f6e9dae038f34db4"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
