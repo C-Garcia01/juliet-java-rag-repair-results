@@ -26,7 +26,7 @@ public class CWE193_Off_by_One_Error__while_14 extends AbstractTestCase
             int[] intArray = new int[10];
             int i = 0;
                                             
-            while (i <= intArray.length)
+            while (i < intArray.length)
             {
                 IO.writeLine("intArray[" + i + "] = " + (intArray[i] = i));
                 i++;
