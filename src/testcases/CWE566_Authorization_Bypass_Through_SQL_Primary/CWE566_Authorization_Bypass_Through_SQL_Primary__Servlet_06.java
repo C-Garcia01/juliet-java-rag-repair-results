@@ -38,7 +38,8 @@ public class CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_06 extends
         if (PRIVATE_STATIC_FINAL_FIVE == 5)
         {
                                                             
-            data = request.getParameter("id");
+            Object sessionUserId = request.getSession().getAttribute("currentUserId");
+            data = (sessionUserId == null) ? null : sessionUserId.toString();
         }
         else
         {
