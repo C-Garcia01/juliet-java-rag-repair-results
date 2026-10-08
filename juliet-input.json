@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE400_Resource_Exhaustion__getQueryString_Servlet_write_11",
+  "cwe": "CWE-400",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE400_Resource_Exhaustion/s01/CWE400_Resource_Exhaustion__getQueryString_Servlet_write_11.java",
+      "repository_path": "src/testcases/CWE400_Resource_Exhaustion/s01/CWE400_Resource_Exhaustion__getQueryString_Servlet_write_11.java",
+      "original_sha256": "bf9314dda1e65bf57cf87f43b20c51051d34964c72b7bc42773e175c038aaf7c",
+      "input_sha256": "1945e79ea10308a867e8bc63e232ebad5293ad6069e05cc4325f074893e48028"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
