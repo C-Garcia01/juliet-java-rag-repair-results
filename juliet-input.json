@@ -1,0 +1,26 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE606_Unchecked_Loop_Condition__Environment_51",
+  "cwe": "CWE-606",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_51a.java",
+      "repository_path": "src/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_51a.java",
+      "original_sha256": "22d43d44aa4df95d7b734412a6040418e1a1a823fa91f75cf6412c26fb8a0d61",
+      "input_sha256": "932400a5ac3b780fc247afcfb30d8a077e7fcdf5640781f884ca7190b06dd495"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_51b.java",
+      "repository_path": "src/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_51b.java",
+      "original_sha256": "63708a48607ac7b32642cfca63acd5efbe7db8ae8effe77256b418f3f0f138f7",
+      "input_sha256": "8c2ea66e79eaa882df1e68ce3a18519d58f95da58b86798ec310b5fedfe80df8"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
