@@ -33,8 +33,7 @@ public class CWE615_Info_Exposure_by_Comment__Servlet_04 extends AbstractTestCas
         if (PRIVATE_STATIC_FINAL_TRUE)
         {
                                                                                   
-            response.getWriter().println("<!--DB username = joe, DB password = 123-->" +
-            "<form action=\"/test\" method=post>" +
+            response.getWriter().println("<form action=\"/test\" method=post>" +
             "<input type=text name=dbusername>" +
             "<input type=test name=dbpassword>" +
             "<input type=submit value=Submit>" +
