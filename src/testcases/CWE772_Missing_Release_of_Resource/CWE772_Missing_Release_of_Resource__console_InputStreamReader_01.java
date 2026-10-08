@@ -37,6 +37,20 @@ public class CWE772_Missing_Release_of_Resource__console_InputStreamReader_01 ex
         {
             IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO);
         }
+        finally
+        {
+            if (readerBuffered != null)
+            {
+                try
+                {
+                    readerBuffered.close();
+                }
+                catch (IOException exceptIO)
+                {
+                    IO.logger.log(Level.WARNING, "Error closing BufferedReader", exceptIO);
+                }
+            }
+        }
         
                                           
     }
