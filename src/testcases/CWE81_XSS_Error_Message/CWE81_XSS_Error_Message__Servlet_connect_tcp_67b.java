@@ -32,7 +32,33 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_67b
                                                                                     
                                                                                                                     
               
-            response.sendError(404, "<br>bad() - Parameter name has value " + data);
+            StringBuilder escapedData = new StringBuilder();
+            for (int i = 0; i < data.length(); i++)
+            {
+                char c = data.charAt(i);
+                switch (c)
+                {
+                    case '&':
+                        escapedData.append("&amp;");
+                        break;
+                    case '<':
+                        escapedData.append("&lt;");
+                        break;
+                    case '>':
+                        escapedData.append("&gt;");
+                        break;
+                    case '\"':
+                        escapedData.append("&quot;");
+                        break;
+                    case '\'':
+                        escapedData.append("&#39;");
+                        break;
+                    default:
+                        escapedData.append(c);
+                        break;
+                }
+            }
+            response.sendError(404, "<br>bad() - Parameter name has value " + escapedData.toString());
         }
 
     }
