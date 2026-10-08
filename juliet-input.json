@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE113_HTTP_Response_Splitting__getParameter_Servlet_addCookieServlet_01",
+  "cwe": "CWE-113",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE113_HTTP_Response_Splitting/s02/CWE113_HTTP_Response_Splitting__getParameter_Servlet_addCookieServlet_01.java",
+      "repository_path": "src/testcases/CWE113_HTTP_Response_Splitting/s02/CWE113_HTTP_Response_Splitting__getParameter_Servlet_addCookieServlet_01.java",
+      "original_sha256": "5de0941a1f2180763dfb0f88d102d255d67cd993254ed9d89b916e3c89ad9ac6",
+      "input_sha256": "a9659800e6f37e0a01ff619545fc195b6bf065d1699fa94704df9f33195198c0"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
