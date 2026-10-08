@@ -26,8 +26,7 @@ public class CWE698_Redirect_Without_Exit__Servlet_01 extends AbstractTestCaseSe
 
         response.sendRedirect("/test");
 
-                                                        
-        IO.writeLine("doing some more things here after the redirect");
+        return;
 
     }
 
