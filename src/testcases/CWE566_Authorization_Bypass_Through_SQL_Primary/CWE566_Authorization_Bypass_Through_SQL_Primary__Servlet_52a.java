@@ -27,7 +27,8 @@ public class CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_52a extend
         String data;
 
                                                         
-        data = request.getParameter("id");
+        Object authenticatedUserId = request.getSession().getAttribute("userId");
+        data = (authenticatedUserId == null) ? null : authenticatedUserId.toString();
 
         (new CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_52b()).badSink(data , request, response);
     }
