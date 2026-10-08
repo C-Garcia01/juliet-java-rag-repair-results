@@ -55,7 +55,14 @@ public class CWE568_Finalize_Without_Super__from_console_01_bad extends Abstract
         {
                                                                                                
                                                           
-            IO.writeLine("finalizing BadClass");
+            try
+            {
+                IO.writeLine("finalizing BadClass");
+            }
+            finally
+            {
+                super.finalize();
+            }
         }
     }
     
