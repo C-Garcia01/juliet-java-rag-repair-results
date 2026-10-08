@@ -29,7 +29,7 @@ public class CWE483_Incorrect_Block_Delimitation__semicolon_16 extends AbstractT
             x = (new SecureRandom()).nextInt(3);
             y = 0;
                                                                           
-            if (x == 0);
+            if (x == 0)
             {
                 IO.writeLine("x == 0");
                 y = 1;                                                     
