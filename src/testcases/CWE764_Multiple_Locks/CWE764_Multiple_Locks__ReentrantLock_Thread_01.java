@@ -17,7 +17,6 @@ public class CWE764_Multiple_Locks__ReentrantLock_Thread_01 extends AbstractTest
 
     static public void helperBad() 
     {
-        REENTRANT_LOCK_BAD.lock(); 
         REENTRANT_LOCK_BAD.lock();                                                                                                            
 
                                                                
