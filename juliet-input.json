@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE193_Off_by_One_Error__while_14",
+  "cwe": "CWE-193",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE193_Off_by_One_Error/CWE193_Off_by_One_Error__while_14.java",
+      "repository_path": "src/testcases/CWE193_Off_by_One_Error/CWE193_Off_by_One_Error__while_14.java",
+      "original_sha256": "f684349a93e2ca95ea2465c456818d887f9da3d1d813b38282722a9b6d816e0d",
+      "input_sha256": "d4e8b68e2dae74e7866148ddef43f99d018180a2fc9654b063d14684f15f53ef"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
