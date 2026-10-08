@@ -1,0 +1,68 @@
+                                   
+                                                       
+                                                                      
+                                      
+  
+  
+              
+                                  
+        
+                                     
+                                  
+                                                                     
+ 
+    
+
+package testcases.CWE486_Compare_Classes_by_Name;
+
+import testcasesupport.*;
+
+public class CWE486_Compare_Classes_by_Name__basic_05 extends AbstractTestCase
+{
+                                                                        
+                                                                          
+                                                                  
+       
+    private boolean privateTrue = true;
+    private boolean privateFalse = false;
+
+    public void bad() throws Throwable
+    {
+        if (privateTrue)
+        {
+                                                                                                                                  
+            testcases.CWE486_Compare_Classes_by_Name.HelperClass.CWE486_Compare_Classes_by_Name__Helper helperClass = new testcases.CWE486_Compare_Classes_by_Name.HelperClass.CWE486_Compare_Classes_by_Name__Helper();
+            testcases.CWE486_Compare_Classes_by_Name.CWE486_Compare_Classes_by_Name__Helper helperClassRoot = new testcases.CWE486_Compare_Classes_by_Name.CWE486_Compare_Classes_by_Name__Helper();
+            if (helperClassRoot.getClass().getSimpleName().equals(helperClass.getClass().getSimpleName()))
+            {
+                IO.writeLine("Classes are the same");
+            }
+            else
+            {
+                                                                                  
+                IO.writeLine("Classes are different");
+            }
+        }
+    }
+
+                                                     
+    
+
+                                                         
+    
+
+    public void good() throws Throwable
+    {
+    }
+
+                                                                          
+                                                                            
+                                                                             
+                                                                       
+       
+    public static void main(String[] args) throws ClassNotFoundException,
+           InstantiationException, IllegalAccessException
+    {
+        mainFromParent(args);
+    }
+}
