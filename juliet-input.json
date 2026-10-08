@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE506_Embedded_Malicious_Code__email_10",
+  "cwe": "CWE-506",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE506_Embedded_Malicious_Code/CWE506_Embedded_Malicious_Code__email_10.java",
+      "repository_path": "src/testcases/CWE506_Embedded_Malicious_Code/CWE506_Embedded_Malicious_Code__email_10.java",
+      "original_sha256": "e329fa0f0e5f1619dbe07805625418544d4834c12f716c4e0fd8d57a74ba5ac8",
+      "input_sha256": "10b576fb249b56ae1df9ff1ff4935d09cecebfe1c656329455dc1e40de99e33c"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
