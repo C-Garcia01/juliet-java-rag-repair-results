@@ -41,7 +41,7 @@ public class CWE760_Predictable_Salt_One_Way_Hash__basic_08 extends AbstractTest
     {
         if (privateReturnsTrue())
         {
-            Random random = new Random();
+            SecureRandom random = new SecureRandom();
             MessageDigest hash = MessageDigest.getInstance("SHA-512");
                                                       
             hash.update((Integer.toString(random.nextInt())).getBytes("UTF-8"));
