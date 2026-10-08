@@ -1,0 +1,32 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_52",
+  "cwe": "CWE-566",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_52a.java",
+      "repository_path": "src/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_52a.java",
+      "original_sha256": "f36b4dbca6f3b5feab4cfe3dfdc6c442117fdaca2a455c0fe15ef80e0500d59d",
+      "input_sha256": "7c966cc13873496ec73326b05bbc1cc09c416f0b42ea8d226adc0e168b4298fc"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_52b.java",
+      "repository_path": "src/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_52b.java",
+      "original_sha256": "a0ea93c28a1a9c8a27943181b43b1c5503644e0b8ed7b66aa014df44151f26ba",
+      "input_sha256": "48c1cfa6f36fdee027fba0446d140f4ad7174aa751b8f172e81b865df0dfb6a9"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_52c.java",
+      "repository_path": "src/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_52c.java",
+      "original_sha256": "f4f40a4719540e953dd418abf443f50a2b8be1eef86fe353ee586d6a16c97034",
+      "input_sha256": "a33a24e3803ac5ceddcf1c797e2b5fcefb17c7e6a2a2e282806e57e885f9706e"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
