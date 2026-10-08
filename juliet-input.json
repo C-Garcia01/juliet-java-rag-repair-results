@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE476_NULL_Pointer_Dereference__binary_if_14",
+  "cwe": "CWE-476",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__binary_if_14.java",
+      "repository_path": "src/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__binary_if_14.java",
+      "original_sha256": "3f08f2c716fd52b8f0b61d70aa33515919e8655eefbbfab0979a676e51f3a31a",
+      "input_sha256": "e0a817c0649c370286a63be1ec4cb1e8644c2fbf7244e9065d03ef85fbcdef89"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
