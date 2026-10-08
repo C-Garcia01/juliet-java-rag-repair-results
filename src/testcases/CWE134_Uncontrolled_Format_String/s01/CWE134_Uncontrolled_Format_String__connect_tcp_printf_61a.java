@@ -27,7 +27,7 @@ public class CWE134_Uncontrolled_Format_String__connect_tcp_printf_61a extends A
         if (data != null)
         {
                                                                 
-            System.out.printf(data);
+            System.out.printf("%s", data);
         }
 
     }
