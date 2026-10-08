@@ -1,0 +1,26 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE369_Divide_by_Zero__float_random_modulo_22",
+  "cwe": "CWE-369",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__float_random_modulo_22a.java",
+      "repository_path": "src/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__float_random_modulo_22a.java",
+      "original_sha256": "4a5ab60f42a66d7d0ab346612d847b117b2477ef6d0834c2b6877375f1cc5457",
+      "input_sha256": "3e5bd47f65da174daef6e2d97a8f2039a22d2ac8940425fe5c2fe2fab9477fcd"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__float_random_modulo_22b.java",
+      "repository_path": "src/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__float_random_modulo_22b.java",
+      "original_sha256": "78cf966ba1f5a0950610dbb499251f140b04edf90d17f08540c06826a550a6eb",
+      "input_sha256": "3f32bf5045a33c1c379579011f083e77a9d41198a3a8cbbad397c9efcbad4357"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
