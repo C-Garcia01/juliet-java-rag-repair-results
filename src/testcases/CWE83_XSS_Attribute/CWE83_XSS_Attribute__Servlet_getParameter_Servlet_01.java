@@ -33,7 +33,8 @@ public class CWE83_XSS_Attribute__Servlet_getParameter_Servlet_01 extends Abstra
         if (data != null)
         {
                                                                                             
-            response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
+            String encodedData = data.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;").replace("'", "&#39;");
+            response.getWriter().println("<br>bad() - <img src=\"" + encodedData + "\">");
         }
 
     }
