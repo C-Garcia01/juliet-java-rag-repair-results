@@ -103,15 +103,15 @@ public class CWE89_SQL_Injection__URLConnection_executeBatch_15 extends Abstract
                 String names[] = data.split("-");
                 int successCount = 0;
                 Connection dbConnection = null;
-                Statement sqlStatement = null;
+                PreparedStatement sqlStatement = null;
                 try
                 {
                     dbConnection = IO.getDBConnection();
-                    sqlStatement = dbConnection.createStatement();
+                    sqlStatement = dbConnection.prepareStatement("update users set hitcount=hitcount+1 where name=?");
                     for (int i = 0; i < names.length; i++)
                     {
-                                                                                                                                              
-                        sqlStatement.addBatch("update users set hitcount=hitcount+1 where name='" + names[i] + "'");
+                        sqlStatement.setString(1, names[i]);
+                        sqlStatement.addBatch();
                     }
                     int resultsArray[] = sqlStatement.executeBatch();
                     for (int i = 0; i < names.length; i++)
