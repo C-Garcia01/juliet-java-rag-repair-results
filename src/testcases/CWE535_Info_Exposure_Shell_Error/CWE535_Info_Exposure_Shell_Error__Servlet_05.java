@@ -48,10 +48,8 @@ public class CWE535_Info_Exposure_Shell_Error__Servlet_05 extends AbstractTestCa
             if (username.matches("[a-zA-Z0-9]*"))
             {
                 HttpSession session = request.getSession(true);
-                writerOutputStream = new OutputStreamWriter(System.err, "UTF-8");
-                writerPrint = new PrintWriter(writerOutputStream);
                                                            
-                writerPrint.println("Username: " + username + " Session ID:" + session.getId());
+                IO.logger.log(Level.INFO, "Username: " + username + " Session ID:" + session.getId());
             }
             else
             {
