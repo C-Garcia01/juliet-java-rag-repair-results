@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE579_Non_Serializable_in_Session__Servlet_01",
+  "cwe": "CWE-579",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE579_Non_Serializable_in_Session/CWE579_Non_Serializable_in_Session__Servlet_01.java",
+      "repository_path": "src/testcases/CWE579_Non_Serializable_in_Session/CWE579_Non_Serializable_in_Session__Servlet_01.java",
+      "original_sha256": "77d454858c105da92e5be6dc3f0f435945dc59b80688d7717e7ea39b100f415f",
+      "input_sha256": "36fb14fd62b323a02a2a3e88ba59939c723e0645201b3501cce9120944900ff7"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
