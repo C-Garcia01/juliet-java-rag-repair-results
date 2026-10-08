@@ -1,0 +1,78 @@
+                                   
+                                                                 
+                                                                                
+                                      
+  
+  
+              
+                                            
+        
+                            
+                               
+                                                                                                 
+ 
+    
+
+package testcases.CWE329_Not_Using_Random_IV_with_CBC_Mode;
+
+import testcasesupport.*;
+
+import javax.servlet.http.*;
+import java.io.*;
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.IvParameterSpec;
+import java.security.SecureRandom;
+
+public class CWE329_Not_Using_Random_IV_with_CBC_Mode__basic_04 extends AbstractTestCase
+{
+                                                                     
+                                                                       
+                          
+       
+    private static final boolean PRIVATE_STATIC_FINAL_TRUE = true;
+    private static final boolean PRIVATE_STATIC_FINAL_FALSE = false;
+
+    public void bad() throws Throwable
+    {
+        if (PRIVATE_STATIC_FINAL_TRUE)
+        {
+            byte[] text = "asdf".getBytes("UTF-8");
+            byte[] initializationVector =
+            {
+                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+            };
+            KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
+            keyGenerator.init(128);
+            SecretKey key = keyGenerator.generateKey();
+                                                            
+            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+            IvParameterSpec ivParameterSpec = new IvParameterSpec(initializationVector);
+            cipher.init(Cipher.ENCRYPT_MODE, key, ivParameterSpec);
+            IO.writeLine(IO.toHex(cipher.doFinal(text)));
+        }
+    }
+
+                                                                                 
+    
+
+                                                         
+    
+
+    public void good() throws Throwable
+    {
+    }
+
+                                                                          
+                                                                            
+                                                                             
+                                                                       
+       
+    public static void main(String[] args) throws ClassNotFoundException,
+           InstantiationException, IllegalAccessException
+    {
+        mainFromParent(args);
+    }
+}
