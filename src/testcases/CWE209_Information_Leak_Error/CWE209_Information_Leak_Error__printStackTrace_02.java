@@ -17,6 +17,8 @@ package testcases.CWE209_Information_Leak_Error;
 
 import testcasesupport.*;
 
+import java.util.logging.Level;
+
 public class CWE209_Information_Leak_Error__printStackTrace_02 extends AbstractTestCase
 {
     public void bad() throws Throwable
@@ -29,7 +31,7 @@ public class CWE209_Information_Leak_Error__printStackTrace_02 extends AbstractT
             }
             catch (UnsupportedOperationException exceptUnsupportedOperation)
             {
-                exceptUnsupportedOperation.printStackTrace();                                                  
+                IO.logger.log(Level.WARNING, "Caught UnsupportedOperationException while performing operation", exceptUnsupportedOperation);
             }
         }
     }
