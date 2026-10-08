@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE253_Incorrect_Check_of_Function_Return_Value__FileInputStream_04",
+  "cwe": "CWE-253",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__FileInputStream_04.java",
+      "repository_path": "src/testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__FileInputStream_04.java",
+      "original_sha256": "c0bdb5dcab165ade11fa324c40c63adce1979ffe49d30fd8b34c790a4b2825fd",
+      "input_sha256": "cb53b338bf918103217cb583170595a3fda1902cbbe5963d63019f1f8a3eab8b"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
