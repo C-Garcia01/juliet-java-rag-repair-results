@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE584_Return_in_Finally_Block__basic_15",
+  "cwe": "CWE-584",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE584_Return_in_Finally_Block/CWE584_Return_in_Finally_Block__basic_15.java",
+      "repository_path": "src/testcases/CWE584_Return_in_Finally_Block/CWE584_Return_in_Finally_Block__basic_15.java",
+      "original_sha256": "88b945cbb4b2f531a85aff09f3cf001c13c40278de1700cea2e9a8b4e3171f85",
+      "input_sha256": "e65261d8ce9e4c352a6286a7f08d5c428e2df71f1ee1a145e231e06c9e93d60d"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
