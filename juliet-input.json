@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE470_Unsafe_Reflection__connect_tcp_01",
+  "cwe": "CWE-470",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__connect_tcp_01.java",
+      "repository_path": "src/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__connect_tcp_01.java",
+      "original_sha256": "257497793f42922ee9ce7a1f76828f909baa5451b6aacf4bd54ddd3ee09e57a3",
+      "input_sha256": "47520a2c86fc1b8135029103a02087a947add3cd9f91b2d35a03662ae721c7a7"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
