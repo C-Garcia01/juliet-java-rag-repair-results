@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE600_Uncaught_Exception_in_Servlet__getParameter_01",
+  "cwe": "CWE-600",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE600_Uncaught_Exception_in_Servlet/CWE600_Uncaught_Exception_in_Servlet__getParameter_01.java",
+      "repository_path": "src/testcases/CWE600_Uncaught_Exception_in_Servlet/CWE600_Uncaught_Exception_in_Servlet__getParameter_01.java",
+      "original_sha256": "e248cae028a53d162de5b3ec0d2e7d663e0c2b59e7e2c5b87665aa1e9bfc5b18",
+      "input_sha256": "156712652d1e9286cf9557e56a902e066829eb5db98e50aae43d98a91f119267"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
