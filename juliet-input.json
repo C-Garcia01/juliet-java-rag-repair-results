@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE511_Logic_Time_Bomb__time_05",
+  "cwe": "CWE-511",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE511_Logic_Time_Bomb/CWE511_Logic_Time_Bomb__time_05.java",
+      "repository_path": "src/testcases/CWE511_Logic_Time_Bomb/CWE511_Logic_Time_Bomb__time_05.java",
+      "original_sha256": "23b2e919fbaab818475961634d9b6cc2f54639899a742811f7eafa23de8306b7",
+      "input_sha256": "1673c66ba6c10063eb2bdbd72a3a5b71d2faf8c330543be1bb9757a2441f48f4"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
