@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE572_Call_to_Thread_run_Instead_of_start__basic_03",
+  "cwe": "CWE-572",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE572_Call_to_Thread_run_Instead_of_start/CWE572_Call_to_Thread_run_Instead_of_start__basic_03.java",
+      "repository_path": "src/testcases/CWE572_Call_to_Thread_run_Instead_of_start/CWE572_Call_to_Thread_run_Instead_of_start__basic_03.java",
+      "original_sha256": "0eb7efad498fa8694ca13bff508a70f25f2e9ed324bdaecd04dfc8467c28f4f7",
+      "input_sha256": "3f10139889ce143f3fc9bb2ffe626aee84198282bdcb0658f1238d8285dcf566"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
