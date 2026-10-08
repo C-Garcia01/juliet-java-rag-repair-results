@@ -26,7 +26,10 @@ public class CWE114_Process_Control__basic_13 extends AbstractTestCase
             String libraryName = "test.dll";
                                                                                 
                                                
-            System.loadLibrary(libraryName);
+            if (libraryName != null && libraryName.equals("test.dll"))
+            {
+                System.loadLibrary("test.dll");
+            }
         }
     }
 
