@@ -33,7 +33,7 @@ public class CWE613_Insufficient_Session_Expiration__Servlet_06 extends Abstract
         {
             HttpSession sesssion = request.getSession(true);
                                                                                  
-            sesssion.setMaxInactiveInterval(-1);
+            sesssion.setMaxInactiveInterval(300);
             response.getWriter().write("bad(): Session still valid");
         }
     }
