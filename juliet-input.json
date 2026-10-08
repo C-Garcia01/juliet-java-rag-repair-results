@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE197_Numeric_Truncation_Error__int_PropertiesFile_to_short_11",
+  "cwe": "CWE-197",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_PropertiesFile_to_short_11.java",
+      "repository_path": "src/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_PropertiesFile_to_short_11.java",
+      "original_sha256": "99b55b90b4fed84acb75e5238747826a15b61881a0a398a145ad83f0958c4936",
+      "input_sha256": "57a154800732578e847e0473663e0db00e9b84d01eb3430d8538b4f134e0cba5"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
