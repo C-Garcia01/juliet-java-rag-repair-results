@@ -49,8 +49,7 @@ public class CWE534_Info_Exposure_Debug_Log__Servlet_08 extends AbstractTestCase
             if (username.matches("[a-zA-Z0-9]*"))
             {
                 HttpSession session = request.getSession(true);
-                                                              
-                logger.log(Level.FINEST, "Username: " + username + " Session ID:" + session.getId());
+                logger.log(Level.FINEST, "A user request was processed successfully.");
             }
             else
             {
