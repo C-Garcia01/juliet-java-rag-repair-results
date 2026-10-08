@@ -28,9 +28,9 @@ public class CWE396_Catch_Generic_Exception__Throwable_15 extends AbstractTestCa
             {
                 Integer.parseInt("Test");                                       
             }
-            catch (Throwable throwable)                                                     
+            catch (NumberFormatException throwable)
             {
-                IO.writeLine("Caught Throwable");
+                IO.writeLine("Caught NumberFormatException");
                 throw throwable;              
             }
             break;
