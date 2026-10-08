@@ -25,11 +25,6 @@ public class CWE511_Logic_Time_Bomb__rand_02 extends AbstractTestCase
     {
         if (true)
         {
-                                               
-            if ((new SecureRandom()).nextInt() == 20000)
-            {
-                Runtime.getRuntime().exec("c:\\windows\\system32\\evil.exe");
-            }
         }
     }
 
