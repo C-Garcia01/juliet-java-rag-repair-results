@@ -86,7 +86,7 @@ public class CWE197_Numeric_Truncation_Error__short_PropertiesFile_15 extends Ab
 
         {
                                                                                              
-            IO.writeLine((byte)data);
+            IO.writeLine(data);
         }
 
     }
