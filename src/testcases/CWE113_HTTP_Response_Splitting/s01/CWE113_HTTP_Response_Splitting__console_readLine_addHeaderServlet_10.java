@@ -92,7 +92,7 @@ public class CWE113_HTTP_Response_Splitting__console_readLine_addHeaderServlet_1
                                                               
             if (data != null)
             {
-                response.addHeader("Location", "/author.jsp?lang=" + data);
+                response.addHeader("Location", "/author.jsp?lang=" + URLEncoder.encode(data, "UTF-8"));
             }
         }
     }
