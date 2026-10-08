@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE613_Insufficient_Session_Expiration__Servlet_09",
+  "cwe": "CWE-613",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE613_Insufficient_Session_Expiration/CWE613_Insufficient_Session_Expiration__Servlet_09.java",
+      "repository_path": "src/testcases/CWE613_Insufficient_Session_Expiration/CWE613_Insufficient_Session_Expiration__Servlet_09.java",
+      "original_sha256": "319cb6c3b530862d0b49931dc01345922c8d37805aef8065e6b9af4fea49cb9c",
+      "input_sha256": "d890b05c19c7171fd6f4a3288829ec6a29fd77676efcfabdfa1c733f78213319"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
