@@ -40,8 +40,11 @@ public class CWE78_OS_Command_Injection__getQueryString_Servlet_74b
         }
 
                                                
-        Process process = Runtime.getRuntime().exec(osCommand + data);
-        process.waitFor();
+        if (data != null && data.matches("[a-zA-Z0-9._/\\-]+"))
+        {
+            Process process = Runtime.getRuntime().exec(osCommand + data);
+            process.waitFor();
+        }
 
     }
 
