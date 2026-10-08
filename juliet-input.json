@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE667_Improper_Locking__basic_01",
+  "cwe": "CWE-667",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE667_Improper_Locking/CWE667_Improper_Locking__basic_01.java",
+      "repository_path": "src/testcases/CWE667_Improper_Locking/CWE667_Improper_Locking__basic_01.java",
+      "original_sha256": "5111de76d83c9ef2e5e56f3d9a4cbf01158e508bf8176e60ed642d493123bdb1",
+      "input_sha256": "f00911a17027038ffce452e8107b2435e3ae3aa09fa6ee417714192242c30f05"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
