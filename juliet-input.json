@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE606_Unchecked_Loop_Condition__Property_15",
+  "cwe": "CWE-606",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Property_15.java",
+      "repository_path": "src/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Property_15.java",
+      "original_sha256": "1f138226b62c0d4d7d78f8e824bab2f27b419302925d47fcfebacc9e42db6de6",
+      "input_sha256": "4d716c36b1d8e316bf795b4da85677fc58a217fcc3290b15f1ad9aecba9d530b"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
