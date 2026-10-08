@@ -27,7 +27,7 @@ public class CWE396_Catch_Generic_Exception__Exception_11 extends AbstractTestCa
             {
                 Integer.parseInt("Test");                                       
             }
-            catch (Exception exception)                                                     
+            catch (NumberFormatException exception)
             {
                 IO.writeLine("Caught Exception");
                 throw exception;              
