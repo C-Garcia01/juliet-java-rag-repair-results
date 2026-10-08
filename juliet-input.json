@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE397_Throw_Generic__declare_Throwable_01",
+  "cwe": "CWE-397",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE397_Throw_Generic/CWE397_Throw_Generic__declare_Throwable_01.java",
+      "repository_path": "src/testcases/CWE397_Throw_Generic/CWE397_Throw_Generic__declare_Throwable_01.java",
+      "original_sha256": "36e503802463b9addbc1c30d3d0201087819b896214c2b99f78b92142d0a8436",
+      "input_sha256": "762d13e8e08473b4c823b35bf47e1e9fae5d1148691c3d8a65b5cde1d195c6af"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
