@@ -25,7 +25,15 @@ public class CWE617_Reachable_Assertion__length_15 extends AbstractTestCase
         {
         case 7:
                                           
-            assert "".length() > 0;
+            String myString = "";
+            if (myString.length() > 0)
+            {
+                IO.writeLine("String has a positive length");
+            }
+            else
+            {
+                IO.writeLine("String is empty");
+            }
             break;
         default:
                                                                               
