@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE315_Plaintext_Storage_in_Cookie__Servlet_11",
+  "cwe": "CWE-315",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_11.java",
+      "repository_path": "src/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_11.java",
+      "original_sha256": "d2960556912cec74ac97f0853fe03f1ba65e74c9d5739a5a61627ead229784c0",
+      "input_sha256": "485661e1cf256db0092d2a7f7cf489e6d3b19df450b59390628e900d039c00db"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
