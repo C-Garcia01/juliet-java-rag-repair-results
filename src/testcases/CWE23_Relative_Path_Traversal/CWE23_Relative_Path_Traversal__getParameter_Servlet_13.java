@@ -57,6 +57,14 @@ public class CWE23_Relative_Path_Traversal__getParameter_Servlet_13 extends Abst
         {
                                                                      
             File file = new File(root + data);
+            File rootDirectory = new File(root);
+            String canonicalRoot = rootDirectory.getCanonicalPath() + File.separator;
+            String canonicalFile = file.getCanonicalPath();
+            if (!canonicalFile.startsWith(canonicalRoot))
+            {
+                IO.logger.log(Level.WARNING, "Rejected path outside of the upload directory");
+                return;
+            }
             FileInputStream streamFileInputSink = null;
             InputStreamReader readerInputStreamSink = null;
             BufferedReader readerBufferdSink = null;
