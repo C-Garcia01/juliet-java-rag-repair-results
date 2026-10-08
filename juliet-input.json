@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE760_Predictable_Salt_One_Way_Hash__basic_17",
+  "cwe": "CWE-760",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE760_Predictable_Salt_One_Way_Hash/CWE760_Predictable_Salt_One_Way_Hash__basic_17.java",
+      "repository_path": "src/testcases/CWE760_Predictable_Salt_One_Way_Hash/CWE760_Predictable_Salt_One_Way_Hash__basic_17.java",
+      "original_sha256": "bc1c88681978ac0b849bccca143665137dca411f75a418a62dc4228b08c8aec1",
+      "input_sha256": "6037a52bce9555251b711446188bf5c48650e1fac8d595f7b8b5adec7d815e79"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
