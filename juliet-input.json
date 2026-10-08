@@ -1,0 +1,44 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE319_Cleartext_Tx_Sensitive_Info__listen_tcp_passwordAuth_54",
+  "cwe": "CWE-319",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__listen_tcp_passwordAuth_54a.java",
+      "repository_path": "src/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__listen_tcp_passwordAuth_54a.java",
+      "original_sha256": "b8d093dcbec5453fe9a8d77cbf869be48fdc72487290ce786e609b2003762bd3",
+      "input_sha256": "a64e397b3e0d1796ab7372775f2ba03af3657594ae6bb432b2677af694c9e2c3"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__listen_tcp_passwordAuth_54b.java",
+      "repository_path": "src/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__listen_tcp_passwordAuth_54b.java",
+      "original_sha256": "b01272b97237dc4c3367b8a3d9a5480d7d21b867052fac62004fc7fe84959053",
+      "input_sha256": "389dfd7bc71bd5b4bd512e8ef1a93b0f0e4fe78cfe52304a2a0f81fe4ae28037"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__listen_tcp_passwordAuth_54c.java",
+      "repository_path": "src/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__listen_tcp_passwordAuth_54c.java",
+      "original_sha256": "67ebc113e103709d153634158ba7163f8bcdda8c8e6353dbc1ad634bdc26ba6a",
+      "input_sha256": "490e8936b0266cf0146c80268d5584ca13ab4d04af53c0e6fd79a10cfbe4090a"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__listen_tcp_passwordAuth_54d.java",
+      "repository_path": "src/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__listen_tcp_passwordAuth_54d.java",
+      "original_sha256": "fc92e63159bce94d1d8630f38d779654840d48eaa80e869fdf1c392afcc24e22",
+      "input_sha256": "7a208d1d811f6f3996985e3502c6d3f1249113acdbe4695cbdef13401f5dc035"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__listen_tcp_passwordAuth_54e.java",
+      "repository_path": "src/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__listen_tcp_passwordAuth_54e.java",
+      "original_sha256": "769f4e81cf5045427ddd5436f28a4790ef2e31941456fe49c108916eeb7aec68",
+      "input_sha256": "d429dff5adfa47875c3dbb11ca46eeaf31229bd0e4878ca8e61890945ff6912f"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
