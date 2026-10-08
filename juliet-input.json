@@ -1,0 +1,32 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE690_NULL_Deref_From_Return__getParameter_Servlet_equals_74",
+  "cwe": "CWE-690",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_Helper.java",
+      "repository_path": "src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_Helper.java",
+      "original_sha256": "e964c715a29838f8efef46475557ccfd67408fcdbc80b10c682995f9cd593cd7",
+      "input_sha256": "9fbcfa6b67a580efed2aea4ddbda8018e82987b1630d25a22a4b9945a48108bc"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__getParameter_Servlet_equals_74a.java",
+      "repository_path": "src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__getParameter_Servlet_equals_74a.java",
+      "original_sha256": "08ecabc721d390d6fe33c7ce4d42c4925ef4e32190ed6af8b9aefb90307e4ee9",
+      "input_sha256": "7f83e5a73ff582194f7a653dc08ba704540da5c18fa1323e66d13265b534a853"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__getParameter_Servlet_equals_74b.java",
+      "repository_path": "src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__getParameter_Servlet_equals_74b.java",
+      "original_sha256": "8e76e3d21e64ac594091b0b33bf734d6c37a375392bc1e521bc12319c9c13955",
+      "input_sha256": "74a9df61a1451c82f7f6e3ad791bbefdafdff590014c4a16c7fb5663eeaa3455"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
