@@ -18,11 +18,16 @@ public class CWE667_Improper_Locking__basic_01 extends AbstractTestCase
     {
         BAD_REENTRANT_LOCK.lock();
         
-        intBadNumber++;
-        
-        IO.writeLine(intBadNumber);
-        
-                                        
+        try
+        {
+            intBadNumber++;
+            
+            IO.writeLine(intBadNumber);
+        }
+        finally
+        {
+            BAD_REENTRANT_LOCK.unlock();
+        }
     }
     
     public void bad() throws Throwable 
