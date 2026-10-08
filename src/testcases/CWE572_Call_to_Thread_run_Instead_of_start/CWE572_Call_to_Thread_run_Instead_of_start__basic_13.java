@@ -31,7 +31,7 @@ public class CWE572_Call_to_Thread_run_Instead_of_start__basic_13 extends Abstra
                     IO.writeLine("bad() In thread: " + Thread.currentThread().getName());
                 }
             };
-            threadOne.run();                                                          
+            threadOne.start();                                                          
         }
     }
 
