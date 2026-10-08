@@ -29,7 +29,7 @@ public class CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_22b
         if (CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_22a.badPublicStatic)
         {
                                                             
-            data = request.getParameter("id");
+            data = request.getSession(true).getAttribute("uid").toString();
         }
         else
         {
