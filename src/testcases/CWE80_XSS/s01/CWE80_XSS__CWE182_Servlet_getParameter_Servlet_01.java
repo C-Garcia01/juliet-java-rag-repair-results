@@ -32,7 +32,8 @@ public class CWE80_XSS__CWE182_Servlet_getParameter_Servlet_01 extends AbstractT
         if (data != null)
         {
                                                                                                                                                                                                                          
-            response.getWriter().println("<br>bad(): data = " + data.replaceAll("(<script>)", ""));
+            String encodedData = data.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;").replace("'", "&#39;");
+            response.getWriter().println("<br>bad(): data = " + encodedData);
         }
 
     }
