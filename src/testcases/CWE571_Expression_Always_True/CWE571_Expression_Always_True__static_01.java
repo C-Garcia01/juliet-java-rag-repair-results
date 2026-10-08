@@ -12,7 +12,7 @@ public class CWE571_Expression_Always_True__static_01 extends AbstractTestCase
     public void bad()
     {
                                             
-        if (IO.staticTrue)
+        if (IO.staticReturnsTrueOrFalse())
         {
             IO.writeLine("always prints");
         }
