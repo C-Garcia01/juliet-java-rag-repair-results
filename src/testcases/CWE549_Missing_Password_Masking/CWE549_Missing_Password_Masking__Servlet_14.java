@@ -28,7 +28,7 @@ public class CWE549_Missing_Password_Masking__Servlet_14 extends AbstractTestCas
             response.getWriter().println("<form id=\"form\" name=\"form\" method=\"post\" action=\"password-test-servlet\">");
             response.getWriter().println("Username: <input name=\"username\" type=\"text\" tabindex=\"10\" /><br><br>");
                                                                      
-            response.getWriter().println("Password: <input name=\"password\" type=\"text\" tabindex=\"10\" />");
+            response.getWriter().println("Password: <input name=\"password\" type=\"password\" tabindex=\"10\" />");
             response.getWriter().println("<input type=\"submit\" name=\"submit\" value=\"Login-bad\" /></form>");
         }
     }
