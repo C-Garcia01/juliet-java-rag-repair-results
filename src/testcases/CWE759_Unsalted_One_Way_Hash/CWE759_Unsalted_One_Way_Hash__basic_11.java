@@ -26,8 +26,11 @@ public class CWE759_Unsalted_One_Way_Hash__basic_11 extends AbstractTestCase
     {
         if (IO.staticReturnsTrue())
         {
+            SecureRandom secureRandom = new SecureRandom();
+            byte[] salt = new byte[16];
+            secureRandom.nextBytes(salt);
             MessageDigest hash = MessageDigest.getInstance("SHA-512");
-                                           
+            hash.update(salt);
             byte[] hashValue = hash.digest("hash me".getBytes("UTF-8"));
             IO.writeLine(IO.toHex(hashValue));
         }
