@@ -23,9 +23,6 @@ public class CWE398_Poor_Code_Quality__empty_block_14 extends AbstractTestCase
     {
         if (IO.staticFive == 5)
         {
-                                                                      
-            {
-            }
             IO.writeLine("Hello from bad()");
         }
     }
