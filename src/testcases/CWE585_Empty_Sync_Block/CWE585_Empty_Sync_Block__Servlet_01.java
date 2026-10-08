@@ -23,10 +23,8 @@ public class CWE585_Empty_Sync_Block__Servlet_01 extends AbstractTestCaseServlet
     {
         synchronized(CWE585_Empty_Sync_Block__Servlet_01.class) 
         {
-                                                                            
+            intBad = intBad * 2;
         }
-    
-        intBad = intBad * 2;
     }
 
     public void bad(HttpServletRequest request, HttpServletResponse response) throws InterruptedException, IOException 
