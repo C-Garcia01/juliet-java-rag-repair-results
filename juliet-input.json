@@ -1,0 +1,26 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE586_Explicit_Call_to_Finalize__basic_01",
+  "cwe": "CWE-586",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE586_Explicit_Call_to_Finalize/CWE586_Explicit_Call_to_Finalize__basic_01.java",
+      "repository_path": "src/testcases/CWE586_Explicit_Call_to_Finalize/CWE586_Explicit_Call_to_Finalize__basic_01.java",
+      "original_sha256": "40dc95b0b397d4bd3aa3363bf04c3851e2915f2e6cb0b7ad368bb13f9c4dec0c",
+      "input_sha256": "389caf82a5d5368711660c4bb953ff410aedf26741ccc5b7fb4d6cb8cb3bb997"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE586_Explicit_Call_to_Finalize/CWE586_Explicit_Call_to_Finalize__basic_Helper.java",
+      "repository_path": "src/testcases/CWE586_Explicit_Call_to_Finalize/CWE586_Explicit_Call_to_Finalize__basic_Helper.java",
+      "original_sha256": "4c3b1213238a6f3fe6db74555a95366e82c894555b33ecc3bb61da255ba5e5a8",
+      "input_sha256": "a5cdfb51264855e5ffa8d45c0ca6d58ea62fffb2d83b80537dcfc04085e78471"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
