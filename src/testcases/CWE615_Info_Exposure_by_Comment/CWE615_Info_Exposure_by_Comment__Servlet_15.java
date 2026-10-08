@@ -27,8 +27,7 @@ public class CWE615_Info_Exposure_by_Comment__Servlet_15 extends AbstractTestCas
         {
         case 7:
                                                                                   
-            response.getWriter().println("<!--DB username = joe, DB password = 123-->" +
-            "<form action=\"/test\" method=post>" +
+            response.getWriter().println("<form action=\"/test\" method=post>" +
             "<input type=text name=dbusername>" +
             "<input type=test name=dbpassword>" +
             "<input type=submit value=Submit>" +
