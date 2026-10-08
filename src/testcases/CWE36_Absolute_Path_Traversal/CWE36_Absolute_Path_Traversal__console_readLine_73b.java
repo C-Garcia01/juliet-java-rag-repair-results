@@ -33,11 +33,16 @@ public class CWE36_Absolute_Path_Traversal__console_readLine_73b
                                                             
         if (data != null)
         {
-            File file = new File(data);
+            File baseDirectory = new File(System.getProperty("user.dir"));
+            File file = new File(baseDirectory, data);
+            String canonicalBasePath = baseDirectory.getCanonicalPath();
+            String canonicalFilePath = file.getCanonicalPath();
             FileInputStream streamFileInputSink = null;
             InputStreamReader readerInputStreamSink = null;
             BufferedReader readerBufferdSink = null;
-            if (file.exists() && file.isFile())
+            if ((canonicalFilePath.equals(canonicalBasePath)
+                    || canonicalFilePath.startsWith(canonicalBasePath + File.separator))
+                && file.exists() && file.isFile())
             {
                 try
                 {
