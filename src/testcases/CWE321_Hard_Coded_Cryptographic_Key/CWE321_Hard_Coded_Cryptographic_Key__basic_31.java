@@ -36,8 +36,7 @@ public class CWE321_Hard_Coded_Cryptographic_Key__basic_31 extends AbstractTestC
         {
             String data;
 
-                                                     
-            data = "23 ~j;asn!@#/>as";
+            data = System.getenv("CRYPTO_KEY");
 
             dataCopy = data;
         }
