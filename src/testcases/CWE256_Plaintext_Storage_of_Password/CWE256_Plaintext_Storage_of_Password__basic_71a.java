@@ -71,6 +71,16 @@ public class CWE256_Plaintext_Storage_of_Password__basic_71a extends AbstractTes
 
                                                                                                                     
 
+        Cipher aesCipher = Cipher.getInstance("AES");
+        SecretKeySpec secretKeySpec = new SecretKeySpec("ABCDEFGHABCDEFGH".getBytes("UTF-8"), "AES");
+        aesCipher.init(Cipher.DECRYPT_MODE, secretKeySpec);
+        byte[] encryptedPassword = new byte[password.length() / 2];
+        for (int i = 0; i < encryptedPassword.length; i++)
+        {
+            encryptedPassword[i] = (byte) Integer.parseInt(password.substring(2 * i, 2 * i + 2), 16);
+        }
+        password = new String(aesCipher.doFinal(encryptedPassword), "UTF-8");
+
         (new CWE256_Plaintext_Storage_of_Password__basic_71b()).badSink((Object)password  );
     }
 
