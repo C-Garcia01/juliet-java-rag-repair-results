@@ -28,7 +28,6 @@ public class CWE765_Multiple_Unlocks__ReentrantLock_Thread_01 extends AbstractTe
         finally 
         {
             REENTRANT_LOCK_BAD.unlock();    
-            REENTRANT_LOCK_BAD.unlock();                                                                                                         
         }
     }
 
