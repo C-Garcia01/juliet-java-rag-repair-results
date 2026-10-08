@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE789_Uncontrolled_Mem_Alloc__getParameter_Servlet_ArrayList_02",
+  "cwe": "CWE-789",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE789_Uncontrolled_Mem_Alloc/s02/CWE789_Uncontrolled_Mem_Alloc__getParameter_Servlet_ArrayList_02.java",
+      "repository_path": "src/testcases/CWE789_Uncontrolled_Mem_Alloc/s02/CWE789_Uncontrolled_Mem_Alloc__getParameter_Servlet_ArrayList_02.java",
+      "original_sha256": "a080af5756c2ef3370143ce451979a047ce9e8a1c0ce7440ac323616b1b69058",
+      "input_sha256": "10d11b5e96b5f9bf996d8198818147f6cc65a9e7a89a4b7b7664e7ecae700f8c"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
