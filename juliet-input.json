@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE570_Expression_Always_False__class_getClass_equal_01",
+  "cwe": "CWE-570",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE570_Expression_Always_False/CWE570_Expression_Always_False__class_getClass_equal_01.java",
+      "repository_path": "src/testcases/CWE570_Expression_Always_False/CWE570_Expression_Always_False__class_getClass_equal_01.java",
+      "original_sha256": "697b57082bc520e1b1e601297c556b366207479c74f04cdbdaeabaa7ea5afd70",
+      "input_sha256": "fad9188acd52130670b932703c69880a3bcc51d331842d948c05afaf0ffdf8f5"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
