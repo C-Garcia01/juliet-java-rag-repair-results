@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE835_Infinite_Loop__do_true_01",
+  "cwe": "CWE-835",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE835_Infinite_Loop/CWE835_Infinite_Loop__do_true_01.java",
+      "repository_path": "src/testcases/CWE835_Infinite_Loop/CWE835_Infinite_Loop__do_true_01.java",
+      "original_sha256": "90525102d51b1e29db169ea11f2e1d4965ea6f9925f575a5abafe33c85a5bac1",
+      "input_sha256": "1f7178d2e1427ca783428769d7db88c3f222198c8b44191895e56d3ab50d7876"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
