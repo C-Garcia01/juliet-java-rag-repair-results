@@ -110,7 +110,7 @@ public class CWE134_Uncontrolled_Format_String__database_printf_21 extends Abstr
             if (data != null)
             {
                                                                     
-                System.out.printf(data);
+                System.out.printf("%s", data);
             }
         }
     }
