@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE597_Wrong_Operator_String_Comparison__basic_04",
+  "cwe": "CWE-597",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE597_Wrong_Operator_String_Comparison/CWE597_Wrong_Operator_String_Comparison__basic_04.java",
+      "repository_path": "src/testcases/CWE597_Wrong_Operator_String_Comparison/CWE597_Wrong_Operator_String_Comparison__basic_04.java",
+      "original_sha256": "05c992c908a3923822cd89f3ea6c59a2829fd8f6ba6db8a771de2cb7e5b495be",
+      "input_sha256": "b7df5ebae4d1ec90b54a08b8c55d64e8d5cfe80ad3c1ce505ff9de72db0607d9"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
