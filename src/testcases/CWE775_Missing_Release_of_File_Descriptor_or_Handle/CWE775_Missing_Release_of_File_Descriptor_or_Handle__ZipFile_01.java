@@ -34,7 +34,20 @@ public class CWE775_Missing_Release_of_File_Descriptor_or_Handle__ZipFile_01 ext
         {
             IO.logger.log(Level.WARNING, "Error reading file", exceptIO);
         }
-                                         
+        finally
+        {
+            if (zFile != null)
+            {
+                try
+                {
+                    zFile.close();
+                }
+                catch (IOException exceptIO)
+                {
+                    IO.logger.log(Level.WARNING, "Error closing ZipFile", exceptIO);
+                }
+            }
+        }
     }
     
     
