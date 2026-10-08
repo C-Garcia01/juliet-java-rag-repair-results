@@ -14,7 +14,7 @@ import java.util.logging.Level;
 
 public class CWE397_Throw_Generic__declare_Exception_01 extends AbstractTestCase 
 {
-    public void bad() throws Exception                                                                             
+    public void bad() throws FileNotFoundException                                                                             
     {
         FileInputStream streamFileInput = new FileInputStream("filename.txt");                                        
         IO.writeLine("File 'filename.txt' exists");
