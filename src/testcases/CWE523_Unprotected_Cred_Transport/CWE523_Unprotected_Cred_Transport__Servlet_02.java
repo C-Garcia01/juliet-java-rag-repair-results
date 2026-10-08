@@ -35,7 +35,7 @@ public class CWE523_Unprotected_Cred_Transport__Servlet_02 extends AbstractTestC
             {
                 writer = response.getWriter();
                                                                                       
-                writer.println("<form action='http://hostname.com/j_security_check' method='post'>");
+                writer.println("<form action='https://hostname.com/j_security_check' method='post'>");
                 writer.println("<table>");
                 writer.println("<tr><td>Name:</td>");
                 writer.println("<td><input type='text' name='j_username'></td></tr>");
