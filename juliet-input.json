@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE598_Information_Exposure_QueryString__Servlet_10",
+  "cwe": "CWE-598",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE598_Information_Exposure_QueryString/CWE598_Information_Exposure_QueryString__Servlet_10.java",
+      "repository_path": "src/testcases/CWE598_Information_Exposure_QueryString/CWE598_Information_Exposure_QueryString__Servlet_10.java",
+      "original_sha256": "b4d9e5cf58bb75f3aa9b16bb213f49f55aeeccc7657632bfae3b9d30a39b1a42",
+      "input_sha256": "573e4081a98d72081f7ce4cc32bb61a1a28eec2cc065a05b7580a83a1a1696db"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
