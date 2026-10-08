@@ -31,7 +31,7 @@ public class CWE209_Information_Leak_Error__printStackTrace_Servlet_10 extends A
             }
             catch (UnsupportedOperationException exceptUnsupportedOperation)
             {
-                exceptUnsupportedOperation.printStackTrace(response.getWriter());                                                   
+                IO.logger.log(java.util.logging.Level.WARNING, "Caught UnsupportedOperationException", exceptUnsupportedOperation);
             }
         }
     }
