@@ -1,0 +1,26 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE78_OS_Command_Injection__console_readLine_73",
+  "cwe": "CWE-78",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__console_readLine_73a.java",
+      "repository_path": "src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__console_readLine_73a.java",
+      "original_sha256": "ad201bbfa5b1fcc1ac1936a85c73d862767010b762ec2074a7c702604691b839",
+      "input_sha256": "8c40df11ec78cd2985d619cb92691462f9f80c2d2b3d31461005896eb73c5266"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__console_readLine_73b.java",
+      "repository_path": "src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__console_readLine_73b.java",
+      "original_sha256": "83005b4ca4c067f6cf87f742aed7ee47f61a35fb23247f77e975952ff2dabfaf",
+      "input_sha256": "7a459035979d38cb339beb43970a106a48bdfc3fe1b912edad92e631ecb26621"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
