@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE396_Catch_Generic_Exception__Exception_15",
+  "cwe": "CWE-396",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE396_Catch_Generic_Exception/CWE396_Catch_Generic_Exception__Exception_15.java",
+      "repository_path": "src/testcases/CWE396_Catch_Generic_Exception/CWE396_Catch_Generic_Exception__Exception_15.java",
+      "original_sha256": "721f9bdae6e69e76dcdb201ad641583f0c397b2d18ca8f9041559992f2a50265",
+      "input_sha256": "ed128edc21bd4601df22d4a0b4ecee6158995514cc4884a6a6cac3860ea9420a"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
