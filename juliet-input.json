@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE615_Info_Exposure_by_Comment__Servlet_04",
+  "cwe": "CWE-615",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE615_Info_Exposure_by_Comment/CWE615_Info_Exposure_by_Comment__Servlet_04.java",
+      "repository_path": "src/testcases/CWE615_Info_Exposure_by_Comment/CWE615_Info_Exposure_by_Comment__Servlet_04.java",
+      "original_sha256": "2c7dbb59cc284d2c946345a86a68287ad7522791ef80e15b3fd987e657bfc95a",
+      "input_sha256": "ae559a3c638543ff90ab3c819b568ccb362862ce50952c52a5c78baa59f5c6c1"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
