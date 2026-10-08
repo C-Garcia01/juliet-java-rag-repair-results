@@ -14,10 +14,10 @@ public class CWE835_Infinite_Loop__while_01 extends AbstractTestCase
         int i = 0;
     
                                                                
-        while (i >= 0)
+        while (i < 256)
         {
             IO.writeLine(i);
-            i = (i + 1) % 256;
+            i = i + 1;
         }
     }
     
