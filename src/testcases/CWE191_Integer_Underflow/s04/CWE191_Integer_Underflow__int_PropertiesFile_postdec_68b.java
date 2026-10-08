@@ -27,7 +27,10 @@ public class CWE191_Integer_Underflow__int_PropertiesFile_postdec_68b
         int data = CWE191_Integer_Underflow__int_PropertiesFile_postdec_68a.data;
 
                                                                               
-        data--;
+        if (data > Integer.MIN_VALUE)
+        {
+            data--;
+        }
         int result = (int)(data);
 
         IO.writeLine("result: " + result);
