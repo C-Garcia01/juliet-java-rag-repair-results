@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE209_Information_Leak_Error__printStackTrace_02",
+  "cwe": "CWE-209",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE209_Information_Leak_Error/CWE209_Information_Leak_Error__printStackTrace_02.java",
+      "repository_path": "src/testcases/CWE209_Information_Leak_Error/CWE209_Information_Leak_Error__printStackTrace_02.java",
+      "original_sha256": "fb4a8fe915bfa68d568ed8ebd0c2e77ccd23b4ede9f39e8185f5a6ac4361db34",
+      "input_sha256": "2800166151649c1fdbcea84e8c89ad3a76de5e97d8f9fb98357c815f8cd0fd5b"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
