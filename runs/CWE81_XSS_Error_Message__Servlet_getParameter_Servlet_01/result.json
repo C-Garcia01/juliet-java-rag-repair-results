@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "5760633ed1f9cb5127c4f397e7c52842c778fbf0",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-81",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "4c0768e3badab7070fdace821278c77f5e445fc4",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26663,
+  "summary": "The bad() servlet entry point reflects the attacker-controlled request parameter \"name\" directly into an HTML error page via response.sendError(404, ...), enabling CWE-81 cross-site scripting in the error message. I fixed it by HTML-encoding the parameter value (escaping &, <, >, \", ') before it is concatenated into the error message. This neutralizes any injected markup/script while preserving the feature: the 404 error is still sent and the parameter value is still displayed for all valid inputs, just safely encoded. No tests, build settings, or scanner directives were touched, and only the editable file was changed.",
+  "exported_files": 1
+}

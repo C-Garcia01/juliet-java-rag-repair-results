@@ -1,0 +1,14 @@
+diff --git c/src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_getParameter_Servlet_01.java w/src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_getParameter_Servlet_01.java
+index eecc4e0..2542f08 100644
+--- c/src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_getParameter_Servlet_01.java
++++ w/src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_getParameter_Servlet_01.java
+@@ -32,7 +32,8 @@ public class CWE80_XSS__CWE182_Servlet_getParameter_Servlet_01 extends AbstractT
+         if (data != null)
+         {
+                                                                                                                                                                                                                          
+-            response.getWriter().println("<br>bad(): data = " + data.replaceAll("(<script>)", ""));
++            String encodedData = data.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;").replace("'", "&#39;");
++            response.getWriter().println("<br>bad(): data = " + encodedData);
+         }
+ 
+     }

@@ -1,0 +1,16 @@
+diff --git c/src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__getParameter_Servlet_01.java w/src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__getParameter_Servlet_01.java
+index ab486a6..27616a6 100644
+--- c/src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__getParameter_Servlet_01.java
++++ w/src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__getParameter_Servlet_01.java
+@@ -43,6 +43,11 @@ public class CWE78_OS_Command_Injection__getParameter_Servlet_01 extends Abstrac
+         }
+ 
+                                                
++        if (data == null || !data.matches("[a-zA-Z0-9._/-]+"))
++        {
++            throw new IllegalArgumentException("The name argument contains unexpected characters");
++        }
++
+         Process process = Runtime.getRuntime().exec(osCommand + data);
+         process.waitFor();
+ 

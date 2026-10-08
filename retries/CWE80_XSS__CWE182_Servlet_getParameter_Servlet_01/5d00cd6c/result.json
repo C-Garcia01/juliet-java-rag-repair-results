@@ -1,0 +1,19 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "42699d2024e0c4522f077f5ab9e7e20c7a452270",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-80",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "1755ec3b071fdb957b5606f451da97341024ea7a",
+  "retrieved_examples": [
+    "apache/struts@885ab3459e146ff830d1f7257f809f4a3dd4493a:CVE-2011-1772"
+  ],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 31685,
+  "summary": "The bad() entry point in CWE80_XSS__CWE182_Servlet_getParameter_Servlet_01 reads attacker-controlled input from request.getParameter(\"name\") and writes it into the HTML response using only a one-shot replaceAll(\"(<script>)\", \"\"). That blacklist filter is trivially bypassed (e.g. <img onerror=...>, <scr<script>ipt>, uppercase <SCRIPT>, event handlers, etc.), leaving a reflected XSS flow. The fix replaces the weak filter with proper HTML entity encoding of all special characters (&, <, >, \", ') before the value is reflected, which neutralizes markup/script injection in the HTML output context while still echoing legitimate input verbatim-as-text. No feature is disabled and valid inputs are still displayed.",
+  "exported_files": 1
+}
