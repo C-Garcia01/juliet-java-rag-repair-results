@@ -1,0 +1,26 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE23_Relative_Path_Traversal__PropertiesFile_22",
+  "cwe": "CWE-23",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_22a.java",
+      "repository_path": "src/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_22a.java",
+      "original_sha256": "2cb40cadeb6ba79b1e828d7efac32e9d70c4d4121c7a4975d5a1e392b425aa47",
+      "input_sha256": "f9c27a893c1dff5c424b4c53eac1fa34ab4599bd1819316328aed4a828eb9932"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_22b.java",
+      "repository_path": "src/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_22b.java",
+      "original_sha256": "fcacf6c2c9238ceb5d845cab670d48e70cfccf60faf4aa6ac519f24559f2294f",
+      "input_sha256": "46a8ea7efc1d783b7335c161372561e98448e05b27c8a24bfeb1abc4750f4ce3"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
