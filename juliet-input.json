@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE114_Process_Control__basic_15",
+  "cwe": "CWE-114",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE114_Process_Control/CWE114_Process_Control__basic_15.java",
+      "repository_path": "src/testcases/CWE114_Process_Control/CWE114_Process_Control__basic_15.java",
+      "original_sha256": "f8810f37046abd5f6e8ed7132b87249cdad219a3c0faba0c3ec1adfd6a301efd",
+      "input_sha256": "c65d02889b85fba874eab9ca0c79b96d13495c6cb14ef19181479e5c76ec406b"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
