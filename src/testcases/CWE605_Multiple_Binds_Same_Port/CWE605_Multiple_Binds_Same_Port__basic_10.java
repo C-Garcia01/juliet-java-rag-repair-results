@@ -38,7 +38,7 @@ public class CWE605_Multiple_Binds_Same_Port__basic_10 extends AbstractTestCase
                 socket1.bind(new InetSocketAddress(15000));
                 socket2 = new ServerSocket();
                                                                                                                  
-                socket2.bind(new InetSocketAddress("localhost", 15000));
+                socket2.bind(new InetSocketAddress("localhost", 15001));
             }
             catch (IOException exceptIO)
             {
