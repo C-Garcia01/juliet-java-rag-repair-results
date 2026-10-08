@@ -43,6 +43,44 @@ public class CWE772_Missing_Release_of_Resource__db_Connection_01 extends Abstra
         {
             IO.logger.log(Level.WARNING, "Error!", exceptSql);
         }
+        finally
+        {
+            try
+            {
+                if (resultSet != null)
+                {
+                    resultSet.close();
+                }
+            }
+            catch (SQLException exceptSqlResultSet)
+            {
+                IO.logger.log(Level.WARNING, "Error closing ResultSet", exceptSqlResultSet);
+            }
+
+            try
+            {
+                if (preparedStatement != null)
+                {
+                    preparedStatement.close();
+                }
+            }
+            catch (SQLException exceptSqlStatement)
+            {
+                IO.logger.log(Level.WARNING, "Error closing PreparedStatement", exceptSqlStatement);
+            }
+
+            try
+            {
+                if (dBConnection != null)
+                {
+                    dBConnection.close();
+                }
+            }
+            catch (SQLException exceptSqlConnection)
+            {
+                IO.logger.log(Level.WARNING, "Error closing Connection", exceptSqlConnection);
+            }
+        }
         
                                                
         
