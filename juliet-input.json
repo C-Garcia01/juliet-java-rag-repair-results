@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE606_Unchecked_Loop_Condition__getCookies_Servlet_05",
+  "cwe": "CWE-606",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__getCookies_Servlet_05.java",
+      "repository_path": "src/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__getCookies_Servlet_05.java",
+      "original_sha256": "af090307a8478be0dabeb19d54e2c6691227a0efebb7bc809557db8d3204db0b",
+      "input_sha256": "0d922206f7a9fff3e7d65c1f66b8d82afac5b9d92fc10f82c75a53209ee08f57"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
