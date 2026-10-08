@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_kerberosKey_07",
+  "cwe": "CWE-319",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_kerberosKey_07.java",
+      "repository_path": "src/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_kerberosKey_07.java",
+      "original_sha256": "968d1893733662372775f87d6327b6102c27cf0a50850cbc7c897ab6c1696eb2",
+      "input_sha256": "4bb06adb44d5525b50d99f342c0a6d9ce6ffcf86e12636232728773ba430d68d"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
