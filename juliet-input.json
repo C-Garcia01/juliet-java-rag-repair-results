@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE23_Relative_Path_Traversal__getParameter_Servlet_13",
+  "cwe": "CWE-23",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getParameter_Servlet_13.java",
+      "repository_path": "src/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getParameter_Servlet_13.java",
+      "original_sha256": "d2132e64d6e46719f77f921962cf7bbd6683730fa85aead225e96a36292b8d0f",
+      "input_sha256": "eab332b418a62ec68241b2e863252af0c2a095306205df844f22806f7fcef40f"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
