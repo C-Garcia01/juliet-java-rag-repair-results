@@ -24,6 +24,8 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.net.Socket;
 
+import javax.net.ssl.SSLSocketFactory;
+
 import java.util.logging.Level;
 
 public class CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_kerberosKey_51a extends AbstractTestCase
@@ -42,7 +44,7 @@ public class CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_kerberosKey_51a ext
             try
             {
                                                                 
-                socket = new Socket("host.example.org", 39544);
+                socket = ((SSLSocketFactory) SSLSocketFactory.getDefault()).createSocket("host.example.org", 39544);
 
                                             
 
