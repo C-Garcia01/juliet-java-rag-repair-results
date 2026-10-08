@@ -24,6 +24,9 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.net.Socket;
 
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
+
 import java.util.logging.Level;
 
 import javax.security.auth.kerberos.KerberosPrincipal;
@@ -48,13 +51,13 @@ public class CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_kerberosKey_07 exte
             password = "";                    
                                                             
             {
-                Socket socket = null;
+                SSLSocket socket = null;
                 BufferedReader readerBuffered = null;
                 InputStreamReader readerInputStream = null;
                 try
                 {
                                                                     
-                    socket = new Socket("host.example.org", 39544);
+                    socket = (SSLSocket) SSLSocketFactory.getDefault().createSocket("host.example.org", 39544);
                                                 
                                                                                         
                     readerInputStream = new InputStreamReader(socket.getInputStream(), "UTF-8");
