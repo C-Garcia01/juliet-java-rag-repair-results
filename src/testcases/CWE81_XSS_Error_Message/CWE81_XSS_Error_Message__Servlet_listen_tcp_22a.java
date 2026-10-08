@@ -39,7 +39,8 @@ public class CWE81_XSS_Error_Message__Servlet_listen_tcp_22a extends AbstractTes
                                                                                     
                                                                                                                     
               
-            response.sendError(404, "<br>bad() - Parameter name has value " + data);
+            String encodedData = data.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;").replace("'", "&#39;");
+            response.sendError(404, "<br>bad() - Parameter name has value " + encodedData);
         }
 
     }
