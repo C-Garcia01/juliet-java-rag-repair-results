@@ -18,12 +18,16 @@ public class CWE404_Improper_Resource_Shutdown__ReentrantLock_Thread_01 extends 
     {
         BAD_REENTRANT_LOCK.lock();
         
-        intBadNumber++;
-        
-        IO.writeLine(intBadNumber);
-        
-                                                              
-        BAD_REENTRANT_LOCK.unlock();       
+        try
+        {
+            intBadNumber++;
+            
+            IO.writeLine(intBadNumber);
+        }
+        finally
+        {
+            BAD_REENTRANT_LOCK.unlock();
+        }
     }
     
     public void bad() throws Throwable 
