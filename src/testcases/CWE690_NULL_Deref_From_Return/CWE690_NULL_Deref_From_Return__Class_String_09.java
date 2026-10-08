@@ -39,8 +39,11 @@ public class CWE690_NULL_Deref_From_Return__Class_String_09 extends AbstractTest
         if (IO.STATIC_FINAL_TRUE)
         {
                                                     
-            String stringTrimmed = data.trim();
-            IO.writeLine(stringTrimmed);
+            if (data != null)
+            {
+                String stringTrimmed = data.trim();
+                IO.writeLine(stringTrimmed);
+            }
         }
     }
 
