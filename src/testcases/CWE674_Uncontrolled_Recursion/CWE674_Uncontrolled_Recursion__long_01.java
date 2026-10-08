@@ -14,8 +14,12 @@ public class CWE674_Uncontrolled_Recursion__long_01 extends AbstractTestCase
 
     private static void helperBad(long level)
     {
-                                                                                                             
-                                   
+        if (level > RECURSION_LONG_MAX) 
+        {
+            IO.writeLine("ERROR IN RECURSION");
+            return;
+        }
+
         if (level == 0) 
         {
             return;
