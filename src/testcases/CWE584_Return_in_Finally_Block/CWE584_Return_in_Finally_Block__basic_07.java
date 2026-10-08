@@ -41,10 +41,8 @@ public class CWE584_Return_in_Finally_Block__basic_07 extends AbstractTestCase
             {
                 if(true)
                 {
-                    return;                                                                            
+                    IO.writeLine("finally block completed");
                 }
-                                                         
-                                                                                                                                          
             }
         }
     }
