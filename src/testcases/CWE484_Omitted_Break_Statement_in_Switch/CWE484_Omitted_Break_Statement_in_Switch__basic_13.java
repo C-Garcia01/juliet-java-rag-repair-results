@@ -33,8 +33,8 @@ public class CWE484_Omitted_Break_Statement_in_Switch__basic_13 extends Abstract
                 stringValue = "one";
                 break;
             case 2:
-                stringValue = "two";                                                                                                              
-                                                               
+                stringValue = "two";
+                break;
             default:
                 stringValue = "Default";
                 break;
