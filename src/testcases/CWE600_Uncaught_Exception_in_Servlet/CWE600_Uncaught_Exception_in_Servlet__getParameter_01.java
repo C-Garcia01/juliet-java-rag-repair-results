@@ -30,15 +30,22 @@ public class CWE600_Uncaught_Exception_in_Servlet__getParameter_01 extends Abstr
     public void bad(HttpServletRequest request, HttpServletResponse response) throws IOException 
     {        
         String ipAddress = request.getRemoteAddr();
-        InetAddress inetAddress = InetAddress.getByName(ipAddress);
-        
-        if (inetAddress == null)
+        try
         {
-            IO.logger.log(Level.WARNING, "Problem getting IP address");
+            InetAddress inetAddress = InetAddress.getByName(ipAddress);
+
+            if (inetAddress == null)
+            {
+                IO.logger.log(Level.WARNING, "Problem getting IP address");
+            }
+            else
+            {
+                IO.writeLine("IP= " + inetAddress.getAddress().toString());
+            }
         }
-        else
+        catch (java.net.UnknownHostException exceptUnknownHost)
         {
-            IO.writeLine("IP= " + inetAddress.getAddress().toString());
+            IO.logger.log(Level.WARNING, "Could not resolve IP address", exceptUnknownHost);
         }
                                                                                        
                                                     
