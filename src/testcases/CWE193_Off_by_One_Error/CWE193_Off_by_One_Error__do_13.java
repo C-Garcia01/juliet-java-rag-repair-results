@@ -30,7 +30,7 @@ public class CWE193_Off_by_One_Error__do_13 extends AbstractTestCase
                 IO.writeLine("intArray[" + i + "] = " + (intArray[i] = i));
                 i++;
             }
-            while (i <= intArray.length);                                   
+            while (i < intArray.length);                                   
         }
     }
 
