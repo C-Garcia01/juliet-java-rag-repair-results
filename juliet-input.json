@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE510_Trapdoor__network_connection_09",
+  "cwe": "CWE-510",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE510_Trapdoor/CWE510_Trapdoor__network_connection_09.java",
+      "repository_path": "src/testcases/CWE510_Trapdoor/CWE510_Trapdoor__network_connection_09.java",
+      "original_sha256": "2e2c0a398e74d8c2c1ef41382f85b2fdcfa3ab72f1f6e664ae7abe6eeca9c5e4",
+      "input_sha256": "476100262db3263f5e7d6b69ba83f40773c0fb79563c089bc04cd05f2398218f"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
