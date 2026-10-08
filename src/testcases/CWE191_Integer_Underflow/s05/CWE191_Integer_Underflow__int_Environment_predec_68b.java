@@ -26,10 +26,16 @@ public class CWE191_Integer_Underflow__int_Environment_predec_68b
     {
         int data = CWE191_Integer_Underflow__int_Environment_predec_68a.data;
 
-                                                                              
-        int result = (int)(--data);
+        if (data > Integer.MIN_VALUE)
+        {
+            int result = (int)(--data);
 
-        IO.writeLine("result: " + result);
+            IO.writeLine("result: " + result);
+        }
+        else
+        {
+            IO.writeLine("data value is too small to perform decrement.");
+        }
 
     }
 
