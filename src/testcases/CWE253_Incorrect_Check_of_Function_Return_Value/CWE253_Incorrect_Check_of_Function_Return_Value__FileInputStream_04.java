@@ -43,7 +43,7 @@ public class CWE253_Incorrect_Check_of_Function_Return_Value__FileInputStream_04
                 byte[] byteArray = new byte[bytesToRead];
                 fis = new FileInputStream("c:\\file.txt");
                                                                                                                                      
-                if (fis.read(byteArray) == 0)
+                if (fis.read(byteArray) == -1)
                 {
                     IO.writeLine("Error reading file.");
                 }
