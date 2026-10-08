@@ -29,14 +29,14 @@ public class CWE327_Use_Broken_Crypto__DES_03 extends AbstractTestCase
         if (5 == 5)
         {
             final String CIPHER_INPUT = "ABCDEFG123456";
-            KeyGenerator keyGenerator = KeyGenerator.getInstance("DES");
+            KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
                                                         
-            keyGenerator.init(56);
+            keyGenerator.init(128);
             SecretKey secretKey = keyGenerator.generateKey();
             byte[] byteKey = secretKey.getEncoded();
                                                         
-            SecretKeySpec secretKeySpec = new SecretKeySpec(byteKey, "DES");
-            Cipher desCipher = Cipher.getInstance("DES");
+            SecretKeySpec secretKeySpec = new SecretKeySpec(byteKey, "AES");
+            Cipher desCipher = Cipher.getInstance("AES");
             desCipher.init(Cipher.ENCRYPT_MODE, secretKeySpec);
             byte[] encrypted = desCipher.doFinal(CIPHER_INPUT.getBytes("UTF-8"));
             IO.writeLine(IO.toHex(encrypted));
