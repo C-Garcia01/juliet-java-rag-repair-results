@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE833_Deadlock__synchronized_Objects_Thread_01",
+  "cwe": "CWE-833",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE833_Deadlock/CWE833_Deadlock__synchronized_Objects_Thread_01.java",
+      "repository_path": "src/testcases/CWE833_Deadlock/CWE833_Deadlock__synchronized_Objects_Thread_01.java",
+      "original_sha256": "66c60b11f9f7511dc9e44344d381a3502026523da424a47dd747732f1b9ce070",
+      "input_sha256": "554d6357f6a90038275d4e61f3b6a9bea62a4ba5eafa3939d5ebf98b5a9ca421"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
