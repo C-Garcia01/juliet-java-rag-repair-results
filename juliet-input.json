@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE568_Finalize_Without_Super__empty_01",
+  "cwe": "CWE-568",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE568_Finalize_Without_Super/CWE568_Finalize_Without_Super__empty_01_bad.java",
+      "repository_path": "src/testcases/CWE568_Finalize_Without_Super/CWE568_Finalize_Without_Super__empty_01_bad.java",
+      "original_sha256": "cfe16e4dd9153eec977ab6d798a0419766391e15708a2a72970153091b07c41b",
+      "input_sha256": "fb64fc85a06908985d311e49e14db63837c533a9e07afa4e1e170eaa03be7480"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
