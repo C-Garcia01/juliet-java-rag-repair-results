@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE329_Not_Using_Random_IV_with_CBC_Mode__basic_10",
+  "cwe": "CWE-329",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE329_Not_Using_Random_IV_with_CBC_Mode/CWE329_Not_Using_Random_IV_with_CBC_Mode__basic_10.java",
+      "repository_path": "src/testcases/CWE329_Not_Using_Random_IV_with_CBC_Mode/CWE329_Not_Using_Random_IV_with_CBC_Mode__basic_10.java",
+      "original_sha256": "dd2fd764d5caa96dedeb50577eea85cb385848903dee7ff689d7df533f9af91a",
+      "input_sha256": "b6eb02c12a0b1bf48a8a1057fcc40bcdddcbe16a25b66569e02581d7223c8310"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
