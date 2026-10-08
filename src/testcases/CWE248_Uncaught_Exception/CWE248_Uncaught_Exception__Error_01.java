@@ -14,7 +14,14 @@ public class CWE248_Uncaught_Exception__Error_01 extends AbstractTestCase
     public void bad() 
     {
                                     
-        throw new Error("Really bad Error");
+        try
+        {
+            throw new Error("Really bad Error");
+        }
+        catch (Error error)
+        {
+            IO.logger.log(Level.WARNING, "Caught Error in bad()", error);
+        }
     }
 
     
