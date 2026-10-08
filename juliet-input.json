@@ -1,0 +1,32 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE486_Compare_Classes_by_Name__basic_11",
+  "cwe": "CWE-486",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE486_Compare_Classes_by_Name/CWE486_Compare_Classes_by_Name__Helper.java",
+      "repository_path": "src/testcases/CWE486_Compare_Classes_by_Name/CWE486_Compare_Classes_by_Name__Helper.java",
+      "original_sha256": "94aee3c95e81dad97726f14cbe6e3b742a1b856101cac882f1da95cd8cd53d29",
+      "input_sha256": "13a1855624cace9b4c9fe0fbd774abcc1a936656a8e8de92d251072ddfb3e6fd"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE486_Compare_Classes_by_Name/CWE486_Compare_Classes_by_Name__basic_11.java",
+      "repository_path": "src/testcases/CWE486_Compare_Classes_by_Name/CWE486_Compare_Classes_by_Name__basic_11.java",
+      "original_sha256": "661f9ec98eb37faa0b60a4c2fac29c275956cbda6f6b3bccb687c3c4b11611f9",
+      "input_sha256": "143272ea3c660bed3f96783e93fdd2ae06db5eab366c4295392eba04f2727f0d"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE486_Compare_Classes_by_Name/HelperClass/CWE486_Compare_Classes_by_Name__Helper.java",
+      "repository_path": "src/testcases/CWE486_Compare_Classes_by_Name/HelperClass/CWE486_Compare_Classes_by_Name__Helper.java",
+      "original_sha256": "abadb5297c22444e2a9fef7f3ef4bf04eb9028c19ef3367a739a499faab4ea26",
+      "input_sha256": "a2238cfff61c1bb85410a7edb64bbccc8d01b5aa2e56e93e6c921577a07004a4"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
