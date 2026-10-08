@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE500_Public_Static_Field_Not_Final__String_01",
+  "cwe": "CWE-500",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE500_Public_Static_Field_Not_Final/CWE500_Public_Static_Field_Not_Final__String_01_bad.java",
+      "repository_path": "src/testcases/CWE500_Public_Static_Field_Not_Final/CWE500_Public_Static_Field_Not_Final__String_01_bad.java",
+      "original_sha256": "d1ab4dc7fbbd36064f7fc5a229ef15e9f130f61142d9a0f8c9ca4c9b8d3efceb",
+      "input_sha256": "f9d466ef8822cd4703cbff255bdc1983d4bf984f298fe80cad38fe255c967a9d"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
