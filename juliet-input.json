@@ -1,0 +1,26 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE259_Hard_Coded_Password__passwordAuth_75",
+  "cwe": "CWE-259",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_75a.java",
+      "repository_path": "src/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_75a.java",
+      "original_sha256": "e34961ac36dd5f7bd68c073fa5edc051c661e528f16ab09e22bdead695b4890a",
+      "input_sha256": "acb24caa8ef8e7b21aec5942912397ed3db753b263f6f3315605b83621666878"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_75b.java",
+      "repository_path": "src/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_75b.java",
+      "original_sha256": "775621330a6db4be50b92eb70d49057e09d66c8a7ab9626eaf0e6437f17a6d7e",
+      "input_sha256": "f5df79c265bdda2c9e6e4eab160a55cac15f77f7944b4def432f5af2e66ad69e"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
