@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE764_Multiple_Locks__ReentrantLock_Servlet_01",
+  "cwe": "CWE-764",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE764_Multiple_Locks/CWE764_Multiple_Locks__ReentrantLock_Servlet_01.java",
+      "repository_path": "src/testcases/CWE764_Multiple_Locks/CWE764_Multiple_Locks__ReentrantLock_Servlet_01.java",
+      "original_sha256": "49c3e864a0535eb90eae45e27f015efe399812547c91ca2ba70da4464229c333",
+      "input_sha256": "f14389f988931cafe536a7a2e8c9f23d04f7b8fc57a4c76f5f6ffa78ca313c5d"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
