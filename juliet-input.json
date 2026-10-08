@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE643_Xpath_Injection__getQueryString_Servlet_06",
+  "cwe": "CWE-643",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__getQueryString_Servlet_06.java",
+      "repository_path": "src/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__getQueryString_Servlet_06.java",
+      "original_sha256": "4644657c61076e3c826346a962672f05add97940abecc2d02011607ffeb6c04d",
+      "input_sha256": "caf23c28a5e7e4681d17bc85d5b65e19a92dcfb3a7f2b37eaa59a84833e99154"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
