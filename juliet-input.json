@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE390_Error_Without_Action__reader_05",
+  "cwe": "CWE-390",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE390_Error_Without_Action/CWE390_Error_Without_Action__reader_05.java",
+      "repository_path": "src/testcases/CWE390_Error_Without_Action/CWE390_Error_Without_Action__reader_05.java",
+      "original_sha256": "8db910172c08ccaee8292a40337f4e0d474971c3cc869c9a209d2b11a16fa456",
+      "input_sha256": "31e0b79d6868b477e28cd96c0a2179c1bb786053a42a5e10837ea47c2bffcefb"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
