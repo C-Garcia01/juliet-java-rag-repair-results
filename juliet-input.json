@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE609_Double_Checked_Locking__Servlet_01",
+  "cwe": "CWE-609",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE609_Double_Checked_Locking/CWE609_Double_Checked_Locking__Servlet_01.java",
+      "repository_path": "src/testcases/CWE609_Double_Checked_Locking/CWE609_Double_Checked_Locking__Servlet_01.java",
+      "original_sha256": "4b79eed81ae21d803781e8e963ed8c5ac0bebc0f109425470bd52cd7fc90b320",
+      "input_sha256": "be5563dfd7ca4e39d394909c64bd7df06dc175fd39925dd9c256449f7612d3da"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
