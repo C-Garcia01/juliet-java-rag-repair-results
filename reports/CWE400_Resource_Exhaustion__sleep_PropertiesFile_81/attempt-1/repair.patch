@@ -1,0 +1,16 @@
+diff --git c/src/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_PropertiesFile_81_bad.java w/src/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_PropertiesFile_81_bad.java
+index 1ed4627..8750a09 100644
+--- c/src/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_PropertiesFile_81_bad.java
++++ w/src/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_PropertiesFile_81_bad.java
+@@ -24,7 +24,10 @@ public class CWE400_Resource_Exhaustion__sleep_PropertiesFile_81_bad extends CWE
+     {
+ 
+                                                                       
+-        Thread.sleep(count);
++        if (count > 0 && count <= 2000)
++        {
++            Thread.sleep(count);
++        }
+ 
+     }
+ }

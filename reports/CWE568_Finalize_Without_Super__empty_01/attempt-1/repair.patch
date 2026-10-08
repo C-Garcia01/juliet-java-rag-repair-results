@@ -1,0 +1,20 @@
+diff --git c/src/testcases/CWE568_Finalize_Without_Super/CWE568_Finalize_Without_Super__empty_01_bad.java w/src/testcases/CWE568_Finalize_Without_Super/CWE568_Finalize_Without_Super__empty_01_bad.java
+index 6a920b2..ae702dc 100644
+--- c/src/testcases/CWE568_Finalize_Without_Super/CWE568_Finalize_Without_Super__empty_01_bad.java
++++ w/src/testcases/CWE568_Finalize_Without_Super/CWE568_Finalize_Without_Super__empty_01_bad.java
+@@ -53,7 +53,14 @@ public class CWE568_Finalize_Without_Super__empty_01_bad extends AbstractTestCas
+     { 
+         protected void finalize() 
+         {
+-                                                                                   
++            try
++            {
++                super.finalize();
++            }
++            catch (Throwable exceptThrowable)
++            {
++                IO.logger.log(Level.WARNING, "caught an exception calling super.finalize() from the BadClass", exceptThrowable);
++            }
+         }
+     }
+     

@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "66b1e47a39caf95e8758de9e675a5fc445796cd1",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-404",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "f17ec9deddebb8584ebda4f25d60882c8818eb54",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26956,
+  "summary": "The bad() method closes the BufferedReader and FileReader only at the end of the try block's normal path. If readerFile construction or readerBuffered.readLine() throws an IOException, control jumps to the catch block and the cleanup code is never reached, leaking the open file resource (CWE-404). The fix moves the close logic into a finally block so the readers are always closed regardless of whether reading succeeds or throws, while preserving the file-reading feature.",
+  "exported_files": 1
+}

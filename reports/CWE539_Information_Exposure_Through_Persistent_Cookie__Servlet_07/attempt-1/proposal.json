@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-539: the bad() method stores a secret message in a cookie and marks it persistent with a 5-year max-age, so the sensitive value is written to disk on the client. Change the max-age to -1 so the cookie remains a session-only (in-memory) cookie, preserving the cookie-setting feature without persisting the secret.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE539_Information_Exposure_Through_Persistent_Cookie/CWE539_Information_Exposure_Through_Persistent_Cookie__Servlet_07.java",
+      "old": "            Cookie cookie = new Cookie(\"SecretMessage\", \"test\");\n                                                                                        \n            cookie.setMaxAge(60*60*24*365*5);",
+      "new": "            Cookie cookie = new Cookie(\"SecretMessage\", \"test\");\n                                                                                        \n            cookie.setMaxAge(-1);"
+    }
+  ]
+}

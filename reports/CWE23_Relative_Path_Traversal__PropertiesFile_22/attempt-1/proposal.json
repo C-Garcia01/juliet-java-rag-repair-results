@@ -1,0 +1,10 @@
+{
+  "summary": "The bad flow reads a filename from a properties file in 22b.badSource() and passes it unchecked into `new File(root + data)` in 22a.bad(), allowing `../` sequences to escape the uploads directory (CWE-23). I add a canonical-path containment check in the sink: the resolved file must reside under the intended uploads root, otherwise an IOException is raised. Legitimate filenames within the uploads directory continue to work unchanged.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_22a.java",
+      "old": "            File file = new File(root + data);\n            FileInputStream streamFileInputSink = null;",
+      "new": "            File file = new File(root + data);\n            File uploadDir = new File(root);\n            if (!file.getCanonicalPath().startsWith(uploadDir.getCanonicalPath() + File.separator))\n            {\n                throw new IOException(\"Potential path traversal detected for: \" + data);\n            }\n            FileInputStream streamFileInputSink = null;"
+    }
+  ]
+}

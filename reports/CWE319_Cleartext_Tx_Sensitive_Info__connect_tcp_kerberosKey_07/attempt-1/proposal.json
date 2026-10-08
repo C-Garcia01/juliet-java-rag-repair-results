@@ -1,0 +1,20 @@
+{
+  "summary": "The bad() entry point reads a Kerberos password over a plaintext TCP Socket, transmitting sensitive authentication material in cleartext (CWE-319). The fix replaces the plain java.net.Socket with a TLS-encrypted SSLSocket created via SSLSocketFactory, so the same host/port connection and line-reading feature still works but the data is now transmitted over an encrypted channel. No behavior is disabled and valid inputs continue to flow through.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_kerberosKey_07.java",
+      "old": "import java.net.Socket;\n",
+      "new": "import java.net.Socket;\n\nimport javax.net.ssl.SSLSocket;\nimport javax.net.ssl.SSLSocketFactory;\n"
+    },
+    {
+      "path": "src/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_kerberosKey_07.java",
+      "old": "                Socket socket = null;",
+      "new": "                SSLSocket socket = null;"
+    },
+    {
+      "path": "src/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__connect_tcp_kerberosKey_07.java",
+      "old": "                    socket = new Socket(\"host.example.org\", 39544);",
+      "new": "                    socket = (SSLSocket) SSLSocketFactory.getDefault().createSocket(\"host.example.org\", 39544);"
+    }
+  ]
+}

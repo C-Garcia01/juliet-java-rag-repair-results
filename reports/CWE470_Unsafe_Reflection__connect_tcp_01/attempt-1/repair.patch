@@ -1,0 +1,31 @@
+diff --git c/src/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__connect_tcp_01.java w/src/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__connect_tcp_01.java
+index 2636672..7cfb419 100644
+--- c/src/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__connect_tcp_01.java
++++ w/src/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__connect_tcp_01.java
+@@ -101,10 +101,23 @@ public class CWE470_Unsafe_Reflection__connect_tcp_01 extends AbstractTestCase
+         }
+ 
+                                                                                                           
+-        Class<?> tempClass = Class.forName(data);
+-        Object tempClassObject = tempClass.newInstance();
++        Class<?> tempClass = null;
+ 
+-        IO.writeLine(tempClassObject.toString());                                      
++                                                                                      
++        if ("java.lang.String".equals(data)
++                || "java.lang.Integer".equals(data)
++                || "java.lang.Long".equals(data)
++                || "java.lang.Object".equals(data))
++        {
++            tempClass = Class.forName(data);
++        }
++
++        if (tempClass != null)
++        {
++            Object tempClassObject = tempClass.newInstance();
++
++            IO.writeLine(tempClassObject.toString());
++        }
+ 
+     }
+ 

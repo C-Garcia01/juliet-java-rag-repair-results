@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method looped with condition `i >= 0` while incrementing `i = (i + 1) % 256`, which keeps i in the range 0..255 and therefore never becomes negative, producing an infinite loop (CWE-835). The feature is iterating over and writing the byte values 0..255. I bounded the loop with `i < 256` and changed the increment to a plain `i = i + 1` so the values 0 through 255 are each written exactly once and the loop then terminates, preserving the output behavior for all valid values without looping forever.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE835_Infinite_Loop/CWE835_Infinite_Loop__while_01.java",
+      "old": "        while (i >= 0)\n        {\n            IO.writeLine(i);\n            i = (i + 1) % 256;\n        }",
+      "new": "        while (i < 256)\n        {\n            IO.writeLine(i);\n            i = i + 1;\n        }"
+    }
+  ]
+}

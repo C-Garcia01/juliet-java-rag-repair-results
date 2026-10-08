@@ -1,0 +1,10 @@
+{
+  "summary": "The hard-coded database password (\"7e5tc4s3\") returned by badSource() in 61b flows into DriverManager.getConnection() in 61a. I replaced the literal with a value read from an environment variable (DB_PASSWORD), eliminating the hard-coded credential (CWE-259) while preserving the connection feature: a legitimately configured environment still supplies a working password.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_61b.java",
+      "old": "        data = \"7e5tc4s3\";",
+      "new": "        data = System.getenv(\"DB_PASSWORD\");"
+    }
+  ]
+}

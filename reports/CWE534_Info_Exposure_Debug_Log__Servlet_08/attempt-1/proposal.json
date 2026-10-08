@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-534: The bad() entry point wrote user-controlled and sensitive data (the request 'username' parameter and the server-side HttpSession ID) into a debug-level log record, exposing sensitive information to anyone with access to the log. The fix preserves the legitimate behavior (validating the username, creating the session, and emitting a debug log entry) but removes the sensitive values from the logged message so no confidential data is exposed in the log.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE534_Info_Exposure_Debug_Log/CWE534_Info_Exposure_Debug_Log__Servlet_08.java",
+      "old": "                HttpSession session = request.getSession(true);\n                                                              \n                logger.log(Level.FINEST, \"Username: \" + username + \" Session ID:\" + session.getId());",
+      "new": "                HttpSession session = request.getSession(true);\n                logger.log(Level.FINEST, \"A user request was processed successfully.\");"
+    }
+  ]
+}

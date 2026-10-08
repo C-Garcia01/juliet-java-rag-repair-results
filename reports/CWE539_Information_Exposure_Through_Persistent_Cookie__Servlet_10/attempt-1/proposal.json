@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-539: The bad() method stores a secret value in a cookie and makes it persistent by calling setMaxAge with a large positive value (5 years), causing the sensitive data to be written to disk by the browser. The fix sets the cookie's max age to -1 so it becomes a session-only cookie that is never persisted to disk, while still preserving the feature of setting the cookie.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE539_Information_Exposure_Through_Persistent_Cookie/CWE539_Information_Exposure_Through_Persistent_Cookie__Servlet_10.java",
+      "old": "            cookie.setMaxAge(60*60*24*365*5);",
+      "new": "            cookie.setMaxAge(-1);"
+    }
+  ]
+}

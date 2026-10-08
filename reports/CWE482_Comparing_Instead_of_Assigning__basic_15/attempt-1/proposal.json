@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-482: the bad() method used the equality operator (==) where an assignment was intended. The line `if((isZero == (zeroOrOne == 0)) == true)` merely compares the uninitialized-intent `isZero` (always false) against the predicate without ever updating `isZero`, so the result of the SecureRandom draw is discarded. Fixed by assigning the predicate result to `isZero` and then testing it, preserving the feature (printing when zeroOrOne is 0 and reporting isZero's value).",
+  "edits": [
+    {
+      "path": "src/testcases/CWE482_Comparing_Instead_of_Assigning/CWE482_Comparing_Instead_of_Assigning__basic_15.java",
+      "old": "            boolean isZero = false;\n            if((isZero == (zeroOrOne == 0)) == true)                                                  \n            {\n                IO.writeLine(\"zeroOrOne is 0\");\n            }",
+      "new": "            boolean isZero = false;\n            isZero = (zeroOrOne == 0);\n            if(isZero == true)\n            {\n                IO.writeLine(\"zeroOrOne is 0\");\n            }"
+    }
+  ]
+}

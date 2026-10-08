@@ -1,0 +1,19 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "37f481a6e38876706b2f6ab6d366d1a2a4d42984",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-134",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "1dd1af9dc5cfdf8ec426cbaad354e815611184ef",
+  "retrieved_examples": [
+    "torvalds/linux@9538cbaab6e8b8046039b4b2eb6c9d614dc782bd:CVE-2013-2852"
+  ],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 32507,
+  "summary": "The bad sink passes a database-derived string directly as the format argument to System.out.printf, letting attacker-controlled percent directives be interpreted (CWE-134). Fixed by supplying a constant \"%s\" format and passing the data as an argument, preserving the printing behavior for all valid inputs.",
+  "exported_files": 1
+}

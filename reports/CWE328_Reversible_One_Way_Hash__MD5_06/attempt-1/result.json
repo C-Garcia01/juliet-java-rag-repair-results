@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "d8315b7861801566d0c4643e032d83e5006aaf90",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-328",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "4e44c7365f0bc729f59c567930fa50e9b617565c",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26551,
+  "summary": "Replaced the weak MD5 message digest with SHA-256, which is a cryptographically strong one-way hash. The feature (computing and writing a hex-encoded hash of the input) is fully preserved for all valid inputs.",
+  "exported_files": 1
+}

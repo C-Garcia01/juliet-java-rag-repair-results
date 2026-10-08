@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE534_Info_Exposure_Debug_Log/CWE534_Info_Exposure_Debug_Log__Servlet_13.java w/src/testcases/CWE534_Info_Exposure_Debug_Log/CWE534_Info_Exposure_Debug_Log__Servlet_13.java
+index ff93c91..eab0187 100644
+--- c/src/testcases/CWE534_Info_Exposure_Debug_Log/CWE534_Info_Exposure_Debug_Log__Servlet_13.java
++++ w/src/testcases/CWE534_Info_Exposure_Debug_Log/CWE534_Info_Exposure_Debug_Log__Servlet_13.java
+@@ -36,7 +36,7 @@ public class CWE534_Info_Exposure_Debug_Log__Servlet_13 extends AbstractTestCase
+             {
+                 HttpSession session = request.getSession(true);
+                                                               
+-                logger.log(Level.FINEST, "Username: " + username + " Session ID:" + session.getId());
++                logger.log(Level.FINEST, "Username: " + username + " has an active session");
+             }
+             else
+             {

@@ -1,0 +1,16 @@
+diff --git c/src/testcases/CWE378_Temporary_File_Creation_With_Insecure_Perms/CWE378_Temporary_File_Creation_With_Insecure_Perms__basic_16.java w/src/testcases/CWE378_Temporary_File_Creation_With_Insecure_Perms/CWE378_Temporary_File_Creation_With_Insecure_Perms__basic_16.java
+index 5916dce..7c090b6 100644
+--- c/src/testcases/CWE378_Temporary_File_Creation_With_Insecure_Perms/CWE378_Temporary_File_Creation_With_Insecure_Perms__basic_16.java
++++ w/src/testcases/CWE378_Temporary_File_Creation_With_Insecure_Perms/CWE378_Temporary_File_Creation_With_Insecure_Perms__basic_16.java
+@@ -37,7 +37,10 @@ public class CWE378_Temporary_File_Creation_With_Insecure_Perms__basic_16 extend
+             File tempFile = null;
+             try
+             {
+-                tempFile = File.createTempFile("temp", "1234");
++                java.util.Set<java.nio.file.attribute.PosixFilePermission> tempFilePermissions =
++                    java.nio.file.attribute.PosixFilePermissions.fromString("rw-------");
++                tempFile = java.nio.file.Files.createTempFile("temp", "1234",
++                    java.nio.file.attribute.PosixFilePermissions.asFileAttribute(tempFilePermissions)).toFile();
+                                                          
+                                                  
+                 streamFileOutput = new FileOutputStream(tempFile);

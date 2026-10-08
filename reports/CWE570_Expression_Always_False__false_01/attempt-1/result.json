@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "b1c55ed3ed757d293d9ffaaddc7d394fe4e421c6",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-570",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "6f3defdfdf8caca205678ededf57e2ba5eaffd03",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 25481,
+  "summary": "The bad() entry point guards the write with a literal `if (false)`, a CWE-570 always-false expression that makes the body unreachable dead code. I replaced the constant `false` with `IO.staticReturnsTrueOrFalse()`, a runtime-evaluated boolean already provided by the IO helper. This keeps the conditional write feature intact (the body can now execute for valid runtime conditions) while removing the statically-always-false expression, and does not disable the feature or return a constant.",
+  "exported_files": 1
+}

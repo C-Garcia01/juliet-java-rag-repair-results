@@ -1,0 +1,19 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "caa80218e2ab90a340a1c2674f3b6f95bae424b0",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-113",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "2ccd4c42a8161b1ab545770738d2e2238cb47097",
+  "retrieved_examples": [
+    "undertow-io/undertow@85d4478e598105fe94ac152d3e11e388374e8b86:CVE-2018-1067"
+  ],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 33664,
+  "summary": "The bad flow passes untrusted data into response.setHeader(\"Location\", ...) without sanitizing CR/LF, enabling HTTP response splitting (CWE-113). The fix URL-encodes the data before concatenating it into the Location header value in the badSink method. URLEncoder.encode percent-encodes carriage return and line feed (and other unsafe characters), neutralizing header/response splitting while preserving the legitimate behavior of passing the value as the lang query parameter. The URLEncoder import already present in 51b is now used.",
+  "exported_files": 1
+}

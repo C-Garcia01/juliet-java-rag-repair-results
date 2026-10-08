@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method reads an untrusted integer from a TCP socket and then computes `data + 1` without any overflow check. When the attacker supplies Integer.MAX_VALUE, the addition silently wraps to Integer.MIN_VALUE (CWE-190). I guard the arithmetic so the increment is only performed when it cannot overflow, leaving all other (valid) inputs producing the same result.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE190_Integer_Overflow/s03/CWE190_Integer_Overflow__int_listen_tcp_add_16.java",
+      "old": "            int result = (int)(data + 1);\n            IO.writeLine(\"result: \" + result);\n            break;",
+      "new": "            if (data != Integer.MAX_VALUE)\n            {\n                int result = (int)(data + 1);\n                IO.writeLine(\"result: \" + result);\n            }\n            else\n            {\n                IO.writeLine(\"data value is too large to increment without overflow\");\n            }\n            break;"
+    }
+  ]
+}

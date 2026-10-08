@@ -1,0 +1,10 @@
+{
+  "summary": "The CWE-571 flaw is the tautological guard `if (PRIVATE_STATIC_FINAL_TRUE)` in bad(), which always evaluates to true. I removed the constant-true condition and execute the output statement directly, preserving the feature (printing the line) while eliminating the always-true expression.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE571_Expression_Always_True/CWE571_Expression_Always_True__private_static_final_01.java",
+      "old": "        if (PRIVATE_STATIC_FINAL_TRUE)\n        {\n            IO.writeLine(\"always prints\");\n        }",
+      "new": "        IO.writeLine(\"always prints\");"
+    }
+  ]
+}

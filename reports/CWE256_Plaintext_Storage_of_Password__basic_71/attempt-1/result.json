@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "ded31a32d32593a03e608efac562b2e70c961d39",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-256",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "823f03f657211f3d92d3a64bf2c3eb5dd0e2f81c",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 30491,
+  "summary": "CWE-256: the bad flow reads a password straight out of config.properties and passes it, in plaintext, into a database connection. The fix treats the stored credential as an encrypted (hex-encoded) value and decrypts it with the AES key before it leaves the source method, so the plaintext credential is no longer the value retrieved and forwarded to the sink. The DB-connection feature is preserved: a valid stored credential still yields the correct password string used by badSink/DriverManager. The crypto imports already present in 71a are now actually used.",
+  "exported_files": 1
+}

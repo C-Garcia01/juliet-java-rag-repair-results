@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method uses an assignment (`isZero = true`) inside the if condition instead of a comparison, which always evaluates true and overwrites the computed value. Changed it to a comparison (`isZero == true`) to preserve the intended branch logic based on the random value.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE481_Assigning_Instead_of_Comparing/CWE481_Assigning_Instead_of_Comparing__basic_03.java",
+      "old": "            if(isZero = true)",
+      "new": "            if(isZero == true)"
+    }
+  ]
+}

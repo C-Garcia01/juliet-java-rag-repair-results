@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-698 (Redirect Without Exit): the bad() method calls response.sendRedirect(\"/test\") but then continues executing further logic in the same request, which can lead to unintended behavior since the redirect does not stop the servlet from processing. The fix adds a return statement immediately after the redirect so that no further code runs after the redirect is issued, while still performing the redirect for valid requests.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE698_Redirect_Without_Exit/CWE698_Redirect_Without_Exit__Servlet_14.java",
+      "old": "            response.sendRedirect(\"/test\");\n                                                            \n            IO.writeLine(\"doing some more things here after the redirect\");",
+      "new": "            response.sendRedirect(\"/test\");\n            return;"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "5e144b9803ce6966175d29b710735648685bae86",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-572",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "0ea0517d35982a07824f64eddf57debd20c2382f",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26463,
+  "summary": "Fixed CWE-572 by calling Thread.start() instead of Thread.run() on threadOne, so the thread body executes on a newly spawned thread rather than synchronously on the current thread. The legitimate behavior (running the thread's run() body) is preserved.",
+  "exported_files": 1
+}

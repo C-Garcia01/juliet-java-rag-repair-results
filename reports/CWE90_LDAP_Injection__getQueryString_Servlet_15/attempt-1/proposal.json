@@ -1,0 +1,10 @@
+{
+  "summary": "The LDAP injection flow takes the `id` value from the servlet query string and concatenates it directly into an LDAP search filter `(cn=<data>)`, letting an attacker inject filter metacharacters. I fixed it by escaping the LDAP special characters (`\\`, `*`, `(`, `)`, NUL) per RFC 4515 before building the filter, so legitimate lookups still work but injected filter syntax is neutralized. The feature (searching by the supplied id) is preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getQueryString_Servlet_15.java",
+      "old": "            String search = \"(cn=\" + data + \")\";",
+      "new": "            String safeData = data;\n            if (safeData != null)\n            {\n                StringBuilder escaped = new StringBuilder();\n                for (int i = 0; i < safeData.length(); i++)\n                {\n                    char current = safeData.charAt(i);\n                    switch (current)\n                    {\n                    case '\\\\':\n                        escaped.append(\"\\\\5c\");\n                        break;\n                    case '*':\n                        escaped.append(\"\\\\2a\");\n                        break;\n                    case '(':\n                        escaped.append(\"\\\\28\");\n                        break;\n                    case ')':\n                        escaped.append(\"\\\\29\");\n                        break;\n                    case '\\u0000':\n                        escaped.append(\"\\\\00\");\n                        break;\n                    default:\n                        escaped.append(current);\n                        break;\n                    }\n                }\n                safeData = escaped.toString();\n            }\n            String search = \"(cn=\" + safeData + \")\";"
+    }
+  ]
+}

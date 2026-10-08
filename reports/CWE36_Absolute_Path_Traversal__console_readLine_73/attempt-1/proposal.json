@@ -1,0 +1,10 @@
+{
+  "summary": "The bad flow reads a filename from console input in 73a and passes it unchecked to `new File(data)` in 73b's badSink, allowing an attacker-supplied absolute path (or `../` sequence) to open any file on the system (CWE-36). I confine the read to a trusted base directory: the input is resolved as a child of `user.dir` (which neutralizes a leading-slash absolute path on resolution) and the canonical path is verified to remain inside the base directory before the file is opened. Legitimate relative filenames within the working directory still work; only paths that escape the base are rejected. The file-reading feature is preserved, no tests/build settings are touched, and no scanner suppression is added.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__console_readLine_73b.java",
+      "old": "            File file = new File(data);\n            FileInputStream streamFileInputSink = null;\n            InputStreamReader readerInputStreamSink = null;\n            BufferedReader readerBufferdSink = null;\n            if (file.exists() && file.isFile())",
+      "new": "            File baseDirectory = new File(System.getProperty(\"user.dir\"));\n            File file = new File(baseDirectory, data);\n            String canonicalBasePath = baseDirectory.getCanonicalPath();\n            String canonicalFilePath = file.getCanonicalPath();\n            FileInputStream streamFileInputSink = null;\n            InputStreamReader readerInputStreamSink = null;\n            BufferedReader readerBufferdSink = null;\n            if ((canonicalFilePath.equals(canonicalBasePath)\n                    || canonicalFilePath.startsWith(canonicalBasePath + File.separator))\n                && file.exists() && file.isFile())"
+    }
+  ]
+}

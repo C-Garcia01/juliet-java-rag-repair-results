@@ -1,0 +1,10 @@
+{
+  "summary": "Removed the duplicate REENTRANT_LOCK_BAD.unlock() call in helperBad()'s finally block. Unlocking a ReentrantLock more times than it was locked throws IllegalMonitorStateException (CWE-765: Multiple Unlocks). The lock is acquired once via lock(), so it must be released exactly once. The lock/mutate/unlock feature is preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE765_Multiple_Unlocks/CWE765_Multiple_Unlocks__ReentrantLock_Thread_01.java",
+      "old": "            REENTRANT_LOCK_BAD.unlock();    \n            REENTRANT_LOCK_BAD.unlock();                                                                                                         \n        }",
+      "new": "            REENTRANT_LOCK_BAD.unlock();    \n        }"
+    }
+  ]
+}

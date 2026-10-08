@@ -1,0 +1,10 @@
+{
+  "summary": "The bad path uses double-checked locking (CWE-609) on the non-volatile static field `stringBad`. Without `volatile`, the JMM allows a thread to observe a non-null reference whose initialization is not yet visible, so the second thread can read a partially/incorrectly published value. The fix declares `stringBad` as `volatile`, which establishes the happens-before ordering that makes double-checked locking safe while preserving the lazy-initialization behavior and return value.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE609_Double_Checked_Locking/CWE609_Double_Checked_Locking__Thread_01.java",
+      "old": "    private static String stringBad = null;",
+      "new": "    private volatile static String stringBad = null;"
+    }
+  ]
+}

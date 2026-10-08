@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_min_multiply_42.java w/src/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_min_multiply_42.java
+index 57a3d51..bb71041 100644
+--- c/src/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_min_multiply_42.java
++++ w/src/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_min_multiply_42.java
+@@ -37,7 +37,7 @@ public class CWE191_Integer_Underflow__byte_min_multiply_42 extends AbstractTest
+         if(data < 0)                                       
+         {
+                                                                                      
+-            byte result = (byte)(data * 2);
++            int result = data * 2;
+             IO.writeLine("result: " + result);
+         }
+ 

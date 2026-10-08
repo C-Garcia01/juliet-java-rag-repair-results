@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-491 (Object Hijack) arises because the public/overridable `clone()` method is not declared `final`. In a non-final class, a malicious subclass could override `clone()` to hijack object creation and return an instance in an attacker-controlled state (bypassing the defensive copy of `theDate`). The fix declares the `clone()` method `final`, which preserves the legitimate cloning behavior (the defensive copy of the `Date` is still performed) while preventing subclasses from overriding it to hijack the object.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE491_Object_Hijack/CWE491_Object_Hijack__basic_01_bad.java",
+      "old": "    protected Object clone() throws CloneNotSupportedException \n    {",
+      "new": "    protected final Object clone() throws CloneNotSupportedException \n    {"
+    }
+  ]
+}

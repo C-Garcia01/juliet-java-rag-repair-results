@@ -1,0 +1,10 @@
+{
+  "summary": "The bad double-checked-locking path reads and publishes stringBad without a memory barrier, so another thread can observe a non-null reference before the assigned value is fully visible (CWE-609). Making the field volatile adds the required happens-before relationship, which is the standard safe form of double-checked locking and preserves the lazy-initialization feature exactly (same value, same lock behavior).",
+  "edits": [
+    {
+      "path": "src/testcases/CWE609_Double_Checked_Locking/CWE609_Double_Checked_Locking__Servlet_01.java",
+      "old": "    private static String stringBad = null;\n    \n",
+      "new": "    private volatile static String stringBad = null;\n    \n"
+    }
+  ]
+}

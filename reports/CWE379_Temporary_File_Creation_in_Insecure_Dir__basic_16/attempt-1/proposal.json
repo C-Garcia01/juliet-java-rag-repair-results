@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-379: the bad() entry point created its temporary file inside a hardcoded, world-accessible directory (C:\\testcases\\insecureDir or /home/user/testcases/insecureDir/) by passing that directory to File.createTempFile, so the temp file (and the data written to it) landed in an insecure location. The fix changes the sink to the two-argument File.createTempFile(\"temp\", \"1234\"), which creates the file in the JVM's default per-user temporary directory instead of the attacker-reachable hardcoded path. The surrounding logic that restricts permissions to the owner (setWritable(true,true), setReadable(true,true), setExecutable(false)), writes the byte, and cleans up in the finally block is unchanged, so the feature of writing to and deleting a temp file is preserved while the insecure source-to-sink flow is broken.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE379_Temporary_File_Creation_in_Insecure_Dir/CWE379_Temporary_File_Creation_in_Insecure_Dir__basic_16.java",
+      "old": "                    tempFile = File.createTempFile(\"temp\", \"1234\", newDirectory);",
+      "new": "                    tempFile = File.createTempFile(\"temp\", \"1234\");"
+    }
+  ]
+}

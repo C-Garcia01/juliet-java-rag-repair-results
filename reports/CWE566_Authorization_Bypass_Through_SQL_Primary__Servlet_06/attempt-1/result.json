@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "1439188a0030a254935c39e645eb30a2a3be4978",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-566",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "d29ba3a8769799afd0cdfd6dff5bfa0280298c13",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 29085,
+  "summary": "CWE-566 Authorization Bypass Through SQL Primary Key: the bad() entry point read the invoice owner's id directly from the attacker-controllable request parameter \"id\" and used it as the uid primary key in the invoices query, letting any caller retrieve any user's invoices by supplying an arbitrary id. The fix binds the query to the authenticated user's identity taken from the server-side session instead of client input, so the invoice lookup feature still works but only ever returns the current user's own records.",
+  "exported_files": 1
+}

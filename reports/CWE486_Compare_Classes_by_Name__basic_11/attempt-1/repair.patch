@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE486_Compare_Classes_by_Name/CWE486_Compare_Classes_by_Name__basic_11.java w/src/testcases/CWE486_Compare_Classes_by_Name/CWE486_Compare_Classes_by_Name__basic_11.java
+index 795b38b..2f3d993 100644
+--- c/src/testcases/CWE486_Compare_Classes_by_Name/CWE486_Compare_Classes_by_Name__basic_11.java
++++ w/src/testcases/CWE486_Compare_Classes_by_Name/CWE486_Compare_Classes_by_Name__basic_11.java
+@@ -26,7 +26,7 @@ public class CWE486_Compare_Classes_by_Name__basic_11 extends AbstractTestCase
+                                                                                                                                   
+             testcases.CWE486_Compare_Classes_by_Name.HelperClass.CWE486_Compare_Classes_by_Name__Helper helperClass = new testcases.CWE486_Compare_Classes_by_Name.HelperClass.CWE486_Compare_Classes_by_Name__Helper();
+             testcases.CWE486_Compare_Classes_by_Name.CWE486_Compare_Classes_by_Name__Helper helperClassRoot = new testcases.CWE486_Compare_Classes_by_Name.CWE486_Compare_Classes_by_Name__Helper();
+-            if (helperClassRoot.getClass().getSimpleName().equals(helperClass.getClass().getSimpleName()))
++            if (helperClassRoot.getClass().equals(helperClass.getClass()))
+             {
+                 IO.writeLine("Classes are the same");
+             }

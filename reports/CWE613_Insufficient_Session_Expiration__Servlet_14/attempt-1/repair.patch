@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE613_Insufficient_Session_Expiration/CWE613_Insufficient_Session_Expiration__Servlet_14.java w/src/testcases/CWE613_Insufficient_Session_Expiration/CWE613_Insufficient_Session_Expiration__Servlet_14.java
+index d7978c9..a8ccfef 100644
+--- c/src/testcases/CWE613_Insufficient_Session_Expiration/CWE613_Insufficient_Session_Expiration__Servlet_14.java
++++ w/src/testcases/CWE613_Insufficient_Session_Expiration/CWE613_Insufficient_Session_Expiration__Servlet_14.java
+@@ -27,7 +27,7 @@ public class CWE613_Insufficient_Session_Expiration__Servlet_14 extends Abstract
+         {
+             HttpSession sesssion = request.getSession(true);
+                                                                                  
+-            sesssion.setMaxInactiveInterval(-1);
++            sesssion.setMaxInactiveInterval(600);
+             response.getWriter().write("bad(): Session still valid");
+         }
+     }

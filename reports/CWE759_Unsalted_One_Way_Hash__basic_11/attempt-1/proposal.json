@@ -1,0 +1,10 @@
+{
+  "summary": "Fixed CWE-759 (unsalted one-way hash) in the bad() entry point by generating a cryptographically random salt with SecureRandom and feeding it into the SHA-512 MessageDigest via update() before digesting the message. This ensures the hash is salted, defeating precomputed/rainbow-table attacks, while preserving the feature: a hash is still computed over the input and written out.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE759_Unsalted_One_Way_Hash/CWE759_Unsalted_One_Way_Hash__basic_11.java",
+      "old": "            MessageDigest hash = MessageDigest.getInstance(\"SHA-512\");\n                                           \n            byte[] hashValue = hash.digest(\"hash me\".getBytes(\"UTF-8\"));\n            IO.writeLine(IO.toHex(hashValue));",
+      "new": "            SecureRandom secureRandom = new SecureRandom();\n            byte[] salt = new byte[16];\n            secureRandom.nextBytes(salt);\n            MessageDigest hash = MessageDigest.getInstance(\"SHA-512\");\n            hash.update(salt);\n            byte[] hashValue = hash.digest(\"hash me\".getBytes(\"UTF-8\"));\n            IO.writeLine(IO.toHex(hashValue));"
+    }
+  ]
+}

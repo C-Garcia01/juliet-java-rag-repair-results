@@ -1,0 +1,10 @@
+{
+  "summary": "The bad entry point pre-increments an int (`++data`) whose value comes from the untrusted `name` request parameter. When the parameter is `Integer.MAX_VALUE`, the pre-increment wraps around to `Integer.MIN_VALUE` (CWE-190). I guard the increment with a bounds check so legitimate values still compute and print a result, while the overflowing case is handled explicitly instead of silently wrapping.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE190_Integer_Overflow/s07/CWE190_Integer_Overflow__int_getParameter_Servlet_preinc_81_bad.java",
+      "old": "                                                                              \n        int result = (int)(++data);\n\n        IO.writeLine(\"result: \" + result);\n",
+      "new": "        if (data != Integer.MAX_VALUE)\n        {\n            int result = (int)(++data);\n\n            IO.writeLine(\"result: \" + result);\n        }\n        else\n        {\n            IO.writeLine(\"data value is too large to perform arithmetic safely.\");\n        }\n"
+    }
+  ]
+}

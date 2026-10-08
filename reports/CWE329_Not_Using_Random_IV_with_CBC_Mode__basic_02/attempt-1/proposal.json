@@ -1,0 +1,10 @@
+{
+  "summary": "Replaced the hard-coded all-zero initialization vector with one filled by SecureRandom, so the AES/CBC encryption uses a random IV while still encrypting the same plaintext and emitting the hex ciphertext as before.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE329_Not_Using_Random_IV_with_CBC_Mode/CWE329_Not_Using_Random_IV_with_CBC_Mode__basic_02.java",
+      "old": "            byte[] text = \"asdf\".getBytes(\"UTF-8\");\n            byte[] initializationVector =\n            {\n                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\n                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00\n            };\n            KeyGenerator keyGenerator = KeyGenerator.getInstance(\"AES\");",
+      "new": "            byte[] text = \"asdf\".getBytes(\"UTF-8\");\n            byte[] initializationVector = new byte[16];\n            SecureRandom secureRandom = new SecureRandom();\n            secureRandom.nextBytes(initializationVector);\n            KeyGenerator keyGenerator = KeyGenerator.getInstance(\"AES\");"
+    }
+  ]
+}

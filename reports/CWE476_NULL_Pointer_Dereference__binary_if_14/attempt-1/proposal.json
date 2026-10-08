@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method uses the non-short-circuit bitwise AND operator (`&`) in the guard `(myString != null) & (myString.length() > 0)`. With `&`, both operands are always evaluated, so `myString.length()` is dereferenced even when `myString` is null, causing a NullPointerException. Switching to the logical short-circuit AND operator (`&&`) makes the null check act as a guard: when `myString` is null the right operand is never evaluated, eliminating the null dereference while preserving the length-check behavior for valid non-null strings.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__binary_if_14.java",
+      "old": "                if ((myString != null) & (myString.length() > 0))",
+      "new": "                if ((myString != null) && (myString.length() > 0))"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "26b44f012719ec8d47e09064fdb8b3d94f39e453",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-534",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "0d86655d59cd1346a98d6039369254402b160937",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26868,
+  "summary": "The bad() method writes the HTTP session ID into a debug-level log entry (CWE-534: Information Exposure Through Debug Log). The session ID is a sensitive authentication token; recording it in log files exposes it to anyone with log access and enables session hijacking. The fix keeps the servlet's behavior intact \u2014 it still validates the username, creates the session, and emits a diagnostic log line \u2014 but removes the sensitive session identifier from the logged message so no secret is persisted to the debug log.",
+  "exported_files": 1
+}

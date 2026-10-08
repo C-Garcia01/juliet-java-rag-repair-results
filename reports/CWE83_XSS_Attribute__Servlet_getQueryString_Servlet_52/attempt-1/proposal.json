@@ -1,0 +1,15 @@
+{
+  "summary": "The flow takes attacker-controlled data from request.getQueryString() (the `id` parameter) in 52a, passes it through 52b.badSink and into 52c.badSink, where it is written unescaped into an HTML `<img src=\"...\">` attribute, enabling XSS (CWE-83). The fix neutralizes the data at the output sink in 52c by URL-encoding it before it is placed inside the attribute value. This preserves the feature (the id value is still reflected into the img src) while preventing the value from breaking out of the attribute/tag context. URL encoding keeps valid inputs working and does not disable the feature or return a constant.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_52c.java",
+      "old": "import javax.servlet.http.*;\n\npublic class CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_52c",
+      "new": "import javax.servlet.http.*;\n\nimport java.net.URLEncoder;\n\npublic class CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_52c"
+    },
+    {
+      "path": "src/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_52c.java",
+      "old": "            response.getWriter().println(\"<br>bad() - <img src=\\\"\" + data + \"\\\">\");",
+      "new": "            response.getWriter().println(\"<br>bad() - <img src=\\\"\" + URLEncoder.encode(data, \"UTF-8\") + \"\\\">\");"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "summary": "Fixed CWE-252 unchecked return value in the bad() entry point by capturing and acting on the value returned by FileInputStream.read(byteArray). The read() method can return fewer bytes than requested (or -1 at end of stream), and ignoring this count means the code processes an array padded with stale/zero bytes. The fix stores the returned byte count and only decodes/writes the portion of the buffer actually filled, preserving the file-reading feature for all valid inputs.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE252_Unchecked_Return_Value/CWE252_Unchecked_Return_Value__FileInputStream_17.java",
+      "old": "                streamFileInput = new FileInputStream(\"c:\\\\file.txt\");\n                streamFileInput.read(byteArray);\n                                                                   \n                IO.writeLine(new String(byteArray, \"UTF-8\"));",
+      "new": "                streamFileInput = new FileInputStream(\"c:\\\\file.txt\");\n                int bytesRead = streamFileInput.read(byteArray);\n                if (bytesRead < 0)\n                {\n                    bytesRead = 0;\n                }\n                IO.writeLine(new String(byteArray, 0, bytesRead, \"UTF-8\"));"
+    }
+  ]
+}

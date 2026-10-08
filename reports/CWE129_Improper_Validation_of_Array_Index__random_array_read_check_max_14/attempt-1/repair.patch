@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__random_array_read_check_max_14.java w/src/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__random_array_read_check_max_14.java
+index 56550f4..d4b48e8 100644
+--- c/src/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__random_array_read_check_max_14.java
++++ w/src/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__random_array_read_check_max_14.java
+@@ -44,7 +44,7 @@ public class CWE129_Improper_Validation_of_Array_Index__random_array_read_check_
+                                                                                                                              
+             int array[] = { 0, 1, 2, 3, 4 };
+                                                                                                                                                        
+-            if (data < array.length)
++            if (data >= 0 && data < array.length)
+             {
+                 IO.writeLine(array[data]);
+             }

@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-615: The bad() method emitted an HTML comment containing database credentials (DB username/password) into the servlet response. This comment is visible to anyone who views page source. The fix removes the sensitive comment from the output while keeping the login form fully functional, so legitimate inputs (dbusername/dbpassword submission) continue to work.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE615_Info_Exposure_by_Comment/CWE615_Info_Exposure_by_Comment__Servlet_15.java",
+      "old": "            response.getWriter().println(\"<!--DB username = joe, DB password = 123-->\" +\n            \"<form action=\\\"/test\\\" method=post>\" +",
+      "new": "            response.getWriter().println(\"<form action=\\\"/test\\\" method=post>\" +"
+    }
+  ]
+}

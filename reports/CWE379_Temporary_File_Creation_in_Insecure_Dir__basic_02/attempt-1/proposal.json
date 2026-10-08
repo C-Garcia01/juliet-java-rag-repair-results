@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-379 fix: the bad() method created a temporary file inside a hard-coded, predictable, world-accessible directory (C:\\testcases\\insecureDir or /home/user/testcases/insecureDir/), which an attacker can anticipate and pre-create or tamper with. The repair removes the hard-coded insecure directory and instead creates the temp file via File.createTempFile with the two-argument form, which places it in the JVM's secure default temporary directory (java.io.tmpdir) under a randomly generated, unpredictable name. The existing owner-only readable/writable and non-executable permission hardening, the write of data, and the cleanup logic are all preserved, so legitimate functionality is unchanged.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE379_Temporary_File_Creation_in_Insecure_Dir/CWE379_Temporary_File_Creation_in_Insecure_Dir__basic_02.java",
+      "old": "            File tempFile = null;\n            String directoryName;\n            if(System.getProperty(\"os.name\").toLowerCase().indexOf(\"win\") >= 0)\n            {\n                                        \n                directoryName = \"C:\\\\testcases\\\\insecureDir\";\n            }\n            else\n            {\n                                            \n                directoryName = \"/home/user/testcases/insecureDir/\";\n            }\n            try\n            {\n                File newDirectory = new File(directoryName);\n                                                              \n                boolean isSuccessful = newDirectory.mkdir();\n                if (isSuccessful)\n                {\n                    IO.writeLine(\"Directory created\");\n                    tempFile = File.createTempFile(\"temp\", \"1234\", newDirectory);",
+      "new": "            File tempFile = null;\n            try\n            {\n                tempFile = File.createTempFile(\"temp\", \"1234\");\n                if (tempFile != null)\n                {\n                    IO.writeLine(\"Temporary file created\");"
+    }
+  ]
+}

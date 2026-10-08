@@ -1,0 +1,21 @@
+diff --git c/src/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_PropertiesFile_to_byte_71b.java w/src/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_PropertiesFile_to_byte_71b.java
+index 1279a1a..697de51 100644
+--- c/src/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_PropertiesFile_to_byte_71b.java
++++ w/src/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_PropertiesFile_to_byte_71b.java
+@@ -24,8 +24,14 @@ public class CWE197_Numeric_Truncation_Error__int_PropertiesFile_to_byte_71b
+         int data = (Integer)dataObject;
+ 
+         {
+-                                                                                             
+-            IO.writeLine((byte)data);
++            if (data >= Byte.MIN_VALUE && data <= Byte.MAX_VALUE)
++            {
++                IO.writeLine((byte)data);
++            }
++            else
++            {
++                IO.logger.log(java.util.logging.Level.WARNING, "Value is out of range for a byte and would be truncated: " + data);
++            }
+         }
+ 
+     }

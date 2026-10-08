@@ -1,0 +1,10 @@
+{
+  "summary": "The bad entry point reads a line from a socket and embeds it directly into an HTTP error message via response.sendError(), reflecting attacker-controlled data into the HTML error page (CWE-81 reflected XSS). The fix HTML-encodes the data before it is placed into the error message, neutralizing markup/script while preserving the feature of reporting the received value. Only the sink in 22a is changed; the socket-reading source behavior is unchanged so valid inputs still flow through and are reported.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_listen_tcp_22a.java",
+      "old": "            response.sendError(404, \"<br>bad() - Parameter name has value \" + data);",
+      "new": "            String encodedData = data.replace(\"&\", \"&amp;\").replace(\"<\", \"&lt;\").replace(\">\", \"&gt;\").replace(\"\\\"\", \"&quot;\").replace(\"'\", \"&#39;\");\n            response.sendError(404, \"<br>bad() - Parameter name has value \" + encodedData);"
+    }
+  ]
+}

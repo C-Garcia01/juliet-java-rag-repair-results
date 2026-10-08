@@ -1,0 +1,33 @@
+diff --git c/src/testcases/CWE600_Uncaught_Exception_in_Servlet/CWE600_Uncaught_Exception_in_Servlet__getParameter_01.java w/src/testcases/CWE600_Uncaught_Exception_in_Servlet/CWE600_Uncaught_Exception_in_Servlet__getParameter_01.java
+index 731800f..9e34210 100644
+--- c/src/testcases/CWE600_Uncaught_Exception_in_Servlet/CWE600_Uncaught_Exception_in_Servlet__getParameter_01.java
++++ w/src/testcases/CWE600_Uncaught_Exception_in_Servlet/CWE600_Uncaught_Exception_in_Servlet__getParameter_01.java
+@@ -30,15 +30,22 @@ public class CWE600_Uncaught_Exception_in_Servlet__getParameter_01 extends Abstr
+     public void bad(HttpServletRequest request, HttpServletResponse response) throws IOException 
+     {        
+         String ipAddress = request.getRemoteAddr();
+-        InetAddress inetAddress = InetAddress.getByName(ipAddress);
+-        
+-        if (inetAddress == null)
++        try
+         {
+-            IO.logger.log(Level.WARNING, "Problem getting IP address");
++            InetAddress inetAddress = InetAddress.getByName(ipAddress);
++
++            if (inetAddress == null)
++            {
++                IO.logger.log(Level.WARNING, "Problem getting IP address");
++            }
++            else
++            {
++                IO.writeLine("IP= " + inetAddress.getAddress().toString());
++            }
+         }
+-        else
++        catch (java.net.UnknownHostException exceptUnknownHost)
+         {
+-            IO.writeLine("IP= " + inetAddress.getAddress().toString());
++            IO.logger.log(Level.WARNING, "Could not resolve IP address", exceptUnknownHost);
+         }
+                                                                                        
+                                                     

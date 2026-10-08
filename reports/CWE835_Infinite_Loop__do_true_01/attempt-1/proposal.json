@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method used a do-while loop with a constant `true` condition, creating an infinite loop (CWE-835). Fixed by replacing the constant condition with a bounded loop condition so the loop terminates while still writing out the sequence of values as before.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE835_Infinite_Loop/CWE835_Infinite_Loop__do_true_01.java",
+      "old": "        do \n        {\n            IO.writeLine(i);\n            i++;\n        } while(true);",
+      "new": "        do \n        {\n            IO.writeLine(i);\n            i++;\n        } while(i < IO.STATIC_FINAL_FIVE);"
+    }
+  ]
+}

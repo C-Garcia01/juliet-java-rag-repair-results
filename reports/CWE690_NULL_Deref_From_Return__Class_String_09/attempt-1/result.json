@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "990c41995966c54dbd5d0f2bb899899b7cf07ff0",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-690",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "2d28fb6934e3a108cfad9dc864548a3d02c721c4",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 28014,
+  "summary": "The bad() entry point dereferences the value returned by getStringBad() without checking for null. Since getStringBad() can return null (CWE-690: unchecked return value used in NULL dereference), the call data.trim() throws a NullPointerException. The fix adds a null guard before dereferencing data, preserving the legitimate behavior of trimming and writing the string whenever a non-null value is returned.",
+  "exported_files": 1
+}

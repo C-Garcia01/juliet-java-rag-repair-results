@@ -1,0 +1,12 @@
+diff --git c/src/testcases/CWE398_Poor_Code_Quality/CWE398_Poor_Code_Quality__empty_for_07.java w/src/testcases/CWE398_Poor_Code_Quality/CWE398_Poor_Code_Quality__empty_for_07.java
+index a3a7c62..f6df1f1 100644
+--- c/src/testcases/CWE398_Poor_Code_Quality/CWE398_Poor_Code_Quality__empty_for_07.java
++++ w/src/testcases/CWE398_Poor_Code_Quality/CWE398_Poor_Code_Quality__empty_for_07.java
+@@ -32,6 +32,7 @@ public class CWE398_Poor_Code_Quality__empty_for_07 extends AbstractTestCase
+                                                             
+             for (int i = 0; i < 10; i++)
+             {
++                IO.writeLine("Iteration " + i);
+             }
+             IO.writeLine("Hello from bad()");
+         }

@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-580 (Clone Without Super) occurs because the overridden clone() constructs a new instance with `new` instead of invoking Object.clone() via super.clone(). This bypasses the clone contract and the behavior of superclasses, potentially producing an object of the wrong runtime type and skipping inherited field copying. The fix obtains the base clone through super.clone() and then performs the deep copy of the mutable Date field, preserving the existing defensive-copy behavior while satisfying the clone contract.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE580_Clone_Without_Super/CWE580_Clone_Without_Super__clone_01_bad.java",
+      "old": "        CWE580_Clone_Without_Super__clone_01_bad objectBad = new CWE580_Clone_Without_Super__clone_01_bad();     \n        objectBad.setDate(new Date(theDate.getTime()));\n        return objectBad;",
+      "new": "        CWE580_Clone_Without_Super__clone_01_bad objectBad = (CWE580_Clone_Without_Super__clone_01_bad) super.clone();\n        objectBad.setDate(new Date(theDate.getTime()));\n        return objectBad;"
+    }
+  ]
+}

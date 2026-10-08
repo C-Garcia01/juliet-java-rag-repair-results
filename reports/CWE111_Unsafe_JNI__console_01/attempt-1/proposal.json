@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-111 Direct Use of Unsafe JNI: the bad() method reads an attacker-controlled string and an independently-parsed integer length from the console and passes both straight to the native method test(String, int). Because the native C code trusts the Java-supplied length to index/copy the string, a length that exceeds the actual string size causes an out-of-bounds read/write in native code. The fix validates the untrusted length against the actual string before crossing the JNI boundary (and guards against a null line), clamping an out-of-range length to the real string length. Valid inputs where the length matches the string still work unchanged, and the native call is preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE111_Unsafe_JNI/CWE111_Unsafe_JNI__console_01.java",
+      "old": "            intNumber = Integer.parseInt(readerBuffered.readLine());\n        \n            IO.writeLine(\"Result from native method: \" + test(stringLine, intNumber));",
+      "new": "            intNumber = Integer.parseInt(readerBuffered.readLine());\n        \n            if (stringLine == null)\n            {\n                return;\n            }\n\n            if (intNumber < 0 || intNumber > stringLine.length())\n            {\n                intNumber = stringLine.length();\n            }\n\n            IO.writeLine(\"Result from native method: \" + test(stringLine, intNumber));"
+    }
+  ]
+}

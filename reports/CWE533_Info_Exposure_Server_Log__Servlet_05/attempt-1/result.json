@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "6b3b070f9e75b33a703dce79fb09d0d77be7887a",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-533",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "aff6c9e45c9eae17a80c7c28d0600d9f006d61f0",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 27011,
+  "summary": "CWE-533 Information Exposure Through Server Log: the bad() entry point wrote the authenticated user's session ID into the server log via log(\"... Session ID:\" + session.getId()). A session identifier is sensitive and must not be exposed in logs, where it can be read by anyone with log access and used for session hijacking. The fix keeps the username validation and session creation (the legitimate feature) intact but removes the session ID from the logged message, logging only a non-sensitive confirmation of the login.",
+  "exported_files": 1
+}

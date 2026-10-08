@@ -1,0 +1,10 @@
+{
+  "summary": "The deadlock arises because the two worker threads acquire the two locks in opposite orders: helperAddBad takes BAD_NUMBER1_LOCK then BAD_NUMBER2_LOCK, while helperMultiplyBad takes BAD_NUMBER2_LOCK then BAD_NUMBER1_LOCK. With both holding their first lock and waiting on the other, they deadlock. The fix enforces a consistent global lock-ordering (always acquire BAD_NUMBER1_LOCK before BAD_NUMBER2_LOCK), matching the good variant, so both the add and multiply operations still execute and update intBadNumber1.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE833_Deadlock/CWE833_Deadlock__synchronized_Objects_Thread_01.java",
+      "old": "        synchronized(BAD_NUMBER2_LOCK) \n        { \n            try \n            { \n                Thread.sleep(1000);                                                                                  \n            } \n            catch (InterruptedException exceptInterrupted) \n            {\n                IO.logger.log(Level.WARNING, \"Sleep Interrupted\", exceptInterrupted);\n            }\n            \n            synchronized(BAD_NUMBER1_LOCK) \n            {\n                intBadNumber1 = intBadNumber1 * intBadNumber2;\n            }\n        }",
+      "new": "        synchronized(BAD_NUMBER1_LOCK) \n        { \n            try \n            { \n                Thread.sleep(1000);                                                                                  \n            } \n            catch (InterruptedException exceptInterrupted) \n            {\n                IO.logger.log(Level.WARNING, \"Sleep Interrupted\", exceptInterrupted);\n            }\n            \n            synchronized(BAD_NUMBER2_LOCK) \n            {\n                intBadNumber1 = intBadNumber1 * intBadNumber2;\n            }\n        }"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "summary": "The bad path acquires BAD_REENTRANT_LOCK but performs the increment, I/O, and unlock outside any try/finally. If any statement between lock() and unlock() throws, the lock is never released, leaking the resource (CWE-404). I wrapped the protected work in a try block and moved unlock() into a finally block, mirroring the safe good1 pattern, so the lock is always released while preserving the increment-and-write behavior.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE404_Improper_Resource_Shutdown/CWE404_Improper_Resource_Shutdown__ReentrantLock_Thread_01.java",
+      "old": "        BAD_REENTRANT_LOCK.lock();\n        \n        intBadNumber++;\n        \n        IO.writeLine(intBadNumber);\n        \n                                                              \n        BAD_REENTRANT_LOCK.unlock();       ",
+      "new": "        BAD_REENTRANT_LOCK.lock();\n        \n        try\n        {\n            intBadNumber++;\n            \n            IO.writeLine(intBadNumber);\n        }\n        finally\n        {\n            BAD_REENTRANT_LOCK.unlock();\n        }"
+    }
+  ]
+}

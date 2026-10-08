@@ -1,0 +1,22 @@
+diff --git c/src/testcases/CWE833_Deadlock/CWE833_Deadlock__synchronized_Objects_Thread_01.java w/src/testcases/CWE833_Deadlock/CWE833_Deadlock__synchronized_Objects_Thread_01.java
+index ebae87d..d0994d2 100644
+--- c/src/testcases/CWE833_Deadlock/CWE833_Deadlock__synchronized_Objects_Thread_01.java
++++ w/src/testcases/CWE833_Deadlock/CWE833_Deadlock__synchronized_Objects_Thread_01.java
+@@ -41,7 +41,7 @@ public class CWE833_Deadlock__synchronized_Objects_Thread_01 extends AbstractTes
+     static public void helperMultiplyBad()
+     {
+                                                                                      
+-        synchronized(BAD_NUMBER2_LOCK) 
++        synchronized(BAD_NUMBER1_LOCK) 
+         { 
+             try 
+             { 
+@@ -52,7 +52,7 @@ public class CWE833_Deadlock__synchronized_Objects_Thread_01 extends AbstractTes
+                 IO.logger.log(Level.WARNING, "Sleep Interrupted", exceptInterrupted);
+             }
+             
+-            synchronized(BAD_NUMBER1_LOCK) 
++            synchronized(BAD_NUMBER2_LOCK) 
+             {
+                 intBadNumber1 = intBadNumber1 * intBadNumber2;
+             }

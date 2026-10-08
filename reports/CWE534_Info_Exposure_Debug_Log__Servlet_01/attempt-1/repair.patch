@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE534_Info_Exposure_Debug_Log/CWE534_Info_Exposure_Debug_Log__Servlet_01.java w/src/testcases/CWE534_Info_Exposure_Debug_Log/CWE534_Info_Exposure_Debug_Log__Servlet_01.java
+index 4cf725d..be3d898 100644
+--- c/src/testcases/CWE534_Info_Exposure_Debug_Log/CWE534_Info_Exposure_Debug_Log__Servlet_01.java
++++ w/src/testcases/CWE534_Info_Exposure_Debug_Log/CWE534_Info_Exposure_Debug_Log__Servlet_01.java
+@@ -37,7 +37,7 @@ public class CWE534_Info_Exposure_Debug_Log__Servlet_01 extends AbstractTestCase
+         {
+             HttpSession session = request.getSession(true);
+                                                           
+-            logger.log(Level.FINEST, "Username: " + username + " Session ID:" + session.getId());
++            logger.log(Level.FINEST, "Accepted a login request with valid username characters");
+         }
+         else
+         {

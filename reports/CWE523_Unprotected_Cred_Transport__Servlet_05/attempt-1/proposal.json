@@ -1,0 +1,10 @@
+{
+  "summary": "Fixed CWE-523 (Unprotected Credential Transport) by changing the login form's action URL from an unencrypted HTTP endpoint to HTTPS, so the submitted credentials (j_username/j_password) are transmitted over an encrypted channel. The login form and all fields are preserved so legitimate functionality is unchanged.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE523_Unprotected_Cred_Transport/CWE523_Unprotected_Cred_Transport__Servlet_05.java",
+      "old": "                writer.println(\"<form action='http://hostname.com/j_security_check' method='post'>\");",
+      "new": "                writer.println(\"<form action='https://hostname.com/j_security_check' method='post'>\");"
+    }
+  ]
+}

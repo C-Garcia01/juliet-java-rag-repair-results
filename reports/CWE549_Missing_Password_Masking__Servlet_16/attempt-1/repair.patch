@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE549_Missing_Password_Masking/CWE549_Missing_Password_Masking__Servlet_16.java w/src/testcases/CWE549_Missing_Password_Masking/CWE549_Missing_Password_Masking__Servlet_16.java
+index 7efb96c..ab3dc5b 100644
+--- c/src/testcases/CWE549_Missing_Password_Masking/CWE549_Missing_Password_Masking__Servlet_16.java
++++ w/src/testcases/CWE549_Missing_Password_Masking/CWE549_Missing_Password_Masking__Servlet_16.java
+@@ -28,7 +28,7 @@ public class CWE549_Missing_Password_Masking__Servlet_16 extends AbstractTestCas
+             response.getWriter().println("<form id=\"form\" name=\"form\" method=\"post\" action=\"password-test-servlet\">");
+             response.getWriter().println("Username: <input name=\"username\" type=\"text\" tabindex=\"10\" /><br><br>");
+                                                                      
+-            response.getWriter().println("Password: <input name=\"password\" type=\"text\" tabindex=\"10\" />");
++            response.getWriter().println("Password: <input name=\"password\" type=\"password\" tabindex=\"10\" />");
+             response.getWriter().println("<input type=\"submit\" name=\"submit\" value=\"Login-bad\" /></form>");
+             break;
+         }

@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method seeds the salt from java.util.Random, whose output is predictable, making the one-way hash vulnerable (CWE-760). Switched the salt source to SecureRandom (already imported) so the salt is cryptographically unpredictable while preserving the hashing feature.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE760_Predictable_Salt_One_Way_Hash/CWE760_Predictable_Salt_One_Way_Hash__basic_08.java",
+      "old": "            Random random = new Random();\n            MessageDigest hash = MessageDigest.getInstance(\"SHA-512\");",
+      "new": "            SecureRandom random = new SecureRandom();\n            MessageDigest hash = MessageDigest.getInstance(\"SHA-512\");"
+    }
+  ]
+}

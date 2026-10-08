@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "d03e007da7d19ff76c3db9fe525bf8a0fbcf4a7e",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-36",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "3e34e2f3433ad88ec3384690c3421ca07b0ee06b",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 29422,
+  "summary": "The bad() entry point reads a servlet cookie value and uses it directly as a filesystem path in new File(data), allowing an attacker to supply an absolute path (CWE-36) or traversal sequence and read arbitrary files. The fix resolves the cookie-supplied name against a trusted base directory (the process working directory) and validates via canonicalization that the resolved file stays within that base before any filesystem access. Absolute paths and traversal escape the base and are rejected, while legitimate relative filenames under the base continue to be read normally, preserving the feature.",
+  "exported_files": 1
+}

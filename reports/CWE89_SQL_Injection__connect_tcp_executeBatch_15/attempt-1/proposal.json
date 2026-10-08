@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method reads untrusted data from a TCP socket, splits it on '-', and concatenates each piece directly into a JDBC batch UPDATE string executed via Statement.addBatch/executeBatch, enabling SQL injection. The fix switches to a PreparedStatement with a parameterized query ('... where name=?') and binds each name via setString before addBatch, so the per-name UPDATE feature and batch semantics are preserved while input is treated strictly as data.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE89_SQL_Injection/s01/CWE89_SQL_Injection__connect_tcp_executeBatch_15.java",
+      "old": "                Statement sqlStatement = null;\n                try\n                {\n                    dbConnection = IO.getDBConnection();\n                    sqlStatement = dbConnection.createStatement();\n                    for (int i = 0; i < names.length; i++)\n                    {\n                                                                                                                                              \n                        sqlStatement.addBatch(\"update users set hitcount=hitcount+1 where name='\" + names[i] + \"'\");\n                    }",
+      "new": "                PreparedStatement sqlStatement = null;\n                try\n                {\n                    dbConnection = IO.getDBConnection();\n                    sqlStatement = dbConnection.prepareStatement(\"update users set hitcount=hitcount+1 where name=?\");\n                    for (int i = 0; i < names.length; i++)\n                    {\n                        sqlStatement.setString(1, names[i]);\n                        sqlStatement.addBatch();\n                    }"
+    }
+  ]
+}

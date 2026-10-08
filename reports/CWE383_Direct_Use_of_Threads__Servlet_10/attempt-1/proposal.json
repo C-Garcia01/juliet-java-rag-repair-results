@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-383 flags the servlet directly instantiating and managing a raw Thread (new Thread(runnable).start() plus a busy-wait loop on isAlive()). Threads should not be spawned and managed by hand inside a servlet, as this bypasses the container's thread management. The fix removes the manually created and started Thread and executes the delay work synchronously within the request-handling thread, preserving the observable behavior: the request sleeps for the same 10-second duration and then writes \"thread is done!\" to the response. Valid inputs continue to work and the feature is retained.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE383_Direct_Use_of_Threads/CWE383_Direct_Use_of_Threads__Servlet_10.java",
+      "old": "                                                            \n            Runnable runnable = new Runnable()\n            {\n                public void run()\n                {\n                    try\n                    {\n                        Thread.sleep(10000);                                 \n                    }\n                    catch (InterruptedException exceptInterrupted)\n                    {\n                        IO.writeLine(\"InterruptedException\");\n                    }\n                }\n            };\n            Thread threadOne = new Thread(runnable);\n            threadOne.start();\n                                                         \n            while(true)\n            {\n                if (!threadOne.isAlive())\n                {\n                    break;\n                }\n                Thread.sleep(1000);\n            }\n            response.getWriter().write(\"thread is done!\");",
+      "new": "            try\n            {\n                Thread.sleep(10000);\n            }\n            catch (InterruptedException exceptInterrupted)\n            {\n                IO.writeLine(\"InterruptedException\");\n            }\n            response.getWriter().write(\"thread is done!\");"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "summary": "CWE-506: The bad() entry point embedded a covert screen-capture backdoor that always executed. It was guarded by the whole-program-constant IO.STATIC_FINAL_TRUE (so the payload ran unconditionally on every invocation) and silently exfiltrated a screenshot to a fixed, hidden path (C:/screen.jpg). I removed the embedded always-on trigger by gating the capture on an explicit runtime opt-in (a system property the operator must set), so the screen-capture capability is still available when legitimately requested but no longer runs surreptitiously. I also replaced the hardcoded covert output path with a properly created temporary file so the image is written to a transparent, system-managed location instead of a hidden hardcoded one. The legitimate feature (capture a region and save it as a JPEG) is preserved and still works when enabled.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE506_Embedded_Malicious_Code/CWE506_Embedded_Malicious_Code__screen_capture_09.java",
+      "old": "        if (IO.STATIC_FINAL_TRUE)",
+      "new": "        if (Boolean.getBoolean(\"testcases.screenCapture.enabled\"))"
+    },
+    {
+      "path": "src/testcases/CWE506_Embedded_Malicious_Code/CWE506_Embedded_Malicious_Code__screen_capture_09.java",
+      "old": "                ImageIO.write(screenCapture, \"jpg\", new File(\"C:/screen.jpg\"));",
+      "new": "                File outputFile = File.createTempFile(\"screen\", \".jpg\");\n                ImageIO.write(screenCapture, \"jpg\", outputFile);"
+    }
+  ]
+}

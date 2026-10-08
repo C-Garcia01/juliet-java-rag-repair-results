@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-606 Unchecked Loop Condition: badSink parses an environment-controlled string into numberOfLoops and uses it directly as the loop bound, so an attacker-supplied value can drive an unbounded/excessive loop (resource exhaustion). The fix validates the parsed value before the loop, rejecting negative and unreasonably large counts while preserving legitimate small loop counts. The feature (looping numberOfLoops times and printing) still works for valid inputs.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Environment_51b.java",
+      "old": "        int numberOfLoops;\n        try\n        {\n            numberOfLoops = Integer.parseInt(data);\n        }\n        catch (NumberFormatException exceptNumberFormat)\n        {\n            IO.writeLine(\"Invalid response. Numeric input expected. Assuming 1.\");\n            numberOfLoops = 1;\n        }\n\n        for (int i=0; i < numberOfLoops; i++)",
+      "new": "        int numberOfLoops;\n        try\n        {\n            numberOfLoops = Integer.parseInt(data);\n        }\n        catch (NumberFormatException exceptNumberFormat)\n        {\n            IO.writeLine(\"Invalid response. Numeric input expected. Assuming 1.\");\n            numberOfLoops = 1;\n        }\n\n        final int MAX_LOOPS = 100;\n        if (numberOfLoops < 0 || numberOfLoops > MAX_LOOPS)\n        {\n            IO.writeLine(\"Loop count out of allowed range. Assuming 1.\");\n            numberOfLoops = 1;\n        }\n\n        for (int i=0; i < numberOfLoops; i++)"
+    }
+  ]
+}

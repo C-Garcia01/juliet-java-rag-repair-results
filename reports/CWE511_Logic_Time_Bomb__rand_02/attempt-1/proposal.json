@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method is a classic logic time bomb (CWE-511): a hidden random trigger that, when SecureRandom.nextInt() happens to equal 20000, launches an attacker-planted executable (evil.exe) via Runtime.exec. There is no legitimate feature embedded here\u2014the entire conditional payload IS the malicious logic. The repair removes the time-bomb trigger and the command execution while leaving the method structurally intact, matching the benign no-op behavior of good().",
+  "edits": [
+    {
+      "path": "src/testcases/CWE511_Logic_Time_Bomb/CWE511_Logic_Time_Bomb__rand_02.java",
+      "old": "    public void bad() throws Throwable\n    {\n        if (true)\n        {\n                                               \n            if ((new SecureRandom()).nextInt() == 20000)\n            {\n                Runtime.getRuntime().exec(\"c:\\\\windows\\\\system32\\\\evil.exe\");\n            }\n        }\n    }",
+      "new": "    public void bad() throws Throwable\n    {\n        if (true)\n        {\n        }\n    }"
+    }
+  ]
+}

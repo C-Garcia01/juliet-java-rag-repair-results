@@ -1,0 +1,16 @@
+diff --git c/src/testcases/CWE397_Throw_Generic/CWE397_Throw_Generic__throw_Exception_01.java w/src/testcases/CWE397_Throw_Generic/CWE397_Throw_Generic__throw_Exception_01.java
+index 89e73f5..7d3e369 100644
+--- c/src/testcases/CWE397_Throw_Generic/CWE397_Throw_Generic__throw_Exception_01.java
++++ w/src/testcases/CWE397_Throw_Generic/CWE397_Throw_Generic__throw_Exception_01.java
+@@ -10,9 +10,9 @@ import java.io.FileNotFoundException;
+ 
+ public class CWE397_Throw_Generic__throw_Exception_01 extends AbstractTestCase 
+ {
+-    public void bad() throws Exception 
++    public void bad() throws FileNotFoundException 
+     {
+-        throw new Exception();                                                    
++        throw new FileNotFoundException();                                                    
+     }
+ 
+     

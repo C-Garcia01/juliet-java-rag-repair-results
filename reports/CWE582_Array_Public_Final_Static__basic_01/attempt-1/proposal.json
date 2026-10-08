@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-582 flags the mutable array exposed as a public final static field: although the reference is final, array contents remain mutable, so any external code can alter INT_ARRAY. The fix restricts the field's visibility to private so it is no longer part of the public API, while the bad() method continues to read, modify, and print the array exactly as before (all accesses are within the declaring class).",
+  "edits": [
+    {
+      "path": "src/testcases/CWE582_Array_Public_Final_Static/CWE582_Array_Public_Final_Static__basic_01_bad.java",
+      "old": "    public final static int INT_ARRAY[] = {1,2,3,4,5};",
+      "new": "    private final static int INT_ARRAY[] = {1,2,3,4,5};"
+    }
+  ]
+}

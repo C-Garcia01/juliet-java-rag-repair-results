@@ -1,0 +1,10 @@
+{
+  "summary": "The trapdoor (CWE-510) is the hidden, hostname-based privilege escalation in bad(): the code reads the client's reverse-DNS hostname via socket.getInetAddress().getHostName() and, if it equals the hardcoded \"admin.google.com\", serves the privileged \"Welcome, admin!\" response. Reverse-DNS hostnames are attacker-controllable (an attacker who controls PTR records for their IP can make it resolve to any name), so this constitutes a backdoor granting elevated access on a spoofable condition. The fix removes the hidden hostname-based branch entirely while preserving the legitimate feature: the server still accepts the connection and writes the standard welcome message to the connected client. No elevated/backdoor path remains, and ordinary connections continue to be served normally.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE510_Trapdoor/CWE510_Trapdoor__hostname_based_logic_17.java",
+      "old": "                if (socket.getInetAddress().getHostName().equals(\"admin.google.com\"))\n                {\n                    streamOutput = socket.getOutputStream();\n                    streamOutput.write(\"Welcome, admin!\".getBytes(\"UTF-8\"));\n                }\n                else\n                {\n                    streamOutput = socket.getOutputStream();\n                    streamOutput.write(\"Welcome, user.\".getBytes(\"UTF-8\"));\n                }",
+      "new": "                streamOutput = socket.getOutputStream();\n                streamOutput.write(\"Welcome, user.\".getBytes(\"UTF-8\"));"
+    }
+  ]
+}

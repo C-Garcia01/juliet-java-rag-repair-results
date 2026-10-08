@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE539_Information_Exposure_Through_Persistent_Cookie/CWE539_Information_Exposure_Through_Persistent_Cookie__Servlet_14.java w/src/testcases/CWE539_Information_Exposure_Through_Persistent_Cookie/CWE539_Information_Exposure_Through_Persistent_Cookie__Servlet_14.java
+index a525d03..4c38b01 100644
+--- c/src/testcases/CWE539_Information_Exposure_Through_Persistent_Cookie/CWE539_Information_Exposure_Through_Persistent_Cookie__Servlet_14.java
++++ w/src/testcases/CWE539_Information_Exposure_Through_Persistent_Cookie/CWE539_Information_Exposure_Through_Persistent_Cookie__Servlet_14.java
+@@ -27,7 +27,7 @@ public class CWE539_Information_Exposure_Through_Persistent_Cookie__Servlet_14 e
+         {
+             Cookie cookie = new Cookie("SecretMessage", "test");
+                                                                                         
+-            cookie.setMaxAge(60*60*24*365*5);
++            cookie.setMaxAge(-1);
+         }
+     }
+ 

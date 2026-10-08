@@ -1,0 +1,27 @@
+diff --git c/src/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java w/src/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java
+index 84c1daf..4ce6e0a 100644
+--- c/src/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java
++++ w/src/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java
+@@ -25,6 +25,8 @@ import java.util.logging.Level;
+ 
+ import javax.crypto.spec.SecretKeySpec;
+ import javax.crypto.Cipher;
++import javax.crypto.KeyGenerator;
++import javax.crypto.SecretKey;
+ 
+ public class CWE321_Hard_Coded_Cryptographic_Key__basic_06 extends AbstractTestCase
+ {
+@@ -55,9 +57,11 @@ public class CWE321_Hard_Coded_Cryptographic_Key__basic_06 extends AbstractTestC
+             String stringToEncrypt = "Super secret Squirrel";
+             byte[] byteStringToEncrypt = stringToEncrypt.getBytes("UTF-8");
+                                                                  
+-            SecretKeySpec secretKeySpec = new SecretKeySpec(data.getBytes("UTF-8"), "AES");
++            KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
++            keyGenerator.init(128);
++            SecretKey secretKey = keyGenerator.generateKey();
+             Cipher aesCipher = Cipher.getInstance("AES");
+-            aesCipher.init(Cipher.ENCRYPT_MODE, secretKeySpec);
++            aesCipher.init(Cipher.ENCRYPT_MODE, secretKey);
+             byte[] byteCipherText = aesCipher.doFinal(byteStringToEncrypt);
+             IO.writeLine(IO.toHex(byteCipherText));                                      
+         }

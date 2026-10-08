@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE193_Off_by_One_Error/CWE193_Off_by_One_Error__while_03.java w/src/testcases/CWE193_Off_by_One_Error/CWE193_Off_by_One_Error__while_03.java
+index 06a0628..9ac74e3 100644
+--- c/src/testcases/CWE193_Off_by_One_Error/CWE193_Off_by_One_Error__while_03.java
++++ w/src/testcases/CWE193_Off_by_One_Error/CWE193_Off_by_One_Error__while_03.java
+@@ -26,7 +26,7 @@ public class CWE193_Off_by_One_Error__while_03 extends AbstractTestCase
+             int[] intArray = new int[10];
+             int i = 0;
+                                             
+-            while (i <= intArray.length)
++            while (i < intArray.length)
+             {
+                 IO.writeLine("intArray[" + i + "] = " + (intArray[i] = i));
+                 i++;

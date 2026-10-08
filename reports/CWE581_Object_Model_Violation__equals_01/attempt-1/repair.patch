@@ -1,0 +1,33 @@
+diff --git c/src/testcases/CWE581_Object_Model_Violation/CWE581_Object_Model_Violation__equals_01_bad.java w/src/testcases/CWE581_Object_Model_Violation/CWE581_Object_Model_Violation__equals_01_bad.java
+index 6777e04..297be62 100644
+--- c/src/testcases/CWE581_Object_Model_Violation/CWE581_Object_Model_Violation__equals_01_bad.java
++++ w/src/testcases/CWE581_Object_Model_Violation/CWE581_Object_Model_Violation__equals_01_bad.java
+@@ -26,6 +26,28 @@ public class CWE581_Object_Model_Violation__equals_01_bad extends AbstractTestCa
+     {
+         return message.hashCode() + seed;
+     }
++
++    public boolean equals(Object obj) 
++    {
++        if (this == obj) 
++        {
++            return true;
++        }
++        if (obj == null || getClass() != obj.getClass()) 
++        {
++            return false;
++        }
++        CWE581_Object_Model_Violation__equals_01_bad other = (CWE581_Object_Model_Violation__equals_01_bad) obj;
++        if (seed != other.seed) 
++        {
++            return false;
++        }
++        if (message == null) 
++        {
++            return other.message == null;
++        }
++        return message.equals(other.message);
++    }
+     
+     public void bad() 
+     { 

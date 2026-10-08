@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-586: The bad() entry point explicitly invokes badObj.finalize() in the finally block. finalize() is a lifecycle method meant to be called only by the garbage collector; calling it directly runs cleanup prematurely while the object is still live and causes it to run a second time at GC. The fix removes the explicit finalize() invocation, leaving the object to be finalized normally by the JVM. The feature (constructing the helper and calling sayHello()) is fully preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE586_Explicit_Call_to_Finalize/CWE586_Explicit_Call_to_Finalize__basic_04.java",
+      "old": "                badObj.finalize();\n",
+      "new": "                badObj = null;\n"
+    }
+  ]
+}

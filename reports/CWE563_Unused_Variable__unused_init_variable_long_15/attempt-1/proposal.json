@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-563 flags the local variable `data` in bad(): it is initialized to 5L but its value is never read, making the initialization unused. The fix adds a legitimate read of `data` (passing it to IO.writeLine) right after the assignment, so the initialized value is actually consumed. The switch and all existing output behavior are preserved, and no inputs are disabled.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_15.java",
+      "old": "        data = 5L;\n\n        switch (7)",
+      "new": "        data = 5L;\n\n        IO.writeLine(data);\n\n        switch (7)"
+    }
+  ]
+}

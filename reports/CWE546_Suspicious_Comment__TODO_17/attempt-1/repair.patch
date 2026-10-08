@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE546_Suspicious_Comment/CWE546_Suspicious_Comment__TODO_17.java w/src/testcases/CWE546_Suspicious_Comment/CWE546_Suspicious_Comment__TODO_17.java
+index e63f586..dd789a2 100644
+--- c/src/testcases/CWE546_Suspicious_Comment/CWE546_Suspicious_Comment__TODO_17.java
++++ w/src/testcases/CWE546_Suspicious_Comment/CWE546_Suspicious_Comment__TODO_17.java
+@@ -23,8 +23,6 @@ public class CWE546_Suspicious_Comment__TODO_17 extends AbstractTestCase
+     {
+         for(int j = 0; j < 1; j++)
+         {
+-                                                      
+-                                                                           
+             IO.writeLine("This a test of the emergency broadcast system");
+         }
+     }

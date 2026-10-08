@@ -1,0 +1,20 @@
+diff --git c/src/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_PropertiesFile_to_short_11.java w/src/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_PropertiesFile_to_short_11.java
+index 8a44157..f8590e1 100644
+--- c/src/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_PropertiesFile_to_short_11.java
++++ w/src/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_PropertiesFile_to_short_11.java
+@@ -84,7 +84,14 @@ public class CWE197_Numeric_Truncation_Error__int_PropertiesFile_to_short_11 ext
+ 
+         {
+                                                                                               
+-            IO.writeLine((short)data);
++            if (data >= Short.MIN_VALUE && data <= Short.MAX_VALUE)
++            {
++                IO.writeLine((short)data);
++            }
++            else
++            {
++                IO.writeLine("data value is out of range for the short type and cannot be safely narrowed");
++            }
+         }
+ 
+     }

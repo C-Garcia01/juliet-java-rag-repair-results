@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "d53c4482d082c21396c9e3a7d91038621107172f",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-23",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "cfa98be10094e3fcf17d85219c0bcff9abb82c67",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 30512,
+  "summary": "The bad flow takes an attacker-controlled environment variable (ADD) and concatenates it directly onto an uploads root directory to build a File path, allowing relative path traversal (e.g. ../../etc/passwd) out of the intended directory. I added a canonical-path containment check in the sink so that only files resolving inside the uploads root are read; legitimate filenames under the uploads directory continue to work, while traversal sequences are rejected before the file is opened.",
+  "exported_files": 1
+}

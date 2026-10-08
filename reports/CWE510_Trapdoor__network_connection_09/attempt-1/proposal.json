@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point contains a CWE-510 trapdoor: a hardcoded covert network connection to the suspicious literal address http://123.123.123.123:80. This is a hidden phone-home/backdoor endpoint baked into the binary with no legitimate, auditable source. The repair removes the hardcoded trapdoor address and instead resolves the endpoint from explicit application configuration (a system property) with a legitimate local default. This preserves the feature (opening and reading a network stream from a URL) while eliminating the hidden, attacker-controlled destination that defines the trapdoor.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE510_Trapdoor/CWE510_Trapdoor__network_connection_09.java",
+      "old": "                URL url = new URL(\"http://123.123.123.123:80\");",
+      "new": "                String endpoint = System.getProperty(\"testcase.network.endpoint\", \"http://localhost:80\");\n                URL url = new URL(endpoint);"
+    }
+  ]
+}

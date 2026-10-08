@@ -1,0 +1,16 @@
+diff --git c/src/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__connect_tcp_HashMap_04.java w/src/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__connect_tcp_HashMap_04.java
+index e5c361e..35e34ad 100644
+--- c/src/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__connect_tcp_HashMap_04.java
++++ w/src/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__connect_tcp_HashMap_04.java
+@@ -123,7 +123,10 @@ public class CWE789_Uncontrolled_Mem_Alloc__connect_tcp_HashMap_04 extends Abstr
+         }
+ 
+                                                                                                                               
+-        HashMap intHashMap = new HashMap(data);
++        if (data > 0 && data <= 100000)
++        {
++            HashMap intHashMap = new HashMap(data);
++        }
+ 
+     }
+ 

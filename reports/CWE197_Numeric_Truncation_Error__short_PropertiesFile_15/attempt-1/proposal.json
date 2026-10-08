@@ -1,0 +1,10 @@
+{
+  "summary": "The flow reads a short from the properties file and then truncates it to a byte at the sink via `(byte)data`, losing the upper bits (CWE-197). The fix removes the narrowing cast and calls `IO.writeLine` with the short value directly, which has a dedicated `short` overload, so the full value is written without truncation while the feature is preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_PropertiesFile_15.java",
+      "old": "            IO.writeLine((byte)data);",
+      "new": "            IO.writeLine(data);"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+diff --git c/src/testcases/CWE789_Uncontrolled_Mem_Alloc/s02/CWE789_Uncontrolled_Mem_Alloc__getParameter_Servlet_ArrayList_02.java w/src/testcases/CWE789_Uncontrolled_Mem_Alloc/s02/CWE789_Uncontrolled_Mem_Alloc__getParameter_Servlet_ArrayList_02.java
+index d5325db..8497f1f 100644
+--- c/src/testcases/CWE789_Uncontrolled_Mem_Alloc/s02/CWE789_Uncontrolled_Mem_Alloc__getParameter_Servlet_ArrayList_02.java
++++ w/src/testcases/CWE789_Uncontrolled_Mem_Alloc/s02/CWE789_Uncontrolled_Mem_Alloc__getParameter_Servlet_ArrayList_02.java
+@@ -52,7 +52,11 @@ public class CWE789_Uncontrolled_Mem_Alloc__getParameter_Servlet_ArrayList_02 ex
+             data = 0;
+         }
+ 
+-                                                                                                                                 
++        final int MAX_INITIAL_CAPACITY = 1000000;
++        if (data < 0 || data > MAX_INITIAL_CAPACITY)
++        {
++            throw new IllegalArgumentException("Requested ArrayList capacity is out of the allowed range");
++        }
+         ArrayList intArrayList = new ArrayList(data);
+ 
+     }

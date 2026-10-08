@@ -1,0 +1,10 @@
+{
+  "summary": "Fixed the off-by-one error in the bad() method's while loop. The loop condition `i <= intArray.length` caused an ArrayIndexOutOfBoundsException by accessing intArray[10] on a length-10 array (valid indices 0-9). Changed the condition to `i < intArray.length` so the loop iterates over all valid indices while preserving the array-fill feature.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE193_Off_by_One_Error/CWE193_Off_by_One_Error__while_03.java",
+      "old": "            while (i <= intArray.length)",
+      "new": "            while (i < intArray.length)"
+    }
+  ]
+}

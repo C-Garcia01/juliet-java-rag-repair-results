@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point passes the ADD environment variable straight into new File(data), so an attacker-controlled absolute path (or one containing traversal sequences) is opened and read verbatim (CWE-36). The fix anchors the supplied path under a fixed trusted base directory (the process working directory) and verifies via canonical paths that the resolved target stays inside that base before opening it. Because File(parent, child) always joins the child onto the parent, a leading '/' no longer escapes the base, and the canonical-containment check rejects '..' traversal. Legitimate relative paths under the base continue to be read exactly as before, and no constant result is substituted.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_07.java",
+      "old": "            File file = new File(data);\n            FileInputStream streamFileInputSink = null;\n            InputStreamReader readerInputStreamSink = null;\n            BufferedReader readerBufferdSink = null;\n            if (file.exists() && file.isFile())",
+      "new": "            File baseDir = new File(System.getProperty(\"user.dir\"));\n            File file = new File(baseDir, data);\n            String canonicalBasePath = baseDir.getCanonicalPath();\n            String canonicalFilePath = file.getCanonicalPath();\n            FileInputStream streamFileInputSink = null;\n            InputStreamReader readerInputStreamSink = null;\n            BufferedReader readerBufferdSink = null;\n            if ((canonicalFilePath.equals(canonicalBasePath)\n                    || canonicalFilePath.startsWith(canonicalBasePath + File.separator))\n                    && file.exists() && file.isFile())"
+    }
+  ]
+}

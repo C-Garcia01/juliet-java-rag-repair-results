@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method assigned data = null and then dereferenced data.length inside the loop, guaranteeing a NullPointerException. Fixed by initializing data with a real int array so data.length is a valid read, preserving the write-out of the array length.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__int_array_17.java",
+      "old": "        data = null;",
+      "new": "        data = new int[] {1, 2, 3, 4, 5};"
+    }
+  ]
+}

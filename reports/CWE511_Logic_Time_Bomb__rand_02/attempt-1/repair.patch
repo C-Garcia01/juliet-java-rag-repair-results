@@ -1,0 +1,16 @@
+diff --git c/src/testcases/CWE511_Logic_Time_Bomb/CWE511_Logic_Time_Bomb__rand_02.java w/src/testcases/CWE511_Logic_Time_Bomb/CWE511_Logic_Time_Bomb__rand_02.java
+index 5e0560c..e639500 100644
+--- c/src/testcases/CWE511_Logic_Time_Bomb/CWE511_Logic_Time_Bomb__rand_02.java
++++ w/src/testcases/CWE511_Logic_Time_Bomb/CWE511_Logic_Time_Bomb__rand_02.java
+@@ -25,11 +25,6 @@ public class CWE511_Logic_Time_Bomb__rand_02 extends AbstractTestCase
+     {
+         if (true)
+         {
+-                                               
+-            if ((new SecureRandom()).nextInt() == 20000)
+-            {
+-                Runtime.getRuntime().exec("c:\\windows\\system32\\evil.exe");
+-            }
+         }
+     }
+ 

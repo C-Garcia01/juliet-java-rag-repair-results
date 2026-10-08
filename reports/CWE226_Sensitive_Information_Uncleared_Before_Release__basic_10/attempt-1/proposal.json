@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-226: the sensitive password held in the StringBuffer is never cleared before the buffer is released at the end of bad(). Added code in the finally block to overwrite each character of the StringBuffer's backing array (via setCharAt) before the buffer goes out of scope, so the sensitive data is scrubbed from memory. The database-connection feature is preserved because the password is still read and used for DriverManager.getConnection before the clearing occurs.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE226_Sensitive_Information_Uncleared_Before_Release/CWE226_Sensitive_Information_Uncleared_Before_Release__basic_10.java",
+      "old": "            finally\n            {\n                                                                                                           \n\n                try\n                {\n                    if (dBConnection != null)",
+      "new": "            finally\n            {\n                /* Clear the sensitive password data from the StringBuffer before it is released */\n                for (int clearIndex = 0; clearIndex < password.length(); clearIndex++)\n                {\n                    password.setCharAt(clearIndex, '0');\n                }\n\n                try\n                {\n                    if (dBConnection != null)"
+    }
+  ]
+}

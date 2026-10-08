@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-585 (empty synchronized block): in helperBad() the synchronized block was empty and the shared counter update `intBad = intBad * 2;` ran outside it, so the two threads mutated intBad without mutual exclusion (lost-update race). Moved the update inside the synchronized block so the read-modify-write is atomic under the class lock, matching the safe pattern in helperGood1(). The feature (doubling the shared counter from two threads and writing the result) is preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE585_Empty_Sync_Block/CWE585_Empty_Sync_Block__Thread_01.java",
+      "old": "        synchronized(CWE585_Empty_Sync_Block__Thread_01.class) \n        {\n                                                                            \n        }\n    \n        intBad = intBad * 2;\n    }",
+      "new": "        synchronized(CWE585_Empty_Sync_Block__Thread_01.class) \n        {\n            intBad = intBad * 2;\n        }\n    }"
+    }
+  ]
+}

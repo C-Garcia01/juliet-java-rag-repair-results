@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE561_Dead_Code/CWE561_Dead_Code__unused_method_01_bad.java w/src/testcases/CWE561_Dead_Code/CWE561_Dead_Code__unused_method_01_bad.java
+index 5071e7e..774dbdf 100644
+--- c/src/testcases/CWE561_Dead_Code/CWE561_Dead_Code__unused_method_01_bad.java
++++ w/src/testcases/CWE561_Dead_Code/CWE561_Dead_Code__unused_method_01_bad.java
+@@ -17,7 +17,7 @@ public class CWE561_Dead_Code__unused_method_01_bad extends AbstractTestCaseClas
+     
+     public void bad() throws Throwable 
+     {
+-        IO.writeLine("hello");
++        IO.writeLine(calculation());
+     }
+ 
+                                                                            

@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "9dfb9e854a5efdc57d78bfc23ad6739d72e7ed7c",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-459",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "52bc91b46db6bd94564e044f469bac67c7c14981",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 27448,
+  "summary": "The bad() entry point creates a temporary file and configures its permissions but never removes it; relying solely on deleteOnExit() leaves the file present for the lifetime of the JVM (CWE-459 Incomplete Cleanup). I added a finally block that explicitly deletes the temporary file once processing completes, so cleanup always runs regardless of success or exception while preserving the legitimate temp-file creation and permission-setting behavior.",
+  "exported_files": 1
+}

@@ -1,0 +1,10 @@
+{
+  "summary": "In helperBad() the ReentrantLock REENTRANT_LOCK_BAD was unlocked in the finally block without ever being locked, causing an IllegalMonitorStateException (CWE-832: Unlock of a Resource that is Not Locked). The fix acquires the lock before entering the try/finally block, mirroring the correct helperGood1() pattern, so the critical section protecting intBad is properly guarded and the unlock in finally is valid. Functionality (doubling intBad and writing it to the response) is preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE832_Unlock_Not_Locked/CWE832_Unlock_Not_Locked__ReentrantLock_Servlet_01.java",
+      "old": "        try\n        { \n            intBad = intBad * 2;\n        } ",
+      "new": "        REENTRANT_LOCK_BAD.lock();\n        try\n        { \n            intBad = intBad * 2;\n        } "
+    }
+  ]
+}

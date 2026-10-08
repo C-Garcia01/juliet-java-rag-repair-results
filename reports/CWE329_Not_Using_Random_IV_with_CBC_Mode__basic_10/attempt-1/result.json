@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "d529fce16855d68460def84e898c303a7cb5df70",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-329",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "2b842bd44a0fd88a2b9af803b4e59fe1d7b01b1c",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26953,
+  "summary": "The bad() method used a fixed all-zeros initialization vector for AES/CBC encryption (CWE-329), which makes the ciphertext deterministic and vulnerable. Replaced the hardcoded zero IV with a randomly generated 16-byte IV using the already-imported SecureRandom, preserving the encryption feature while producing a secure, unpredictable IV.",
+  "exported_files": 1
+}

@@ -1,0 +1,10 @@
+{
+  "summary": "Fixed CWE-486 (Comparing Classes by Name) in the bad entry point of CWE486_Compare_Classes_by_Name__basic_14. The code compared the two helper objects using getClass().getSimpleName().equals(...), which treats two distinct classes in different packages as identical because they share the simple name. Replaced the name-based comparison with a direct comparison of the Class objects (getClass().equals(getClass())), which reliably distinguishes the classes while preserving the feature of reporting whether they are the same or different.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE486_Compare_Classes_by_Name/CWE486_Compare_Classes_by_Name__basic_14.java",
+      "old": "            if (helperClassRoot.getClass().getSimpleName().equals(helperClass.getClass().getSimpleName()))",
+      "new": "            if (helperClassRoot.getClass().equals(helperClass.getClass()))"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_75a.java w/src/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_75a.java
+index 803f004..c7aa595 100644
+--- c/src/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_75a.java
++++ w/src/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_75a.java
+@@ -32,7 +32,7 @@ public class CWE259_Hard_Coded_Password__passwordAuth_75a extends AbstractTestCa
+         String data;
+ 
+                                                   
+-        data = "7e5tc4s3";
++        data = System.getenv("ADD");
+ 
+                                             
+         ByteArrayOutputStream streamByteArrayOutput = null;

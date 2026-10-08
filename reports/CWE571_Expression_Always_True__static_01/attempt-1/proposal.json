@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point gated IO.writeLine on IO.staticTrue, a non-final static that is only ever assigned true, so the condition is an expression that is always true (CWE-571). Replaced the always-true static read with IO.staticReturnsTrueOrFalse(), a runtime-evaluated predicate, so the guard can genuinely be true or false while the legitimate behavior (printing the line when the condition holds) is preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE571_Expression_Always_True/CWE571_Expression_Always_True__static_01.java",
+      "old": "        if (IO.staticTrue)\n        {\n            IO.writeLine(\"always prints\");\n        }",
+      "new": "        if (IO.staticReturnsTrueOrFalse())\n        {\n            IO.writeLine(\"always prints\");\n        }"
+    }
+  ]
+}

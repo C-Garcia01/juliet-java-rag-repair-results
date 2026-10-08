@@ -1,0 +1,27 @@
+diff --git c/src/testcases/CWE404_Improper_Resource_Shutdown/CWE404_Improper_Resource_Shutdown__ReentrantLock_Thread_01.java w/src/testcases/CWE404_Improper_Resource_Shutdown/CWE404_Improper_Resource_Shutdown__ReentrantLock_Thread_01.java
+index ba1e998..77bc2e5 100644
+--- c/src/testcases/CWE404_Improper_Resource_Shutdown/CWE404_Improper_Resource_Shutdown__ReentrantLock_Thread_01.java
++++ w/src/testcases/CWE404_Improper_Resource_Shutdown/CWE404_Improper_Resource_Shutdown__ReentrantLock_Thread_01.java
+@@ -18,12 +18,16 @@ public class CWE404_Improper_Resource_Shutdown__ReentrantLock_Thread_01 extends
+     {
+         BAD_REENTRANT_LOCK.lock();
+         
+-        intBadNumber++;
+-        
+-        IO.writeLine(intBadNumber);
+-        
+-                                                              
+-        BAD_REENTRANT_LOCK.unlock();       
++        try
++        {
++            intBadNumber++;
++            
++            IO.writeLine(intBadNumber);
++        }
++        finally
++        {
++            BAD_REENTRANT_LOCK.unlock();
++        }
+     }
+     
+     public void bad() throws Throwable 

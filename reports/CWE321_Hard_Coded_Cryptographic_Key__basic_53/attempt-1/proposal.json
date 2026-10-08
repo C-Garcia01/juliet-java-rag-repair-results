@@ -1,0 +1,10 @@
+{
+  "summary": "The bad flow originates in 53a, which hard-codes the AES key string \"23 ~j;asn!@#/>as\" and passes it through the sink chain (53b -> 53c -> 53d) where it is used directly as a SecretKeySpec for AES encryption (CWE-321). The fix removes the hard-coded key at the source and instead reads the key material from an external, configurable source (the CRYPTO_KEY environment variable). The downstream sink in 53d already null-checks the data and performs encryption unchanged, so legitimate encryption functionality is preserved for any valid key supplied via the environment while the hard-coded secret is eliminated.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_53a.java",
+      "old": "        String data;\n\n                                                 \n        data = \"23 ~j;asn!@#/>as\";\n",
+      "new": "        String data;\n\n                                                 \n        data = System.getenv(\"CRYPTO_KEY\");\n"
+    }
+  ]
+}

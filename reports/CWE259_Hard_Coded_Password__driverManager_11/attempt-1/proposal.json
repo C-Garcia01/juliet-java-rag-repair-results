@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method hard-codes the database password (\"7e5tc4s3\") and passes it directly to DriverManager.getConnection, which is CWE-259 (Use of Hard-coded Password). The fix retrieves the password from an external source (the DB_PASSWORD environment variable) instead of embedding it in source code, preserving the database-connection feature while removing the hard-coded credential.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__driverManager_11.java",
+      "old": "            data = \"7e5tc4s3\";",
+      "new": "            data = System.getenv(\"DB_PASSWORD\");"
+    }
+  ]
+}

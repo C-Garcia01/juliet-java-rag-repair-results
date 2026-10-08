@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method parses an external value (System.getProperty(\"user.home\")) into numberOfLoops and uses it directly as an unbounded loop condition (CWE-606: Unchecked Input for Loop Condition). An attacker-controlled property could cause an excessively large or negative loop count, leading to resource exhaustion. The fix validates the parsed value against a sane range after parsing, resetting it to a safe default when out of bounds, while leaving legitimate small values working unchanged.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__Property_15.java",
+      "old": "            catch (NumberFormatException exceptNumberFormat)\n            {\n                IO.writeLine(\"Invalid response. Numeric input expected. Assuming 1.\");\n                numberOfLoops = 1;\n            }\n            for (int i=0; i < numberOfLoops; i++)",
+      "new": "            catch (NumberFormatException exceptNumberFormat)\n            {\n                IO.writeLine(\"Invalid response. Numeric input expected. Assuming 1.\");\n                numberOfLoops = 1;\n            }\n            if (numberOfLoops < 0 || numberOfLoops > 10000)\n            {\n                IO.writeLine(\"Invalid response. Expected a value between 0 and 10000. Assuming 1.\");\n                numberOfLoops = 1;\n            }\n            for (int i=0; i < numberOfLoops; i++)"
+    }
+  ]
+}

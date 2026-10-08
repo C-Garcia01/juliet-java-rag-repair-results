@@ -1,0 +1,14 @@
+diff --git c/src/testcases/CWE482_Comparing_Instead_of_Assigning/CWE482_Comparing_Instead_of_Assigning__basic_09.java w/src/testcases/CWE482_Comparing_Instead_of_Assigning/CWE482_Comparing_Instead_of_Assigning__basic_09.java
+index 0543274..b5a2909 100644
+--- c/src/testcases/CWE482_Comparing_Instead_of_Assigning/CWE482_Comparing_Instead_of_Assigning__basic_09.java
++++ w/src/testcases/CWE482_Comparing_Instead_of_Assigning/CWE482_Comparing_Instead_of_Assigning__basic_09.java
+@@ -27,7 +27,8 @@ public class CWE482_Comparing_Instead_of_Assigning__basic_09 extends AbstractTes
+         {
+             int zeroOrOne = (new SecureRandom()).nextInt(2);
+             boolean isZero = false;
+-            if((isZero == (zeroOrOne == 0)) == true)                                                  
++            isZero = (zeroOrOne == 0);
++            if(isZero == true)                                                  
+             {
+                 IO.writeLine("zeroOrOne is 0");
+             }

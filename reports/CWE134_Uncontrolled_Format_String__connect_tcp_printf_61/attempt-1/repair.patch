@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_61a.java w/src/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_61a.java
+index 154d1d0..86ff7e8 100644
+--- c/src/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_61a.java
++++ w/src/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_61a.java
+@@ -27,7 +27,7 @@ public class CWE134_Uncontrolled_Format_String__connect_tcp_printf_61a extends A
+         if (data != null)
+         {
+                                                                 
+-            System.out.printf(data);
++            System.out.printf("%s", data);
+         }
+ 
+     }

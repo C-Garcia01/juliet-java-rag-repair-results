@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-533: the servlet logged the HTTP session ID (sensitive data) to the server log. I removed the session ID from the log message so that only the already-validated, non-sensitive username is recorded. The session is still created and the username validation/response behavior is unchanged, preserving the feature.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE533_Info_Exposure_Server_Log/CWE533_Info_Exposure_Server_Log__Servlet_14.java",
+      "old": "                log(\"Username: \" + username + \" Session ID:\" + session.getId());",
+      "new": "                log(\"Username: \" + username);"
+    }
+  ]
+}

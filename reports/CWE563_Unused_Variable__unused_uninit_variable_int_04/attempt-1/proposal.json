@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method declared int data but never assigned or read it, which is CWE-563 (unused/uninitialized variable). The fix initializes data and reads it via IO.writeLine so the variable is actually used, preserving the test entry point's structure.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_uninit_variable_int_04.java",
+      "old": "        int data;",
+      "new": "        int data;\n\n        /* initialize and use data so it is not left unused */\n        data = 2;\n        IO.writeLine(\"data value: \" + data);"
+    }
+  ]
+}

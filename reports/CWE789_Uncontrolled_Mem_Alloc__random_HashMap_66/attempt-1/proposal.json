@@ -1,0 +1,10 @@
+{
+  "summary": "The flow takes an attacker-influenced random int in CWE789_Uncontrolled_Mem_Alloc__random_HashMap_66a.bad(), passes it via an int array to badSink() in the 66b class, and uses it directly as a HashMap initial capacity. A negative value throws IllegalArgumentException and an excessively large value triggers uncontrolled memory allocation (OOM). The fix adds a bounds check in badSink so the capacity is only used when it falls within a sane, non-negative range, preserving the HashMap-sizing feature for all valid inputs.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE789_Uncontrolled_Mem_Alloc/s03/CWE789_Uncontrolled_Mem_Alloc__random_HashMap_66b.java",
+      "old": "        int data = dataArray[2];\n\n                                                                                                                              \n        HashMap intHashMap = new HashMap(data);\n",
+      "new": "        int data = dataArray[2];\n\n                                                                                                                              \n        if (data >= 0 && data <= 100000)\n        {\n            HashMap intHashMap = new HashMap(data);\n        }\n"
+    }
+  ]
+}

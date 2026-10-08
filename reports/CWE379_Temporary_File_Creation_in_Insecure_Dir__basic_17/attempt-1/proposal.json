@@ -1,0 +1,15 @@
+{
+  "summary": "CWE-379 fix: the bad() method created a temporary file inside a predictable, world-accessible shared directory (C:\\testcases\\insecureDir or /home/user/testcases/insecureDir/) via File.createTempFile(prefix, suffix, insecureDir), exposing its contents to other local users. The fix creates the temporary file with java.nio.file.Files.createTempFile, which places it in the JVM's secure per-user temporary location and (on POSIX) restricts permissions to the owner (rw-------), while still writing the same data and performing the same cleanup. The write is also no longer gated on the insecure-directory creation succeeding, so legitimate functionality is preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE379_Temporary_File_Creation_in_Insecure_Dir/CWE379_Temporary_File_Creation_in_Insecure_Dir__basic_17.java",
+      "old": "import java.io.IOException;\n\nimport java.util.logging.Level;",
+      "new": "import java.io.IOException;\n\nimport java.nio.file.Files;\n\nimport java.util.logging.Level;"
+    },
+    {
+      "path": "src/testcases/CWE379_Temporary_File_Creation_in_Insecure_Dir/CWE379_Temporary_File_Creation_in_Insecure_Dir__basic_17.java",
+      "old": "                boolean isSuccessful = newDirectory.mkdir();\n                if (isSuccessful)\n                {\n                    IO.writeLine(\"Directory created\");\n                    tempFile = File.createTempFile(\"temp\", \"1234\", newDirectory);",
+      "new": "                boolean isSuccessful = newDirectory.mkdir();\n                if (isSuccessful)\n                {\n                    IO.writeLine(\"Directory created\");\n                }\n                {\n                    tempFile = Files.createTempFile(\"temp\", \"1234\").toFile();"
+    }
+  ]
+}

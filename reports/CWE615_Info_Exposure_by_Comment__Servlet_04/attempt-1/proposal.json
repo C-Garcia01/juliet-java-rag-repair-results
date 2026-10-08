@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-615 (Information Exposure Through Comments): the bad() method writes an HTML comment containing database credentials (`DB username = joe, DB password = 123`) into the servlet response, leaking sensitive information to anyone who views the page source. The fix removes the credential-bearing comment while preserving the login form that is the actual feature.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE615_Info_Exposure_by_Comment/CWE615_Info_Exposure_by_Comment__Servlet_04.java",
+      "old": "            response.getWriter().println(\"<!--DB username = joe, DB password = 123-->\" +\n            \"<form action=\\\"/test\\\" method=post>\" +",
+      "new": "            response.getWriter().println(\"<form action=\\\"/test\\\" method=post>\" +"
+    }
+  ]
+}

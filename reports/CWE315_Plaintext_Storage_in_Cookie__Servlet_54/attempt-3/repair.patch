@@ -1,0 +1,15 @@
+diff --git c/src/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_54e.java w/src/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_54e.java
+index 4cc004e..a995770 100644
+--- c/src/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_54e.java
++++ w/src/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_54e.java
+@@ -31,7 +31,9 @@ public class CWE315_Plaintext_Storage_in_Cookie__Servlet_54e
+                                                                                         
+ 
+                                                            
+-        response.addCookie(new Cookie("auth", data));
++        MessageDigest messageDigest = MessageDigest.getInstance("SHA-512");
++        byte[] hashedData = messageDigest.digest(data.getBytes("UTF-8"));
++        response.addCookie(new Cookie("auth", IO.toHex(hashedData)));
+ 
+     }
+ 

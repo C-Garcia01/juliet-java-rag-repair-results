@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-606: the bad entry point parses an integer directly from an untrusted request cookie (request.getCookies()[0].getValue()) and uses it as the upper bound of a for loop with no validation, allowing an attacker-controlled value to drive an unbounded/negative loop. The fix validates the parsed value against a sane range before it is used as the loop condition, clamping out-of-range values to a safe default while still honoring legitimate numeric cookie values within range.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE606_Unchecked_Loop_Condition/CWE606_Unchecked_Loop_Condition__getCookies_Servlet_05.java",
+      "old": "            for (int i=0; i < numberOfLoops; i++)",
+      "new": "            if (numberOfLoops < 0 || numberOfLoops > 100)\n            {\n                IO.writeLine(\"Loop count out of allowed range. Assuming 1.\");\n                numberOfLoops = 1;\n            }\n            for (int i=0; i < numberOfLoops; i++)"
+    }
+  ]
+}

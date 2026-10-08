@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-114 Process Control: the bad() path passes a library name straight into System.loadLibrary() with no validation, letting an untrusted/modifiable name reach the native-library sink. The fix guards the sink with an explicit allowlist check so only the known, trusted library ('test.dll') is ever loaded. Legitimate functionality is preserved because the valid input still loads normally, but any unexpected name is rejected before reaching loadLibrary.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE114_Process_Control/CWE114_Process_Control__basic_15.java",
+      "old": "            System.loadLibrary(libraryName);",
+      "new": "            if (\"test.dll\".equals(libraryName))\n            {\n                System.loadLibrary(libraryName);\n            }"
+    }
+  ]
+}

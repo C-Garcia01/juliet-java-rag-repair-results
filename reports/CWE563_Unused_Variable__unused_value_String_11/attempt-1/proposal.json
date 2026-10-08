@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method assigns `data` an initial value (\"Good\" or null) that is never read because the subsequent block unconditionally overwrites it with \"Reinitialize\" before the only use. This is the CWE-563 unused-value flaw. The fix removes the dead reassignment so the originally computed `data` value is the one written out, preserving the write-line feature while eliminating the unused assignment.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_value_String_11.java",
+      "old": "        if(IO.staticReturnsTrue())\n        {\n                                                                                               \n            data = \"Reinitialize\";\n            IO.writeLine(data);\n        }",
+      "new": "        if(IO.staticReturnsTrue())\n        {\n            IO.writeLine(data);\n        }"
+    }
+  ]
+}

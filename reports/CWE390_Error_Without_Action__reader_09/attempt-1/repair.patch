@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE390_Error_Without_Action/CWE390_Error_Without_Action__reader_09.java w/src/testcases/CWE390_Error_Without_Action/CWE390_Error_Without_Action__reader_09.java
+index 180cc20..914988c 100644
+--- c/src/testcases/CWE390_Error_Without_Action/CWE390_Error_Without_Action__reader_09.java
++++ w/src/testcases/CWE390_Error_Without_Action/CWE390_Error_Without_Action__reader_09.java
+@@ -54,7 +54,7 @@ public class CWE390_Error_Without_Action__reader_09 extends AbstractTestCase
+             }
+             catch (FileNotFoundException exceptFileNotFound)
+             {
+-                                                                
++                IO.logger.log(Level.WARNING, "File not found", exceptFileNotFound);
+             }
+             finally
+             {

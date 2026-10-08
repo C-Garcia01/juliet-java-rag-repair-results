@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method reads a class name from an untrusted TCP socket and passes it directly to Class.forName()/newInstance(), allowing an attacker to instantiate arbitrary classes (CWE-470 Unsafe Reflection). The fix validates the received class name against an allowlist of expected, safe class names before performing reflection. Legitimate inputs naming an approved class still work and are instantiated normally; disallowed or null input is rejected without reflecting on attacker-controlled data.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__listen_tcp_11.java",
+      "old": "                                                                                                          \n        Class<?> tempClass = Class.forName(data);\n        Object tempClassObject = tempClass.newInstance();\n\n        IO.writeLine(tempClassObject.toString());                                      \n",
+      "new": "        /* Only allow reflection on an explicitly approved set of class names so that\n         * attacker-controlled input cannot be used to instantiate arbitrary classes. */\n        final java.util.Set<String> allowedClassNames = new java.util.HashSet<String>(java.util.Arrays.asList(\n            \"java.lang.String\",\n            \"java.lang.Object\",\n            \"java.util.ArrayList\",\n            \"java.util.HashMap\"));\n\n        if (data != null && allowedClassNames.contains(data))\n        {\n            Class<?> tempClass = Class.forName(data);\n            Object tempClassObject = tempClass.newInstance();\n\n            IO.writeLine(tempClassObject.toString());                                      \n        }\n        else\n        {\n            IO.writeLine(\"Requested class name is not permitted\");\n        }\n"
+    }
+  ]
+}

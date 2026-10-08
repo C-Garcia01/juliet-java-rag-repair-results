@@ -1,0 +1,16 @@
+diff --git c/src/testcases/CWE114_Process_Control/CWE114_Process_Control__basic_13.java w/src/testcases/CWE114_Process_Control/CWE114_Process_Control__basic_13.java
+index 8120bd7..c5aec5f 100644
+--- c/src/testcases/CWE114_Process_Control/CWE114_Process_Control__basic_13.java
++++ w/src/testcases/CWE114_Process_Control/CWE114_Process_Control__basic_13.java
+@@ -26,7 +26,10 @@ public class CWE114_Process_Control__basic_13 extends AbstractTestCase
+             String libraryName = "test.dll";
+                                                                                 
+                                                
+-            System.loadLibrary(libraryName);
++            if (libraryName != null && libraryName.equals("test.dll"))
++            {
++                System.loadLibrary("test.dll");
++            }
+         }
+     }
+ 

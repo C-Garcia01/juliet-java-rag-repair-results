@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-598: the bad() servlet renders a login form with method=\"get\", which causes the submitted username and password to be appended to the request URL query string where they are exposed (logs, browser history, Referer headers). Changing the form submission method to POST keeps the login feature fully functional while sending the credentials in the request body instead of the query string, closing the information-exposure flow.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE598_Information_Exposure_QueryString/CWE598_Information_Exposure_QueryString__Servlet_10.java",
+      "old": "            response.getWriter().println(\"<form id=\\\"form\\\" name=\\\"form\\\" method=\\\"get\\\" action=\\\"password-test-servlet\\\">\");",
+      "new": "            response.getWriter().println(\"<form id=\\\"form\\\" name=\\\"form\\\" method=\\\"post\\\" action=\\\"password-test-servlet\\\">\");"
+    }
+  ]
+}

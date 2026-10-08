@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-579 stores a non-serializable object in the HttpSession via setAttribute. In a distributed/persistent session container the session may be serialized, and a non-serializable attribute causes a NotSerializableException and data loss. The fix makes the stored BadObject class implement Serializable (with a serialVersionUID), so the object can be safely persisted in the session. The feature is preserved: the object is still created, stored under the \"BadObject\" attribute, retrieved, and its badString written to the response.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE579_Non_Serializable_in_Session/CWE579_Non_Serializable_in_Session__Servlet_01.java",
+      "old": "    static class BadObject                                                         \n    {\n        public String badString = \"Bad\";\n    }",
+      "new": "    static class BadObject implements Serializable\n    {\n        private static final long serialVersionUID = 7925935052619185042L;\n        public String badString = \"Bad\";\n    }"
+    }
+  ]
+}

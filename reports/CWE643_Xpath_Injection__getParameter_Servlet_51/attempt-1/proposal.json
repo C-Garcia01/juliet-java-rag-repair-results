@@ -1,0 +1,10 @@
+{
+  "summary": "Fixed XPath injection in CWE643_Xpath_Injection__getParameter_Servlet_51b.java by escaping the untrusted username and password values with StringEscapeUtils.escapeXml before interpolating them into the XPath query string. The commons-lang StringEscapeUtils class is already imported. Legitimate login lookups continue to work, but XPath metacharacters in the input are neutralized so they can no longer alter the query structure.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__getParameter_Servlet_51b.java",
+      "old": "            String query = \"//users/user[name/text()='\" + username +\n                           \"' and pass/text()='\" + password + \"']\" +\n                           \"/secret/text()\";",
+      "new": "            String query = \"//users/user[name/text()='\" + StringEscapeUtils.escapeXml(username) +\n                           \"' and pass/text()='\" + StringEscapeUtils.escapeXml(password) + \"']\" +\n                           \"/secret/text()\";"
+    }
+  ]
+}

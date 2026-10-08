@@ -1,0 +1,15 @@
+{
+  "summary": "CWE-546 (suspicious comment) in CWE546_Suspicious_Comment__HACK_12.java: the bad() entry point carries suspicious maintenance-note comments (containing the 'HACK' marker) in both branches of the IO.staticReturnsTrueOrFalse() conditional. The fix removes these suspicious comment lines from both branches while keeping the legitimate IO.writeLine(...) functionality fully intact, so valid behavior is unchanged and no feature is disabled.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE546_Suspicious_Comment/CWE546_Suspicious_Comment__HACK_12.java",
+      "old": "        if (IO.staticReturnsTrueOrFalse())\n        {\n                                                      \n                                                                           \n            IO.writeLine(\"This a test of the emergency broadcast system\");",
+      "new": "        if (IO.staticReturnsTrueOrFalse())\n        {\n            IO.writeLine(\"This a test of the emergency broadcast system\");"
+    },
+    {
+      "path": "src/testcases/CWE546_Suspicious_Comment/CWE546_Suspicious_Comment__HACK_12.java",
+      "old": "        else\n        {\n\n                                                            \n            IO.writeLine(\"This a test of the emergency broadcast system\");\n\n        }",
+      "new": "        else\n        {\n            IO.writeLine(\"This a test of the emergency broadcast system\");\n        }"
+    }
+  ]
+}

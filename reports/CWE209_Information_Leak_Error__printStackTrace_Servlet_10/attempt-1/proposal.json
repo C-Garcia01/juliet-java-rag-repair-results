@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method writes a full exception stack trace directly to the servlet HTTP response via printStackTrace(response.getWriter()), leaking internal implementation details to the client (CWE-209). The fix logs the exception server-side using the existing IO.logger instead, preserving the exception-handling control flow without exposing stack trace details to the response.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE209_Information_Leak_Error/CWE209_Information_Leak_Error__printStackTrace_Servlet_10.java",
+      "old": "                exceptUnsupportedOperation.printStackTrace(response.getWriter());                                                   ",
+      "new": "                IO.logger.log(java.util.logging.Level.WARNING, \"Caught UnsupportedOperationException\", exceptUnsupportedOperation);"
+    }
+  ]
+}

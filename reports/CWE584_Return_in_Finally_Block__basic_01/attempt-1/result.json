@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "5f7602b9c9a87dd1f88b079fbfe34e53b2c08dcb",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-584",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "edca9859d65b24e3d1ffd115e6e1c6124c403056",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26269,
+  "summary": "CWE-584: the bad() method contains a `return;` inside its finally block, which silently discards any exception or alternate return path flowing out of the try/catch. Removing the return from the finally block eliminates the unsafe control-flow sink while keeping the method's observable behavior: the try still throws and the catch still logs, and the method now completes normally (it is void, so no return value or feature is lost). The finally block still runs its logging, and any future exceptions from the try block would correctly propagate instead of being swallowed.",
+  "exported_files": 1
+}

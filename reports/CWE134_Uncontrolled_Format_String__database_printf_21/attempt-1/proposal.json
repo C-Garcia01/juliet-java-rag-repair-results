@@ -1,0 +1,10 @@
+{
+  "summary": "The bad sink passes a database-derived string directly as the format argument to System.out.printf, letting attacker-controlled percent directives be interpreted (CWE-134). Fixed by supplying a constant \"%s\" format and passing the data as an argument, preserving the printing behavior for all valid inputs.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__database_printf_21.java",
+      "old": "                System.out.printf(data);",
+      "new": "                System.out.printf(\"%s\", data);"
+    }
+  ]
+}

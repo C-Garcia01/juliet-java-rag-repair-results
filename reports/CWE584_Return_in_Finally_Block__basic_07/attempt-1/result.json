@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "3ee65a9e7ced56bcf8e684ce4c4fb7b955ee4f68",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-584",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "3673e782dd39ae032017099ef7f58363e980f520",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26805,
+  "summary": "CWE-584: The bad() method placed a `return` statement inside a finally block. A return in a finally block abruptly completes the block, which would discard any exception propagating from the try/catch and makes control flow surprising. Since the method returns void and the finally block contained no other meaningful logic, I removed the return statement so the finally block no longer forces an abrupt completion. The feature is preserved: the method still enters the try, throws and catches the IllegalArgumentException, logs the message, and then completes normally after the finally block.",
+  "exported_files": 1
+}

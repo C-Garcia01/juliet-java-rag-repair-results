@@ -1,0 +1,10 @@
+{
+  "summary": "The null-deref flow starts at System.getProperty(\"CWE690\") in 71a (which returns null when the property is unset) and reaches the dereference data.equals(\"CWE690\") in 71b's badSink. I add a null guard around the dereference so the sink only compares when data is non-null, preserving the legitimate behavior (printing when the property equals \"CWE690\") for valid inputs while avoiding the NullPointerException.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__System_getProperty_equals_71b.java",
+      "old": "        if(data.equals(\"CWE690\"))\n        {\n            IO.writeLine(\"data is CWE690\");\n        }",
+      "new": "        if(data != null && data.equals(\"CWE690\"))\n        {\n            IO.writeLine(\"data is CWE690\");\n        }"
+    }
+  ]
+}

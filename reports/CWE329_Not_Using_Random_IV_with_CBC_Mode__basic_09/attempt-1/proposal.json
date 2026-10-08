@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method uses a hard-coded all-zero initialization vector with AES/CBC, which is predictable and defeats the semantic security CBC provides (CWE-329). The fix generates a cryptographically random IV using SecureRandom and uses it to build the IvParameterSpec, while keeping the AES/CBC/PKCS5Padding encryption feature intact.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE329_Not_Using_Random_IV_with_CBC_Mode/CWE329_Not_Using_Random_IV_with_CBC_Mode__basic_09.java",
+      "old": "            byte[] text = \"asdf\".getBytes(\"UTF-8\");\n            byte[] initializationVector =\n            {\n                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\n                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00\n            };\n            KeyGenerator keyGenerator = KeyGenerator.getInstance(\"AES\");",
+      "new": "            byte[] text = \"asdf\".getBytes(\"UTF-8\");\n            byte[] initializationVector = new byte[16];\n            SecureRandom secureRandom = new SecureRandom();\n            secureRandom.nextBytes(initializationVector);\n            KeyGenerator keyGenerator = KeyGenerator.getInstance(\"AES\");"
+    }
+  ]
+}

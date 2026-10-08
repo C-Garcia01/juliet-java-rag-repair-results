@@ -1,0 +1,20 @@
+diff --git c/src/testcases/CWE506_Embedded_Malicious_Code/CWE506_Embedded_Malicious_Code__email_10.java w/src/testcases/CWE506_Embedded_Malicious_Code/CWE506_Embedded_Malicious_Code__email_10.java
+index bf5fc50..032c435 100644
+--- c/src/testcases/CWE506_Embedded_Malicious_Code/CWE506_Embedded_Malicious_Code__email_10.java
++++ w/src/testcases/CWE506_Embedded_Malicious_Code/CWE506_Embedded_Malicious_Code__email_10.java
+@@ -37,13 +37,13 @@ public class CWE506_Embedded_Malicious_Code__email_10 extends AbstractTestCaseBa
+         {
+             Properties properties = new Properties();
+             Session session = Session.getDefaultInstance(properties, null);
+-            String messageBody = "...";
++            String messageBody = "This is a notification message.";
+             try
+             {
+                 Message message = new MimeMessage(session);                                         
+                 message.setFrom(new InternetAddress("sender@example.com"));
+                 message.addRecipient(Message.RecipientType.TO, new InternetAddress("recipient@example.com"));
+-                message.setSubject("Shhh, I'm sending some bad stuff!");
++                message.setSubject("Notification");
+                 message.setText(messageBody);
+                                           
+                 Transport.send(message);

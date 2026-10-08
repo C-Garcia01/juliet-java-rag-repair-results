@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_22b.java w/src/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_22b.java
+index dd872b2..035b87f 100644
+--- c/src/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_22b.java
++++ w/src/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_22b.java
+@@ -29,7 +29,7 @@ public class CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_22b
+         if (CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_22a.badPublicStatic)
+         {
+                                                             
+-            data = request.getParameter("id");
++            data = request.getSession(true).getAttribute("uid").toString();
+         }
+         else
+         {

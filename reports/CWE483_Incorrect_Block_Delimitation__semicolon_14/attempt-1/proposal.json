@@ -1,0 +1,10 @@
+{
+  "summary": "Removed the stray semicolon after the `if (x == 0)` condition. The semicolon made the `if` statement's body an empty statement, so the following block always executed unconditionally (setting y = 1 and printing \"x == 0\" regardless of x). Removing it binds the block to the condition, so it runs only when x == 0.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE483_Incorrect_Block_Delimitation/CWE483_Incorrect_Block_Delimitation__semicolon_14.java",
+      "old": "            if (x == 0);\n            {",
+      "new": "            if (x == 0)\n            {"
+    }
+  ]
+}

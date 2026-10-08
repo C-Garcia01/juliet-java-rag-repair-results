@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_08.java w/src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_08.java
+index deeb29e..80d306c 100644
+--- c/src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_08.java
++++ w/src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_08.java
+@@ -90,7 +90,7 @@ public class CWE80_XSS__CWE182_Servlet_PropertiesFile_08 extends AbstractTestCas
+         if (data != null)
+         {
+                                                                                                                                                                                                                          
+-            response.getWriter().println("<br>bad(): data = " + data.replaceAll("(<script>)", ""));
++            response.getWriter().println("<br>bad(): data = " + data.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;").replace("'", "&#39;"));
+         }
+ 
+     }

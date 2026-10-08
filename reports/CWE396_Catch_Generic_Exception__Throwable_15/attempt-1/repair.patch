@@ -1,0 +1,16 @@
+diff --git c/src/testcases/CWE396_Catch_Generic_Exception/CWE396_Catch_Generic_Exception__Throwable_15.java w/src/testcases/CWE396_Catch_Generic_Exception/CWE396_Catch_Generic_Exception__Throwable_15.java
+index 31b81df..6b5de36 100644
+--- c/src/testcases/CWE396_Catch_Generic_Exception/CWE396_Catch_Generic_Exception__Throwable_15.java
++++ w/src/testcases/CWE396_Catch_Generic_Exception/CWE396_Catch_Generic_Exception__Throwable_15.java
+@@ -28,9 +28,9 @@ public class CWE396_Catch_Generic_Exception__Throwable_15 extends AbstractTestCa
+             {
+                 Integer.parseInt("Test");                                       
+             }
+-            catch (Throwable throwable)                                                     
++            catch (NumberFormatException throwable)
+             {
+-                IO.writeLine("Caught Throwable");
++                IO.writeLine("Caught NumberFormatException");
+                 throw throwable;              
+             }
+             break;

@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method adds a sensitive cookie to the response without marking it Secure, so it can be transmitted over unencrypted HTTP (CWE-614). I add a call to cookie.setSecure(true) before the cookie is added to the response, ensuring the browser only sends it over HTTPS. The cookie creation and the request.isSecure()-guarded addCookie call are preserved, so legitimate functionality still works.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE614_Sensitive_Cookie_Without_Secure/CWE614_Sensitive_Cookie_Without_Secure__Servlet_08.java",
+      "old": "            Cookie cookie = new Cookie(\"SecretMessage\", \"test\");\n            if (request.isSecure())\n            {\n                                               \n                response.addCookie(cookie);\n            }",
+      "new": "            Cookie cookie = new Cookie(\"SecretMessage\", \"test\");\n            cookie.setSecure(true);\n            if (request.isSecure())\n            {\n                                               \n                response.addCookie(cookie);\n            }"
+    }
+  ]
+}

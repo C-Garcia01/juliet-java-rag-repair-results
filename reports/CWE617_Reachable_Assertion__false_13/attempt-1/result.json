@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "68cfbe1b1c90b3057199e831c4cd7658a5155e41",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-617",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "587152ef1aeb29db351d6defe87a4884b4b447c6",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26189,
+  "summary": "The bad() entry point unconditionally executes `assert false` inside a branch that is always taken (IO.STATIC_FINAL_FIVE is a constant 5), making the assertion reachable and guaranteed to fail \u2014 a classic CWE-617 reachable assertion that aborts execution. The fix replaces the always-false assertion with a meaningful assertion that validates the actual condition the branch relies on (that the value really is 5). This preserves the feature's control flow and the value check while ensuring the assertion holds for the valid state instead of unconditionally failing.",
+  "exported_files": 1
+}

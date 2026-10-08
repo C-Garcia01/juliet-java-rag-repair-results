@@ -1,0 +1,25 @@
+diff --git c/src/testcases/CWE772_Missing_Release_of_Resource/CWE772_Missing_Release_of_Resource__console_InputStreamReader_01.java w/src/testcases/CWE772_Missing_Release_of_Resource/CWE772_Missing_Release_of_Resource__console_InputStreamReader_01.java
+index b8286d8..4013166 100644
+--- c/src/testcases/CWE772_Missing_Release_of_Resource/CWE772_Missing_Release_of_Resource__console_InputStreamReader_01.java
++++ w/src/testcases/CWE772_Missing_Release_of_Resource/CWE772_Missing_Release_of_Resource__console_InputStreamReader_01.java
+@@ -37,6 +37,20 @@ public class CWE772_Missing_Release_of_Resource__console_InputStreamReader_01 ex
+         {
+             IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO);
+         }
++        finally
++        {
++            if (readerBuffered != null)
++            {
++                try
++                {
++                    readerBuffered.close();
++                }
++                catch (IOException exceptIO)
++                {
++                    IO.logger.log(Level.WARNING, "Error closing BufferedReader", exceptIO);
++                }
++            }
++        }
+         
+                                           
+     }

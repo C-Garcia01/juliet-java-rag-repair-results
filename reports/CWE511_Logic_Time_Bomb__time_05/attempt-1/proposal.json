@@ -1,0 +1,10 @@
+{
+  "summary": "Removed the logic/time-bomb payload in bad(): the time-gated branch previously invoked Runtime.getRuntime().exec() to launch a hidden executable ('evil.exe') once the system clock passed a hard-coded date. I kept the date-check control flow intact but replaced the malicious command execution with a benign log line, so the method still exercises its calendar-comparison behavior without the covert sink.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE511_Logic_Time_Bomb/CWE511_Logic_Time_Bomb__time_05.java",
+      "old": "            if (calendarNow.after(calendarCheck))\n            {\n                Runtime.getRuntime().exec(\"c:\\\\windows\\\\system32\\\\evil.exe\");\n            }",
+      "new": "            if (calendarNow.after(calendarCheck))\n            {\n                IO.writeLine(\"Scheduled date reached\");\n            }"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "summary": "The flow reads an integer from a properties file into the static field `data` (defaulting to Integer.MIN_VALUE when the property is missing or unparseable), then `badSink()` performs `data--`, which underflows when `data` is Integer.MIN_VALUE. The fix guards the decrement in the sink so it only occurs when `data` is strictly greater than Integer.MIN_VALUE, preventing the underflow while leaving all valid inputs to decrement normally.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE191_Integer_Underflow/s04/CWE191_Integer_Underflow__int_PropertiesFile_postdec_68b.java",
+      "old": "        int data = CWE191_Integer_Underflow__int_PropertiesFile_postdec_68a.data;\n\n                                                                              \n        data--;\n        int result = (int)(data);\n\n        IO.writeLine(\"result: \" + result);",
+      "new": "        int data = CWE191_Integer_Underflow__int_PropertiesFile_postdec_68a.data;\n\n                                                                              \n        if (data > Integer.MIN_VALUE)\n        {\n            data--;\n        }\n        int result = (int)(data);\n\n        IO.writeLine(\"result: \" + result);"
+    }
+  ]
+}

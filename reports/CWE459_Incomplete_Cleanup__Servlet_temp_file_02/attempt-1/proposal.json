@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point creates a temporary file and configures its permissions but never removes it; relying solely on deleteOnExit() leaves the file present for the lifetime of the JVM (CWE-459 Incomplete Cleanup). I added a finally block that explicitly deletes the temporary file once processing completes, so cleanup always runs regardless of success or exception while preserving the legitimate temp-file creation and permission-setting behavior.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE459_Incomplete_Cleanup/CWE459_Incomplete_Cleanup__Servlet_temp_file_02.java",
+      "old": "            catch (IOException exceptIO)\n            {\n                IO.logger.log(Level.WARNING, \"Could not create temporary file\", exceptIO);\n            }\n        }\n    }",
+      "new": "            catch (IOException exceptIO)\n            {\n                IO.logger.log(Level.WARNING, \"Could not create temporary file\", exceptIO);\n            }\n            finally\n            {\n                if (tempFile != null && tempFile.exists() && !tempFile.delete())\n                {\n                    IO.logger.log(Level.WARNING, \"Could not delete temporary file\");\n                }\n            }\n        }\n    }"
+    }
+  ]
+}

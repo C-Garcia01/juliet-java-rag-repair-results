@@ -1,0 +1,16 @@
+diff --git c/src/testcases/CWE191_Integer_Underflow/s04/CWE191_Integer_Underflow__int_PropertiesFile_postdec_68b.java w/src/testcases/CWE191_Integer_Underflow/s04/CWE191_Integer_Underflow__int_PropertiesFile_postdec_68b.java
+index 9fe19e9..5eb5010 100644
+--- c/src/testcases/CWE191_Integer_Underflow/s04/CWE191_Integer_Underflow__int_PropertiesFile_postdec_68b.java
++++ w/src/testcases/CWE191_Integer_Underflow/s04/CWE191_Integer_Underflow__int_PropertiesFile_postdec_68b.java
+@@ -27,7 +27,10 @@ public class CWE191_Integer_Underflow__int_PropertiesFile_postdec_68b
+         int data = CWE191_Integer_Underflow__int_PropertiesFile_postdec_68a.data;
+ 
+                                                                               
+-        data--;
++        if (data > Integer.MIN_VALUE)
++        {
++            data--;
++        }
+         int result = (int)(data);
+ 
+         IO.writeLine("result: " + result);

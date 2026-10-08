@@ -1,0 +1,10 @@
+{
+  "summary": "Removed the fixed-seed call that made the SecureRandom output deterministic (CWE-336). SecureRandom is left to self-seed from the platform's entropy source, so nextInt() still produces usable random values and the feature (writing two random integers) is preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE336_Same_Seed_in_PRNG/CWE336_Same_Seed_in_PRNG__basic_01.java",
+      "old": "        final byte[] SEED = new byte[] {0x01, 0x02, 0x03, 0x04, 0x05};\n        SecureRandom secureRandom = new SecureRandom();\n\n                                                                                                   \n        secureRandom.setSeed(SEED);\n\n        IO.writeLine(\"\" + secureRandom.nextInt());",
+      "new": "        SecureRandom secureRandom = new SecureRandom();\n\n        IO.writeLine(\"\" + secureRandom.nextInt());"
+    }
+  ]
+}

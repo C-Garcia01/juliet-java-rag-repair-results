@@ -1,0 +1,10 @@
+{
+  "summary": "The unsafe flow passes network-sourced data (read from a socket in badSource()) directly as the format string argument to System.out.printf in the bad() entry point, allowing uncontrolled format directives (CWE-134). The fix uses a constant \"%s\" format string and passes the untrusted data as a value argument, so the data is printed literally without being interpreted as format specifiers. This preserves the feature (the data is still printed) while neutralizing the format-string vulnerability.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_61a.java",
+      "old": "            System.out.printf(data);",
+      "new": "            System.out.printf(\"%s\", data);"
+    }
+  ]
+}

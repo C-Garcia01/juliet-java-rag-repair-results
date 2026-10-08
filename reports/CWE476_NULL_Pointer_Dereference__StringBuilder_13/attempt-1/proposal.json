@@ -1,0 +1,15 @@
+{
+  "summary": "In bad(), the StringBuilder 'data' was unconditionally assigned null in both branches of the first if/else, then dereferenced via data.length() in the second if block, guaranteeing a NullPointerException. The fix initializes 'data' with a valid StringBuilder instance in both branches so that data.length() computes a real length (0 for the fresh builder) while preserving the feature of writing out the builder's length.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__StringBuilder_13.java",
+      "old": "                                              \n            data = null;\n        }\n        else",
+      "new": "                                              \n            data = new StringBuilder();\n        }\n        else"
+    },
+    {
+      "path": "src/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__StringBuilder_13.java",
+      "old": "                                                                                           \n            data = null;\n        }\n\n        if (IO.STATIC_FINAL_FIVE==5)",
+      "new": "                                                                                           \n            data = new StringBuilder();\n        }\n\n        if (IO.STATIC_FINAL_FIVE==5)"
+    }
+  ]
+}

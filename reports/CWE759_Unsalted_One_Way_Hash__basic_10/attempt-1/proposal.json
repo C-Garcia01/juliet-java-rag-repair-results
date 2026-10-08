@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method computes a SHA-512 digest of a fixed value without any salt (CWE-759 Unsalted One-Way Hash). The fix generates a random salt with the already-imported SecureRandom and mixes it into the digest via hash.update(salt) before hashing the input. This preserves the feature (still computes and writes a SHA-512 hash of \"hash me\") while making the hash salted.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE759_Unsalted_One_Way_Hash/CWE759_Unsalted_One_Way_Hash__basic_10.java",
+      "old": "            MessageDigest hash = MessageDigest.getInstance(\"SHA-512\");\n                                           \n            byte[] hashValue = hash.digest(\"hash me\".getBytes(\"UTF-8\"));\n            IO.writeLine(IO.toHex(hashValue));",
+      "new": "            MessageDigest hash = MessageDigest.getInstance(\"SHA-512\");\n            byte[] salt = new byte[16];\n            (new SecureRandom()).nextBytes(salt);\n            hash.update(salt);\n            byte[] hashValue = hash.digest(\"hash me\".getBytes(\"UTF-8\"));\n            IO.writeLine(IO.toHex(hashValue));"
+    }
+  ]
+}

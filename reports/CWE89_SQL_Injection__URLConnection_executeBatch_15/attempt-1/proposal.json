@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() path reads an untrusted line from a URLConnection, splits it on '-', and concatenates each token directly into a SQL UPDATE string passed to Statement.addBatch(), enabling SQL injection. I fixed the sink by switching to a parameterized PreparedStatement: the query uses a bound '?' placeholder and each name is set via setString before addBatch(). This preserves the batch-update feature and the per-name success counting for all legitimate inputs while neutralizing injection.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE89_SQL_Injection/s04/CWE89_SQL_Injection__URLConnection_executeBatch_15.java",
+      "old": "                Connection dbConnection = null;\n                Statement sqlStatement = null;\n                try\n                {\n                    dbConnection = IO.getDBConnection();\n                    sqlStatement = dbConnection.createStatement();\n                    for (int i = 0; i < names.length; i++)\n                    {\n                                                                                                                                              \n                        sqlStatement.addBatch(\"update users set hitcount=hitcount+1 where name='\" + names[i] + \"'\");\n                    }\n                    int resultsArray[] = sqlStatement.executeBatch();",
+      "new": "                Connection dbConnection = null;\n                PreparedStatement sqlStatement = null;\n                try\n                {\n                    dbConnection = IO.getDBConnection();\n                    sqlStatement = dbConnection.prepareStatement(\"update users set hitcount=hitcount+1 where name=?\");\n                    for (int i = 0; i < names.length; i++)\n                    {\n                        sqlStatement.setString(1, names[i]);\n                        sqlStatement.addBatch();\n                    }\n                    int resultsArray[] = sqlStatement.executeBatch();"
+    }
+  ]
+}

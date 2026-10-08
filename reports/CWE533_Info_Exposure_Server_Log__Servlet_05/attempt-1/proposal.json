@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-533 Information Exposure Through Server Log: the bad() entry point wrote the authenticated user's session ID into the server log via log(\"... Session ID:\" + session.getId()). A session identifier is sensitive and must not be exposed in logs, where it can be read by anyone with log access and used for session hijacking. The fix keeps the username validation and session creation (the legitimate feature) intact but removes the session ID from the logged message, logging only a non-sensitive confirmation of the login.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE533_Info_Exposure_Server_Log/CWE533_Info_Exposure_Server_Log__Servlet_05.java",
+      "old": "                log(\"Username: \" + username + \" Session ID:\" + session.getId());",
+      "new": "                log(\"Username: \" + username + \" logged in\");"
+    }
+  ]
+}

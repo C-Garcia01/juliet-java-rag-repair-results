@@ -1,0 +1,10 @@
+{
+  "summary": "Fixed CWE-597 wrong operator for string comparison in the bad() method by replacing the reference-equality operator `==` with `.equals()`, which compares the string contents. This preserves the feature (reporting whether the two entered strings are equal) while correctly handling distinct String objects holding equal values.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE597_Wrong_Operator_String_Comparison/CWE597_Wrong_Operator_String_Comparison__basic_04.java",
+      "old": "                    if (string1 == string2)                                                                     \n",
+      "new": "                    if (string1.equals(string2))                                                                     \n"
+    }
+  ]
+}

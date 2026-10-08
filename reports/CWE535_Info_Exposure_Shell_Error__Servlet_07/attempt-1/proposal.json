@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-535: the bad() entry point wrote the username and session ID to System.err via a PrintWriter, exposing sensitive runtime/session information through the shell error stream. The fix routes the same message through the application's standard logger (IO.logger at FINEST) instead of writing to System.err, so the feature (recording the validated username and session ID) is preserved for valid inputs while the sensitive data no longer leaks to the shell error channel. The now-unused OutputStreamWriter/PrintWriter locals remain null and are safely handled by the existing close block.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE535_Info_Exposure_Shell_Error/CWE535_Info_Exposure_Shell_Error__Servlet_07.java",
+      "old": "                writerOutputStream = new OutputStreamWriter(System.err, \"UTF-8\");\n                writerPrint = new PrintWriter(writerOutputStream);\n                                                           \n                writerPrint.println(\"Username: \" + username + \" Session ID:\" + session.getId());",
+      "new": "                IO.logger.log(Level.FINEST, \"Username: \" + username + \" Session ID:\" + session.getId());"
+    }
+  ]
+}

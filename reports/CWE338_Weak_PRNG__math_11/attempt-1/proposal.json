@@ -1,0 +1,10 @@
+{
+  "summary": "Replaced the weak PRNG call `Math.random()` with `SecureRandom.nextDouble()`, which produces a cryptographically strong random double in the same [0.0, 1.0) range. The `java.security.SecureRandom` import is already present, so the output behavior (writing a random double) is preserved while eliminating the predictable-PRNG flaw (CWE-338).",
+  "edits": [
+    {
+      "path": "src/testcases/CWE338_Weak_PRNG/CWE338_Weak_PRNG__math_11.java",
+      "old": "            IO.writeLine(\"\" + Math.random());",
+      "new": "            IO.writeLine(\"\" + (new SecureRandom()).nextDouble());"
+    }
+  ]
+}

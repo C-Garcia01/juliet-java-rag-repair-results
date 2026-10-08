@@ -1,0 +1,10 @@
+{
+  "summary": "In the bad() switch statement, case 2 omits its break, so when intRandom == 2 execution falls through into the default branch and overwrites stringValue (\"two\") with \"Default\". This is the CWE-484 Omitted Break Statement flaw. Adding the missing break; after the case 2 assignment preserves all legitimate case outputs (1 -> \"one\", 2 -> \"two\", 0/other -> \"Default\") without disabling the feature.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE484_Omitted_Break_Statement_in_Switch/CWE484_Omitted_Break_Statement_in_Switch__basic_09.java",
+      "old": "                stringValue = \"two\";",
+      "new": "                stringValue = \"two\";\n                break;"
+    }
+  ]
+}

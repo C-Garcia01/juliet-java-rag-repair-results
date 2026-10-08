@@ -1,0 +1,15 @@
+{
+  "summary": "The bad() method used the deprecated String.getBytes(int, int, byte[], int) method (removed/obsolete since it does not properly handle character encoding and truncates each char to a single byte). Replaced it with the standard String.getBytes() method, which returns the string encoded into bytes using the platform default charset and properly handles multi-byte characters. The feature (converting the sentence to a byte array and printing it as hex) is preserved for all valid inputs.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE477_Obsolete_Functions/CWE477_Obsolete_Functions__String_getBytes_03.java",
+      "old": "            byte[] sentenceAsBytes = new byte[sentence.length()];",
+      "new": "            byte[] sentenceAsBytes = sentence.getBytes();"
+    },
+    {
+      "path": "src/testcases/CWE477_Obsolete_Functions/CWE477_Obsolete_Functions__String_getBytes_03.java",
+      "old": "            sentence.getBytes(0, sentence.length(), sentenceAsBytes, 0);\n            IO.writeLine",
+      "new": "            IO.writeLine"
+    }
+  ]
+}

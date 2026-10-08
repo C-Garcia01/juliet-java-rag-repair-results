@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-601 Open Redirect: untrusted data read from a socket flows into response.sendRedirect() in badSink unchanged, letting an attacker redirect users to an arbitrary external site. Fix in the sink (72b) by validating the already-parsed URI and requiring the target to be a site-local relative path (leading '/', no scheme, no authority, and not a protocol-relative '//...' URL) before redirecting. Legitimate relative redirects still work; off-site targets are rejected with the existing error response.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_listen_tcp_72b.java",
+      "old": "            response.sendRedirect(data);",
+      "new": "            if (uri.isAbsolute() || uri.getAuthority() != null || data.startsWith(\"//\") || !data.startsWith(\"/\"))\n            {\n                response.getWriter().write(\"Invalid redirect URL\");\n                return;\n            }\n            response.sendRedirect(data);"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-526: The bad() method writes the full contents of the PATH environment variable to output via IO.writeLine, exposing potentially sensitive system configuration. The fix removes the sensitive environment-variable value from the output while preserving the logging behavior. Instead of dumping the raw PATH, the code now reports only whether PATH is configured (a non-sensitive boolean), keeping the diagnostic feature functional for any environment without disclosing the variable's contents.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE526_Info_Exposure_Environment_Variables/CWE526_Info_Exposure_Environment_Variables__writeLine_09.java",
+      "old": "            IO.writeLine(\"Not in path: \" + System.getenv(\"PATH\"));",
+      "new": "            IO.writeLine(\"PATH configured: \" + (System.getenv(\"PATH\") != null));"
+    }
+  ]
+}

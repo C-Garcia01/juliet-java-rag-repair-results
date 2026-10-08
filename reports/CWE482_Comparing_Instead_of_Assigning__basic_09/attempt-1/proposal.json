@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-482: the bad() method compared `isZero` against `(zeroOrOne == 0)` instead of assigning the result, so `isZero` stayed `false` and the branch/output never reflected the random value. Fixed by assigning the comparison result to `isZero`, then testing that variable, preserving the intended 'zeroOrOne is 0' feature.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE482_Comparing_Instead_of_Assigning/CWE482_Comparing_Instead_of_Assigning__basic_09.java",
+      "old": "boolean isZero = false;\n            if((isZero == (zeroOrOne == 0)) == true)",
+      "new": "boolean isZero = false;\n            isZero = (zeroOrOne == 0);\n            if(isZero == true)"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-226: the bad() method reads a database password into a StringBuffer and uses it to open a connection, but never clears the StringBuffer's contents before it goes out of scope, leaving the sensitive password lingering in memory for release. The fix adds code at the start of the finally block to overwrite/clear the StringBuffer's contents (password.delete(0, length)) once the connection attempt is complete. This preserves the feature\u2014the password is still read and used to establish the connection\u2014while ensuring the sensitive data is cleared before the buffer is released.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE226_Sensitive_Information_Uncleared_Before_Release/CWE226_Sensitive_Information_Uncleared_Before_Release__basic_15.java",
+      "old": "            finally\n            {\n",
+      "new": "            finally\n            {\n                if (password != null)\n                {\n                    password.delete(0, password.length());\n                }\n\n"
+    }
+  ]
+}

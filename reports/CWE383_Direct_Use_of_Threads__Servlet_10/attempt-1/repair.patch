@@ -1,0 +1,41 @@
+diff --git c/src/testcases/CWE383_Direct_Use_of_Threads/CWE383_Direct_Use_of_Threads__Servlet_10.java w/src/testcases/CWE383_Direct_Use_of_Threads/CWE383_Direct_Use_of_Threads__Servlet_10.java
+index eee4848..cce5e3a 100644
+--- c/src/testcases/CWE383_Direct_Use_of_Threads/CWE383_Direct_Use_of_Threads__Servlet_10.java
++++ w/src/testcases/CWE383_Direct_Use_of_Threads/CWE383_Direct_Use_of_Threads__Servlet_10.java
+@@ -25,31 +25,13 @@ public class CWE383_Direct_Use_of_Threads__Servlet_10 extends AbstractTestCaseSe
+     {
+         if (IO.staticTrue)
+         {
+-                                                            
+-            Runnable runnable = new Runnable()
++            try
+             {
+-                public void run()
+-                {
+-                    try
+-                    {
+-                        Thread.sleep(10000);                                 
+-                    }
+-                    catch (InterruptedException exceptInterrupted)
+-                    {
+-                        IO.writeLine("InterruptedException");
+-                    }
+-                }
+-            };
+-            Thread threadOne = new Thread(runnable);
+-            threadOne.start();
+-                                                         
+-            while(true)
++                Thread.sleep(10000);
++            }
++            catch (InterruptedException exceptInterrupted)
+             {
+-                if (!threadOne.isAlive())
+-                {
+-                    break;
+-                }
+-                Thread.sleep(1000);
++                IO.writeLine("InterruptedException");
+             }
+             response.getWriter().write("thread is done!");
+         }

@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-400 Resource Exhaustion: the loop bound `count` is read directly from the attacker-controlled query string `id` parameter and drives how many times data is written to the file, so a large value causes unbounded resource consumption. The fix clamps `count` to a safe upper bound before it is used in the write loop, preserving legitimate small values while preventing exhaustion.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE400_Resource_Exhaustion/s01/CWE400_Resource_Exhaustion__getQueryString_Servlet_write_11.java",
+      "old": "            BufferedWriter writerBuffered = new BufferedWriter(writerOutputStream);\n            int i;",
+      "new": "            BufferedWriter writerBuffered = new BufferedWriter(writerOutputStream);\n            /* Limit the number of writes to a reasonable upper bound to avoid exhausting resources */\n            if (count > 20)\n            {\n                count = 20;\n            }\n            int i;"
+    }
+  ]
+}

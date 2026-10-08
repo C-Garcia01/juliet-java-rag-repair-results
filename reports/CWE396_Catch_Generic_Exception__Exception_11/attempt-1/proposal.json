@@ -1,0 +1,10 @@
+{
+  "summary": "Fixed CWE-396 (Catch of Generic Exception) by catching the specific NumberFormatException that Integer.parseInt can throw instead of the overly broad Exception. The feature (parsing and rethrowing after logging) is preserved: valid parse behavior is unchanged, and the relevant exception is still caught, logged, and rethrown.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE396_Catch_Generic_Exception/CWE396_Catch_Generic_Exception__Exception_11.java",
+      "old": "            catch (Exception exception)                                                     \n            {\n                IO.writeLine(\"Caught Exception\");\n                throw exception;              \n            }",
+      "new": "            catch (NumberFormatException exception)\n            {\n                IO.writeLine(\"Caught Exception\");\n                throw exception;              \n            }"
+    }
+  ]
+}

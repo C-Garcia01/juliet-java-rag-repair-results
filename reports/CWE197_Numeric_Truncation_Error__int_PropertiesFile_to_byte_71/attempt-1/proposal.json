@@ -1,0 +1,10 @@
+{
+  "summary": "The flow reads an int from a properties file (71a) and passes it to badSink (71b), which unconditionally narrows it to a byte via (byte)data, silently truncating values outside the byte range. The fix adds a range check in badSink so the value is only written when it fits in a byte; out-of-range values are logged and skipped instead of being silently truncated. Valid byte-range inputs continue to work unchanged.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_PropertiesFile_to_byte_71b.java",
+      "old": "        int data = (Integer)dataObject;\n\n        {\n                                                                                             \n            IO.writeLine((byte)data);\n        }\n",
+      "new": "        int data = (Integer)dataObject;\n\n        {\n            if (data >= Byte.MIN_VALUE && data <= Byte.MAX_VALUE)\n            {\n                IO.writeLine((byte)data);\n            }\n            else\n            {\n                IO.logger.log(java.util.logging.Level.WARNING, \"Value is out of range for a byte and would be truncated: \" + data);\n            }\n        }\n"
+    }
+  ]
+}

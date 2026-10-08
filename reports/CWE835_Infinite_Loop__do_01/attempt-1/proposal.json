@@ -1,0 +1,10 @@
+{
+  "summary": "The `bad()` loop increments `i` with `i = (i + 1) % 256`, so `i` always stays in the range [0, 255] and the `while(i >= 0)` condition is never false, producing an infinite loop (CWE-835). I preserved the feature of writing the sequence of values by dropping the wrapping modulo and bounding the loop with `i < 256`, so it still prints 0 through 255 once and then terminates normally.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE835_Infinite_Loop/CWE835_Infinite_Loop__do_01.java",
+      "old": "        do \n        {\n            IO.writeLine(i);\n            i = (i + 1) % 256;\n        } while(i >= 0);",
+      "new": "        do \n        {\n            IO.writeLine(i);\n            i = i + 1;\n        } while(i < 256);"
+    }
+  ]
+}

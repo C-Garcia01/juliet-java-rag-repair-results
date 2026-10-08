@@ -1,0 +1,10 @@
+{
+  "summary": "Fixed CWE-572 by calling Thread.start() instead of Thread.run() on threadOne, so the thread body executes on a newly spawned thread rather than synchronously on the current thread. The legitimate behavior (running the thread's run() body) is preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE572_Call_to_Thread_run_Instead_of_start/CWE572_Call_to_Thread_run_Instead_of_start__basic_13.java",
+      "old": "            threadOne.run();                                                          ",
+      "new": "            threadOne.start();                                                          "
+    }
+  ]
+}

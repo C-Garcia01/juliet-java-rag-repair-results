@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE598_Information_Exposure_QueryString/CWE598_Information_Exposure_QueryString__Servlet_08.java w/src/testcases/CWE598_Information_Exposure_QueryString/CWE598_Information_Exposure_QueryString__Servlet_08.java
+index 8010653..37c05b1 100644
+--- c/src/testcases/CWE598_Information_Exposure_QueryString/CWE598_Information_Exposure_QueryString__Servlet_08.java
++++ w/src/testcases/CWE598_Information_Exposure_QueryString/CWE598_Information_Exposure_QueryString__Servlet_08.java
+@@ -39,7 +39,7 @@ public class CWE598_Information_Exposure_QueryString__Servlet_08 extends Abstrac
+     {
+         if (privateReturnsTrue())
+         {
+-            response.getWriter().println("<form id=\"form\" name=\"form\" method=\"get\" action=\"password-test-servlet\">");                                                 
++            response.getWriter().println("<form id=\"form\" name=\"form\" method=\"post\" action=\"password-test-servlet\">");                                                 
+             response.getWriter().println("Username: <input name=\"username\" type=\"text\" tabindex=\"10\" /><br><br>");
+             response.getWriter().println("Password: <input name=\"password\" type=\"password\" tabindex=\"10\" />");
+             response.getWriter().println("<input type=\"submit\" name=\"submit\" value=\"Login-bad\" /></form>");

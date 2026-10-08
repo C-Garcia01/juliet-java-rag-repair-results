@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "1ebf5395ae982b0334134244be3e676033a3b301",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-598",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "0a1d3f924e2ffaf286000491610f1bb1d1576b28",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26733,
+  "summary": "CWE-598: the bad() servlet renders a login form with method=\"get\", which causes the submitted username and password to be appended to the request URL query string where they are exposed (logs, browser history, Referer headers). Changing the form submission method to POST keeps the login feature fully functional while sending the credentials in the request body instead of the query string, closing the information-exposure flow.",
+  "exported_files": 1
+}

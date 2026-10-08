@@ -1,0 +1,22 @@
+diff --git c/src/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_52c.java w/src/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_52c.java
+index 3e9f46b..9263eef 100644
+--- c/src/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_52c.java
++++ w/src/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_52c.java
+@@ -20,6 +20,8 @@ import testcasesupport.*;
+ 
+ import javax.servlet.http.*;
+ 
++import java.net.URLEncoder;
++
+ public class CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_52c
+ {
+     public void badSink(String data , HttpServletRequest request, HttpServletResponse response) throws Throwable
+@@ -28,7 +30,7 @@ public class CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_52c
+         if (data != null)
+         {
+                                                                                             
+-            response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
++            response.getWriter().println("<br>bad() - <img src=\"" + URLEncoder.encode(data, "UTF-8") + "\">");
+         }
+ 
+     }

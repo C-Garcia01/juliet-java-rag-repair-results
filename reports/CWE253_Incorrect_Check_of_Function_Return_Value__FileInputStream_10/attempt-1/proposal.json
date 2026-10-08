@@ -1,0 +1,10 @@
+{
+  "summary": "Fixed CWE-253 (Incorrect Check of Function Return Value) in the bad() entry point. FileInputStream.read(byte[]) returns the number of bytes read, or -1 when the end of the stream has been reached; it does not return 0 to signal EOF. Comparing against 0 is the incorrect check, so end-of-file is never detected and the code treats the empty/EOF case as valid data. The repair compares the return value against -1, which is the documented end-of-stream sentinel, while preserving the normal read-and-print behavior for valid file contents.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__FileInputStream_10.java",
+      "old": "                if (fis.read(byteArray) == 0)",
+      "new": "                if (fis.read(byteArray) == -1)"
+    }
+  ]
+}

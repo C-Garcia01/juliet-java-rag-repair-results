@@ -1,0 +1,18 @@
+diff --git c/src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__getQueryString_Servlet_74b.java w/src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__getQueryString_Servlet_74b.java
+index c6e84ef..7872ad8 100644
+--- c/src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__getQueryString_Servlet_74b.java
++++ w/src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__getQueryString_Servlet_74b.java
+@@ -40,8 +40,11 @@ public class CWE78_OS_Command_Injection__getQueryString_Servlet_74b
+         }
+ 
+                                                
+-        Process process = Runtime.getRuntime().exec(osCommand + data);
+-        process.waitFor();
++        if (data != null && data.matches("[a-zA-Z0-9._/\\-]+"))
++        {
++            Process process = Runtime.getRuntime().exec(osCommand + data);
++            process.waitFor();
++        }
+ 
+     }
+ 

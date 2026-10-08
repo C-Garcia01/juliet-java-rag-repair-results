@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-390 (Detection of Error Condition Without Action): the bad() method catches FileNotFoundException with an empty body, silently swallowing the error. The fix logs the exception so the error condition is acted upon, while preserving the file-reading feature and its resource-cleanup logic.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE390_Error_Without_Action/CWE390_Error_Without_Action__reader_09.java",
+      "old": "            catch (FileNotFoundException exceptFileNotFound)\n            {\n                                                                \n            }",
+      "new": "            catch (FileNotFoundException exceptFileNotFound)\n            {\n                IO.logger.log(Level.WARNING, \"File not found\", exceptFileNotFound);\n            }"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "3e0d370219407772d412ca6dce3bf232b9059fdc",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-571",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "1cb395d93db36db6617c4c5fd54d1e99100db84e",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 25757,
+  "summary": "The bad() method compared `random.getClass()` (always `Random.class`) against `secureRandom.getClass()` (always `SecureRandom.class`). Since these runtime classes can never be equal, `!equals(...)` was a tautology that always evaluated to true (CWE-571). The repair preserves the feature of comparing two objects' runtime classes and printing when they differ, but makes the second object's runtime type depend on a runtime value so the comparison is genuinely data-dependent rather than always true.",
+  "exported_files": 1
+}

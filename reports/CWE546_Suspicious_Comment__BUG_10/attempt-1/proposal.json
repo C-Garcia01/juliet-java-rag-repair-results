@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-546 (Suspicious Comment) flags developer comments in the `bad()` entry point sitting between the `if (IO.staticTrue)` guard and the `IO.writeLine(...)` call. The fix removes those suspicious comment lines from the bad entry point while leaving the legitimate behavior intact: the guarded `IO.writeLine(\"This a test of the emergency broadcast system\")` call still executes exactly as before. No feature is disabled and no constant result is returned.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE546_Suspicious_Comment/CWE546_Suspicious_Comment__BUG_10.java",
+      "old": "        if (IO.staticTrue)\n        {\n                                                      \n                                                                          \n            IO.writeLine(\"This a test of the emergency broadcast system\");",
+      "new": "        if (IO.staticTrue)\n        {\n            IO.writeLine(\"This a test of the emergency broadcast system\");"
+    }
+  ]
+}

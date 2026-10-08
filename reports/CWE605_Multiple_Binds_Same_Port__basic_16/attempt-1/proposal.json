@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method creates two ServerSockets and binds both to the same port (15000); the second bind to the already-used port is the CWE-605 flaw (and will throw a BindException). Fixed by binding the second socket to a distinct port (15001), so both sockets bind successfully and the feature (two listening sockets) is preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE605_Multiple_Binds_Same_Port/CWE605_Multiple_Binds_Same_Port__basic_16.java",
+      "old": "                socket2.bind(new InetSocketAddress(\"localhost\", 15000));",
+      "new": "                socket2.bind(new InetSocketAddress(\"localhost\", 15001));"
+    }
+  ]
+}

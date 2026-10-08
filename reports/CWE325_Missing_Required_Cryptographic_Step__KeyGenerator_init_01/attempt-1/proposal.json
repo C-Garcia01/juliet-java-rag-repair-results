@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point obtains a KeyGenerator for AES but never calls init() before generateKey(), which is the missing required cryptographic step (CWE-325). Without init(), the provider falls back to an implementation-default key size, which may be weaker than intended and leaves key strength unspecified. The fix adds an explicit keyGenerator.init(128) call so a 128-bit AES key is deterministically generated, preserving the encrypt-and-print feature for valid inputs.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE325_Missing_Required_Cryptographic_Step/CWE325_Missing_Required_Cryptographic_Step__KeyGenerator_init_01.java",
+      "old": "        KeyGenerator keyGenerator = KeyGenerator.getInstance(\"AES\");\n\n",
+      "new": "        KeyGenerator keyGenerator = KeyGenerator.getInstance(\"AES\");\n\n        keyGenerator.init(128);\n\n"
+    }
+  ]
+}

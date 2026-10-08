@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-598 occurs because the login form submits credentials (username and password) using HTTP GET, which places the sensitive password in the URL query string where it can be logged and exposed. The fix changes the form's submission method from GET to POST so the credentials are sent in the request body instead of the query string, preserving the login form's functionality.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE598_Information_Exposure_QueryString/CWE598_Information_Exposure_QueryString__Servlet_08.java",
+      "old": "response.getWriter().println(\"<form id=\\\"form\\\" name=\\\"form\\\" method=\\\"get\\\" action=\\\"password-test-servlet\\\">\");",
+      "new": "response.getWriter().println(\"<form id=\\\"form\\\" name=\\\"form\\\" method=\\\"post\\\" action=\\\"password-test-servlet\\\">\");"
+    }
+  ]
+}

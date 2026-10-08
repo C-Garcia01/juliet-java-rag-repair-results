@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE582_Array_Public_Final_Static/CWE582_Array_Public_Final_Static__basic_01_bad.java w/src/testcases/CWE582_Array_Public_Final_Static/CWE582_Array_Public_Final_Static__basic_01_bad.java
+index bd00550..60311dd 100644
+--- c/src/testcases/CWE582_Array_Public_Final_Static/CWE582_Array_Public_Final_Static__basic_01_bad.java
++++ w/src/testcases/CWE582_Array_Public_Final_Static/CWE582_Array_Public_Final_Static__basic_01_bad.java
+@@ -11,7 +11,7 @@ import testcasesupport.*;
+ 
+ public class CWE582_Array_Public_Final_Static__basic_01_bad extends AbstractTestCaseClassIssueBad
+ {
+-    public final static int INT_ARRAY[] = {1,2,3,4,5};                                  
++    private final static int INT_ARRAY[] = {1,2,3,4,5};                                  
+         
+     public void bad() 
+     {

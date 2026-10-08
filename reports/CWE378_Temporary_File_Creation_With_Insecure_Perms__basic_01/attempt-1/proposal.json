@@ -1,0 +1,15 @@
+{
+  "summary": "CWE-378: `File.createTempFile` creates the temporary file with default, overly permissive permissions (world-readable on many systems), exposing its contents. Replaced it with `java.nio.file.Files.createTempFile(...).toFile()`, which on the default provider creates the file with permissions restricted to the owner. The rest of the feature (writing to and deleting the temp file) is unchanged.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE378_Temporary_File_Creation_With_Insecure_Perms/CWE378_Temporary_File_Creation_With_Insecure_Perms__basic_01.java",
+      "old": "import java.io.File;\nimport java.io.IOException;\n\nimport java.util.logging.Level;",
+      "new": "import java.io.File;\nimport java.io.IOException;\n\nimport java.nio.file.Files;\n\nimport java.util.logging.Level;"
+    },
+    {
+      "path": "src/testcases/CWE378_Temporary_File_Creation_With_Insecure_Perms/CWE378_Temporary_File_Creation_With_Insecure_Perms__basic_01.java",
+      "old": "            tempFile = File.createTempFile(\"temp\", \"1234\");",
+      "new": "            tempFile = Files.createTempFile(\"temp\", \"1234\").toFile();"
+    }
+  ]
+}

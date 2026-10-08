@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-396 flags the bad() entry point for catching the overly broad Throwable around Integer.parseInt. The only checked failure from parseInt is NumberFormatException, so I narrowed the catch to NumberFormatException. This preserves the feature (still parses the string, logs, and rethrows the parse error) while no longer masking unrelated Errors/Throwables.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE396_Catch_Generic_Exception/CWE396_Catch_Generic_Exception__Throwable_15.java",
+      "old": "            catch (Throwable throwable)                                                     \n            {\n                IO.writeLine(\"Caught Throwable\");\n                throw throwable;              \n            }",
+      "new": "            catch (NumberFormatException throwable)\n            {\n                IO.writeLine(\"Caught NumberFormatException\");\n                throw throwable;              \n            }"
+    }
+  ]
+}

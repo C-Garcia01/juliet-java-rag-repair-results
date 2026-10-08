@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_URLConnection_75b.java w/src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_URLConnection_75b.java
+index 1299b22..0fd3058 100644
+--- c/src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_URLConnection_75b.java
++++ w/src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_URLConnection_75b.java
+@@ -40,7 +40,7 @@ public class CWE80_XSS__CWE182_Servlet_URLConnection_75b
+             if (data != null)
+             {
+                                                                                                                                                                                                                              
+-                response.getWriter().println("<br>bad(): data = " + data.replaceAll("(<script>)", ""));
++                response.getWriter().println("<br>bad(): data = " + data.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;").replace("'", "&#39;"));
+             }
+ 
+         }

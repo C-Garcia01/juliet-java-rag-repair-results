@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "be05feec8cdbc248ae1893ec42086124342a472a",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-674",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "19044ae7611711acad6732d1cfcfe6b03b3e2a84",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26028,
+  "summary": "The bad path recurses in helperBad with no terminating base case, so helperBad(level) calls helperBad(level-1) indefinitely, causing uncontrolled recursion and a StackOverflowError. I added a base case that returns 0 when level becomes negative\u2014mirroring the safe helperGood1\u2014so the recursive summation terminates while still computing the same sum for all valid (0..99) inputs produced by the feature.",
+  "exported_files": 1
+}

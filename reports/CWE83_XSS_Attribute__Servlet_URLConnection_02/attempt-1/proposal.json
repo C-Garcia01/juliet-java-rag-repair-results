@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method reads an attacker-influenceable line from a URLConnection and writes it unescaped into an HTML img src attribute (CWE-83/XSS). I HTML-encode the value before inserting it into the markup, neutralizing attribute-breakout and script injection while still rendering any legitimate URL the remote server returns.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_URLConnection_02.java",
+      "old": "            response.getWriter().println(\"<br>bad() - <img src=\\\"\" + data + \"\\\">\");",
+      "new": "            String encodedData = data\n                .replace(\"&\", \"&amp;\")\n                .replace(\"<\", \"&lt;\")\n                .replace(\">\", \"&gt;\")\n                .replace(\"\\\"\", \"&quot;\")\n                .replace(\"'\", \"&#39;\");\n            response.getWriter().println(\"<br>bad() - <img src=\\\"\" + encodedData + \"\\\">\");"
+    }
+  ]
+}

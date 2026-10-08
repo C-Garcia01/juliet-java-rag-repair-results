@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-397: the bad() method declared 'throws Throwable', an overly generic exception type that hides the actual error contract. Since an override may narrow the declared checked exceptions, I changed the declaration to 'throws FileNotFoundException' \u2014 the only checked exception the method body can actually produce (from the FileInputStream constructor; the close() call already catches its IOException). This preserves the feature and remains compatible with the abstract AbstractTestCase.bad() signature.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE397_Throw_Generic/CWE397_Throw_Generic__declare_Throwable_01.java",
+      "old": "    public void bad() throws Throwable                                                                             \n    {",
+      "new": "    public void bad() throws FileNotFoundException                                                                             \n    {"
+    }
+  ]
+}

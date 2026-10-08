@@ -1,0 +1,10 @@
+{
+  "summary": "Added the missing break statement at the end of case 2 so that it no longer falls through into the default case. Previously, when intRandom was 2, stringValue was set to \"two\" but then execution fell through to the default case, overwriting it with \"Default\". The fix preserves all legitimate behavior: case 1 returns \"one\", case 2 now correctly returns \"two\", and all other values return \"Default\".",
+  "edits": [
+    {
+      "path": "src/testcases/CWE484_Omitted_Break_Statement_in_Switch/CWE484_Omitted_Break_Statement_in_Switch__basic_13.java",
+      "old": "            case 2:\n                stringValue = \"two\";                                                                                                              \n                                                               \n            default:",
+      "new": "            case 2:\n                stringValue = \"two\";\n                break;\n            default:"
+    }
+  ]
+}

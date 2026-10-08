@@ -1,0 +1,12 @@
+diff --git c/src/testcases/CWE832_Unlock_Not_Locked/CWE832_Unlock_Not_Locked__ReentrantLock_Servlet_01.java w/src/testcases/CWE832_Unlock_Not_Locked/CWE832_Unlock_Not_Locked__ReentrantLock_Servlet_01.java
+index 4a76411..7a63cb2 100644
+--- c/src/testcases/CWE832_Unlock_Not_Locked/CWE832_Unlock_Not_Locked__ReentrantLock_Servlet_01.java
++++ w/src/testcases/CWE832_Unlock_Not_Locked/CWE832_Unlock_Not_Locked__ReentrantLock_Servlet_01.java
+@@ -25,6 +25,7 @@ public class CWE832_Unlock_Not_Locked__ReentrantLock_Servlet_01 extends Abstract
+ 
+                                                                
+                                                                                                   
++        REENTRANT_LOCK_BAD.lock();
+         try
+         { 
+             intBad = intBad * 2;

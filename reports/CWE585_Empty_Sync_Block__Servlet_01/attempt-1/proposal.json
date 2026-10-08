@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-585 (empty synchronized block): helperBad() held the class monitor around an empty block and then mutated the shared static field intBad outside the lock, so the synchronization provided no protection. Fixed by moving the intBad update inside the synchronized block (mirroring the correct helperGood1 pattern), so the shared-state mutation is actually guarded while preserving the doubling behavior.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE585_Empty_Sync_Block/CWE585_Empty_Sync_Block__Servlet_01.java",
+      "old": "        synchronized(CWE585_Empty_Sync_Block__Servlet_01.class) \n        {\n                                                                            \n        }\n    \n        intBad = intBad * 2;\n    }",
+      "new": "        synchronized(CWE585_Empty_Sync_Block__Servlet_01.class) \n        {\n            intBad = intBad * 2;\n        }\n    }"
+    }
+  ]
+}

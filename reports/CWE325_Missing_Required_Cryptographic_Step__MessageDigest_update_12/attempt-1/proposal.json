@@ -1,0 +1,10 @@
+{
+  "summary": "In the bad() method's first branch, a SHA-512 MessageDigest is created and digested without ever calling update(), so the digest is computed over no input\u2014omitting the required cryptographic step (CWE-325). The fix adds a messageDigest.update(...) call feeding the data to be hashed before digest() is invoked, mirroring the correct second branch and preserving the hashing feature.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE325_Missing_Required_Cryptographic_Step/CWE325_Missing_Required_Cryptographic_Step__MessageDigest_update_12.java",
+      "old": "            MessageDigest messageDigest = MessageDigest.getInstance(\"SHA-512\");\n                                                                                                              \n            IO.writeLine(IO.toHex(messageDigest.digest()));",
+      "new": "            final String HASH_INPUT = \"ABCDEFG123456\";\n\n            MessageDigest messageDigest = MessageDigest.getInstance(\"SHA-512\");\n\n            messageDigest.update(HASH_INPUT.getBytes(\"UTF-8\"));\n\n            IO.writeLine(IO.toHex(messageDigest.digest()));"
+    }
+  ]
+}

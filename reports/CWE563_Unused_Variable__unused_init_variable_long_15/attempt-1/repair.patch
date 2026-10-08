@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_15.java w/src/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_15.java
+index 77c101a..9fd6c5d 100644
+--- c/src/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_15.java
++++ w/src/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_init_variable_long_15.java
+@@ -28,6 +28,8 @@ public class CWE563_Unused_Variable__unused_init_variable_long_15 extends Abstra
+ 
+         data = 5L;
+ 
++        IO.writeLine(data);
++
+         switch (7)
+         {
+         case 7:

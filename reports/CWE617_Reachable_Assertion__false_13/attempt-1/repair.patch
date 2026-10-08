@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE617_Reachable_Assertion/CWE617_Reachable_Assertion__false_13.java w/src/testcases/CWE617_Reachable_Assertion/CWE617_Reachable_Assertion__false_13.java
+index 5deb4d2..0a0b1b0 100644
+--- c/src/testcases/CWE617_Reachable_Assertion/CWE617_Reachable_Assertion__false_13.java
++++ w/src/testcases/CWE617_Reachable_Assertion/CWE617_Reachable_Assertion__false_13.java
+@@ -24,7 +24,7 @@ public class CWE617_Reachable_Assertion__false_13 extends AbstractTestCase
+         if (IO.STATIC_FINAL_FIVE == 5)
+         {
+                                                                                                                                       
+-            assert false;                                                                                                               
++            assert IO.STATIC_FINAL_FIVE == 5;                                                                                                               
+         }
+     }
+ 

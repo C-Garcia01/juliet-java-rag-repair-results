@@ -1,0 +1,10 @@
+{
+  "summary": "The deadlock (CWE-833) arises from inconsistent lock ordering: helperAddBad() acquires BAD_NUMBER1 then BAD_NUMBER2, while helperMultiplyBad() acquires them in the reverse order (BAD_NUMBER2 then BAD_NUMBER1). Under concurrent servlet requests this circular wait can deadlock. The fix makes helperMultiplyBad() acquire the locks in the same consistent order (BAD_NUMBER1 first, then BAD_NUMBER2), matching the good variant, which eliminates the circular wait while preserving the multiply functionality.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE833_Deadlock/CWE833_Deadlock__ReentrantLock_Servlet_01.java",
+      "old": "    static public void helperMultiplyBad()\n    {\n                                                                           \n        BAD_NUMBER2_REENTRANTLOCK.lock(); \n\n                                                                                                                                                  \n                                                                                               \n\n        BAD_NUMBER1_REENTRANTLOCK.lock();\n        try \n        {\n            intBadNumber1 = intBadNumber1 * intBadNumber2;\n        } \n        finally \n        {\n            BAD_NUMBER1_REENTRANTLOCK.unlock();\n            BAD_NUMBER2_REENTRANTLOCK.unlock();\n        }\n    }  ",
+      "new": "    static public void helperMultiplyBad()\n    {\n                                                                           \n        BAD_NUMBER1_REENTRANTLOCK.lock(); \n\n                                                                                                                                                  \n                                                                                               \n\n        BAD_NUMBER2_REENTRANTLOCK.lock();\n        try \n        {\n            intBadNumber1 = intBadNumber1 * intBadNumber2;\n        } \n        finally \n        {\n            BAD_NUMBER2_REENTRANTLOCK.unlock();\n            BAD_NUMBER1_REENTRANTLOCK.unlock();\n        }\n    }  "
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+diff --git c/src/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__StringBuilder_13.java w/src/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__StringBuilder_13.java
+index 12aef6f..2efdf03 100644
+--- c/src/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__StringBuilder_13.java
++++ w/src/testcases/CWE476_NULL_Pointer_Dereference/CWE476_NULL_Pointer_Dereference__StringBuilder_13.java
+@@ -27,13 +27,13 @@ public class CWE476_NULL_Pointer_Dereference__StringBuilder_13 extends AbstractT
+         if (IO.STATIC_FINAL_FIVE==5)
+         {
+                                               
+-            data = null;
++            data = new StringBuilder();
+         }
+         else
+         {
+                                                                            
+                                                                                            
+-            data = null;
++            data = new StringBuilder();
+         }
+ 
+         if (IO.STATIC_FINAL_FIVE==5)

@@ -1,0 +1,10 @@
+{
+  "summary": "Fixed CWE-765 (Multiple Unlocks) by removing the duplicate REENTRANT_LOCK_BAD.unlock() call in helperBad()'s finally block. A ReentrantLock must be unlocked once per lock() acquisition; the second unlock throws IllegalMonitorStateException. The feature (doubling intBad under lock protection) is preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE765_Multiple_Unlocks/CWE765_Multiple_Unlocks__ReentrantLock_Servlet_01.java",
+      "old": "            REENTRANT_LOCK_BAD.unlock(); \n            REENTRANT_LOCK_BAD.unlock();                                                                                                         \n",
+      "new": "            REENTRANT_LOCK_BAD.unlock(); \n"
+    }
+  ]
+}

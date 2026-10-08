@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method seeds a SecureRandom instance with a hard-coded constant seed (CWE-336), making its output fully predictable. Removing the setSeed(SEED) call (and the now-unused fixed SEED array) lets SecureRandom self-seed from the platform's entropy source, preserving the feature of emitting two random integers while making them unpredictable.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE336_Same_Seed_in_PRNG/CWE336_Same_Seed_in_PRNG__basic_06.java",
+      "old": "            final byte[] SEED = new byte[] {0x01, 0x02, 0x03, 0x04, 0x05};\n            SecureRandom secureRandom = new SecureRandom();\n                                                                                                       \n            secureRandom.setSeed(SEED);\n            IO.writeLine(\"\" + secureRandom.nextInt());",
+      "new": "            SecureRandom secureRandom = new SecureRandom();\n            IO.writeLine(\"\" + secureRandom.nextInt());"
+    }
+  ]
+}

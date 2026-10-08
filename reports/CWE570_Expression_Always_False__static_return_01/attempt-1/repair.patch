@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE570_Expression_Always_False/CWE570_Expression_Always_False__static_return_01.java w/src/testcases/CWE570_Expression_Always_False/CWE570_Expression_Always_False__static_return_01.java
+index 0e601c9..614188f 100644
+--- c/src/testcases/CWE570_Expression_Always_False/CWE570_Expression_Always_False__static_return_01.java
++++ w/src/testcases/CWE570_Expression_Always_False/CWE570_Expression_Always_False__static_return_01.java
+@@ -12,7 +12,7 @@ public class CWE570_Expression_Always_False__static_return_01 extends AbstractTe
+     public void bad()
+     {
+                                              
+-        if (IO.staticReturnsFalse())
++        if (IO.staticReturnsTrueOrFalse())
+         {
+             IO.writeLine("never prints");
+         }

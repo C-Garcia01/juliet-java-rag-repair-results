@@ -1,0 +1,10 @@
+{
+  "summary": "The XPath Injection flaw is in CWE643_Xpath_Injection__PropertiesFile_22b.java, where untrusted `username` and `password` values (read from a properties file in 22a) are concatenated directly into an XPath expression. An attacker-controlled value could alter the query structure (e.g. injecting `' or '1'='1`). The fix escapes both values with StringEscapeUtils.escapeXml (already imported) before embedding them in the query, neutralizing XML/XPath metacharacters while preserving legitimate lookups for valid credentials.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__PropertiesFile_22b.java",
+      "old": "                String query = \"//users/user[name/text()='\" + username +\n                \"' and pass/text()='\" + password + \"']\" +\n                \"/secret/text()\";",
+      "new": "                String query = \"//users/user[name/text()='\" + StringEscapeUtils.escapeXml(username) +\n                \"' and pass/text()='\" + StringEscapeUtils.escapeXml(password) + \"']\" +\n                \"/secret/text()\";"
+    }
+  ]
+}

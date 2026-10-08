@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method opens an InputStreamReader/BufferedReader on System.in but never closes them, leaking the resource (CWE-772) on every invocation. I added a finally block that closes the BufferedReader (which chains to the underlying InputStreamReader), wrapping the close in its own try/catch so a close-time IOException is logged rather than propagated. Reading and echoing the line still works exactly as before for valid input.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE772_Missing_Release_of_Resource/CWE772_Missing_Release_of_Resource__console_InputStreamReader_01.java",
+      "old": "        catch (IOException exceptIO)\n        {\n            IO.logger.log(Level.WARNING, \"Error with stream reading\", exceptIO);\n        }\n        \n                                          \n    }",
+      "new": "        catch (IOException exceptIO)\n        {\n            IO.logger.log(Level.WARNING, \"Error with stream reading\", exceptIO);\n        }\n        finally\n        {\n            if (readerBuffered != null)\n            {\n                try\n                {\n                    readerBuffered.close();\n                }\n                catch (IOException exceptIO)\n                {\n                    IO.logger.log(Level.WARNING, \"Error closing BufferedReader\", exceptIO);\n                }\n            }\n        }\n        \n                                          \n    }"
+    }
+  ]
+}

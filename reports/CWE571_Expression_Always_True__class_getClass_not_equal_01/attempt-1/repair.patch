@@ -1,0 +1,28 @@
+diff --git c/src/testcases/CWE571_Expression_Always_True/CWE571_Expression_Always_True__class_getClass_not_equal_01.java w/src/testcases/CWE571_Expression_Always_True/CWE571_Expression_Always_True__class_getClass_not_equal_01.java
+index 3bdfc2e..5ff541e 100644
+--- c/src/testcases/CWE571_Expression_Always_True/CWE571_Expression_Always_True__class_getClass_not_equal_01.java
++++ w/src/testcases/CWE571_Expression_Always_True/CWE571_Expression_Always_True__class_getClass_not_equal_01.java
+@@ -15,11 +15,20 @@ public class CWE571_Expression_Always_True__class_getClass_not_equal_01 extends
+     {
+                                             
+         Random random = new Random();
+-        SecureRandom secureRandom = new SecureRandom();
++        Random secondRandom;
+ 
+-        if (!random.getClass().equals(secureRandom.getClass()))
++        if (IO.staticReturnsTrueOrFalse())
+         {
+-            IO.writeLine("always prints");
++            secondRandom = new SecureRandom();
++        }
++        else
++        {
++            secondRandom = new Random();
++        }
++
++        if (!random.getClass().equals(secondRandom.getClass()))
++        {
++            IO.writeLine("classes differ");
+         }
+     }
+     

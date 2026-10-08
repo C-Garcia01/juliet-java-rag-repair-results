@@ -1,0 +1,15 @@
+{
+  "summary": "The CWE-607 flaw is the publicly accessible static final field of a mutable type (`Date`). `final` only prevents reassignment of the reference, not mutation of the `Date` object, so any caller\u2014including `bad()` via `getDate().setTime(...)`\u2014can mutate the shared static instance. The fix reduces the field's visibility to `private` so external code cannot reach the mutable instance directly, and makes the `getDate()` accessor return a defensive copy so callers cannot mutate the stored instance through it. The legitimate feature is preserved: `getHello()` still reads the stored date, and `getDate()` still returns a usable `Date` value.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE607_Public_Static_Final_Mutable/CWE607_Public_Static_Final_Mutable__console_01_bad.java",
+      "old": "    public final static Date date = new Date();",
+      "new": "    private final static Date date = new Date();"
+    },
+    {
+      "path": "src/testcases/CWE607_Public_Static_Final_Mutable/CWE607_Public_Static_Final_Mutable__console_01_bad.java",
+      "old": "        return date; ",
+      "new": "        return new Date(date.getTime()); "
+    }
+  ]
+}

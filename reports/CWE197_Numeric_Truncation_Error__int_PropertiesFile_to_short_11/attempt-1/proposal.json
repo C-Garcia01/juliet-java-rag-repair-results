@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point reads an int from a properties file and then casts it directly to short in IO.writeLine((short)data), which silently truncates any value outside the short range (CWE-197). I replaced the unconditional narrowing cast with a range check: values that fit in a short are written exactly as before (preserving legitimate functionality for all valid inputs), while out-of-range values are reported instead of being corrupted by truncation.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE197_Numeric_Truncation_Error/s01/CWE197_Numeric_Truncation_Error__int_PropertiesFile_to_short_11.java",
+      "old": "        {\n                                                                                              \n            IO.writeLine((short)data);\n        }",
+      "new": "        {\n                                                                                              \n            if (data >= Short.MIN_VALUE && data <= Short.MAX_VALUE)\n            {\n                IO.writeLine((short)data);\n            }\n            else\n            {\n                IO.writeLine(\"data value is out of range for the short type and cannot be safely narrowed\");\n            }\n        }"
+    }
+  ]
+}

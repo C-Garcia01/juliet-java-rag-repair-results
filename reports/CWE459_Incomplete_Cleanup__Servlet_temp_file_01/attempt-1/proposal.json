@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point creates a temporary file and relies solely on deleteOnExit(), which only removes the file when the JVM terminates normally \u2014 leaving the resource uncleaned during the servlet's lifetime (CWE-459 Incomplete Cleanup). The fix explicitly deletes the temporary file once its work is done, while keeping the legitimate temp-file creation and permission-setting behavior intact.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE459_Incomplete_Cleanup/CWE459_Incomplete_Cleanup__Servlet_temp_file_01.java",
+      "old": "            if (!tempFile.setExecutable(false))\n            {\n                IO.logger.log(Level.WARNING, \"Could not set Executable permissions\");\n            }\n        }",
+      "new": "            if (!tempFile.setExecutable(false))\n            {\n                IO.logger.log(Level.WARNING, \"Could not set Executable permissions\");\n            }\n\n            /* complete the cleanup by deleting the temporary file now that we are\n             * done with it, instead of relying only on deleteOnExit() */\n            if (!tempFile.delete())\n            {\n                IO.logger.log(Level.WARNING, \"Could not delete temporary file\");\n            }\n        }"
+    }
+  ]
+}

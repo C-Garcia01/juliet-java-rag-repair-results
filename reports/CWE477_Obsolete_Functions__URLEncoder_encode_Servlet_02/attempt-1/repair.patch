@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE477_Obsolete_Functions/CWE477_Obsolete_Functions__URLEncoder_encode_Servlet_02.java w/src/testcases/CWE477_Obsolete_Functions/CWE477_Obsolete_Functions__URLEncoder_encode_Servlet_02.java
+index 1cb69bf..ea9762f 100644
+--- c/src/testcases/CWE477_Obsolete_Functions/CWE477_Obsolete_Functions__URLEncoder_encode_Servlet_02.java
++++ w/src/testcases/CWE477_Obsolete_Functions/CWE477_Obsolete_Functions__URLEncoder_encode_Servlet_02.java
+@@ -27,7 +27,7 @@ public class CWE477_Obsolete_Functions__URLEncoder_encode_Servlet_02 extends Abs
+         if (true)
+         {
+                                                                             
+-            response.getWriter().println(URLEncoder.encode("abc|1 $#@<><()"));
++            response.getWriter().println(URLEncoder.encode("abc|1 $#@<><()", "UTF-8"));
+         }
+     }
+ 

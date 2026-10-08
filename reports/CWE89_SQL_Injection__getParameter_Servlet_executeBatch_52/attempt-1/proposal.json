@@ -1,0 +1,20 @@
+{
+  "summary": "The flow routes untrusted `request.getParameter(\"name\")` through 52a\u219252b\u219252c, where in 52c each `names[i]` token is concatenated directly into a SQL UPDATE string and added to a `Statement` batch (CWE-89). I converted the sink to a `PreparedStatement` with a parameterized `where name=?` clause, binding each token via `setString`, so the batch-update feature (split on `-`, per-name hitcount increment, success counting) is fully preserved while input can no longer alter query structure. Only 52c needed changes; 52a/52b are passthroughs.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE89_SQL_Injection/s02/CWE89_SQL_Injection__getParameter_Servlet_executeBatch_52c.java",
+      "old": "            Statement sqlStatement = null;",
+      "new": "            PreparedStatement sqlStatement = null;"
+    },
+    {
+      "path": "src/testcases/CWE89_SQL_Injection/s02/CWE89_SQL_Injection__getParameter_Servlet_executeBatch_52c.java",
+      "old": "                sqlStatement = dbConnection.createStatement();",
+      "new": "                sqlStatement = dbConnection.prepareStatement(\"update users set hitcount=hitcount+1 where name=?\");"
+    },
+    {
+      "path": "src/testcases/CWE89_SQL_Injection/s02/CWE89_SQL_Injection__getParameter_Servlet_executeBatch_52c.java",
+      "old": "                    sqlStatement.addBatch(\"update users set hitcount=hitcount+1 where name='\" + names[i] + \"'\");",
+      "new": "                    sqlStatement.setString(1, names[i]);\n                    sqlStatement.addBatch();"
+    }
+  ]
+}

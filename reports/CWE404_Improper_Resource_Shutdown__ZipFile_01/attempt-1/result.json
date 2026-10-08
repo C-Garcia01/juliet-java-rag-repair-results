@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "4843ebc9163f5ccb600bd45084f417d7624f6d3e",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-404",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "d64a8bad59acc832085d788001cd7bf43acc85ad",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26862,
+  "summary": "The bad() method placed the ZipFile.close() inside the try block after zFile.size(). If opening the ZipFile or calling size() throws a ZipException or IOException, control jumps to the catch blocks and the close is never executed, leaking the ZipFile resource (CWE-404). The fix moves the resource cleanup into a finally block so the ZipFile is always closed regardless of whether an exception occurs, while preserving the feature of opening the file and reporting its entry count.",
+  "exported_files": 1
+}

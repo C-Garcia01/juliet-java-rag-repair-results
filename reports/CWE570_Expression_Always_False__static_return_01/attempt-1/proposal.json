@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method guards its IO.writeLine call with IO.staticReturnsFalse(), a static helper that always returns false, so the if-condition is a CWE-570 expression that is always false and the body is dead code. Replaced the constant-false helper with IO.staticReturnsTrueOrFalse(), which returns a genuine runtime boolean, so the branch is now a real conditional that can execute while preserving the feature.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE570_Expression_Always_False/CWE570_Expression_Always_False__static_return_01.java",
+      "old": "        if (IO.staticReturnsFalse())\n        {\n            IO.writeLine(\"never prints\");\n        }",
+      "new": "        if (IO.staticReturnsTrueOrFalse())\n        {\n            IO.writeLine(\"never prints\");\n        }"
+    }
+  ]
+}

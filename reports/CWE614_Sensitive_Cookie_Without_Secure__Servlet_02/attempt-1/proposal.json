@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point creates a sensitive cookie (\"SecretMessage\") and adds it to the response without marking it secure, so the browser will transmit it over plaintext HTTP (CWE-614). The fix calls cookie.setSecure(true) so the cookie is only sent over encrypted (HTTPS) connections, preserving the cookie-setting functionality.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE614_Sensitive_Cookie_Without_Secure/CWE614_Sensitive_Cookie_Without_Secure__Servlet_02.java",
+      "old": "            Cookie cookie = new Cookie(\"SecretMessage\", \"test\");\n",
+      "new": "            Cookie cookie = new Cookie(\"SecretMessage\", \"test\");\n            cookie.setSecure(true);\n"
+    }
+  ]
+}

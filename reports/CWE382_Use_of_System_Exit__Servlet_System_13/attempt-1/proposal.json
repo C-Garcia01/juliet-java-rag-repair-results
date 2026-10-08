@@ -1,0 +1,10 @@
+{
+  "summary": "In a servlet, calling System.exit(1) terminates the entire JVM/web container, which is the CWE-382 defect. The sink is reached whenever the condition is true (IO.STATIC_FINAL_FIVE == 5, always true). The fix keeps the conditional control flow intact but replaces the JVM-killing call with a benign, non-terminating action (logging), so the servlet continues to function and still responds normally instead of shutting down the container.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE382_Use_of_System_Exit/CWE382_Use_of_System_Exit__Servlet_System_13.java",
+      "old": "        if (IO.STATIC_FINAL_FIVE == 5)\n        {\n                                          \n            System.exit(1);\n        }",
+      "new": "        if (IO.STATIC_FINAL_FIVE == 5)\n        {\n            /* Servlets must not terminate the JVM/container; log and continue instead. */\n            IO.writeLine(\"Reached conditional branch in bad()\");\n        }"
+    }
+  ]
+}

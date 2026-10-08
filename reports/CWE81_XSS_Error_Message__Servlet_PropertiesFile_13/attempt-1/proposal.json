@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point reads a 'data' value from a properties file and embeds it directly into the HTTP error message sent via response.sendError, allowing the value to be reflected into the HTML error page unescaped (CWE-81 XSS). The fix HTML-encodes the data before concatenating it into the error message, neutralizing any markup/script while leaving ordinary values displayed intact. The intentional surrounding '<br>' markup is preserved so the feature still renders normally.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_PropertiesFile_13.java",
+      "old": "            response.sendError(404, \"<br>bad() - Parameter name has value \" + data);",
+      "new": "            String encodedData = data.replace(\"&\", \"&amp;\").replace(\"<\", \"&lt;\").replace(\">\", \"&gt;\").replace(\"\\\"\", \"&quot;\").replace(\"'\", \"&#39;\");\n            response.sendError(404, \"<br>bad() - Parameter name has value \" + encodedData);"
+    }
+  ]
+}

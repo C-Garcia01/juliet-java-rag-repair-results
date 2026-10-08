@@ -1,0 +1,10 @@
+{
+  "summary": "Fixed CWE-15 by validating the externally-controlled cookie value against a strict allow-list pattern before passing it to dbConnection.setCatalog(). Legitimate catalog names (alphanumeric plus underscore) continue to work, while attacker-controlled values that don't match the safe pattern are rejected and logged rather than applied as a system/configuration setting.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__getCookies_Servlet_11.java",
+      "old": "            dbConnection.setCatalog(data);",
+      "new": "            if (data != null && data.matches(\"[A-Za-z0-9_]+\"))\n            {\n                dbConnection.setCatalog(data);\n            }\n            else\n            {\n                IO.logger.log(Level.WARNING, \"Rejected invalid catalog name from request\");\n            }"
+    }
+  ]
+}

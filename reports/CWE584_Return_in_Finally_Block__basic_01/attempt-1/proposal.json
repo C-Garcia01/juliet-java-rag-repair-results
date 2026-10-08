@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-584: the bad() method contains a `return;` inside its finally block, which silently discards any exception or alternate return path flowing out of the try/catch. Removing the return from the finally block eliminates the unsafe control-flow sink while keeping the method's observable behavior: the try still throws and the catch still logs, and the method now completes normally (it is void, so no return value or feature is lost). The finally block still runs its logging, and any future exceptions from the try block would correctly propagate instead of being swallowed.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE584_Return_in_Finally_Block/CWE584_Return_in_Finally_Block__basic_01.java",
+      "old": "            if(true)\n            {\n                return;",
+      "new": "            if(true)\n            {\n                IO.writeLine(\"finishing up\");"
+    }
+  ]
+}

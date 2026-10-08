@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point reads the server's PATH environment variable via System.getenv and writes it directly to the HTTP response, exposing sensitive server configuration to any client (CWE-526). The repair keeps the code path and the environment lookup intact but redirects the value to the server-side log instead of the untrusted HTTP response, breaking the source-to-sink flow to the client while preserving the diagnostic behavior for valid requests.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE526_Info_Exposure_Environment_Variables/CWE526_Info_Exposure_Environment_Variables__Servlet_05.java",
+      "old": "        if (privateTrue)\n        {\n                                                    \n            response.getWriter().println(\"Not in path: \" + System.getenv(\"PATH\"));\n        }",
+      "new": "        if (privateTrue)\n        {\n                                                    \n            IO.logger.fine(\"Not in path: \" + System.getenv(\"PATH\"));\n            response.getWriter().println(\"Path check complete\");\n        }"
+    }
+  ]
+}

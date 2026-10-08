@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point reads a URL from a file and passes it directly to response.sendRedirect(), allowing an open redirect if the file content points to an attacker-controlled external site. The fix validates the parsed URI before redirecting: only relative URLs (no scheme and no authority/host) are allowed, which preserves legitimate same-application redirects while rejecting absolute off-site URLs. Invalid or external URLs produce an error message instead of a redirect.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java",
+      "old": "            URI uri;\n            try\n            {\n                uri = new URI(data);\n            }\n            catch (URISyntaxException exceptURISyntax)\n            {\n                response.getWriter().write(\"Invalid redirect URL\");\n                return;\n            }\n                                                                                                                                           \n            response.sendRedirect(data);\n            return;",
+      "new": "            URI uri;\n            try\n            {\n                uri = new URI(data);\n            }\n            catch (URISyntaxException exceptURISyntax)\n            {\n                response.getWriter().write(\"Invalid redirect URL\");\n                return;\n            }\n                                                                                                                                           \n            if (uri.isAbsolute() || uri.getScheme() != null || uri.getAuthority() != null || uri.getHost() != null)\n            {\n                response.getWriter().write(\"Invalid redirect URL\");\n                return;\n            }\n            response.sendRedirect(data);\n            return;"
+    }
+  ]
+}

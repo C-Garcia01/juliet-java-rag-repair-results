@@ -1,0 +1,19 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "efc39111788217695013a16598234ccf56068317",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-606",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "1be58a9cb63724eef40f3cbddf1b0ac59958251a",
+  "retrieved_examples": [
+    "django/django@b6b3cb9899214a23ebb0f4ebf0e0b300b0ee524f:CVE-2015-2316"
+  ],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 32972,
+  "summary": "CWE-606: the bad entry point parses an integer directly from an untrusted request cookie (request.getCookies()[0].getValue()) and uses it as the upper bound of a for loop with no validation, allowing an attacker-controlled value to drive an unbounded/negative loop. The fix validates the parsed value against a sane range before it is used as the loop condition, clamping out-of-range values to a safe default while still honoring legitimate numeric cookie values within range.",
+  "exported_files": 1
+}

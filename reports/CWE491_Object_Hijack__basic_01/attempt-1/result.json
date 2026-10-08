@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "165697988d12d5ed5654fbc0e99559c01f1695bf",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-491",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "388e06f35719a5e8db29a83d62ff35a63bd5d375",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26090,
+  "summary": "CWE-491 (Object Hijack) arises because the public/overridable `clone()` method is not declared `final`. In a non-final class, a malicious subclass could override `clone()` to hijack object creation and return an instance in an attacker-controlled state (bypassing the defensive copy of `theDate`). The fix declares the `clone()` method `final`, which preserves the legitimate cloning behavior (the defensive copy of the `Date` is still performed) while preventing subclasses from overriding it to hijack the object.",
+  "exported_files": 1
+}

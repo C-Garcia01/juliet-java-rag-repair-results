@@ -1,0 +1,15 @@
+diff --git c/src/testcases/CWE478_Missing_Default_Case_in_Switch/CWE478_Missing_Default_Case_in_Switch__basic_14.java w/src/testcases/CWE478_Missing_Default_Case_in_Switch/CWE478_Missing_Default_Case_in_Switch__basic_14.java
+index 169f84b..e52140a 100644
+--- c/src/testcases/CWE478_Missing_Default_Case_in_Switch/CWE478_Missing_Default_Case_in_Switch__basic_14.java
++++ w/src/testcases/CWE478_Missing_Default_Case_in_Switch/CWE478_Missing_Default_Case_in_Switch__basic_14.java
+@@ -37,7 +37,9 @@ public class CWE478_Missing_Default_Case_in_Switch__basic_14 extends AbstractTes
+             case 1:
+                 stringIntValue = "1";
+                 break;
+-                                                                                 
++            default:
++                stringIntValue = String.valueOf(x);
++                break;
+             }
+             IO.writeLine(stringIntValue);
+         }

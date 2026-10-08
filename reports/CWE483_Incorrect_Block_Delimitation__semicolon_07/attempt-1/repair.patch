@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE483_Incorrect_Block_Delimitation/CWE483_Incorrect_Block_Delimitation__semicolon_07.java w/src/testcases/CWE483_Incorrect_Block_Delimitation/CWE483_Incorrect_Block_Delimitation__semicolon_07.java
+index 0c8d899..4817a74 100644
+--- c/src/testcases/CWE483_Incorrect_Block_Delimitation/CWE483_Incorrect_Block_Delimitation__semicolon_07.java
++++ w/src/testcases/CWE483_Incorrect_Block_Delimitation/CWE483_Incorrect_Block_Delimitation__semicolon_07.java
+@@ -35,7 +35,7 @@ public class CWE483_Incorrect_Block_Delimitation__semicolon_07 extends AbstractT
+             x = (new SecureRandom()).nextInt(3);
+             y = 0;
+                                                                           
+-            if (x == 0);
++            if (x == 0)
+             {
+                 IO.writeLine("x == 0");
+                 y = 1;                                                     

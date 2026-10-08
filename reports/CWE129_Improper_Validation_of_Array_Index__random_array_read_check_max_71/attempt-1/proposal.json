@@ -1,0 +1,10 @@
+{
+  "summary": "The badSink in 71b reads array[data] after only checking the upper bound (data < array.length). Since data comes from SecureRandom().nextInt(), it can be negative, causing an out-of-bounds array access (CWE-129). Fixed by also validating the lower bound (data >= 0) before indexing, matching the pattern of the reference fix which checks the index against both bounds before use. Valid indices 0-4 still work.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__random_array_read_check_max_71b.java",
+      "old": "        if (data < array.length)\n        {\n            IO.writeLine(array[data]);\n        }",
+      "new": "        if (data >= 0 && data < array.length)\n        {\n            IO.writeLine(array[data]);\n        }"
+    }
+  ]
+}

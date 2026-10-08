@@ -1,0 +1,10 @@
+{
+  "summary": "The XSS flow reads `data` from a properties file and writes it into the HTTP response with only a weak `replaceAll(\"(<script>)\", \"\")`, which fails to neutralize other HTML/script injection vectors (attribute breakouts, event handlers, mixed-case or split tags, etc.). I replaced the inadequate filter with full HTML entity encoding of the untrusted value before it is written to the response writer, which closes the source-to-sink flow while still displaying the configured `data` value.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_PropertiesFile_08.java",
+      "old": "            response.getWriter().println(\"<br>bad(): data = \" + data.replaceAll(\"(<script>)\", \"\"));",
+      "new": "            response.getWriter().println(\"<br>bad(): data = \" + data.replace(\"&\", \"&amp;\").replace(\"<\", \"&lt;\").replace(\">\", \"&gt;\").replace(\"\\\"\", \"&quot;\").replace(\"'\", \"&#39;\"));"
+    }
+  ]
+}

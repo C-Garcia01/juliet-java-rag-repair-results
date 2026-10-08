@@ -1,0 +1,16 @@
+diff --git c/src/testcases/CWE570_Expression_Always_False/CWE570_Expression_Always_False__false_01.java w/src/testcases/CWE570_Expression_Always_False/CWE570_Expression_Always_False__false_01.java
+index f337001..7c21a7e 100644
+--- c/src/testcases/CWE570_Expression_Always_False/CWE570_Expression_Always_False__false_01.java
++++ w/src/testcases/CWE570_Expression_Always_False/CWE570_Expression_Always_False__false_01.java
+@@ -12,9 +12,9 @@ public class CWE570_Expression_Always_False__false_01 extends AbstractTestCase
+     public void bad()
+     {
+                                              
+-        if (false)
++        if (IO.staticReturnsTrueOrFalse())
+         {
+-            IO.writeLine("never prints");
++            IO.writeLine("conditionally prints");
+         }
+     }
+     

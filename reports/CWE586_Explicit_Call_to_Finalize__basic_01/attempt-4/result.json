@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "31f0bcdaab98d4b8390b3da3813b7f25fb12a4d2",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-586",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "8e9d1c8e730cf93792825a779bfdd48c693fe722",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 27889,
+  "summary": "CWE-586 flags the explicit invocation of finalize() in the bad() entry point. Calling finalize() directly runs the object's finalization logic prematurely while the object is still live; the JVM will later call finalize() again during garbage collection, causing double cleanup. The fix removes the explicit finalize() call from the finally block, letting the garbage collector invoke finalization at the proper time. The legitimate feature (badObj.sayHello()) is untouched and continues to work.",
+  "exported_files": 1
+}

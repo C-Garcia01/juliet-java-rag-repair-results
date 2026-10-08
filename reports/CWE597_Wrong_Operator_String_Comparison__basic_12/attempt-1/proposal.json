@@ -1,0 +1,10 @@
+{
+  "summary": "In bad(), the string comparison used the reference-identity operator `==` instead of value comparison, so two equal strings read from input would be reported as not equal. Replaced `string1 == string2` with `string1.equals(string2)` to compare string contents, matching the correct behavior already used in the good branch. Both strings are null-checked before the comparison, so this is safe.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE597_Wrong_Operator_String_Comparison/CWE597_Wrong_Operator_String_Comparison__basic_12.java",
+      "old": "                    if (string1 == string2)                                                                     \n                    {\n                        IO.writeLine(\"bad(): Strings are equal\");",
+      "new": "                    if (string1.equals(string2))                                                                     \n                    {\n                        IO.writeLine(\"bad(): Strings are equal\");"
+    }
+  ]
+}

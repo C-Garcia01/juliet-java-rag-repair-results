@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method opens a ZipFile but never closes it, leaking the file descriptor/handle (CWE-775). I add a finally block that closes the ZipFile if it was opened, preserving the feature of reading the entry count while ensuring the handle is always released.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE775_Missing_Release_of_File_Descriptor_or_Handle/CWE775_Missing_Release_of_File_Descriptor_or_Handle__ZipFile_01.java",
+      "old": "        catch (IOException exceptIO)\n        {\n            IO.logger.log(Level.WARNING, \"Error reading file\", exceptIO);\n        }\n                                         \n    }",
+      "new": "        catch (IOException exceptIO)\n        {\n            IO.logger.log(Level.WARNING, \"Error reading file\", exceptIO);\n        }\n        finally\n        {\n            if (zFile != null)\n            {\n                try\n                {\n                    zFile.close();\n                }\n                catch (IOException exceptIO)\n                {\n                    IO.logger.log(Level.WARNING, \"Error closing ZipFile\", exceptIO);\n                }\n            }\n        }\n    }"
+    }
+  ]
+}

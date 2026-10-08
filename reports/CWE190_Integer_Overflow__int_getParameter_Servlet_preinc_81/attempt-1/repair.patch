@@ -1,0 +1,24 @@
+diff --git c/src/testcases/CWE190_Integer_Overflow/s07/CWE190_Integer_Overflow__int_getParameter_Servlet_preinc_81_bad.java w/src/testcases/CWE190_Integer_Overflow/s07/CWE190_Integer_Overflow__int_getParameter_Servlet_preinc_81_bad.java
+index e2d4398..b87cff2 100644
+--- c/src/testcases/CWE190_Integer_Overflow/s07/CWE190_Integer_Overflow__int_getParameter_Servlet_preinc_81_bad.java
++++ w/src/testcases/CWE190_Integer_Overflow/s07/CWE190_Integer_Overflow__int_getParameter_Servlet_preinc_81_bad.java
+@@ -25,10 +25,16 @@ public class CWE190_Integer_Overflow__int_getParameter_Servlet_preinc_81_bad ext
+     public void action(int data , HttpServletRequest request, HttpServletResponse response) throws Throwable
+     {
+ 
+-                                                                              
+-        int result = (int)(++data);
++        if (data != Integer.MAX_VALUE)
++        {
++            int result = (int)(++data);
+ 
+-        IO.writeLine("result: " + result);
++            IO.writeLine("result: " + result);
++        }
++        else
++        {
++            IO.writeLine("data value is too large to perform arithmetic safely.");
++        }
+ 
+     }
+ }

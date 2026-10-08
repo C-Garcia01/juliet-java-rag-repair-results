@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point hard-codes the AES key as the string literal \"23 ~j;asn!@#/>as\" (CWE-321). The fix replaces the hard-coded literal with a key sourced at runtime from an environment variable, so the key is no longer embedded in the compiled code. The existing null check and the rest of the encryption flow are preserved, so a properly configured key still encrypts data exactly as before.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_31.java",
+      "old": "                                                     \n            data = \"23 ~j;asn!@#/>as\";\n",
+      "new": "            data = System.getenv(\"CRYPTO_KEY\");\n"
+    }
+  ]
+}

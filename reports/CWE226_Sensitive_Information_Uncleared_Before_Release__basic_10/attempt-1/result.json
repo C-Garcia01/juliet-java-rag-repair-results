@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "ad1a131896b2a8cb95f1a1cc060efeaf86135c0c",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-226",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "1f21efd456906d531b0848a45e4854b1c970e274",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 28730,
+  "summary": "CWE-226: the sensitive password held in the StringBuffer is never cleared before the buffer is released at the end of bad(). Added code in the finally block to overwrite each character of the StringBuffer's backing array (via setCharAt) before the buffer goes out of scope, so the sensitive data is scrubbed from memory. The database-connection feature is preserved because the password is still read and used for DriverManager.getConnection before the clearing occurs.",
+  "exported_files": 1
+}

@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-566 Authorization Bypass Through SQL Primary Key: the bad() entry point read the invoice owner's id directly from the attacker-controllable request parameter \"id\" and used it as the uid primary key in the invoices query, letting any caller retrieve any user's invoices by supplying an arbitrary id. The fix binds the query to the authenticated user's identity taken from the server-side session instead of client input, so the invoice lookup feature still works but only ever returns the current user's own records.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_06.java",
+      "old": "            data = request.getParameter(\"id\");",
+      "new": "            Object sessionUserId = request.getSession().getAttribute(\"currentUserId\");\n            data = (sessionUserId == null) ? null : sessionUserId.toString();"
+    }
+  ]
+}

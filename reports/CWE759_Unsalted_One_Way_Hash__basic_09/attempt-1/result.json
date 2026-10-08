@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "eee015d9b15e11bd9761f6f86637da8fb1a2150f",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-759",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "e81e2109104dc7805d44755d9bae357b553d7c9d",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26222,
+  "summary": "Fixed CWE-759 (unsalted one-way hash) in the bad() entry point by generating a random salt with SecureRandom and incorporating it into the SHA-512 digest. The hashing feature is preserved: valid input is still hashed and the hex output written. SecureRandom was already imported.",
+  "exported_files": 1
+}

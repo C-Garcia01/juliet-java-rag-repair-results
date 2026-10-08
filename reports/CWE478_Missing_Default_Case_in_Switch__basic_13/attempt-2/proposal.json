@@ -1,0 +1,10 @@
+{
+  "summary": "Added a default case to the switch statement in bad() to handle the x==2 value (and any other value) returned by SecureRandom.nextInt(3). This resolves the CWE-478 missing-default-case flaw while preserving the feature: the method still produces the string representation of the random integer for all valid inputs.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE478_Missing_Default_Case_in_Switch/CWE478_Missing_Default_Case_in_Switch__basic_13.java",
+      "old": "            case 1:\n                stringIntValue = \"1\";\n                break;\n                                                                                 \n            }",
+      "new": "            case 1:\n                stringIntValue = \"1\";\n                break;\n            default:\n                stringIntValue = Integer.toString(x);\n                break;\n            }"
+    }
+  ]
+}

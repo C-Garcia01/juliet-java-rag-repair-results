@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-486: the bad() entry point compares two objects' classes by their simple name using getSimpleName().equals(...). Because both helper classes share the simple name CWE486_Compare_Classes_by_Name__Helper (differing only by package), distinct classes are treated as equal. Fixed by comparing the actual Class objects via equals(), which correctly distinguishes the two classes while preserving the same-or-different reporting feature.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE486_Compare_Classes_by_Name/CWE486_Compare_Classes_by_Name__basic_05.java",
+      "old": "            if (helperClassRoot.getClass().getSimpleName().equals(helperClass.getClass().getSimpleName()))",
+      "new": "            if (helperClassRoot.getClass().equals(helperClass.getClass()))"
+    }
+  ]
+}

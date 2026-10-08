@@ -1,0 +1,15 @@
+diff --git c/src/testcases/CWE511_Logic_Time_Bomb/CWE511_Logic_Time_Bomb__counter_11.java w/src/testcases/CWE511_Logic_Time_Bomb/CWE511_Logic_Time_Bomb__counter_11.java
+index aad89f3..7722222 100644
+--- c/src/testcases/CWE511_Logic_Time_Bomb/CWE511_Logic_Time_Bomb__counter_11.java
++++ w/src/testcases/CWE511_Logic_Time_Bomb/CWE511_Logic_Time_Bomb__counter_11.java
+@@ -27,10 +27,6 @@ public class CWE511_Logic_Time_Bomb__counter_11 extends AbstractTestCase
+             do
+             {
+                                                       
+-                if (count == 20000)
+-                {
+-                    Runtime.getRuntime().exec("c:\\windows\\system32\\evil.exe");
+-                }
+                 count++;
+             }
+             while (count < Integer.MAX_VALUE);

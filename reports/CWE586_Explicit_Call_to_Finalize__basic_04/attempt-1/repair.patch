@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE586_Explicit_Call_to_Finalize/CWE586_Explicit_Call_to_Finalize__basic_04.java w/src/testcases/CWE586_Explicit_Call_to_Finalize/CWE586_Explicit_Call_to_Finalize__basic_04.java
+index 8a49c17..f6c3cac 100644
+--- c/src/testcases/CWE586_Explicit_Call_to_Finalize/CWE586_Explicit_Call_to_Finalize__basic_04.java
++++ w/src/testcases/CWE586_Explicit_Call_to_Finalize/CWE586_Explicit_Call_to_Finalize__basic_04.java
+@@ -43,7 +43,7 @@ public class CWE586_Explicit_Call_to_Finalize__basic_04 extends AbstractTestCase
+             {
+                              
+                                                                                       
+-                badObj.finalize();
++                badObj = null;
+             }
+         }
+     }

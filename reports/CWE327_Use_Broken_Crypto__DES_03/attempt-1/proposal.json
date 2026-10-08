@@ -1,0 +1,20 @@
+{
+  "summary": "The bad() entry point used DES, a broken 56-bit block cipher (CWE-327). I replaced DES with AES (128-bit) for the key generator, key spec, and cipher while preserving the encrypt-and-print-hex behavior for the same input.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE327_Use_Broken_Crypto/CWE327_Use_Broken_Crypto__DES_03.java",
+      "old": "            KeyGenerator keyGenerator = KeyGenerator.getInstance(\"DES\");",
+      "new": "            KeyGenerator keyGenerator = KeyGenerator.getInstance(\"AES\");"
+    },
+    {
+      "path": "src/testcases/CWE327_Use_Broken_Crypto/CWE327_Use_Broken_Crypto__DES_03.java",
+      "old": "            keyGenerator.init(56);",
+      "new": "            keyGenerator.init(128);"
+    },
+    {
+      "path": "src/testcases/CWE327_Use_Broken_Crypto/CWE327_Use_Broken_Crypto__DES_03.java",
+      "old": "            SecretKeySpec secretKeySpec = new SecretKeySpec(byteKey, \"DES\");\n            Cipher desCipher = Cipher.getInstance(\"DES\");",
+      "new": "            SecretKeySpec secretKeySpec = new SecretKeySpec(byteKey, \"AES\");\n            Cipher desCipher = Cipher.getInstance(\"AES\");"
+    }
+  ]
+}

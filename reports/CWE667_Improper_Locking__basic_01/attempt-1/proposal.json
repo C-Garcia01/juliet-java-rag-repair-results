@@ -1,0 +1,10 @@
+{
+  "summary": "The bad path acquired BAD_REENTRANT_LOCK via lock() but never released it, so the lock is held indefinitely (and leaked if an exception were thrown) \u2014 a CWE-667 improper locking defect. I wrapped the critical section in a try block and release the lock in a finally block, mirroring the correct helperGood1() pattern. The increment-and-print feature is preserved and valid execution continues to work; the only change is guaranteed release of the lock.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE667_Improper_Locking/CWE667_Improper_Locking__basic_01.java",
+      "old": "        BAD_REENTRANT_LOCK.lock();\n        \n        intBadNumber++;\n        \n        IO.writeLine(intBadNumber);\n        \n                                        \n    }",
+      "new": "        BAD_REENTRANT_LOCK.lock();\n        \n        try\n        {\n            intBadNumber++;\n            \n            IO.writeLine(intBadNumber);\n        }\n        finally\n        {\n            BAD_REENTRANT_LOCK.unlock();\n        }\n    }"
+    }
+  ]
+}

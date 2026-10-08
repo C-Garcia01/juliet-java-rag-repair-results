@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-390 (Error Without Action): the bad() method catches FileNotFoundException when opening the reader but takes no action in the catch block, silently swallowing the error. The fix adds a log statement in the catch block so the detected error is acted upon, consistent with the logging already used for IOExceptions in the finally block. The feature (opening and reading the file via BufferedReader) is preserved unchanged.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE390_Error_Without_Action/CWE390_Error_Without_Action__reader_05.java",
+      "old": "            catch (FileNotFoundException exceptFileNotFound)\n            {\n                                                                \n            }",
+      "new": "            catch (FileNotFoundException exceptFileNotFound)\n            {\n                IO.logger.log(Level.WARNING, \"File not found exception\", exceptFileNotFound);\n            }"
+    }
+  ]
+}

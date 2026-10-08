@@ -1,0 +1,16 @@
+diff --git c/src/testcases/CWE789_Uncontrolled_Mem_Alloc/s03/CWE789_Uncontrolled_Mem_Alloc__random_HashMap_66b.java w/src/testcases/CWE789_Uncontrolled_Mem_Alloc/s03/CWE789_Uncontrolled_Mem_Alloc__random_HashMap_66b.java
+index c64e21c..9336503 100644
+--- c/src/testcases/CWE789_Uncontrolled_Mem_Alloc/s03/CWE789_Uncontrolled_Mem_Alloc__random_HashMap_66b.java
++++ w/src/testcases/CWE789_Uncontrolled_Mem_Alloc/s03/CWE789_Uncontrolled_Mem_Alloc__random_HashMap_66b.java
+@@ -28,7 +28,10 @@ public class CWE789_Uncontrolled_Mem_Alloc__random_HashMap_66b
+         int data = dataArray[2];
+ 
+                                                                                                                               
+-        HashMap intHashMap = new HashMap(data);
++        if (data >= 0 && data <= 100000)
++        {
++            HashMap intHashMap = new HashMap(data);
++        }
+ 
+     }
+ 

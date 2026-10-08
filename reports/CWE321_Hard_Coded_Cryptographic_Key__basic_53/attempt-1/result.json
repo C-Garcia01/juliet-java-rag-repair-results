@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "85c04d8f83a72227fd975d303e959b101cc03b5d",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-321",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "45c1591f8302b3635f91adcc341c2c08437541ae",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 30893,
+  "summary": "The bad flow originates in 53a, which hard-codes the AES key string \"23 ~j;asn!@#/>as\" and passes it through the sink chain (53b -> 53c -> 53d) where it is used directly as a SecretKeySpec for AES encryption (CWE-321). The fix removes the hard-coded key at the source and instead reads the key material from an external, configurable source (the CRYPTO_KEY environment variable). The downstream sink in 53d already null-checks the data and performs encryption unchanged, so legitimate encryption functionality is preserved for any valid key supplied via the environment while the hard-coded secret is eliminated.",
+  "exported_files": 1
+}

@@ -1,0 +1,10 @@
+{
+  "summary": "The private calculation() method was dead code: it was never invoked, so the source-to-sink flow (its return value) never reached any sink. I repaired this by having bad() invoke calculation() and pass its result to IO.writeLine, so the method is now live code whose return value is actually consumed. This preserves the writeLine output behavior while eliminating the unused method.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE561_Dead_Code/CWE561_Dead_Code__unused_method_01_bad.java",
+      "old": "    public void bad() throws Throwable \n    {\n        IO.writeLine(\"hello\");\n    }",
+      "new": "    public void bad() throws Throwable \n    {\n        IO.writeLine(calculation());\n    }"
+    }
+  ]
+}

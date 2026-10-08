@@ -1,0 +1,10 @@
+{
+  "summary": "The flow reads a password from a TCP socket in 54a.bad() and passes it through 54b/54c/54d to 54e.badSink(), where it is wrapped in a PasswordAuthentication and written out via IO.writeLine in cleartext (CWE-319: cleartext transmission of sensitive info). The fix encrypts the credential data with AES before transmitting it, using the Cipher/SecretKeySpec classes already imported in 54e. The feature (deriving and transmitting the password-based credential) is preserved; only the cleartext exposure is removed.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE319_Cleartext_Tx_Sensitive_Info/CWE319_Cleartext_Tx_Sensitive_Info__listen_tcp_passwordAuth_54e.java",
+      "old": "            PasswordAuthentication credentials = new PasswordAuthentication(\"user\", password.toCharArray());\n            IO.writeLine(credentials.toString());",
+      "new": "            PasswordAuthentication credentials = new PasswordAuthentication(\"user\", password.toCharArray());\n            Cipher aesCipher = Cipher.getInstance(\"AES/ECB/PKCS5Padding\");\n            SecretKeySpec secretKeySpec = new SecretKeySpec(\"ABCDEFGHABCDEFGH\".getBytes(\"UTF-8\"), \"AES\");\n            aesCipher.init(Cipher.ENCRYPT_MODE, secretKeySpec);\n            byte[] encryptedBytes = aesCipher.doFinal(credentials.toString().getBytes(\"UTF-8\"));\n            IO.writeLine(IO.toHex(encryptedBytes));"
+    }
+  ]
+}

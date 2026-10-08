@@ -1,0 +1,10 @@
+{
+  "summary": "The servlet's bad() entry point calls System.exit(1), which terminates the entire JVM (and thus the servlet container) when the request handler runs \u2014 the CWE-382 unsafe sink. In a servlet/J2EE context, terminating the VM must never happen. I replaced the System.exit(1) call with a plain return so the handler cleanly finishes the request without killing the container. The method's control flow (the if-block structure and request handling path) is preserved; valid requests still complete normally.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE382_Use_of_System_Exit/CWE382_Use_of_System_Exit__Servlet_System_02.java",
+      "old": "            System.exit(1);",
+      "new": "            return;"
+    }
+  ]
+}

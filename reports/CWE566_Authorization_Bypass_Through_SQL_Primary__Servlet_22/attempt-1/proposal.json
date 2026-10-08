@@ -1,0 +1,10 @@
+{
+  "summary": "The flow is an authorization bypass through a SQL primary key (CWE-566): `badSource` in 22b returns the attacker-controlled `id` request parameter, which 22a then uses directly as the `uid` primary key in `select * from invoices where uid=?`. This lets a caller read any user's invoices by supplying an arbitrary `uid`. The fix derives the primary key from the authenticated session instead of from the request parameter, so invoices are scoped to the current user's own identity while the invoice-lookup feature is preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_22b.java",
+      "old": "            data = request.getParameter(\"id\");",
+      "new": "            data = request.getSession(true).getAttribute(\"uid\").toString();"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point unconditionally executes `assert false` inside a branch that is always taken (IO.STATIC_FINAL_FIVE is a constant 5), making the assertion reachable and guaranteed to fail \u2014 a classic CWE-617 reachable assertion that aborts execution. The fix replaces the always-false assertion with a meaningful assertion that validates the actual condition the branch relies on (that the value really is 5). This preserves the feature's control flow and the value check while ensuring the assertion holds for the valid state instead of unconditionally failing.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE617_Reachable_Assertion/CWE617_Reachable_Assertion__false_13.java",
+      "old": "assert false;",
+      "new": "assert IO.STATIC_FINAL_FIVE == 5;"
+    }
+  ]
+}

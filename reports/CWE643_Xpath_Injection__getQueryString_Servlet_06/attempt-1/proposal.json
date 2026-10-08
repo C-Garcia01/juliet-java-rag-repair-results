@@ -1,0 +1,10 @@
+{
+  "summary": "Fixed XPath injection by XML-escaping the user-controlled username and password before concatenating them into the XPath query. The existing Apache Commons `StringEscapeUtils.escapeXml` (already imported) escapes apostrophes and other XML metacharacters so the input can no longer break out of the quoted XPath string literals, while legitimate credential lookups still work.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__getQueryString_Servlet_06.java",
+      "old": "                String query = \"//users/user[name/text()='\" + username +\n                               \"' and pass/text()='\" + password + \"']\" +\n                               \"/secret/text()\";",
+      "new": "                String query = \"//users/user[name/text()='\" + StringEscapeUtils.escapeXml(username) +\n                               \"' and pass/text()='\" + StringEscapeUtils.escapeXml(password) + \"']\" +\n                               \"/secret/text()\";"
+    }
+  ]
+}

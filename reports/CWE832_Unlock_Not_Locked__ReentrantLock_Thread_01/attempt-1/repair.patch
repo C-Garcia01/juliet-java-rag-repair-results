@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE832_Unlock_Not_Locked/CWE832_Unlock_Not_Locked__ReentrantLock_Thread_01.java w/src/testcases/CWE832_Unlock_Not_Locked/CWE832_Unlock_Not_Locked__ReentrantLock_Thread_01.java
+index 09880d9..9f7df54 100644
+--- c/src/testcases/CWE832_Unlock_Not_Locked/CWE832_Unlock_Not_Locked__ReentrantLock_Thread_01.java
++++ w/src/testcases/CWE832_Unlock_Not_Locked/CWE832_Unlock_Not_Locked__ReentrantLock_Thread_01.java
+@@ -17,7 +17,7 @@ public class CWE832_Unlock_Not_Locked__ReentrantLock_Thread_01 extends AbstractT
+ 
+     static public void helperBad() 
+     {
+-                               
++        REENTRANT_LOCK_BAD.lock();
+ 
+                                                                
+                                                                                                   

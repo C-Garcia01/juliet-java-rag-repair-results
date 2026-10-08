@@ -1,0 +1,16 @@
+diff --git c/src/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_22a.java w/src/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_22a.java
+index e763db3..b47671a 100644
+--- c/src/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_22a.java
++++ w/src/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__PropertiesFile_22a.java
+@@ -52,6 +52,11 @@ public class CWE23_Relative_Path_Traversal__PropertiesFile_22a extends AbstractT
+         {
+                                                                      
+             File file = new File(root + data);
++            File uploadDir = new File(root);
++            if (!file.getCanonicalPath().startsWith(uploadDir.getCanonicalPath() + File.separator))
++            {
++                throw new IOException("Potential path traversal detected for: " + data);
++            }
+             FileInputStream streamFileInputSink = null;
+             InputStreamReader readerInputStreamSink = null;
+             BufferedReader readerBufferdSink = null;

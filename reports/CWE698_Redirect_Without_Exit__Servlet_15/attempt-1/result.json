@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "9b0eb3f33ce7145b3d6e466f4521f94ce9394a20",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-698",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "8fbd9bea35eaba71289d2d4d9a08defe1570dca0",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26364,
+  "summary": "CWE-698 (Redirect Without Exit): after calling response.sendRedirect(), the bad() method continued executing instead of returning, so code intended to run only when no redirect occurs still executed. Fixed by returning immediately after issuing the redirect, preserving the redirect feature while preventing further processing on the same request.",
+  "exported_files": 1
+}

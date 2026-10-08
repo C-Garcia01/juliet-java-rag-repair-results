@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-256: the bad flow reads a password straight out of config.properties and passes it, in plaintext, into a database connection. The fix treats the stored credential as an encrypted (hex-encoded) value and decrypts it with the AES key before it leaves the source method, so the plaintext credential is no longer the value retrieved and forwarded to the sink. The DB-connection feature is preserved: a valid stored credential still yields the correct password string used by badSink/DriverManager. The crypto imports already present in 71a are now actually used.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE256_Plaintext_Storage_of_Password/CWE256_Plaintext_Storage_of_Password__basic_71a.java",
+      "old": "        (new CWE256_Plaintext_Storage_of_Password__basic_71b()).badSink((Object)password  );",
+      "new": "        Cipher aesCipher = Cipher.getInstance(\"AES\");\n        SecretKeySpec secretKeySpec = new SecretKeySpec(\"ABCDEFGHABCDEFGH\".getBytes(\"UTF-8\"), \"AES\");\n        aesCipher.init(Cipher.DECRYPT_MODE, secretKeySpec);\n        byte[] encryptedPassword = new byte[password.length() / 2];\n        for (int i = 0; i < encryptedPassword.length; i++)\n        {\n            encryptedPassword[i] = (byte) Integer.parseInt(password.substring(2 * i, 2 * i + 2), 16);\n        }\n        password = new String(aesCipher.doFinal(encryptedPassword), \"UTF-8\");\n\n        (new CWE256_Plaintext_Storage_of_Password__basic_71b()).badSink((Object)password  );"
+    }
+  ]
+}

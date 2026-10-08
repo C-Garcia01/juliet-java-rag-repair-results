@@ -1,0 +1,10 @@
+{
+  "summary": "Fixed CWE-759 (unsalted one-way hash) in the bad() entry point by generating a random salt with SecureRandom and incorporating it into the SHA-512 digest. The hashing feature is preserved: valid input is still hashed and the hex output written. SecureRandom was already imported.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE759_Unsalted_One_Way_Hash/CWE759_Unsalted_One_Way_Hash__basic_09.java",
+      "old": "            MessageDigest hash = MessageDigest.getInstance(\"SHA-512\");\n                                           \n            byte[] hashValue = hash.digest(\"hash me\".getBytes(\"UTF-8\"));\n            IO.writeLine(IO.toHex(hashValue));",
+      "new": "            MessageDigest hash = MessageDigest.getInstance(\"SHA-512\");\n            byte[] salt = new byte[16];\n            (new SecureRandom()).nextBytes(salt);\n            hash.update(salt);\n            byte[] hashValue = hash.digest(\"hash me\".getBytes(\"UTF-8\"));\n            IO.writeLine(IO.toHex(hashValue));"
+    }
+  ]
+}

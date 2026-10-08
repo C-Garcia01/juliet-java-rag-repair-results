@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "4183d1fb5ad499da722bc79c40f67c64a05618d0",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-400",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "1b73678e48541bba19e0349ead3651a9f0e9682a",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 30881,
+  "summary": "The bad entry point reads an integer from a properties file and passes it directly to Thread.sleep(count), allowing an attacker-controlled value to cause uncontrolled resource consumption (CWE-400). The fix validates the duration against a sane upper bound before sleeping, so legitimate sleep durations still work while unbounded/malicious values are rejected.",
+  "exported_files": 1
+}

@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "92af73afaa24edc4ddd6ba50b272a762a4fe9439",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-90",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "ca9b1e1590e1c40d98460d026bd40008bd89a2d7",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 29416,
+  "summary": "The LDAP injection flow takes the `id` value from the servlet query string and concatenates it directly into an LDAP search filter `(cn=<data>)`, letting an attacker inject filter metacharacters. I fixed it by escaping the LDAP special characters (`\\`, `*`, `(`, `)`, NUL) per RFC 4515 before building the filter, so legitimate lookups still work but injected filter syntax is neutralized. The feature (searching by the supplied id) is preserved.",
+  "exported_files": 1
+}

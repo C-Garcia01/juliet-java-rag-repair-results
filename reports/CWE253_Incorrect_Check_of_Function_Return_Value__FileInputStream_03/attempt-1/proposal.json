@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-253: FileInputStream.read(byte[]) returns the number of bytes read, or -1 when the stream has reached end-of-file; it does not return 0 to signal that nothing was read. Checking the result against 0 misinterprets the return value, so a genuine end-of-file/no-data condition is never detected and the else branch decodes an unfilled buffer. The fix compares the return value against -1, the correct sentinel, preserving normal reads while properly handling the end-of-file case.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__FileInputStream_03.java",
+      "old": "                if (fis.read(byteArray) == 0)",
+      "new": "                if (fis.read(byteArray) == -1)"
+    }
+  ]
+}

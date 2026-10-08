@@ -1,0 +1,14 @@
+diff --git c/src/testcases/CWE572_Call_to_Thread_run_Instead_of_start/CWE572_Call_to_Thread_run_Instead_of_start__basic_03.java w/src/testcases/CWE572_Call_to_Thread_run_Instead_of_start/CWE572_Call_to_Thread_run_Instead_of_start__basic_03.java
+index 475a984..1679f46 100644
+--- c/src/testcases/CWE572_Call_to_Thread_run_Instead_of_start/CWE572_Call_to_Thread_run_Instead_of_start__basic_03.java
++++ w/src/testcases/CWE572_Call_to_Thread_run_Instead_of_start/CWE572_Call_to_Thread_run_Instead_of_start__basic_03.java
+@@ -31,7 +31,8 @@ public class CWE572_Call_to_Thread_run_Instead_of_start__basic_03 extends Abstra
+                     IO.writeLine("bad() In thread: " + Thread.currentThread().getName());
+                 }
+             };
+-            threadOne.run();                                                          
++            threadOne.start();
++            threadOne.join();
+         }
+     }
+ 

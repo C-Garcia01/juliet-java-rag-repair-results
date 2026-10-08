@@ -1,0 +1,14 @@
+diff --git c/src/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_06.java w/src/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_06.java
+index 0fde522..ee0f4ca 100644
+--- c/src/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_06.java
++++ w/src/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_06.java
+@@ -38,7 +38,8 @@ public class CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_06 extends
+         if (PRIVATE_STATIC_FINAL_FIVE == 5)
+         {
+                                                             
+-            data = request.getParameter("id");
++            Object sessionUserId = request.getSession().getAttribute("currentUserId");
++            data = (sessionUserId == null) ? null : sessionUserId.toString();
+         }
+         else
+         {

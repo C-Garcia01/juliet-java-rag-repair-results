@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-499: The bad subclass of a Serializable Helper stores a sensitive password in the `passwordHash` instance field, so serializing the object would persist the secret. Marking the field `transient` excludes it from serialization while keeping setPassword/getPassword/withdraw fully functional for valid inputs.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE499_Sensitive_Data_Serializable/CWE499_Sensitive_Data_Serializable__serializable_01_bad.java",
+      "old": "    private String passwordHash;",
+      "new": "    private transient String passwordHash;"
+    }
+  ]
+}

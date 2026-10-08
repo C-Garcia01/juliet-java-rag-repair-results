@@ -1,0 +1,10 @@
+{
+  "summary": "The flaw is a hard-coded password: the entry point in 75a assigns the literal \"7e5tc4s3\" to `data`, which is then serialized and used to construct a PasswordAuthentication in 75b's sink. I replace the hard-coded literal with a value read from an external source (the `ADD` environment variable), so the credential is supplied at runtime rather than baked into the bytecode. The downstream serialization and the existing null check in badSink continue to work unchanged, preserving the feature for any valid runtime-provided password.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE259_Hard_Coded_Password/CWE259_Hard_Coded_Password__passwordAuth_75a.java",
+      "old": "        data = \"7e5tc4s3\";",
+      "new": "        data = System.getenv(\"ADD\");"
+    }
+  ]
+}

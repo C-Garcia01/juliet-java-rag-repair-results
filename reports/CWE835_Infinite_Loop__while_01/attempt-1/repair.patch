@@ -1,0 +1,17 @@
+diff --git c/src/testcases/CWE835_Infinite_Loop/CWE835_Infinite_Loop__while_01.java w/src/testcases/CWE835_Infinite_Loop/CWE835_Infinite_Loop__while_01.java
+index 214b709..8fe92d3 100644
+--- c/src/testcases/CWE835_Infinite_Loop/CWE835_Infinite_Loop__while_01.java
++++ w/src/testcases/CWE835_Infinite_Loop/CWE835_Infinite_Loop__while_01.java
+@@ -14,10 +14,10 @@ public class CWE835_Infinite_Loop__while_01 extends AbstractTestCase
+         int i = 0;
+     
+                                                                
+-        while (i >= 0)
++        while (i < 256)
+         {
+             IO.writeLine(i);
+-            i = (i + 1) % 256;
++            i = i + 1;
+         }
+     }
+     

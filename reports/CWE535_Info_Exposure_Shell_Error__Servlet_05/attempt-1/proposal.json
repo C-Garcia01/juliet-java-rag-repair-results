@@ -1,0 +1,15 @@
+{
+  "summary": "CWE-535: the bad() path wrote the username and session ID to System.err via an OutputStreamWriter/PrintWriter, exposing sensitive runtime information through the shell error stream. The fix removes the error-stream writer creation and routes the same message through the application logger at an informational level instead, preserving the legitimate behavior of recording the validated username and session ID while eliminating the flow of request-derived data into the error output stream. Input validation and the valid-input code path remain unchanged.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE535_Info_Exposure_Shell_Error/CWE535_Info_Exposure_Shell_Error__Servlet_05.java",
+      "old": "                HttpSession session = request.getSession(true);\n                writerOutputStream = new OutputStreamWriter(System.err, \"UTF-8\");\n                writerPrint = new PrintWriter(writerOutputStream);",
+      "new": "                HttpSession session = request.getSession(true);"
+    },
+    {
+      "path": "src/testcases/CWE535_Info_Exposure_Shell_Error/CWE535_Info_Exposure_Shell_Error__Servlet_05.java",
+      "old": "                writerPrint.println(\"Username: \" + username + \" Session ID:\" + session.getId());",
+      "new": "                IO.logger.log(Level.INFO, \"Username: \" + username + \" Session ID:\" + session.getId());"
+    }
+  ]
+}

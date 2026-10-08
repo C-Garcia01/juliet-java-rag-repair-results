@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "b28f357af2bacb614a4442a03870bc069c884d52",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-533",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "30441469d872fa6da1b4de0b831070ca4c6c7e38",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26743,
+  "summary": "The bad() entry point logs the session ID to the server log (CWE-533). Session identifiers are sensitive and must not be written to logs where they could be read by anyone with log access and used to hijack a user's session. The fix removes the session ID from the log message while preserving the legitimate functionality: the validated username is still logged and the session is still created. Valid inputs continue to produce a log entry and invalid inputs still get the error response.",
+  "exported_files": 1
+}

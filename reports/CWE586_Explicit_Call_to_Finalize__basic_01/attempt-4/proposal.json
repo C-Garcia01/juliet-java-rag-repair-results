@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-586 flags the explicit invocation of finalize() in the bad() entry point. Calling finalize() directly runs the object's finalization logic prematurely while the object is still live; the JVM will later call finalize() again during garbage collection, causing double cleanup. The fix removes the explicit finalize() call from the finally block, letting the garbage collector invoke finalization at the proper time. The legitimate feature (badObj.sayHello()) is untouched and continues to work.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE586_Explicit_Call_to_Finalize/CWE586_Explicit_Call_to_Finalize__basic_01.java",
+      "old": "        catch (Exception exception)\n        {\n            IO.writeLine(\"An error occurred.\");\n        }\n        finally\n        {\n                         \n                                                                                  \n            badObj.finalize();\n        }\n",
+      "new": "        catch (Exception exception)\n        {\n            IO.writeLine(\"An error occurred.\");\n        }\n"
+    }
+  ]
+}

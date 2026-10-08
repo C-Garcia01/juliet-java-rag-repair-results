@@ -1,0 +1,10 @@
+{
+  "summary": "The bad entry point reads an integer from a properties file and passes it directly to Thread.sleep(count), allowing an attacker-controlled value to cause uncontrolled resource consumption (CWE-400). The fix validates the duration against a sane upper bound before sleeping, so legitimate sleep durations still work while unbounded/malicious values are rejected.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_PropertiesFile_81_bad.java",
+      "old": "        Thread.sleep(count);",
+      "new": "        if (count > 0 && count <= 2000)\n        {\n            Thread.sleep(count);\n        }"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "summary": "The OS command injection flows from request.getQueryString() in 74a (parsing the `id=` token) into Runtime.getRuntime().exec() in 74b's badSink. I add input validation at the sink, immediately before command execution, requiring the decoded argument to match a conservative allow-list of filename-safe characters (letters, digits, dot, underscore, slash, hyphen). This rejects shell metacharacters and argument separators that enable injection while still permitting legitimate directory/file names to be listed, preserving the feature without disabling it or returning a constant.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__getQueryString_Servlet_74b.java",
+      "old": "        Process process = Runtime.getRuntime().exec(osCommand + data);\n        process.waitFor();",
+      "new": "        if (data != null && data.matches(\"[a-zA-Z0-9._/\\\\-]+\"))\n        {\n            Process process = Runtime.getRuntime().exec(osCommand + data);\n            process.waitFor();\n        }"
+    }
+  ]
+}

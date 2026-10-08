@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "1508411d7043ea8c6214c126f330c1eff80ba576",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-563",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "219b420c0c5828565e6ae7ca0eaddf97c50ad7aa",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26850,
+  "summary": "The bad() method assigns `data` an initial value (\"Good\" or null) that is never read because the subsequent block unconditionally overwrites it with \"Reinitialize\" before the only use. This is the CWE-563 unused-value flaw. The fix removes the dead reassignment so the originally computed `data` value is the one written out, preserving the write-line feature while eliminating the unused assignment.",
+  "exported_files": 1
+}

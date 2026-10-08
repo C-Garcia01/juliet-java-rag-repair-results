@@ -1,0 +1,15 @@
+{
+  "summary": "Fixed CWE-90 LDAP injection in the bad() entry point. User-controlled input from request.getParameter(\"name\") was concatenated directly into the LDAP search filter \"(cn=\" + data + \")\", allowing filter metacharacters to alter the query. Added an escapeLdapSearchFilter helper that escapes RFC 4515 special characters (\\, *, (, ), NUL) and applied it to the input before building the filter. Legitimate values still search normally; the feature is preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_12.java",
+      "old": "            String search = \"(cn=\" + data + \")\";",
+      "new": "            String search = \"(cn=\" + escapeLdapSearchFilter(data) + \")\";"
+    },
+    {
+      "path": "src/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getParameter_Servlet_12.java",
+      "old": "    public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable\n    {\n    }",
+      "new": "    private String escapeLdapSearchFilter(String filter)\n    {\n        StringBuilder escaped = new StringBuilder();\n        for (int i = 0; i < filter.length(); i++)\n        {\n            char current = filter.charAt(i);\n            switch (current)\n            {\n                case '\\\\':\n                    escaped.append(\"\\\\5c\");\n                    break;\n                case '*':\n                    escaped.append(\"\\\\2a\");\n                    break;\n                case '(':\n                    escaped.append(\"\\\\28\");\n                    break;\n                case ')':\n                    escaped.append(\"\\\\29\");\n                    break;\n                case '\\u0000':\n                    escaped.append(\"\\\\00\");\n                    break;\n                default:\n                    escaped.append(current);\n            }\n        }\n        return escaped.toString();\n    }\n\n    public void good(HttpServletRequest request, HttpServletResponse response) throws Throwable\n    {\n    }"
+    }
+  ]
+}

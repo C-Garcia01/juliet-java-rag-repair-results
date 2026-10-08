@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "227c94e94fe94194221d625bbc084903fde9db4f",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-253",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "034bdd65380b766ad01da94e2fbc94476a6d6928",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 27732,
+  "summary": "CWE-253: FileInputStream.read(byte[]) returns the number of bytes read, or -1 when the stream has reached end-of-file; it does not return 0 to signal that nothing was read. Checking the result against 0 misinterprets the return value, so a genuine end-of-file/no-data condition is never detected and the else branch decodes an unfilled buffer. The fix compares the return value against -1, the correct sentinel, preserving normal reads while properly handling the end-of-file case.",
+  "exported_files": 1
+}

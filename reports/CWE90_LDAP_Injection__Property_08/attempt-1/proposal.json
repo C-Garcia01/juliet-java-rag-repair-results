@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method takes the value of the user.home system property and concatenates it directly into an LDAP search filter (\"(cn=\" + data + \")\"), allowing LDAP injection via filter metacharacters. The fix escapes the LDAP filter special characters (\\, *, (, ), NUL) per RFC 4515 before building the filter, so legitimate values still produce an equivalent search while injection payloads are neutralized. The feature (searching LDAP by the provided value) is preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_08.java",
+      "old": "            String search = \"(cn=\" + data + \")\";",
+      "new": "            String safeData = data;\n            if (safeData != null)\n            {\n                StringBuilder escaped = new StringBuilder();\n                for (int i = 0; i < safeData.length(); i++)\n                {\n                    char currentChar = safeData.charAt(i);\n                    switch (currentChar)\n                    {\n                        case '\\\\':\n                            escaped.append(\"\\\\5c\");\n                            break;\n                        case '*':\n                            escaped.append(\"\\\\2a\");\n                            break;\n                        case '(':\n                            escaped.append(\"\\\\28\");\n                            break;\n                        case ')':\n                            escaped.append(\"\\\\29\");\n                            break;\n                        case '\\u0000':\n                            escaped.append(\"\\\\00\");\n                            break;\n                        default:\n                            escaped.append(currentChar);\n                    }\n                }\n                safeData = escaped.toString();\n            }\n            String search = \"(cn=\" + safeData + \")\";"
+    }
+  ]
+}

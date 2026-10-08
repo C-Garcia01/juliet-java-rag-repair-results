@@ -1,0 +1,10 @@
+{
+  "summary": "Replaced the broken 3DES (DESede) algorithm with AES-128, a modern secure symmetric cipher. The feature\u2014generating a key, encrypting the input string, and writing the hex-encoded ciphertext\u2014is fully preserved; only the weak algorithm and its key size are swapped for a strong one.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE327_Use_Broken_Crypto/CWE327_Use_Broken_Crypto__3DES_14.java",
+      "old": "            KeyGenerator keyGenerator = KeyGenerator.getInstance(\"DESede\");\n                                                        \n            keyGenerator.init(112);\n            SecretKey secretKey = keyGenerator.generateKey();\n            byte[] byteKey = secretKey.getEncoded();\n                                                         \n            SecretKeySpec secretKeySpec = new SecretKeySpec(byteKey, \"DESede\");\n            Cipher tripleDesCipher = Cipher.getInstance(\"DESede\");\n            tripleDesCipher.init(Cipher.ENCRYPT_MODE, secretKeySpec);\n            byte[] encrypted = tripleDesCipher.doFinal(CIPHER_INPUT.getBytes(\"UTF-8\"));",
+      "new": "            KeyGenerator keyGenerator = KeyGenerator.getInstance(\"AES\");\n                                                        \n            keyGenerator.init(128);\n            SecretKey secretKey = keyGenerator.generateKey();\n            byte[] byteKey = secretKey.getEncoded();\n                                                         \n            SecretKeySpec secretKeySpec = new SecretKeySpec(byteKey, \"AES\");\n            Cipher aesCipher = Cipher.getInstance(\"AES\");\n            aesCipher.init(Cipher.ENCRYPT_MODE, secretKeySpec);\n            byte[] encrypted = aesCipher.doFinal(CIPHER_INPUT.getBytes(\"UTF-8\"));"
+    }
+  ]
+}

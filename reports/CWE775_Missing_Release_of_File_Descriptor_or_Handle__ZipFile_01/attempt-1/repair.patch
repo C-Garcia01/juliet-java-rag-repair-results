@@ -1,0 +1,26 @@
+diff --git c/src/testcases/CWE775_Missing_Release_of_File_Descriptor_or_Handle/CWE775_Missing_Release_of_File_Descriptor_or_Handle__ZipFile_01.java w/src/testcases/CWE775_Missing_Release_of_File_Descriptor_or_Handle/CWE775_Missing_Release_of_File_Descriptor_or_Handle__ZipFile_01.java
+index 6603704..9b9cf8a 100644
+--- c/src/testcases/CWE775_Missing_Release_of_File_Descriptor_or_Handle/CWE775_Missing_Release_of_File_Descriptor_or_Handle__ZipFile_01.java
++++ w/src/testcases/CWE775_Missing_Release_of_File_Descriptor_or_Handle/CWE775_Missing_Release_of_File_Descriptor_or_Handle__ZipFile_01.java
+@@ -34,7 +34,20 @@ public class CWE775_Missing_Release_of_File_Descriptor_or_Handle__ZipFile_01 ext
+         {
+             IO.logger.log(Level.WARNING, "Error reading file", exceptIO);
+         }
+-                                         
++        finally
++        {
++            if (zFile != null)
++            {
++                try
++                {
++                    zFile.close();
++                }
++                catch (IOException exceptIO)
++                {
++                    IO.logger.log(Level.WARNING, "Error closing ZipFile", exceptIO);
++                }
++            }
++        }
+     }
+     
+     

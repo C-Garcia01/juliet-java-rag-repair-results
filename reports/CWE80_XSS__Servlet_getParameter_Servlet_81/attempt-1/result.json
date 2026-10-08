@@ -1,0 +1,19 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "4e3cc59e6d2cfcf6888dd0adf880c69cfd39bc2d",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-80",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "05ef8571b59f0f06337a46fcc8c9147a5d50f7f9",
+  "retrieved_examples": [
+    "apache/struts@885ab3459e146ff830d1f7257f809f4a3dd4493a:CVE-2011-1772"
+  ],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 33962,
+  "summary": "The flow takes attacker-controlled input from request.getParameter(\"name\") and writes it directly into the HTML response via response.getWriter().println, allowing reflected XSS (CWE-80). The fix HTML-encodes the tainted data in the bad() action method before it is written into the HTML output context, neutralizing markup-significant characters (&, <, >, \", ') while still displaying the user's value. Valid inputs continue to be echoed back; only their rendering is made safe.",
+  "exported_files": 1
+}

@@ -1,0 +1,16 @@
+diff --git c/src/testcases/CWE585_Empty_Sync_Block/CWE585_Empty_Sync_Block__Thread_01.java w/src/testcases/CWE585_Empty_Sync_Block/CWE585_Empty_Sync_Block__Thread_01.java
+index 16ee270..a14292f 100644
+--- c/src/testcases/CWE585_Empty_Sync_Block/CWE585_Empty_Sync_Block__Thread_01.java
++++ w/src/testcases/CWE585_Empty_Sync_Block/CWE585_Empty_Sync_Block__Thread_01.java
+@@ -17,10 +17,8 @@ public class CWE585_Empty_Sync_Block__Thread_01 extends AbstractTestCase
+     {
+         synchronized(CWE585_Empty_Sync_Block__Thread_01.class) 
+         {
+-                                                                            
++            intBad = intBad * 2;
+         }
+-    
+-        intBad = intBad * 2;
+     }
+ 
+     public void bad() throws InterruptedException 

@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point sets the session's max inactive interval to -1, which disables session expiration entirely (CWE-613). I replaced the negative value with a finite, positive timeout (300 seconds / 5 minutes) so the session still functions but expires after a reasonable period of inactivity. The response message is preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE613_Insufficient_Session_Expiration/CWE613_Insufficient_Session_Expiration__Servlet_09.java",
+      "old": "            sesssion.setMaxInactiveInterval(-1);",
+      "new": "            sesssion.setMaxInactiveInterval(300);"
+    }
+  ]
+}

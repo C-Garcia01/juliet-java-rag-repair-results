@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point contained an empty `{ }` block (CWE-398 poor code quality). I removed the empty block while keeping the legitimate functionality (the conditional IO.writeLine call) intact.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE398_Poor_Code_Quality/CWE398_Poor_Code_Quality__empty_block_14.java",
+      "old": "                                                                      \n            {\n            }\n            IO.writeLine(\"Hello from bad()\");",
+      "new": "            IO.writeLine(\"Hello from bad()\");"
+    }
+  ]
+}

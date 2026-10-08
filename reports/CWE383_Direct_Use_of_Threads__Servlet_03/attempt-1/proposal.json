@@ -1,0 +1,20 @@
+{
+  "summary": "CWE-383 (Direct Use of Threads) in a servlet: directly instantiating and starting a raw `Thread` from servlet code leads to unmanaged thread creation and potential resource exhaustion. The fix replaces the manual `Thread`/`isAlive()` polling loop with a managed `ExecutorService` (single-thread pool) that submits the same `Runnable`, waits for completion via `Future.get()`, and shuts the executor down. This preserves the exact feature \u2014 run the task to completion, then write \"thread is done!\" \u2014 while delegating thread lifecycle management to the concurrency framework.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE383_Direct_Use_of_Threads/CWE383_Direct_Use_of_Threads__Servlet_03.java",
+      "old": "import javax.servlet.http.*;",
+      "new": "import javax.servlet.http.*;\nimport java.util.concurrent.*;"
+    },
+    {
+      "path": "src/testcases/CWE383_Direct_Use_of_Threads/CWE383_Direct_Use_of_Threads__Servlet_03.java",
+      "old": "            Thread threadOne = new Thread(runnable);\n            threadOne.start();",
+      "new": "            ExecutorService executor = Executors.newSingleThreadExecutor();\n            Future<?> future = executor.submit(runnable);"
+    },
+    {
+      "path": "src/testcases/CWE383_Direct_Use_of_Threads/CWE383_Direct_Use_of_Threads__Servlet_03.java",
+      "old": "            while(true)\n            {\n                if (!threadOne.isAlive())\n                {\n                    break;\n                }\n                Thread.sleep(1000);\n            }",
+      "new": "            try\n            {\n                future.get();\n            }\n            catch (ExecutionException exceptExecution)\n            {\n                IO.writeLine(\"ExecutionException\");\n            }\n            finally\n            {\n                executor.shutdown();\n            }"
+    }
+  ]
+}

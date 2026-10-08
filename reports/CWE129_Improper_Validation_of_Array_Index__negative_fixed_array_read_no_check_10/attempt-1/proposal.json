@@ -1,0 +1,10 @@
+{
+  "summary": "In bad(), the array index `data` is set to -1 and then used to read `array[data]` without any bounds check, causing an out-of-bounds (negative index) read. I added a bounds check that validates the index is within `[0, array.length)` before using it to index the array, mirroring the standard fix of guarding the access against the known array size. Valid (in-range) indices continue to work and print the selected element; an out-of-range index is simply not used for the read.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__negative_fixed_array_read_no_check_10.java",
+      "old": "            int array[] = { 0, 1, 2, 3, 4 };\n                                                                                                                    \n            IO.writeLine(array[data]);",
+      "new": "            int array[] = { 0, 1, 2, 3, 4 };\n                                                                                                                    \n            if (data >= 0 && data < array.length)\n            {\n                IO.writeLine(array[data]);\n            }"
+    }
+  ]
+}

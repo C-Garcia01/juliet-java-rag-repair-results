@@ -1,0 +1,10 @@
+{
+  "summary": "Replaced the weak MD5 message digest with SHA-256, which is a cryptographically strong one-way hash. The feature (computing and writing a hex-encoded hash of the input) is fully preserved for all valid inputs.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE328_Reversible_One_Way_Hash/CWE328_Reversible_One_Way_Hash__MD5_06.java",
+      "old": "            MessageDigest messageDigest = MessageDigest.getInstance(\"MD5\");",
+      "new": "            MessageDigest messageDigest = MessageDigest.getInstance(\"SHA-256\");"
+    }
+  ]
+}

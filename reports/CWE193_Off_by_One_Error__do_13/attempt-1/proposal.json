@@ -1,0 +1,10 @@
+{
+  "summary": "Fixed the off-by-one error in the do-while loop bound. The loop used `i <= intArray.length`, which allows `i` to reach 10 and access `intArray[10]` on a length-10 array, causing an ArrayIndexOutOfBoundsException. Changed the condition to `i < intArray.length` so all valid indices 0..9 are still written while the out-of-bounds access is removed.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE193_Off_by_One_Error/CWE193_Off_by_One_Error__do_13.java",
+      "old": "            while (i <= intArray.length);",
+      "new": "            while (i < intArray.length);"
+    }
+  ]
+}

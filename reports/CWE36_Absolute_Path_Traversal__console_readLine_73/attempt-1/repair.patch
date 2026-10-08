@@ -1,0 +1,23 @@
+diff --git c/src/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__console_readLine_73b.java w/src/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__console_readLine_73b.java
+index f80063f..0d32595 100644
+--- c/src/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__console_readLine_73b.java
++++ w/src/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__console_readLine_73b.java
+@@ -33,11 +33,16 @@ public class CWE36_Absolute_Path_Traversal__console_readLine_73b
+                                                             
+         if (data != null)
+         {
+-            File file = new File(data);
++            File baseDirectory = new File(System.getProperty("user.dir"));
++            File file = new File(baseDirectory, data);
++            String canonicalBasePath = baseDirectory.getCanonicalPath();
++            String canonicalFilePath = file.getCanonicalPath();
+             FileInputStream streamFileInputSink = null;
+             InputStreamReader readerInputStreamSink = null;
+             BufferedReader readerBufferdSink = null;
+-            if (file.exists() && file.isFile())
++            if ((canonicalFilePath.equals(canonicalBasePath)
++                    || canonicalFilePath.startsWith(canonicalBasePath + File.separator))
++                && file.exists() && file.isFile())
+             {
+                 try
+                 {

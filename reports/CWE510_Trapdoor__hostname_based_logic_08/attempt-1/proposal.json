@@ -1,0 +1,15 @@
+{
+  "summary": "The bad() entry point contains a CWE-510 trapdoor: it elevates a connecting client to admin (\"Welcome, admin!\") purely because the socket's reverse-DNS hostname resolves to \"admin.google.com\". Reverse DNS (getHostName()) is attacker-controllable, so this hardcoded hostname check is a hidden backdoor granting privileged access. The fix removes the hostname-based decision and instead gates the privileged greeting on an authentication token the client must supply, validated against a server-configured secret (read from the ADMIN_ACCESS_TOKEN environment variable). This preserves the two-outcome greeting feature (admin vs. user), keeps valid clients working, and does not return a constant result, while eliminating the spoofable-hostname trapdoor flow.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE510_Trapdoor/CWE510_Trapdoor__hostname_based_logic_08.java",
+      "old": "import java.io.OutputStream;\nimport java.io.IOException;",
+      "new": "import java.io.OutputStream;\nimport java.io.InputStream;\nimport java.io.InputStreamReader;\nimport java.io.BufferedReader;\nimport java.io.IOException;"
+    },
+    {
+      "path": "src/testcases/CWE510_Trapdoor/CWE510_Trapdoor__hostname_based_logic_08.java",
+      "old": "                if (socket.getInetAddress().getHostName().equals(\"admin.google.com\"))\n                {\n                    streamOutput = socket.getOutputStream();\n                    streamOutput.write(\"Welcome, admin!\".getBytes(\"UTF-8\"));\n                }\n                else\n                {\n                    streamOutput = socket.getOutputStream();\n                    streamOutput.write(\"Welcome, user.\".getBytes(\"UTF-8\"));\n                }",
+      "new": "                InputStream streamInput = socket.getInputStream();\n                BufferedReader reader = new BufferedReader(new InputStreamReader(streamInput, \"UTF-8\"));\n                String credential = reader.readLine();\n                String adminToken = System.getenv(\"ADMIN_ACCESS_TOKEN\");\n                if (adminToken != null && !adminToken.isEmpty() && adminToken.equals(credential))\n                {\n                    streamOutput = socket.getOutputStream();\n                    streamOutput.write(\"Welcome, admin!\".getBytes(\"UTF-8\"));\n                }\n                else\n                {\n                    streamOutput = socket.getOutputStream();\n                    streamOutput.write(\"Welcome, user.\".getBytes(\"UTF-8\"));\n                }"
+    }
+  ]
+}

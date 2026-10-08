@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "69b077bf6ffbcf9bce303e61c85251d58f7a820c",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-319",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "5491b96226785f6947dcc883c8fd3565e634a2b7",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 30265,
+  "summary": "The bad() entry point reads a Kerberos password over a plaintext TCP Socket, transmitting sensitive authentication material in cleartext (CWE-319). The fix replaces the plain java.net.Socket with a TLS-encrypted SSLSocket created via SSLSocketFactory, so the same host/port connection and line-reading feature still works but the data is now transmitted over an encrypted channel. No behavior is disabled and valid inputs continue to flow through.",
+  "exported_files": 1
+}

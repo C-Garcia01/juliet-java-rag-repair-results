@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-674: helperBad recursed starting from Long.MAX_VALUE with only a `level == 0` base case, so the terminating condition is never reached in any practical sense and the stack overflows. Added an upper-bound guard mirroring the safe helper (helperGood1) so excessively deep recursion is rejected before it exhausts the stack, while legitimate in-range levels still recurse and terminate normally.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE674_Uncontrolled_Recursion/CWE674_Uncontrolled_Recursion__long_01.java",
+      "old": "    private static void helperBad(long level)\n    {\n                                                                                                             \n                                   \n        if (level == 0) \n        {\n            return;\n        }\n\n        helperBad(level - 1);\n    }",
+      "new": "    private static void helperBad(long level)\n    {\n        if (level > RECURSION_LONG_MAX) \n        {\n            IO.writeLine(\"ERROR IN RECURSION\");\n            return;\n        }\n\n        if (level == 0) \n        {\n            return;\n        }\n\n        helperBad(level - 1);\n    }"
+    }
+  ]
+}

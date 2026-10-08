@@ -1,0 +1,12 @@
+diff --git c/src/testcases/CWE764_Multiple_Locks/CWE764_Multiple_Locks__ReentrantLock_Thread_01.java w/src/testcases/CWE764_Multiple_Locks/CWE764_Multiple_Locks__ReentrantLock_Thread_01.java
+index d5ddc08..67ce5ad 100644
+--- c/src/testcases/CWE764_Multiple_Locks/CWE764_Multiple_Locks__ReentrantLock_Thread_01.java
++++ w/src/testcases/CWE764_Multiple_Locks/CWE764_Multiple_Locks__ReentrantLock_Thread_01.java
+@@ -17,7 +17,6 @@ public class CWE764_Multiple_Locks__ReentrantLock_Thread_01 extends AbstractTest
+ 
+     static public void helperBad() 
+     {
+-        REENTRANT_LOCK_BAD.lock(); 
+         REENTRANT_LOCK_BAD.lock();                                                                                                            
+ 
+                                                                

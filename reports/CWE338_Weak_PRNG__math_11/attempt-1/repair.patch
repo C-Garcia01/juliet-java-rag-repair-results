@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE338_Weak_PRNG/CWE338_Weak_PRNG__math_11.java w/src/testcases/CWE338_Weak_PRNG/CWE338_Weak_PRNG__math_11.java
+index 92e1aa8..e63e948 100644
+--- c/src/testcases/CWE338_Weak_PRNG/CWE338_Weak_PRNG__math_11.java
++++ w/src/testcases/CWE338_Weak_PRNG/CWE338_Weak_PRNG__math_11.java
+@@ -26,7 +26,7 @@ public class CWE338_Weak_PRNG__math_11 extends AbstractTestCase
+         if (IO.staticReturnsTrue())
+         {
+                                                           
+-            IO.writeLine("" + Math.random());
++            IO.writeLine("" + (new SecureRandom()).nextDouble());
+         }
+     }
+ 

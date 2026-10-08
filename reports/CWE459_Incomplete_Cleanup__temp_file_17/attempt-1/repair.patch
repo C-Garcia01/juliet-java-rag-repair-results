@@ -1,0 +1,15 @@
+diff --git c/src/testcases/CWE459_Incomplete_Cleanup/CWE459_Incomplete_Cleanup__temp_file_17.java w/src/testcases/CWE459_Incomplete_Cleanup/CWE459_Incomplete_Cleanup__temp_file_17.java
+index 79b83dc..7669375 100644
+--- c/src/testcases/CWE459_Incomplete_Cleanup/CWE459_Incomplete_Cleanup__temp_file_17.java
++++ w/src/testcases/CWE459_Incomplete_Cleanup/CWE459_Incomplete_Cleanup__temp_file_17.java
+@@ -47,6 +47,10 @@ public class CWE459_Incomplete_Cleanup__temp_file_17 extends AbstractTestCase
+                 {
+                     IO.logger.log(Level.WARNING, "Could not set Executable permissions");
+                 }
++                if (!tempFile.delete())
++                {
++                    IO.logger.log(Level.WARNING, "Could not delete temporary file");
++                }
+             }
+             catch (IOException exceptIO)
+             {

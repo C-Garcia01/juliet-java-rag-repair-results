@@ -1,0 +1,14 @@
+diff --git c/src/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_PropertiesFile_13.java w/src/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_PropertiesFile_13.java
+index f9678a6..126b0fb 100644
+--- c/src/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_PropertiesFile_13.java
++++ w/src/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_PropertiesFile_13.java
+@@ -80,7 +80,8 @@ public class CWE81_XSS_Error_Message__Servlet_PropertiesFile_13 extends Abstract
+                                                                                     
+                                                                                                                     
+               
+-            response.sendError(404, "<br>bad() - Parameter name has value " + data);
++            String encodedData = data.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;").replace("'", "&#39;");
++            response.sendError(404, "<br>bad() - Parameter name has value " + encodedData);
+         }
+ 
+     }

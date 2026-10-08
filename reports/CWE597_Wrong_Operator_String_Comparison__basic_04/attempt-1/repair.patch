@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE597_Wrong_Operator_String_Comparison/CWE597_Wrong_Operator_String_Comparison__basic_04.java w/src/testcases/CWE597_Wrong_Operator_String_Comparison/CWE597_Wrong_Operator_String_Comparison__basic_04.java
+index 9ac9859..bda1c9d 100644
+--- c/src/testcases/CWE597_Wrong_Operator_String_Comparison/CWE597_Wrong_Operator_String_Comparison__basic_04.java
++++ w/src/testcases/CWE597_Wrong_Operator_String_Comparison/CWE597_Wrong_Operator_String_Comparison__basic_04.java
+@@ -50,7 +50,7 @@ public class CWE597_Wrong_Operator_String_Comparison__basic_04 extends AbstractT
+                 if (string1 != null && string2 != null)
+                 {
+                                                    
+-                    if (string1 == string2)                                                                     
++                    if (string1.equals(string2))                                                                     
+                     {
+                         IO.writeLine("bad(): Strings are equal");
+                     }

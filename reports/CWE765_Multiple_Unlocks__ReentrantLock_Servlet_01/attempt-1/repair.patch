@@ -1,0 +1,12 @@
+diff --git c/src/testcases/CWE765_Multiple_Unlocks/CWE765_Multiple_Unlocks__ReentrantLock_Servlet_01.java w/src/testcases/CWE765_Multiple_Unlocks/CWE765_Multiple_Unlocks__ReentrantLock_Servlet_01.java
+index 1b9b209..4d41933 100644
+--- c/src/testcases/CWE765_Multiple_Unlocks/CWE765_Multiple_Unlocks__ReentrantLock_Servlet_01.java
++++ w/src/testcases/CWE765_Multiple_Unlocks/CWE765_Multiple_Unlocks__ReentrantLock_Servlet_01.java
+@@ -32,7 +32,6 @@ public class CWE765_Multiple_Unlocks__ReentrantLock_Servlet_01 extends AbstractT
+         finally 
+         {
+             REENTRANT_LOCK_BAD.unlock(); 
+-            REENTRANT_LOCK_BAD.unlock();                                                                                                         
+         }
+     }
+ 

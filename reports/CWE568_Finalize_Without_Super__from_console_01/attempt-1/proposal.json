@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-568: BadClass overrides finalize() but never invokes super.finalize(), so HelperClass's finalizer (and thus its super.finalize() chain) is never run. Fixed by wrapping the existing finalize body in a try/finally that calls super.finalize() in the finally block, mirroring the safe pattern already used in HelperClass. The visible 'finalizing BadClass' behavior is preserved and the superclass finalizer chain now executes.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE568_Finalize_Without_Super/CWE568_Finalize_Without_Super__from_console_01_bad.java",
+      "old": "            IO.writeLine(\"finalizing BadClass\");",
+      "new": "            try\n            {\n                IO.writeLine(\"finalizing BadClass\");\n            }\n            finally\n            {\n                super.finalize();\n            }"
+    }
+  ]
+}

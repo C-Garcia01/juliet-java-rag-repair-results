@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "784fd7974284b403709bfbb54ed62104537f9b04",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-36",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "45efc1d4aecd8449479e96a6aca7724ee8a3745a",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 32044,
+  "summary": "The bad flow reads a filename from console input in 73a and passes it unchecked to `new File(data)` in 73b's badSink, allowing an attacker-supplied absolute path (or `../` sequence) to open any file on the system (CWE-36). I confine the read to a trusted base directory: the input is resolved as a child of `user.dir` (which neutralizes a leading-slash absolute path on resolution) and the canonical path is verified to remain inside the base directory before the file is opened. Legitimate relative filenames within the working directory still work; only paths that escape the base are rejected. The file-reading feature is preserved, no tests/build settings are touched, and no scanner suppression is added.",
+  "exported_files": 1
+}

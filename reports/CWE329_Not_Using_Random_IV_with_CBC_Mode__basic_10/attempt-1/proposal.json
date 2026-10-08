@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method used a fixed all-zeros initialization vector for AES/CBC encryption (CWE-329), which makes the ciphertext deterministic and vulnerable. Replaced the hardcoded zero IV with a randomly generated 16-byte IV using the already-imported SecureRandom, preserving the encryption feature while producing a secure, unpredictable IV.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE329_Not_Using_Random_IV_with_CBC_Mode/CWE329_Not_Using_Random_IV_with_CBC_Mode__basic_10.java",
+      "old": "            byte[] initializationVector =\n            {\n                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\n                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00\n            };",
+      "new": "            byte[] initializationVector = new byte[16];\n            SecureRandom secureRandom = new SecureRandom();\n            secureRandom.nextBytes(initializationVector);"
+    }
+  ]
+}

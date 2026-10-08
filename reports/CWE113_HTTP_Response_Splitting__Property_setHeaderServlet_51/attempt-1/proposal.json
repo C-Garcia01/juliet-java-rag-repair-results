@@ -1,0 +1,10 @@
+{
+  "summary": "The bad flow passes untrusted data into response.setHeader(\"Location\", ...) without sanitizing CR/LF, enabling HTTP response splitting (CWE-113). The fix URL-encodes the data before concatenating it into the Location header value in the badSink method. URLEncoder.encode percent-encodes carriage return and line feed (and other unsafe characters), neutralizing header/response splitting while preserving the legitimate behavior of passing the value as the lang query parameter. The URLEncoder import already present in 51b is now used.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE113_HTTP_Response_Splitting/s03/CWE113_HTTP_Response_Splitting__Property_setHeaderServlet_51b.java",
+      "old": "        if (data != null)\n        {\n                                                                               \n            response.setHeader(\"Location\", \"/author.jsp?lang=\" + data);\n        }",
+      "new": "        if (data != null)\n        {\n            response.setHeader(\"Location\", \"/author.jsp?lang=\" + URLEncoder.encode(data, \"UTF-8\"));\n        }"
+    }
+  ]
+}

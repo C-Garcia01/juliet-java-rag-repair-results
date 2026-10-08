@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "0a15129d7c94141953505de6f7fed3f081d6b266",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-369",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "ef6222166f892ddf4927f5c0780d84603c76fa0b",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26555,
+  "summary": "The bad() entry point computes 100 % data where data comes from SecureRandom.nextInt() and can be zero, causing an ArithmeticException (divide by zero). I guard the modulo operation so it only runs when data is non-zero, preserving the legitimate output for all valid (non-zero) random values while avoiding the divide-by-zero.",
+  "exported_files": 1
+}

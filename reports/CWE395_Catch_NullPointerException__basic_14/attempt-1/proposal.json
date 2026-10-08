@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-395: the bad() method relied on catching NullPointerException to detect that System.getProperty(\"CWE395\") returned null. Replaced the NPE-based control flow with an explicit null check, preserving behavior: a matching property still logs the match, and a null/absent property logs \"systemProperty is null\" via a normal else branch rather than an exception handler.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE395_Catch_NullPointerException/CWE395_Catch_NullPointerException__basic_14.java",
+      "old": "            try\n            {\n                                                                                     \n                if(systemProperty.equals(\"CWE395\"))\n                {\n                    IO.writeLine(\"systemProperty is CWE395\");\n                }\n            }\n            catch (NullPointerException exceptNullPointer)                                                           \n            {\n                IO.writeLine(\"systemProperty is null\");\n            }",
+      "new": "            if (systemProperty != null && systemProperty.equals(\"CWE395\"))\n            {\n                IO.writeLine(\"systemProperty is CWE395\");\n            }\n            else if (systemProperty == null)\n            {\n                IO.writeLine(\"systemProperty is null\");\n            }"
+    }
+  ]
+}

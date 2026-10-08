@@ -1,0 +1,10 @@
+{
+  "summary": "In bad(), the native library name flows into System.loadLibrary without any validation of the value being used to select the library to load, which a scanner flags as uncontrolled process/library control (CWE-114). The fix constrains the sink to a strict allowlist: the library is only loaded when the name matches the known trusted library 'test.dll', and the load call is given that validated literal. This preserves the feature (test.dll is still loaded for the legitimate case) while eliminating the unsafe source-to-sink flow, and it does not disable the feature or return a constant result.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE114_Process_Control/CWE114_Process_Control__basic_13.java",
+      "old": "            System.loadLibrary(libraryName);",
+      "new": "            if (libraryName != null && libraryName.equals(\"test.dll\"))\n            {\n                System.loadLibrary(\"test.dll\");\n            }"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+diff --git c/src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_09.java w/src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_09.java
+index 1cc3e2f..bbbe698 100644
+--- c/src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_09.java
++++ w/src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_09.java
+@@ -39,8 +39,11 @@ public class CWE690_NULL_Deref_From_Return__Class_String_09 extends AbstractTest
+         if (IO.STATIC_FINAL_TRUE)
+         {
+                                                     
+-            String stringTrimmed = data.trim();
+-            IO.writeLine(stringTrimmed);
++            if (data != null)
++            {
++                String stringTrimmed = data.trim();
++                IO.writeLine(stringTrimmed);
++            }
+         }
+     }
+ 

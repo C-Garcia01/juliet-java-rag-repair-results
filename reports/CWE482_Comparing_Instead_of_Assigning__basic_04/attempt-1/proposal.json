@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method used a comparison (isZero == (zeroOrOne == 0)) where an assignment was intended (CWE-482). This left isZero perpetually false and based the branch on an accidental equality test. Replaced the comparison with an assignment so isZero is set to whether zeroOrOne is 0, then branch on that value, preserving the intended feature.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE482_Comparing_Instead_of_Assigning/CWE482_Comparing_Instead_of_Assigning__basic_04.java",
+      "old": "            boolean isZero = false;\n            if((isZero == (zeroOrOne == 0)) == true)                                                  \n            {\n                IO.writeLine(\"zeroOrOne is 0\");\n            }",
+      "new": "            boolean isZero = false;\n            isZero = (zeroOrOne == 0);\n            if(isZero)\n            {\n                IO.writeLine(\"zeroOrOne is 0\");\n            }"
+    }
+  ]
+}

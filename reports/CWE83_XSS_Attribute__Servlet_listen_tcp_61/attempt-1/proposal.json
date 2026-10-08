@@ -1,0 +1,10 @@
+{
+  "summary": "The XSS flaw is that attacker-controlled data read from the socket in 61b.badSource() is concatenated directly into an HTML `img src` attribute in 61a.bad() and written to the response without encoding. The fix HTML-encodes the data before it is placed into the attribute context, neutralizing characters that could break out of the attribute or inject markup, while preserving normal values which render unchanged.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_61a.java",
+      "old": "            response.getWriter().println(\"<br>bad() - <img src=\\\"\" + data + \"\\\">\");",
+      "new": "            String encoded = data.replace(\"&\", \"&amp;\").replace(\"<\", \"&lt;\").replace(\">\", \"&gt;\").replace(\"\\\"\", \"&quot;\").replace(\"'\", \"&#39;\");\n            response.getWriter().println(\"<br>bad() - <img src=\\\"\" + encoded + \"\\\">\");"
+    }
+  ]
+}

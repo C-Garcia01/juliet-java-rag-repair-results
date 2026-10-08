@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE605_Multiple_Binds_Same_Port/CWE605_Multiple_Binds_Same_Port__basic_08.java w/src/testcases/CWE605_Multiple_Binds_Same_Port/CWE605_Multiple_Binds_Same_Port__basic_08.java
+index 6220743..5ef0d35 100644
+--- c/src/testcases/CWE605_Multiple_Binds_Same_Port/CWE605_Multiple_Binds_Same_Port__basic_08.java
++++ w/src/testcases/CWE605_Multiple_Binds_Same_Port/CWE605_Multiple_Binds_Same_Port__basic_08.java
+@@ -52,7 +52,7 @@ public class CWE605_Multiple_Binds_Same_Port__basic_08 extends AbstractTestCase
+                 socket1.bind(new InetSocketAddress(15000));
+                 socket2 = new ServerSocket();
+                                                                                                                  
+-                socket2.bind(new InetSocketAddress("localhost", 15000));
++                socket2.bind(new InetSocketAddress("localhost", 15001));
+             }
+             catch (IOException exceptIO)
+             {

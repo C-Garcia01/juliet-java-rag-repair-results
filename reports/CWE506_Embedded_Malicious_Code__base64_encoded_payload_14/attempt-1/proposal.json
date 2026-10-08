@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point contains embedded malicious code: it decodes a hardcoded Base64 string (\"Y2FsYy5leGU=\" = \"calc.exe\") and passes it to Runtime.getRuntime().exec(), executing an attacker-chosen command with no legitimate purpose or input. The fix removes the embedded payload decode-and-execute logic. There is no legitimate feature to preserve here (the command string is a hardcoded embedded payload, not a user-driven feature), so the entry point is reduced to a benign no-op matching the good() behavior, eliminating the source-to-sink flow while leaving the class structure, entry point, and test harness intact.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE506_Embedded_Malicious_Code/CWE506_Embedded_Malicious_Code__base64_encoded_payload_14.java",
+      "old": "        if (IO.staticFive == 5)\n        {\n                                          \n            String encodedPayload = \"Y2FsYy5leGU=\";\n            try\n            {\n                Runtime.getRuntime().exec(new String(Base64.decodeBase64(encodedPayload), \"UTF-8\"));\n            }\n            catch (IOException exceptIO)\n            {\n                IO.logger.log(Level.WARNING, \"Error executing command\", exceptIO);\n            }\n        }",
+      "new": "        if (IO.staticFive == 5)\n        {\n            /* No embedded command is executed. */\n        }"
+    }
+  ]
+}

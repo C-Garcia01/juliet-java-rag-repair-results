@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-500 flags a public static field that is not final, allowing it to be mutated by any code. The field DEFAULT_ERROR holds a constant error message and is never reassigned, so marking it `final` closes the exposure while preserving the feature: bad() still reads and writes the same message via IO.writeLine.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE500_Public_Static_Field_Not_Final/CWE500_Public_Static_Field_Not_Final__String_01_bad.java",
+      "old": "    public static String DEFAULT_ERROR = \"The value you entered was not understood.  Please try again.\";",
+      "new": "    public static final String DEFAULT_ERROR = \"The value you entered was not understood.  Please try again.\";"
+    }
+  ]
+}

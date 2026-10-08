@@ -1,0 +1,20 @@
+diff --git c/src/testcases/CWE617_Reachable_Assertion/CWE617_Reachable_Assertion__length_06.java w/src/testcases/CWE617_Reachable_Assertion/CWE617_Reachable_Assertion__length_06.java
+index 55c70d4..dddc6b7 100644
+--- c/src/testcases/CWE617_Reachable_Assertion/CWE617_Reachable_Assertion__length_06.java
++++ w/src/testcases/CWE617_Reachable_Assertion/CWE617_Reachable_Assertion__length_06.java
+@@ -30,7 +30,14 @@ public class CWE617_Reachable_Assertion__length_06 extends AbstractTestCase
+         if (PRIVATE_STATIC_FINAL_FIVE == 5)
+         {
+                                           
+-            assert "".length() > 0;
++            if ("".length() > 0)
++            {
++                IO.writeLine("String length is greater than 0");
++            }
++            else
++            {
++                IO.writeLine("String length is 0");
++            }
+         }
+     }
+ 

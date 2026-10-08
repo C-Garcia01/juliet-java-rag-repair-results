@@ -1,0 +1,22 @@
+diff --git c/src/testcases/CWE506_Embedded_Malicious_Code/CWE506_Embedded_Malicious_Code__base64_encoded_payload_14.java w/src/testcases/CWE506_Embedded_Malicious_Code/CWE506_Embedded_Malicious_Code__base64_encoded_payload_14.java
+index e318467..5b0308f 100644
+--- c/src/testcases/CWE506_Embedded_Malicious_Code/CWE506_Embedded_Malicious_Code__base64_encoded_payload_14.java
++++ w/src/testcases/CWE506_Embedded_Malicious_Code/CWE506_Embedded_Malicious_Code__base64_encoded_payload_14.java
+@@ -29,16 +29,7 @@ public class CWE506_Embedded_Malicious_Code__base64_encoded_payload_14 extends A
+     {
+         if (IO.staticFive == 5)
+         {
+-                                          
+-            String encodedPayload = "Y2FsYy5leGU=";
+-            try
+-            {
+-                Runtime.getRuntime().exec(new String(Base64.decodeBase64(encodedPayload), "UTF-8"));
+-            }
+-            catch (IOException exceptIO)
+-            {
+-                IO.logger.log(Level.WARNING, "Error executing command", exceptIO);
+-            }
++            /* No embedded command is executed. */
+         }
+     }
+ 

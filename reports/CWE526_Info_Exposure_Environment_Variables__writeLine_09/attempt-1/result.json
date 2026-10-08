@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "ce0ec4eab0769a4a8a5eaaf0b88452700abf7102",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-526",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "6ac13b378560a0d9f4c526a88f1a31d67eca3b50",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26205,
+  "summary": "CWE-526: The bad() method writes the full contents of the PATH environment variable to output via IO.writeLine, exposing potentially sensitive system configuration. The fix removes the sensitive environment-variable value from the output while preserving the logging behavior. Instead of dumping the raw PATH, the code now reports only whether PATH is configured (a non-sensitive boolean), keeping the diagnostic feature functional for any environment without disclosing the variable's contents.",
+  "exported_files": 1
+}

@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-253: FileInputStream.read(byte[]) returns the number of bytes read, or -1 when the stream has reached end-of-file; it does not return 0 to signal EOF (0 only occurs when the requested length is 0). Checking the return value against 0 incorrectly interprets the result, so the EOF condition is never detected. The fix compares the return value against -1, the documented end-of-stream sentinel, preserving the read/report behavior.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__FileInputStream_04.java",
+      "old": "                if (fis.read(byteArray) == 0)",
+      "new": "                if (fis.read(byteArray) == -1)"
+    }
+  ]
+}

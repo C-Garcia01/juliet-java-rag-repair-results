@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point exposes the sensitive PATH environment variable value by concatenating System.getenv(\"PATH\") directly into an output line (CWE-526). The repair still reads the environment variable and still writes an informative, non-constant status line, but reports only whether the variable is set rather than disclosing its contents, eliminating the information-exposure flow while preserving the logging feature.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE526_Info_Exposure_Environment_Variables/CWE526_Info_Exposure_Environment_Variables__writeLine_06.java",
+      "old": "            IO.writeLine(\"Not in path: \" + System.getenv(\"PATH\"));",
+      "new": "            String path = System.getenv(\"PATH\");\n            IO.writeLine(\"PATH environment variable is \" + (path != null ? \"set\" : \"not set\"));"
+    }
+  ]
+}

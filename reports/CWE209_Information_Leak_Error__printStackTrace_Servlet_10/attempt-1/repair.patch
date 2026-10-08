@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE209_Information_Leak_Error/CWE209_Information_Leak_Error__printStackTrace_Servlet_10.java w/src/testcases/CWE209_Information_Leak_Error/CWE209_Information_Leak_Error__printStackTrace_Servlet_10.java
+index 6ef5525..aebaa78 100644
+--- c/src/testcases/CWE209_Information_Leak_Error/CWE209_Information_Leak_Error__printStackTrace_Servlet_10.java
++++ w/src/testcases/CWE209_Information_Leak_Error/CWE209_Information_Leak_Error__printStackTrace_Servlet_10.java
+@@ -31,7 +31,7 @@ public class CWE209_Information_Leak_Error__printStackTrace_Servlet_10 extends A
+             }
+             catch (UnsupportedOperationException exceptUnsupportedOperation)
+             {
+-                exceptUnsupportedOperation.printStackTrace(response.getWriter());                                                   
++                IO.logger.log(java.util.logging.Level.WARNING, "Caught UnsupportedOperationException", exceptUnsupportedOperation);
+             }
+         }
+     }

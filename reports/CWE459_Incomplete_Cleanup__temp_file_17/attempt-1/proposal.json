@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-459 Incomplete Cleanup: bad() creates a temporary file, writes to it, and sets its permissions but never deletes it, leaving the temp file resource behind. The fix adds an explicit delete of the temp file after it is used, completing the cleanup while preserving the create/write/permission-setting functionality.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE459_Incomplete_Cleanup/CWE459_Incomplete_Cleanup__temp_file_17.java",
+      "old": "                if (!tempFile.setExecutable(false))\n                {\n                    IO.logger.log(Level.WARNING, \"Could not set Executable permissions\");\n                }\n            }",
+      "new": "                if (!tempFile.setExecutable(false))\n                {\n                    IO.logger.log(Level.WARNING, \"Could not set Executable permissions\");\n                }\n                if (!tempFile.delete())\n                {\n                    IO.logger.log(Level.WARNING, \"Could not delete temporary file\");\n                }\n            }"
+    }
+  ]
+}

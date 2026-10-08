@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__FileInputStream_10.java w/src/testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__FileInputStream_10.java
+index bf34955..b92a891 100644
+--- c/src/testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__FileInputStream_10.java
++++ w/src/testcases/CWE253_Incorrect_Check_of_Function_Return_Value/CWE253_Incorrect_Check_of_Function_Return_Value__FileInputStream_10.java
+@@ -36,7 +36,7 @@ public class CWE253_Incorrect_Check_of_Function_Return_Value__FileInputStream_10
+                 byte[] byteArray = new byte[bytesToRead];
+                 fis = new FileInputStream("c:\\file.txt");
+                                                                                                                                      
+-                if (fis.read(byteArray) == 0)
++                if (fis.read(byteArray) == -1)
+                 {
+                     IO.writeLine("Error reading file.");
+                 }

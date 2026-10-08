@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE584_Return_in_Finally_Block/CWE584_Return_in_Finally_Block__basic_01.java w/src/testcases/CWE584_Return_in_Finally_Block/CWE584_Return_in_Finally_Block__basic_01.java
+index 67be21b..eb6e2ee 100644
+--- c/src/testcases/CWE584_Return_in_Finally_Block/CWE584_Return_in_Finally_Block__basic_01.java
++++ w/src/testcases/CWE584_Return_in_Finally_Block/CWE584_Return_in_Finally_Block__basic_01.java
+@@ -34,7 +34,7 @@ public class CWE584_Return_in_Finally_Block__basic_01 extends AbstractTestCase
+         {
+             if(true)
+             {
+-                return;                                                                            
++                IO.writeLine("finishing up");                                                                            
+             }
+                                                      
+                                                                                                                                       

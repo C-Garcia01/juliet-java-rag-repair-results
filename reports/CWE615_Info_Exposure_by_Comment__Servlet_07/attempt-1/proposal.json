@@ -1,0 +1,10 @@
+{
+  "summary": "Removed the HTML comment that leaked the database username and password from the servlet's response. The `<form>` and its inputs \u2014 the legitimate feature \u2014 are preserved unchanged, so the page still renders the login form while no longer exposing sensitive information in the markup.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE615_Info_Exposure_by_Comment/CWE615_Info_Exposure_by_Comment__Servlet_07.java",
+      "old": "            response.getWriter().println(\"<!--DB username = joe, DB password = 123-->\" +\n            \"<form action=\\\"/test\\\" method=post>\" +",
+      "new": "            response.getWriter().println(\"<form action=\\\"/test\\\" method=post>\" +"
+    }
+  ]
+}

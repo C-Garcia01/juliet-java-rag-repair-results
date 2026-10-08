@@ -1,0 +1,23 @@
+diff --git c/src/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__float_random_modulo_22b.java w/src/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__float_random_modulo_22b.java
+index e6c0059..8038b19 100644
+--- c/src/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__float_random_modulo_22b.java
++++ w/src/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__float_random_modulo_22b.java
+@@ -24,9 +24,15 @@ public class CWE369_Divide_by_Zero__float_random_modulo_22b
+     {
+         if (CWE369_Divide_by_Zero__float_random_modulo_22a.badPublicStatic)
+         {
+-                                                         
+-            int result = (int)(100.0 % data);
+-            IO.writeLine(result);
++            if (data != 0.0f)
++            {
++                int result = (int)(100.0 % data);
++                IO.writeLine(result);
++            }
++            else
++            {
++                IO.writeLine("This would result in a divide by zero");
++            }
+         }
+         else
+         {

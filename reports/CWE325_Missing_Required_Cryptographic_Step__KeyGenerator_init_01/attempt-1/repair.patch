@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE325_Missing_Required_Cryptographic_Step/CWE325_Missing_Required_Cryptographic_Step__KeyGenerator_init_01.java w/src/testcases/CWE325_Missing_Required_Cryptographic_Step/CWE325_Missing_Required_Cryptographic_Step__KeyGenerator_init_01.java
+index a73561a..915f75d 100644
+--- c/src/testcases/CWE325_Missing_Required_Cryptographic_Step/CWE325_Missing_Required_Cryptographic_Step__KeyGenerator_init_01.java
++++ w/src/testcases/CWE325_Missing_Required_Cryptographic_Step/CWE325_Missing_Required_Cryptographic_Step__KeyGenerator_init_01.java
+@@ -31,6 +31,8 @@ public class CWE325_Missing_Required_Cryptographic_Step__KeyGenerator_init_01 ex
+ 
+         KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
+ 
++        keyGenerator.init(128);
++
+                                                                                      
+                                                                                          
+                                                                                          

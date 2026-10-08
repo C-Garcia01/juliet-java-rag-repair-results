@@ -1,0 +1,29 @@
+diff --git c/src/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_08.java w/src/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_08.java
+index 096315b..6969da2 100644
+--- c/src/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_08.java
++++ w/src/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_08.java
+@@ -61,10 +61,21 @@ public class CWE470_Unsafe_Reflection__getCookies_Servlet_08 extends AbstractTes
+         }
+ 
+                                                                                                           
+-        Class<?> tempClass = Class.forName(data);
+-        Object tempClassObject = tempClass.newInstance();
++        java.util.Set<String> allowedClassNames = new java.util.HashSet<String>();
++        allowedClassNames.add("java.lang.String");
++        allowedClassNames.add("java.util.ArrayList");
++        allowedClassNames.add("java.lang.Object");
++        if (data != null && allowedClassNames.contains(data))
++        {
++            Class<?> tempClass = Class.forName(data);
++            Object tempClassObject = tempClass.newInstance();
+ 
+-        IO.writeLine(tempClassObject.toString());                                      
++            IO.writeLine(tempClassObject.toString());
++        }
++        else
++        {
++            IO.writeLine("Requested class is not allowed");
++        }                                      
+ 
+     }
+ 

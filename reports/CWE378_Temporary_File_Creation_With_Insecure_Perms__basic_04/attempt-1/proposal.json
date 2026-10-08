@@ -1,0 +1,15 @@
+{
+  "summary": "CWE-378: The bad() method created the temporary file with File.createTempFile, which on many platforms creates files with overly permissive, world-readable default permissions. I replaced it with java.nio.file.Files.createTempFile, which creates the temp file with owner-only (0600) permissions on POSIX systems while preserving identical functionality (the File is still used for the output stream, existence check, and deletion). Files.createTempFile throws IOException, which the existing catch block already handles.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE378_Temporary_File_Creation_With_Insecure_Perms/CWE378_Temporary_File_Creation_With_Insecure_Perms__basic_04.java",
+      "old": "import java.io.File;\nimport java.io.IOException;",
+      "new": "import java.io.File;\nimport java.io.IOException;\n\nimport java.nio.file.Files;"
+    },
+    {
+      "path": "src/testcases/CWE378_Temporary_File_Creation_With_Insecure_Perms/CWE378_Temporary_File_Creation_With_Insecure_Perms__basic_04.java",
+      "old": "                tempFile = File.createTempFile(\"temp\", \"1234\");",
+      "new": "                tempFile = Files.createTempFile(\"temp\", \"1234\").toFile();"
+    }
+  ]
+}

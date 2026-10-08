@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-584 is triggered by the `return;` statement inside the `finally` block of `bad()`. A return in a finally block abruptly ends the method, discarding any pending exception or return value from the try/catch and making control flow surprising. The fix removes the return from the finally block while keeping the finally body executing normally; control then falls through to the existing `break;` so the switch/method behavior is preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE584_Return_in_Finally_Block/CWE584_Return_in_Finally_Block__basic_15.java",
+      "old": "            finally\n            {\n                if(true)\n                {\n                    return;                                                                            \n                }\n                                                         \n                                                                                                                                          \n            }",
+      "new": "            finally\n            {\n                IO.writeLine(\"finally block executed\");\n            }"
+    }
+  ]
+}

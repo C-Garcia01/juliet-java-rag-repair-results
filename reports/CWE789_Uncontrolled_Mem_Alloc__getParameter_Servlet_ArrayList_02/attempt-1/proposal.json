@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method reads an integer from the untrusted 'name' request parameter and passes it directly as the initial capacity of a new ArrayList, allowing an attacker to trigger an uncontrolled, potentially huge memory allocation (CWE-789). The fix validates the parsed value before using it as a capacity: non-positive values and values exceeding a sane upper bound are rejected, so legitimate small capacities still work while oversized/negative requests no longer drive an unbounded allocation.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE789_Uncontrolled_Mem_Alloc/s02/CWE789_Uncontrolled_Mem_Alloc__getParameter_Servlet_ArrayList_02.java",
+      "old": "                                                                                                                                 \n        ArrayList intArrayList = new ArrayList(data);\n",
+      "new": "        final int MAX_INITIAL_CAPACITY = 1000000;\n        if (data < 0 || data > MAX_INITIAL_CAPACITY)\n        {\n            throw new IllegalArgumentException(\"Requested ArrayList capacity is out of the allowed range\");\n        }\n        ArrayList intArrayList = new ArrayList(data);\n"
+    }
+  ]
+}

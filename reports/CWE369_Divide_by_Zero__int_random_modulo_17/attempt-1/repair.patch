@@ -1,0 +1,20 @@
+diff --git c/src/testcases/CWE369_Divide_by_Zero/s03/CWE369_Divide_by_Zero__int_random_modulo_17.java w/src/testcases/CWE369_Divide_by_Zero/s03/CWE369_Divide_by_Zero__int_random_modulo_17.java
+index 1a3bc6b..fea8b1f 100644
+--- c/src/testcases/CWE369_Divide_by_Zero/s03/CWE369_Divide_by_Zero__int_random_modulo_17.java
++++ w/src/testcases/CWE369_Divide_by_Zero/s03/CWE369_Divide_by_Zero__int_random_modulo_17.java
+@@ -40,7 +40,14 @@ public class CWE369_Divide_by_Zero__int_random_modulo_17 extends AbstractTestCas
+         {
+                                                                                           
+                                        
+-            IO.writeLine("100%" + data + " = " + (100 % data) + "\n");
++            if (data != 0)
++            {
++                IO.writeLine("100%" + data + " = " + (100 % data) + "\n");
++            }
++            else
++            {
++                IO.writeLine("100%" + data + " = undefined (divisor is zero)\n");
++            }
+         }
+     }
+ 

@@ -1,0 +1,19 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "5b4a8d346b5aa039fcb5cbd71c015a85103e9e99",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-606",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "27352a2bdb90f3aa17c45005d8e1a93a6ee39803",
+  "retrieved_examples": [
+    "django/django@b6b3cb9899214a23ebb0f4ebf0e0b300b0ee524f:CVE-2015-2316"
+  ],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 33016,
+  "summary": "CWE-606 Unchecked Loop Condition: badSink parses an environment-controlled string into numberOfLoops and uses it directly as the loop bound, so an attacker-supplied value can drive an unbounded/excessive loop (resource exhaustion). The fix validates the parsed value before the loop, rejecting negative and unreasonably large counts while preserving legitimate small loop counts. The feature (looping numberOfLoops times and printing) still works for valid inputs.",
+  "exported_files": 1
+}

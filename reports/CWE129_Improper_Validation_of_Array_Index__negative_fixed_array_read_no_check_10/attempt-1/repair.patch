@@ -1,0 +1,16 @@
+diff --git c/src/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__negative_fixed_array_read_no_check_10.java w/src/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__negative_fixed_array_read_no_check_10.java
+index 9d364a1..71631df 100644
+--- c/src/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__negative_fixed_array_read_no_check_10.java
++++ w/src/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__negative_fixed_array_read_no_check_10.java
+@@ -42,7 +42,10 @@ public class CWE129_Improper_Validation_of_Array_Index__negative_fixed_array_rea
+                                                                                                                              
+             int array[] = { 0, 1, 2, 3, 4 };
+                                                                                                                     
+-            IO.writeLine(array[data]);
++            if (data >= 0 && data < array.length)
++            {
++                IO.writeLine(array[data]);
++            }
+         }
+     }
+ 

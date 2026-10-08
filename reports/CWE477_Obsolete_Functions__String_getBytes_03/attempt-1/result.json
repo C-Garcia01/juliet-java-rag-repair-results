@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "afd14df3bebc4112c391a741a01d4c4d73b1688a",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-477",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "dd6a96bbf913ee7843b0c188803a71e2b5a8aa79",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26290,
+  "summary": "The bad() method used the deprecated String.getBytes(int, int, byte[], int) method (removed/obsolete since it does not properly handle character encoding and truncates each char to a single byte). Replaced it with the standard String.getBytes() method, which returns the string encoded into bytes using the platform default charset and properly handles multi-byte characters. The feature (converting the sentence to a byte array and printing it as hex) is preserved for all valid inputs.",
+  "exported_files": 1
+}

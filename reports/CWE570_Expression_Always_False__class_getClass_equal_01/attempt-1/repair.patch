@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE570_Expression_Always_False/CWE570_Expression_Always_False__class_getClass_equal_01.java w/src/testcases/CWE570_Expression_Always_False/CWE570_Expression_Always_False__class_getClass_equal_01.java
+index 96bbecb..979d110 100644
+--- c/src/testcases/CWE570_Expression_Always_False/CWE570_Expression_Always_False__class_getClass_equal_01.java
++++ w/src/testcases/CWE570_Expression_Always_False/CWE570_Expression_Always_False__class_getClass_equal_01.java
+@@ -17,7 +17,7 @@ public class CWE570_Expression_Always_False__class_getClass_equal_01 extends Abs
+         Random random = new Random();
+         SecureRandom secureRandom = new SecureRandom();
+ 
+-        if (random.getClass().equals(secureRandom.getClass()))
++        if (random.getClass().isAssignableFrom(secureRandom.getClass()))
+         {
+             IO.writeLine("never prints");
+         }

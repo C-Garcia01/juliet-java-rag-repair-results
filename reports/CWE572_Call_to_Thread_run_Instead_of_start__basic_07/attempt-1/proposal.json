@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-572: The bad() method invoked Thread.run() directly, which executes the thread body synchronously in the current thread rather than spawning a new thread of execution. Changed the call to threadOne.start() so the work runs in its own thread as intended, preserving the logging feature.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE572_Call_to_Thread_run_Instead_of_start/CWE572_Call_to_Thread_run_Instead_of_start__basic_07.java",
+      "old": "            threadOne.run();                                                          ",
+      "new": "            threadOne.start();                                                          "
+    }
+  ]
+}

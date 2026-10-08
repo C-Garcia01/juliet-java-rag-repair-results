@@ -1,0 +1,18 @@
+diff --git c/src/testcases/CWE459_Incomplete_Cleanup/CWE459_Incomplete_Cleanup__Servlet_temp_file_02.java w/src/testcases/CWE459_Incomplete_Cleanup/CWE459_Incomplete_Cleanup__Servlet_temp_file_02.java
+index 9716adc..d485e58 100644
+--- c/src/testcases/CWE459_Incomplete_Cleanup/CWE459_Incomplete_Cleanup__Servlet_temp_file_02.java
++++ w/src/testcases/CWE459_Incomplete_Cleanup/CWE459_Incomplete_Cleanup__Servlet_temp_file_02.java
+@@ -56,6 +56,13 @@ public class CWE459_Incomplete_Cleanup__Servlet_temp_file_02 extends AbstractTes
+             {
+                 IO.logger.log(Level.WARNING, "Could not create temporary file", exceptIO);
+             }
++            finally
++            {
++                if (tempFile != null && tempFile.exists() && !tempFile.delete())
++                {
++                    IO.logger.log(Level.WARNING, "Could not delete temporary file");
++                }
++            }
+         }
+     }
+ 

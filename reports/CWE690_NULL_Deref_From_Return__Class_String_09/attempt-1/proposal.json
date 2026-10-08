@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point dereferences the value returned by getStringBad() without checking for null. Since getStringBad() can return null (CWE-690: unchecked return value used in NULL dereference), the call data.trim() throws a NullPointerException. The fix adds a null guard before dereferencing data, preserving the legitimate behavior of trimming and writing the string whenever a non-null value is returned.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_09.java",
+      "old": "        if (IO.STATIC_FINAL_TRUE)\n        {\n                                                    \n            String stringTrimmed = data.trim();\n            IO.writeLine(stringTrimmed);\n        }",
+      "new": "        if (IO.STATIC_FINAL_TRUE)\n        {\n                                                    \n            if (data != null)\n            {\n                String stringTrimmed = data.trim();\n                IO.writeLine(stringTrimmed);\n            }\n        }"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-523 (Unprotected Credential Transport): the login form submits the j_username/j_password credentials over cleartext HTTP to http://hostname.com/j_security_check, exposing them in transit. The fix changes the form action to use HTTPS so credentials are encrypted during transport, while preserving the login form and all fields.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE523_Unprotected_Cred_Transport/CWE523_Unprotected_Cred_Transport__Servlet_03.java",
+      "old": "                writer.println(\"<form action='http://hostname.com/j_security_check' method='post'>\");",
+      "new": "                writer.println(\"<form action='https://hostname.com/j_security_check' method='post'>\");"
+    }
+  ]
+}

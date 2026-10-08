@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-226: the bad() method reads a database password into a StringBuffer but never clears that buffer before it goes out of scope, leaving the sensitive credential sitting in memory for later reuse/garbage collection. I overwrite the StringBuffer's contents in the finally block (so it runs on both success and exception paths) before the resources are released. The password is still fully used for the real DriverManager.getConnection call, so legitimate functionality is preserved; only the lingering plaintext copy is scrubbed.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE226_Sensitive_Information_Uncleared_Before_Release/CWE226_Sensitive_Information_Uncleared_Before_Release__basic_11.java",
+      "old": "                try\n                {\n                    if (dBConnection != null)\n                    {\n                        dBConnection.close();\n                    }\n                }",
+      "new": "                if (password != null)\n                {\n                    for (int clearIndex = 0; clearIndex < password.length(); clearIndex++)\n                    {\n                        password.setCharAt(clearIndex, '0');\n                    }\n                    password.setLength(0);\n                }\n\n                try\n                {\n                    if (dBConnection != null)\n                    {\n                        dBConnection.close();\n                    }\n                }"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE614_Sensitive_Cookie_Without_Secure/CWE614_Sensitive_Cookie_Without_Secure__Servlet_11.java w/src/testcases/CWE614_Sensitive_Cookie_Without_Secure/CWE614_Sensitive_Cookie_Without_Secure__Servlet_11.java
+index 784fee9..33cdfd4 100644
+--- c/src/testcases/CWE614_Sensitive_Cookie_Without_Secure/CWE614_Sensitive_Cookie_Without_Secure__Servlet_11.java
++++ w/src/testcases/CWE614_Sensitive_Cookie_Without_Secure/CWE614_Sensitive_Cookie_Without_Secure__Servlet_11.java
+@@ -29,7 +29,7 @@ public class CWE614_Sensitive_Cookie_Without_Secure__Servlet_11 extends Abstract
+             Cookie cookie = new Cookie("SecretMessage", "test");
+             if (request.isSecure())
+             {
+-                                               
++                cookie.setSecure(true);
+                 response.addCookie(cookie);
+             }
+         }

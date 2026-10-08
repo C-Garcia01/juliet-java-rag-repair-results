@@ -1,0 +1,15 @@
+{
+  "summary": "CWE-209: the bad() entry point called exceptUnsupportedOperation.printStackTrace(), which writes the full stack trace to standard error where it can be exposed to users, leaking internal implementation details. I replaced the printStackTrace() call with controlled server-side logging through the existing IO.logger, which records a generic message plus the exception for operators without surfacing the trace to callers. The exception-handling feature is preserved. I added the java.util.logging.Level import needed for the log call.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE209_Information_Leak_Error/CWE209_Information_Leak_Error__printStackTrace_02.java",
+      "old": "import testcasesupport.*;\n",
+      "new": "import testcasesupport.*;\n\nimport java.util.logging.Level;\n"
+    },
+    {
+      "path": "src/testcases/CWE209_Information_Leak_Error/CWE209_Information_Leak_Error__printStackTrace_02.java",
+      "old": "                exceptUnsupportedOperation.printStackTrace();                                                  \n",
+      "new": "                IO.logger.log(Level.WARNING, \"Caught UnsupportedOperationException while performing operation\", exceptUnsupportedOperation);\n"
+    }
+  ]
+}

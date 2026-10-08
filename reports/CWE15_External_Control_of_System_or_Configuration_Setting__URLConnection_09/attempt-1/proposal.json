@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method reads a line from an external URL and passes it directly to dbConnection.setCatalog(data), letting an attacker-controlled value set a system/configuration setting (CWE-15). I added input validation so the catalog is only set when the externally sourced value is non-null and matches a safe database-identifier pattern (letters, digits, underscores). This preserves the feature for legitimate catalog names while rejecting arbitrary/unexpected external input.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__URLConnection_09.java",
+      "old": "            dbConnection.setCatalog(data);",
+      "new": "            if (data != null && data.matches(\"[A-Za-z0-9_]+\"))\n            {\n                dbConnection.setCatalog(data);\n            }"
+    }
+  ]
+}

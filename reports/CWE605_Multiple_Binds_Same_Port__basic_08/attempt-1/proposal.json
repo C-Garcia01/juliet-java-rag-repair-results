@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-605 (Multiple Binds to the Same Port) occurs because the bad() method binds socket2 to port 15000, the same port socket1 is already bound to. I changed the second socket to bind to a distinct port (15001) so both binds succeed and the socket-binding feature continues to work for legitimate use.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE605_Multiple_Binds_Same_Port/CWE605_Multiple_Binds_Same_Port__basic_08.java",
+      "old": "                socket2.bind(new InetSocketAddress(\"localhost\", 15000));",
+      "new": "                socket2.bind(new InetSocketAddress(\"localhost\", 15001));"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method writes the HTTP session ID into a debug-level log entry (CWE-534: Information Exposure Through Debug Log). The session ID is a sensitive authentication token; recording it in log files exposes it to anyone with log access and enables session hijacking. The fix keeps the servlet's behavior intact \u2014 it still validates the username, creates the session, and emits a diagnostic log line \u2014 but removes the sensitive session identifier from the logged message so no secret is persisted to the debug log.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE534_Info_Exposure_Debug_Log/CWE534_Info_Exposure_Debug_Log__Servlet_13.java",
+      "old": "                HttpSession session = request.getSession(true);\n                                                              \n                logger.log(Level.FINEST, \"Username: \" + username + \" Session ID:\" + session.getId());",
+      "new": "                HttpSession session = request.getSession(true);\n                                                              \n                logger.log(Level.FINEST, \"Username: \" + username + \" has an active session\");"
+    }
+  ]
+}

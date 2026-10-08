@@ -1,0 +1,10 @@
+{
+  "summary": "The flow takes attacker-controlled input from request.getParameter(\"name\") and writes it directly into the HTML response via response.getWriter().println, allowing reflected XSS (CWE-80). The fix HTML-encodes the tainted data in the bad() action method before it is written into the HTML output context, neutralizing markup-significant characters (&, <, >, \", ') while still displaying the user's value. Valid inputs continue to be echoed back; only their rendering is made safe.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getParameter_Servlet_81_bad.java",
+      "old": "            response.getWriter().println(\"<br>bad(): data = \" + data);",
+      "new": "            String encodedData = data.replace(\"&\", \"&amp;\").replace(\"<\", \"&lt;\").replace(\">\", \"&gt;\").replace(\"\\\"\", \"&quot;\").replace(\"'\", \"&#39;\");\n            response.getWriter().println(\"<br>bad(): data = \" + encodedData);"
+    }
+  ]
+}

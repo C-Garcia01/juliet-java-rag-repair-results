@@ -1,0 +1,16 @@
+diff --git c/src/testcases/CWE571_Expression_Always_True/CWE571_Expression_Always_True__private_static_final_01.java w/src/testcases/CWE571_Expression_Always_True/CWE571_Expression_Always_True__private_static_final_01.java
+index 7250090..d21d759 100644
+--- c/src/testcases/CWE571_Expression_Always_True/CWE571_Expression_Always_True__private_static_final_01.java
++++ w/src/testcases/CWE571_Expression_Always_True/CWE571_Expression_Always_True__private_static_final_01.java
+@@ -14,10 +14,7 @@ public class CWE571_Expression_Always_True__private_static_final_01 extends Abst
+     public void bad()
+     {
+                                             
+-        if (PRIVATE_STATIC_FINAL_TRUE)
+-        {
+-            IO.writeLine("always prints");
+-        }
++        IO.writeLine("always prints");
+     }
+     
+     public void good()

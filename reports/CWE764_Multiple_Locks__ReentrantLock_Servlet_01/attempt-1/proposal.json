@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-764 (Multiple Locks): helperBad() acquired REENTRANT_LOCK_BAD twice (two lock() calls) but released it only once in the finally block, leaving the lock held with a residual hold count of 1 after the method returns. This permanently holds the lock, blocking any future acquisition. Fixed by acquiring the lock exactly once, matching the single unlock(), which preserves the feature (doubling intBad under mutual exclusion) while balancing lock/unlock.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE764_Multiple_Locks/CWE764_Multiple_Locks__ReentrantLock_Servlet_01.java",
+      "old": "        REENTRANT_LOCK_BAD.lock(); \n        REENTRANT_LOCK_BAD.lock();                                                                                                          \n",
+      "new": "        REENTRANT_LOCK_BAD.lock();\n"
+    }
+  ]
+}

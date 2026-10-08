@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE382_Use_of_System_Exit/CWE382_Use_of_System_Exit__Servlet_System_02.java w/src/testcases/CWE382_Use_of_System_Exit/CWE382_Use_of_System_Exit__Servlet_System_02.java
+index e6c279f..195f201 100644
+--- c/src/testcases/CWE382_Use_of_System_Exit/CWE382_Use_of_System_Exit__Servlet_System_02.java
++++ w/src/testcases/CWE382_Use_of_System_Exit/CWE382_Use_of_System_Exit__Servlet_System_02.java
+@@ -26,7 +26,7 @@ public class CWE382_Use_of_System_Exit__Servlet_System_02 extends AbstractTestCa
+         if (true)
+         {
+                                           
+-            System.exit(1);
++            return;
+         }
+     }
+ 

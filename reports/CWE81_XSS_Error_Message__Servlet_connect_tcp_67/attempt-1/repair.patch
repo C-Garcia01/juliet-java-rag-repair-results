@@ -1,0 +1,39 @@
+diff --git c/src/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_connect_tcp_67b.java w/src/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_connect_tcp_67b.java
+index fa04d28..33bc854 100644
+--- c/src/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_connect_tcp_67b.java
++++ w/src/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_connect_tcp_67b.java
+@@ -32,7 +32,33 @@ public class CWE81_XSS_Error_Message__Servlet_connect_tcp_67b
+                                                                                     
+                                                                                                                     
+               
+-            response.sendError(404, "<br>bad() - Parameter name has value " + data);
++            StringBuilder escapedData = new StringBuilder();
++            for (int i = 0; i < data.length(); i++)
++            {
++                char c = data.charAt(i);
++                switch (c)
++                {
++                    case '&':
++                        escapedData.append("&amp;");
++                        break;
++                    case '<':
++                        escapedData.append("&lt;");
++                        break;
++                    case '>':
++                        escapedData.append("&gt;");
++                        break;
++                    case '\"':
++                        escapedData.append("&quot;");
++                        break;
++                    case '\'':
++                        escapedData.append("&#39;");
++                        break;
++                    default:
++                        escapedData.append(c);
++                        break;
++                }
++            }
++            response.sendError(404, "<br>bad() - Parameter name has value " + escapedData.toString());
+         }
+ 
+     }

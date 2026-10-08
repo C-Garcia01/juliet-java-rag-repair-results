@@ -1,0 +1,26 @@
+diff --git c/src/testcases/CWE667_Improper_Locking/CWE667_Improper_Locking__basic_01.java w/src/testcases/CWE667_Improper_Locking/CWE667_Improper_Locking__basic_01.java
+index 3410903..9afa5c8 100644
+--- c/src/testcases/CWE667_Improper_Locking/CWE667_Improper_Locking__basic_01.java
++++ w/src/testcases/CWE667_Improper_Locking/CWE667_Improper_Locking__basic_01.java
+@@ -18,11 +18,16 @@ public class CWE667_Improper_Locking__basic_01 extends AbstractTestCase
+     {
+         BAD_REENTRANT_LOCK.lock();
+         
+-        intBadNumber++;
+-        
+-        IO.writeLine(intBadNumber);
+-        
+-                                        
++        try
++        {
++            intBadNumber++;
++            
++            IO.writeLine(intBadNumber);
++        }
++        finally
++        {
++            BAD_REENTRANT_LOCK.unlock();
++        }
+     }
+     
+     public void bad() throws Throwable 

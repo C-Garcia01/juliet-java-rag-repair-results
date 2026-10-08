@@ -1,0 +1,10 @@
+{
+  "summary": "The bad flow feeds a random float (which can be 0.0) into a modulo operation `100.0 % data`, triggering a divide-by-zero (CWE-369) when data is 0. The fix guards the modulo in badSink so it only runs when the divisor is non-zero, preserving the compute-and-write feature for all valid (non-zero) inputs.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__float_random_modulo_22b.java",
+      "old": "        if (CWE369_Divide_by_Zero__float_random_modulo_22a.badPublicStatic)\n        {\n                                                         \n            int result = (int)(100.0 % data);\n            IO.writeLine(result);\n        }",
+      "new": "        if (CWE369_Divide_by_Zero__float_random_modulo_22a.badPublicStatic)\n        {\n            if (data != 0.0f)\n            {\n                int result = (int)(100.0 % data);\n                IO.writeLine(result);\n            }\n            else\n            {\n                IO.writeLine(\"This would result in a divide by zero\");\n            }\n        }"
+    }
+  ]
+}

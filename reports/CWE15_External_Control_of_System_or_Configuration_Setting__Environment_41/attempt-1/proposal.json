@@ -1,0 +1,10 @@
+{
+  "summary": "The bad entry point reads the ADD environment variable and passes it unvalidated to Connection.setCatalog(), allowing external control of a database configuration setting (CWE-15). The fix validates the value against a strict allow-list pattern (non-null, non-empty, only letters, digits, and underscores) before applying it as the catalog. Legitimate catalog names still work, but attacker-controlled values containing unexpected characters are rejected rather than applied.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__Environment_41.java",
+      "old": "            dbConnection = IO.getDBConnection();\n\n                                                                          \n                                                                                                   \n            dbConnection.setCatalog(data);",
+      "new": "            dbConnection = IO.getDBConnection();\n\n                                                                          \n                                                                                                   \n            if (data != null && data.matches(\"[A-Za-z0-9_]+\"))\n            {\n                dbConnection.setCatalog(data);\n            }"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE491_Object_Hijack/CWE491_Object_Hijack__basic_01_bad.java w/src/testcases/CWE491_Object_Hijack/CWE491_Object_Hijack__basic_01_bad.java
+index e601838..9d99d5e 100644
+--- c/src/testcases/CWE491_Object_Hijack/CWE491_Object_Hijack__basic_01_bad.java
++++ w/src/testcases/CWE491_Object_Hijack/CWE491_Object_Hijack__basic_01_bad.java
+@@ -18,7 +18,7 @@ public class CWE491_Object_Hijack__basic_01_bad extends AbstractTestCaseClassIss
+     private Date theDate = new Date();
+     
+                                                  
+-    protected Object clone() throws CloneNotSupportedException 
++    protected final Object clone() throws CloneNotSupportedException 
+     {
+         CWE491_Object_Hijack__basic_01_bad objectBad = (CWE491_Object_Hijack__basic_01_bad) super.clone();     
+         objectBad.setDate(new Date(theDate.getTime()));

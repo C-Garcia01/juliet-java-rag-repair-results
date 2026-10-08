@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method compared `random.getClass()` (always `Random.class`) against `secureRandom.getClass()` (always `SecureRandom.class`). Since these runtime classes can never be equal, `!equals(...)` was a tautology that always evaluated to true (CWE-571). The repair preserves the feature of comparing two objects' runtime classes and printing when they differ, but makes the second object's runtime type depend on a runtime value so the comparison is genuinely data-dependent rather than always true.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE571_Expression_Always_True/CWE571_Expression_Always_True__class_getClass_not_equal_01.java",
+      "old": "        Random random = new Random();\n        SecureRandom secureRandom = new SecureRandom();\n\n        if (!random.getClass().equals(secureRandom.getClass()))\n        {\n            IO.writeLine(\"always prints\");\n        }",
+      "new": "        Random random = new Random();\n        Random secondRandom;\n\n        if (IO.staticReturnsTrueOrFalse())\n        {\n            secondRandom = new SecureRandom();\n        }\n        else\n        {\n            secondRandom = new Random();\n        }\n\n        if (!random.getClass().equals(secondRandom.getClass()))\n        {\n            IO.writeLine(\"classes differ\");\n        }"
+    }
+  ]
+}

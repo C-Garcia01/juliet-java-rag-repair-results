@@ -1,0 +1,16 @@
+diff --git c/src/testcases/CWE585_Empty_Sync_Block/CWE585_Empty_Sync_Block__Servlet_01.java w/src/testcases/CWE585_Empty_Sync_Block/CWE585_Empty_Sync_Block__Servlet_01.java
+index 3256c3b..6b6616a 100644
+--- c/src/testcases/CWE585_Empty_Sync_Block/CWE585_Empty_Sync_Block__Servlet_01.java
++++ w/src/testcases/CWE585_Empty_Sync_Block/CWE585_Empty_Sync_Block__Servlet_01.java
+@@ -23,10 +23,8 @@ public class CWE585_Empty_Sync_Block__Servlet_01 extends AbstractTestCaseServlet
+     {
+         synchronized(CWE585_Empty_Sync_Block__Servlet_01.class) 
+         {
+-                                                                            
++            intBad = intBad * 2;
+         }
+-    
+-        intBad = intBad * 2;
+     }
+ 
+     public void bad(HttpServletRequest request, HttpServletResponse response) throws InterruptedException, IOException 

@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-397: bad() declared the overly generic checked exception `throws Exception`, which forces callers to catch a broad type and masks the specific error. The only checked exception the body can propagate is FileNotFoundException from the FileInputStream constructor (the IOException from close() is already caught and logged). Narrowed the throws clause to FileNotFoundException, matching the good() method and the file-opening feature. This is a legal narrowing of the abstract `throws Throwable` declaration, so callers and runTest are unaffected.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE397_Throw_Generic/CWE397_Throw_Generic__declare_Exception_01.java",
+      "old": "    public void bad() throws Exception                                                                             \n    {\n        FileInputStream streamFileInput = new FileInputStream(\"filename.txt\");",
+      "new": "    public void bad() throws FileNotFoundException                                                                             \n    {\n        FileInputStream streamFileInput = new FileInputStream(\"filename.txt\");"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+diff --git c/src/testcases/CWE698_Redirect_Without_Exit/CWE698_Redirect_Without_Exit__Servlet_15.java w/src/testcases/CWE698_Redirect_Without_Exit/CWE698_Redirect_Without_Exit__Servlet_15.java
+index 95343ca..799d903 100644
+--- c/src/testcases/CWE698_Redirect_Without_Exit/CWE698_Redirect_Without_Exit__Servlet_15.java
++++ w/src/testcases/CWE698_Redirect_Without_Exit/CWE698_Redirect_Without_Exit__Servlet_15.java
+@@ -27,6 +27,7 @@ public class CWE698_Redirect_Without_Exit__Servlet_15 extends AbstractTestCaseSe
+         {
+         case 7:
+             response.sendRedirect("/test");
++            return;
+                                                             
+             IO.writeLine("doing some more things here after the redirect");
+             break;

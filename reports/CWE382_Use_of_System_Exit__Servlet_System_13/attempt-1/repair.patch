@@ -1,0 +1,15 @@
+diff --git c/src/testcases/CWE382_Use_of_System_Exit/CWE382_Use_of_System_Exit__Servlet_System_13.java w/src/testcases/CWE382_Use_of_System_Exit/CWE382_Use_of_System_Exit__Servlet_System_13.java
+index 5f0a81e..4933d1e 100644
+--- c/src/testcases/CWE382_Use_of_System_Exit/CWE382_Use_of_System_Exit__Servlet_System_13.java
++++ w/src/testcases/CWE382_Use_of_System_Exit/CWE382_Use_of_System_Exit__Servlet_System_13.java
+@@ -25,8 +25,8 @@ public class CWE382_Use_of_System_Exit__Servlet_System_13 extends AbstractTestCa
+     {
+         if (IO.STATIC_FINAL_FIVE == 5)
+         {
+-                                          
+-            System.exit(1);
++            /* Servlets must not terminate the JVM/container; log and continue instead. */
++            IO.writeLine("Reached conditional branch in bad()");
+         }
+     }
+ 

@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method takes a user-controlled cookie value and passes it directly to Class.forName()/newInstance(), allowing an attacker to instantiate arbitrary classes (CWE-470 Unsafe Reflection). The fix adds an allowlist check so only a known, safe set of class names can be loaded, while still honoring legitimate cookie values and performing the same reflection/instantiation behavior for valid inputs.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__getCookies_Servlet_08.java",
+      "old": "        Class<?> tempClass = Class.forName(data);\n        Object tempClassObject = tempClass.newInstance();\n\n        IO.writeLine(tempClassObject.toString());",
+      "new": "        java.util.Set<String> allowedClassNames = new java.util.HashSet<String>();\n        allowedClassNames.add(\"java.lang.String\");\n        allowedClassNames.add(\"java.util.ArrayList\");\n        allowedClassNames.add(\"java.lang.Object\");\n        if (data != null && allowedClassNames.contains(data))\n        {\n            Class<?> tempClass = Class.forName(data);\n            Object tempClassObject = tempClass.newInstance();\n\n            IO.writeLine(tempClassObject.toString());\n        }\n        else\n        {\n            IO.writeLine(\"Requested class is not allowed\");\n        }"
+    }
+  ]
+}

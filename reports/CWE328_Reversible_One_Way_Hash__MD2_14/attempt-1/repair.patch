@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE328_Reversible_One_Way_Hash/CWE328_Reversible_One_Way_Hash__MD2_14.java w/src/testcases/CWE328_Reversible_One_Way_Hash/CWE328_Reversible_One_Way_Hash__MD2_14.java
+index 83b8cd2..9061003 100644
+--- c/src/testcases/CWE328_Reversible_One_Way_Hash/CWE328_Reversible_One_Way_Hash__MD2_14.java
++++ w/src/testcases/CWE328_Reversible_One_Way_Hash/CWE328_Reversible_One_Way_Hash__MD2_14.java
+@@ -27,7 +27,7 @@ public class CWE328_Reversible_One_Way_Hash__MD2_14 extends AbstractTestCase
+         {
+             String input = "Test Input";
+                                                                       
+-            MessageDigest messageDigest = MessageDigest.getInstance("MD2");
++            MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
+             byte[] hashValue = messageDigest.digest(input.getBytes("UTF-8"));                                                          
+             IO.writeLine(IO.toHex(hashValue));
+         }

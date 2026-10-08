@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-600: bad() calls InetAddress.getByName() on the remote address and declares `throws IOException`. getByName can throw UnknownHostException (an IOException subclass), which propagates uncaught out of the servlet entry point. The fix wraps the resolution and its use in a try/catch for UnknownHostException, logging the failure instead of letting it escape. Valid, resolvable addresses still produce the same IP output, so the feature is preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE600_Uncaught_Exception_in_Servlet/CWE600_Uncaught_Exception_in_Servlet__getParameter_01.java",
+      "old": "        InetAddress inetAddress = InetAddress.getByName(ipAddress);\n        \n        if (inetAddress == null)\n        {\n            IO.logger.log(Level.WARNING, \"Problem getting IP address\");\n        }\n        else\n        {\n            IO.writeLine(\"IP= \" + inetAddress.getAddress().toString());\n        }",
+      "new": "        try\n        {\n            InetAddress inetAddress = InetAddress.getByName(ipAddress);\n\n            if (inetAddress == null)\n            {\n                IO.logger.log(Level.WARNING, \"Problem getting IP address\");\n            }\n            else\n            {\n                IO.writeLine(\"IP= \" + inetAddress.getAddress().toString());\n            }\n        }\n        catch (java.net.UnknownHostException exceptUnknownHost)\n        {\n            IO.logger.log(Level.WARNING, \"Could not resolve IP address\", exceptUnknownHost);\n        }"
+    }
+  ]
+}

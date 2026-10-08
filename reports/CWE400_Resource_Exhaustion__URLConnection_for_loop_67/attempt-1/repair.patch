@@ -1,0 +1,21 @@
+diff --git c/src/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__URLConnection_for_loop_67b.java w/src/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__URLConnection_for_loop_67b.java
+index cb229d1..a21c637 100644
+--- c/src/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__URLConnection_for_loop_67b.java
++++ w/src/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__URLConnection_for_loop_67b.java
+@@ -28,7 +28,15 @@ public class CWE400_Resource_Exhaustion__URLConnection_for_loop_67b
+ 
+         int i = 0;
+ 
+-                                                                                        
++        /* Bound the loop count to a sane maximum so an attacker-controlled value
++         * cannot drive unbounded iteration and exhaust resources. Legitimate small
++         * counts continue to work unchanged. */
++        final int MAX_LOOP_COUNT = 1000;
++        if (count > MAX_LOOP_COUNT)
++        {
++            count = MAX_LOOP_COUNT;
++        }
++
+         for (i = 0; i < count; i++)
+         {
+             IO.writeLine("Hello");

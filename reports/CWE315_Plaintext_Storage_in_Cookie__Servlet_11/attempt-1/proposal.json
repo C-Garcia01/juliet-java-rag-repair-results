@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method stored a cleartext username:password string directly in the \"auth\" cookie (CWE-315). The fix hashes the sensitive value with SHA-256 (using the already-imported MessageDigest and the IO.toHex helper) before adding it to the cookie, so no plaintext credential is persisted in the cookie. The cookie is still set on the same condition, preserving the feature.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_11.java",
+      "old": "            response.addCookie(new Cookie(\"auth\", data));",
+      "new": "            MessageDigest messageDigest = MessageDigest.getInstance(\"SHA-256\");\n            byte[] hashedData = messageDigest.digest((data == null ? \"\" : data).getBytes(\"UTF-8\"));\n            response.addCookie(new Cookie(\"auth\", IO.toHex(hashedData)));"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+diff --git c/src/testcases/CWE395_Catch_NullPointerException/CWE395_Catch_NullPointerException__basic_03.java w/src/testcases/CWE395_Catch_NullPointerException/CWE395_Catch_NullPointerException__basic_03.java
+index 66a17df..0a5d855 100644
+--- c/src/testcases/CWE395_Catch_NullPointerException/CWE395_Catch_NullPointerException__basic_03.java
++++ w/src/testcases/CWE395_Catch_NullPointerException/CWE395_Catch_NullPointerException__basic_03.java
+@@ -24,15 +24,14 @@ public class CWE395_Catch_NullPointerException__basic_03 extends AbstractTestCas
+         if (5 == 5)
+         {
+             String systemProperty = System.getProperty("CWE395");
+-            try
++            if (systemProperty != null)
+             {
+-                                                                                     
+                 if(systemProperty.equals("CWE395"))
+                 {
+                     IO.writeLine("systemProperty is CWE395");
+                 }
+             }
+-            catch (NullPointerException exceptNullPointer)                                                           
++            else
+             {
+                 IO.writeLine("systemProperty is null");
+             }

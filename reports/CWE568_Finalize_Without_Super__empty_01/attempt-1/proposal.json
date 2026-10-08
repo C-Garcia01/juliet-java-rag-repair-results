@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-568: BadClass.finalize() overrides Object's finalizer chain but never calls super.finalize(), so HelperClass.finalize() (which logs and chains to Object.finalize()) is skipped. Fix: have BadClass.finalize() invoke super.finalize() inside a try/catch (mirroring the HelperClass pattern), preserving the finalizer feature while restoring proper super-class finalization.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE568_Finalize_Without_Super/CWE568_Finalize_Without_Super__empty_01_bad.java",
+      "old": "        protected void finalize() \n        {\n                                                                                   \n        }",
+      "new": "        protected void finalize() \n        {\n            try\n            {\n                super.finalize();\n            }\n            catch (Throwable exceptThrowable)\n            {\n                IO.logger.log(Level.WARNING, \"caught an exception calling super.finalize() from the BadClass\", exceptThrowable);\n            }\n        }"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "74c2eb4d8c5673f621975b9f5c3d378a549761a3",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-539",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "679997aa36c76e4896b4c88a50e42efb862d1aad",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26495,
+  "summary": "The bad() entry point writes a cookie containing a secret value and then calls setMaxAge with a multi-year lifetime, making the servlet persist sensitive data to the client's disk (CWE-539). The fix keeps the cookie creation feature intact but sets the cookie's max age to -1, which makes it a session-only cookie that is not written to persistent storage, eliminating the information-exposure flow while still delivering the cookie.",
+  "exported_files": 1
+}

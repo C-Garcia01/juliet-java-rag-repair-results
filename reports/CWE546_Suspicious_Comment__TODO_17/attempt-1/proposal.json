@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-546 flags the suspicious TODO comments inside bad(). The repair removes the two suspicious comment lines preceding the IO.writeLine call while preserving the loop and the legitimate output, so valid behavior is unchanged.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE546_Suspicious_Comment/CWE546_Suspicious_Comment__TODO_17.java",
+      "old": "        for(int j = 0; j < 1; j++)\n        {\n                                                      \n                                                                           \n            IO.writeLine(\"This a test of the emergency broadcast system\");\n        }",
+      "new": "        for(int j = 0; j < 1; j++)\n        {\n            IO.writeLine(\"This a test of the emergency broadcast system\");\n        }"
+    }
+  ]
+}

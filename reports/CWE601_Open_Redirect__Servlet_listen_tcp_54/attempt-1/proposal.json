@@ -1,0 +1,10 @@
+{
+  "summary": "Fixed the open redirect in the sink (CWE601_Open_Redirect__Servlet_listen_tcp_54e.java) where untrusted data read from a TCP socket flowed directly into response.sendRedirect(). Added validation that rejects any absolute or host-bearing URL (and protocol-relative/backslash variants) so only same-site relative redirect targets are honored, preserving legitimate relative-path redirects.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_listen_tcp_54e.java",
+      "old": "            response.sendRedirect(data);\n            return;",
+      "new": "            if (uri.isAbsolute() || uri.getHost() != null || uri.getAuthority() != null\n                    || data.startsWith(\"//\") || data.startsWith(\"/\\\\\") || data.startsWith(\"\\\\\"))\n            {\n                response.getWriter().write(\"Invalid redirect URL\");\n                return;\n            }\n            response.sendRedirect(data);\n            return;"
+    }
+  ]
+}

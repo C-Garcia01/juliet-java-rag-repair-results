@@ -1,0 +1,19 @@
+diff --git c/src/testcases/CWE674_Uncontrolled_Recursion/CWE674_Uncontrolled_Recursion__long_01.java w/src/testcases/CWE674_Uncontrolled_Recursion/CWE674_Uncontrolled_Recursion__long_01.java
+index b503d1a..2052635 100644
+--- c/src/testcases/CWE674_Uncontrolled_Recursion/CWE674_Uncontrolled_Recursion__long_01.java
++++ w/src/testcases/CWE674_Uncontrolled_Recursion/CWE674_Uncontrolled_Recursion__long_01.java
+@@ -14,8 +14,12 @@ public class CWE674_Uncontrolled_Recursion__long_01 extends AbstractTestCase
+ 
+     private static void helperBad(long level)
+     {
+-                                                                                                             
+-                                   
++        if (level > RECURSION_LONG_MAX) 
++        {
++            IO.writeLine("ERROR IN RECURSION");
++            return;
++        }
++
+         if (level == 0) 
+         {
+             return;

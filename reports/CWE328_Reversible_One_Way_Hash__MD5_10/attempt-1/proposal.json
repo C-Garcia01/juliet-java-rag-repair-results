@@ -1,0 +1,10 @@
+{
+  "summary": "Replaced the insecure MD5 algorithm with SHA-512 in the bad() entry point. MD5 is a broken, reversible one-way hash (CWE-328); SHA-512 is a strong cryptographic hash. The hashing feature still works: it computes a digest of the input and writes the hex result exactly as before.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE328_Reversible_One_Way_Hash/CWE328_Reversible_One_Way_Hash__MD5_10.java",
+      "old": "            MessageDigest messageDigest = MessageDigest.getInstance(\"MD5\");",
+      "new": "            MessageDigest messageDigest = MessageDigest.getInstance(\"SHA-512\");"
+    }
+  ]
+}

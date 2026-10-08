@@ -1,0 +1,14 @@
+diff --git c/src/testcases/CWE398_Poor_Code_Quality/CWE398_Poor_Code_Quality__empty_block_14.java w/src/testcases/CWE398_Poor_Code_Quality/CWE398_Poor_Code_Quality__empty_block_14.java
+index 92c51ee..5f8f0b3 100644
+--- c/src/testcases/CWE398_Poor_Code_Quality/CWE398_Poor_Code_Quality__empty_block_14.java
++++ w/src/testcases/CWE398_Poor_Code_Quality/CWE398_Poor_Code_Quality__empty_block_14.java
+@@ -23,9 +23,6 @@ public class CWE398_Poor_Code_Quality__empty_block_14 extends AbstractTestCase
+     {
+         if (IO.staticFive == 5)
+         {
+-                                                                      
+-            {
+-            }
+             IO.writeLine("Hello from bad()");
+         }
+     }

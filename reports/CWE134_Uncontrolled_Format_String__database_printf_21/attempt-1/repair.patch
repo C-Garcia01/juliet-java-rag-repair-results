@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__database_printf_21.java w/src/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__database_printf_21.java
+index 4223995..c56cf8d 100644
+--- c/src/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__database_printf_21.java
++++ w/src/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__database_printf_21.java
+@@ -110,7 +110,7 @@ public class CWE134_Uncontrolled_Format_String__database_printf_21 extends Abstr
+             if (data != null)
+             {
+                                                                     
+-                System.out.printf(data);
++                System.out.printf("%s", data);
+             }
+         }
+     }

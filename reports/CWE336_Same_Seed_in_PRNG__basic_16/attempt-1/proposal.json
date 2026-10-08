@@ -1,0 +1,15 @@
+{
+  "summary": "CWE-336 (Same Seed in PRNG): bad() seeded a SecureRandom with a hardcoded, constant byte array via setSeed(SEED), making the generated sequence fully predictable. The fix removes the fixed-seed material and the setSeed call so the SecureRandom relies on its secure internal self-seeding. The feature is preserved: two random integers are still generated and written.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE336_Same_Seed_in_PRNG/CWE336_Same_Seed_in_PRNG__basic_16.java",
+      "old": "            final byte[] SEED = new byte[] {0x01, 0x02, 0x03, 0x04, 0x05};\n            SecureRandom secureRandom = new SecureRandom();",
+      "new": "            SecureRandom secureRandom = new SecureRandom();"
+    },
+    {
+      "path": "src/testcases/CWE336_Same_Seed_in_PRNG/CWE336_Same_Seed_in_PRNG__basic_16.java",
+      "old": "            secureRandom.setSeed(SEED);\n            IO.writeLine(\"\" + secureRandom.nextInt());",
+      "new": "            IO.writeLine(\"\" + secureRandom.nextInt());"
+    }
+  ]
+}

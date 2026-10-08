@@ -1,0 +1,16 @@
+diff --git c/src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java w/src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java
+index e7b09a4..f02aafa 100644
+--- c/src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java
++++ w/src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_File_04.java
+@@ -130,6 +130,11 @@ public class CWE601_Open_Redirect__Servlet_File_04 extends AbstractTestCaseServl
+                 return;
+             }
+                                                                                                                                            
++            if (uri.isAbsolute() || uri.getScheme() != null || uri.getAuthority() != null || uri.getHost() != null)
++            {
++                response.getWriter().write("Invalid redirect URL");
++                return;
++            }
+             response.sendRedirect(data);
+             return;
+         }

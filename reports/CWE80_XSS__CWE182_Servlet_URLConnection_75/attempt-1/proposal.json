@@ -1,0 +1,10 @@
+{
+  "summary": "The flow reads attacker-influenceable text from a URLConnection, serializes/deserializes it, and writes it into an HTML response in CWE80_XSS__CWE182_Servlet_URLConnection_75b.badSink. The only neutralization was a weak `replaceAll(\"(<script>)\", \"\")` that strips one literal substring and is trivially bypassed (case variants, broken-up tags, event handlers, other tags). I replaced it with full HTML-entity encoding of the metacharacters (&, <, >, \", ') so the value is rendered as inert text while still being displayed, preserving the feature for all valid inputs.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_URLConnection_75b.java",
+      "old": "                response.getWriter().println(\"<br>bad(): data = \" + data.replaceAll(\"(<script>)\", \"\"));",
+      "new": "                response.getWriter().println(\"<br>bad(): data = \" + data.replace(\"&\", \"&amp;\").replace(\"<\", \"&lt;\").replace(\">\", \"&gt;\").replace(\"\\\"\", \"&quot;\").replace(\"'\", \"&#39;\"));"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "summary": "Removed the embedded logic time bomb: the hidden conditional that executed an external program (evil.exe) once the counter reached a specific value (20000). The legitimate counting loop is preserved intact so valid iteration behavior continues to work; only the malicious payload triggered by the trip-wire condition is deleted.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE511_Logic_Time_Bomb/CWE511_Logic_Time_Bomb__counter_11.java",
+      "old": "                if (count == 20000)\n                {\n                    Runtime.getRuntime().exec(\"c:\\\\windows\\\\system32\\\\evil.exe\");\n                }\n                count++;",
+      "new": "                count++;"
+    }
+  ]
+}

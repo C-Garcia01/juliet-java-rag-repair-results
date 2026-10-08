@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method divides 100 by a value from SecureRandom.nextInt(), which can return 0, causing a divide-by-zero (CWE-369). The fix guards the division by checking that the divisor is non-zero before performing it, preserving the legitimate divide behavior for all valid (non-zero) random values while safely handling the zero case.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE369_Divide_by_Zero/s03/CWE369_Divide_by_Zero__int_random_divide_15.java",
+      "old": "            IO.writeLine(\"bad: 100/\" + data + \" = \" + (100 / data) + \"\\n\");",
+      "new": "            if (data != 0)\n            {\n                IO.writeLine(\"bad: 100/\" + data + \" = \" + (100 / data) + \"\\n\");\n            }\n            else\n            {\n                IO.writeLine(\"bad: 100/\" + data + \" = undefined (division by zero avoided)\\n\");\n            }"
+    }
+  ]
+}

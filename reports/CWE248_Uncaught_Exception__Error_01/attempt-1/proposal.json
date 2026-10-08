@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-248: bad() threw an uncaught java.lang.Error that propagated out of the overridden runTest() (which, unlike the base class, has no surrounding try/catch), crashing the test harness. I preserved the error-signaling behavior but contained it within bad() by catching the Error and logging it via the existing IO.logger, so legitimate execution continues instead of terminating abnormally. The java.util.logging.Level import already present is now used.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE248_Uncaught_Exception/CWE248_Uncaught_Exception__Error_01.java",
+      "old": "        throw new Error(\"Really bad Error\");",
+      "new": "        try\n        {\n            throw new Error(\"Really bad Error\");\n        }\n        catch (Error error)\n        {\n            IO.logger.log(Level.WARNING, \"Caught Error in bad()\", error);\n        }"
+    }
+  ]
+}

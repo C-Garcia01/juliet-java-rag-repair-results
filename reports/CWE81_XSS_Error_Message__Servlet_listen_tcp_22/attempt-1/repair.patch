@@ -1,0 +1,14 @@
+diff --git c/src/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_listen_tcp_22a.java w/src/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_listen_tcp_22a.java
+index 253c3ff..5386d26 100644
+--- c/src/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_listen_tcp_22a.java
++++ w/src/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_listen_tcp_22a.java
+@@ -39,7 +39,8 @@ public class CWE81_XSS_Error_Message__Servlet_listen_tcp_22a extends AbstractTes
+                                                                                     
+                                                                                                                     
+               
+-            response.sendError(404, "<br>bad() - Parameter name has value " + data);
++            String encodedData = data.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;").replace("'", "&#39;");
++            response.sendError(404, "<br>bad() - Parameter name has value " + encodedData);
+         }
+ 
+     }

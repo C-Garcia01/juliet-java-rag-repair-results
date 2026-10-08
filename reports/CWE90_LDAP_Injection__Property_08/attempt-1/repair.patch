@@ -1,0 +1,43 @@
+diff --git c/src/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_08.java w/src/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_08.java
+index c9a96c5..e101c28 100644
+--- c/src/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_08.java
++++ w/src/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__Property_08.java
+@@ -67,7 +67,37 @@ public class CWE90_LDAP_Injection__Property_08 extends AbstractTestCase
+         {
+             directoryContext = new InitialDirContext(environmentHashTable);
+                                                                                                           
+-            String search = "(cn=" + data + ")";
++            String safeData = data;
++            if (safeData != null)
++            {
++                StringBuilder escaped = new StringBuilder();
++                for (int i = 0; i < safeData.length(); i++)
++                {
++                    char currentChar = safeData.charAt(i);
++                    switch (currentChar)
++                    {
++                        case '\\':
++                            escaped.append("\\5c");
++                            break;
++                        case '*':
++                            escaped.append("\\2a");
++                            break;
++                        case '(':
++                            escaped.append("\\28");
++                            break;
++                        case ')':
++                            escaped.append("\\29");
++                            break;
++                        case '\u0000':
++                            escaped.append("\\00");
++                            break;
++                        default:
++                            escaped.append(currentChar);
++                    }
++                }
++                safeData = escaped.toString();
++            }
++            String search = "(cn=" + safeData + ")";
+ 
+             NamingEnumeration<SearchResult> answer = directoryContext.search("", search, null);
+             while (answer.hasMore())

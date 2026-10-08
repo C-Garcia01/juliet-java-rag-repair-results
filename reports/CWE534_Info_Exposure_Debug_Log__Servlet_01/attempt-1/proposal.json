@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-534: The bad() method logged sensitive data (the username and the session ID) via the debug logger, exposing session identifiers and user information to anyone who can read the debug log. The fix keeps the full feature \u2014 parameter validation, session creation, and the invalid-character response path \u2014 but removes the sensitive username and session ID from the log message, replacing it with a non-sensitive informational entry.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE534_Info_Exposure_Debug_Log/CWE534_Info_Exposure_Debug_Log__Servlet_01.java",
+      "old": "            HttpSession session = request.getSession(true);\n                                                          \n            logger.log(Level.FINEST, \"Username: \" + username + \" Session ID:\" + session.getId());",
+      "new": "            HttpSession session = request.getSession(true);\n                                                          \n            logger.log(Level.FINEST, \"Accepted a login request with valid username characters\");"
+    }
+  ]
+}

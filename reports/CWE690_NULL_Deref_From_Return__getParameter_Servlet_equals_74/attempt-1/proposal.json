@@ -1,0 +1,10 @@
+{
+  "summary": "The value from request.getParameter(\"CWE690\") can be null and is stored in the HashMap, then dereferenced via data.equals(...) in badSink, causing a NULL pointer dereference (CWE-690). Guard the dereference with a null check so legitimate non-null values still match, while null input no longer throws.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__getParameter_Servlet_equals_74b.java",
+      "old": "        String data = dataHashMap.get(2);\n\n                                                \n        if(data.equals(\"CWE690\"))",
+      "new": "        String data = dataHashMap.get(2);\n\n                                                \n        if(data != null && data.equals(\"CWE690\"))"
+    }
+  ]
+}

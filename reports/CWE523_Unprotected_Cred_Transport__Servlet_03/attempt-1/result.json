@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "b1db51f234eb00363956f13b7d1640f10eb71c5c",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-523",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "6033a5e92f468b73619cf746b7637629ee5adcc2",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 27366,
+  "summary": "CWE-523 (Unprotected Credential Transport): the login form submits the j_username/j_password credentials over cleartext HTTP to http://hostname.com/j_security_check, exposing them in transit. The fix changes the form action to use HTTPS so credentials are encrypted during transport, while preserving the login form and all fields.",
+  "exported_files": 1
+}

@@ -1,0 +1,15 @@
+diff --git c/src/testcases/CWE579_Non_Serializable_in_Session/CWE579_Non_Serializable_in_Session__Servlet_01.java w/src/testcases/CWE579_Non_Serializable_in_Session/CWE579_Non_Serializable_in_Session__Servlet_01.java
+index a452b47..57ea9a0 100644
+--- c/src/testcases/CWE579_Non_Serializable_in_Session/CWE579_Non_Serializable_in_Session__Servlet_01.java
++++ w/src/testcases/CWE579_Non_Serializable_in_Session/CWE579_Non_Serializable_in_Session__Servlet_01.java
+@@ -29,8 +29,9 @@ public class CWE579_Non_Serializable_in_Session__Servlet_01 extends AbstractTest
+ {
+     private static final long serialVersionUID = 1L;
+ 
+-    static class BadObject                                                         
++    static class BadObject implements Serializable
+     {
++        private static final long serialVersionUID = 7925935052619185042L;
+         public String badString = "Bad";
+     }
+     

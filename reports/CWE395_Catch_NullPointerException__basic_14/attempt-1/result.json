@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "c336a27e0a1a7124db34f240c9491d4f2ddfbeab",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-395",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "42896a369087d38f4e758ad93b114f785b096dea",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26559,
+  "summary": "CWE-395: the bad() method relied on catching NullPointerException to detect that System.getProperty(\"CWE395\") returned null. Replaced the NPE-based control flow with an explicit null check, preserving behavior: a matching property still logs the match, and a null/absent property logs \"systemProperty is null\" via a normal else branch rather than an exception handler.",
+  "exported_files": 1
+}

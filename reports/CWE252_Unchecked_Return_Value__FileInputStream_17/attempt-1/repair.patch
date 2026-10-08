@@ -1,0 +1,20 @@
+diff --git c/src/testcases/CWE252_Unchecked_Return_Value/CWE252_Unchecked_Return_Value__FileInputStream_17.java w/src/testcases/CWE252_Unchecked_Return_Value/CWE252_Unchecked_Return_Value__FileInputStream_17.java
+index 7ed1659..4cffbc7 100644
+--- c/src/testcases/CWE252_Unchecked_Return_Value/CWE252_Unchecked_Return_Value__FileInputStream_17.java
++++ w/src/testcases/CWE252_Unchecked_Return_Value/CWE252_Unchecked_Return_Value__FileInputStream_17.java
+@@ -35,9 +35,12 @@ public class CWE252_Unchecked_Return_Value__FileInputStream_17 extends AbstractT
+                 int bytesToRead = 1024;
+                 byte[] byteArray = new byte[bytesToRead];
+                 streamFileInput = new FileInputStream("c:\\file.txt");
+-                streamFileInput.read(byteArray);
+-                                                                   
+-                IO.writeLine(new String(byteArray, "UTF-8"));
++                int bytesRead = streamFileInput.read(byteArray);
++                if (bytesRead < 0)
++                {
++                    bytesRead = 0;
++                }
++                IO.writeLine(new String(byteArray, 0, bytesRead, "UTF-8"));
+             }
+             catch(FileNotFoundException exceptFileNotFound)
+             {

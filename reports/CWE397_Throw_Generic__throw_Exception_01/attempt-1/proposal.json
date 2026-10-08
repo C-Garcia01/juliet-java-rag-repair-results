@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-397 is triggered because bad() declares and throws the generic java.lang.Exception, forcing callers to handle an overly broad type. The fix replaces it with a specific exception type (FileNotFoundException, already imported and used by good()), preserving the behavior of throwing/propagating an exception while narrowing the declared and thrown type. The overriding of the abstract bad() (which declares throws Throwable) remains valid.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE397_Throw_Generic/CWE397_Throw_Generic__throw_Exception_01.java",
+      "old": "    public void bad() throws Exception \n    {\n        throw new Exception();                                                    \n    }",
+      "new": "    public void bad() throws FileNotFoundException \n    {\n        throw new FileNotFoundException();                                                    \n    }"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point reads an integer from a network socket and passes it directly to the HashMap(int initialCapacity) constructor, allowing an attacker-controlled value to drive an uncontrolled, potentially huge memory allocation (CWE-789). The fix validates the value against a sane positive upper bound before using it as the initial capacity, so legitimate capacity values still size the HashMap as intended while out-of-range or attacker-inflated values no longer trigger an unbounded allocation.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE789_Uncontrolled_Mem_Alloc/s01/CWE789_Uncontrolled_Mem_Alloc__connect_tcp_HashMap_04.java",
+      "old": "        HashMap intHashMap = new HashMap(data);\n",
+      "new": "        if (data > 0 && data <= 100000)\n        {\n            HashMap intHashMap = new HashMap(data);\n        }\n"
+    }
+  ]
+}

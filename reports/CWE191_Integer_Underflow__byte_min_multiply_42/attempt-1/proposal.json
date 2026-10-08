@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() path takes data = Byte.MIN_VALUE (-128) and computes (byte)(data * 2). The int product -256 is out of the byte range, so the narrowing cast to byte silently wraps (integer underflow), producing 0. The fix keeps the multiply-and-print feature but stores the product in an int, which can represent -256 exactly and never underflows. Legitimate values still multiply and print correctly; nothing is disabled or made constant.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_min_multiply_42.java",
+      "old": "            byte result = (byte)(data * 2);\n            IO.writeLine(\"result: \" + result);",
+      "new": "            int result = data * 2;\n            IO.writeLine(\"result: \" + result);"
+    }
+  ]
+}

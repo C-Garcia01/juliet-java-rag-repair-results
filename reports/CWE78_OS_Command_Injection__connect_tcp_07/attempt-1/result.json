@@ -1,0 +1,19 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "69d1f562c17dbe5463ede93c72f1ac84e7341b4c",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-78",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "7eae6fa85795d481c7435ff7edfa90ae24a3df25",
+  "retrieved_examples": [
+    "apache/tomcat@5bc4e6d7b1c22dc1bf99f475b7e70594ebdd83b9:CVE-2019-0232"
+  ],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 44450,
+  "summary": "The bad() method reads an untrusted line from a network socket and concatenates it directly into an OS command passed to Runtime.exec(), creating a CWE-78 command-injection sink. The fix validates the socket-derived data against a strict allowlist of characters that are legitimate for a filesystem path argument to `ls`/`dir` (letters, digits, and the safe path punctuation `. / _ -`) before it is ever used to build the command. Valid path arguments still flow through to exec() and the feature continues to work; only input containing shell/argument metacharacters (spaces, `;`, `&`, `|`, `$`, backticks, quotes, etc.) is rejected, which neutralizes the injection without disabling functionality or returning a constant result.",
+  "exported_files": 1
+}

@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE499_Sensitive_Data_Serializable/CWE499_Sensitive_Data_Serializable__serializable_01_bad.java w/src/testcases/CWE499_Sensitive_Data_Serializable/CWE499_Sensitive_Data_Serializable__serializable_01_bad.java
+index b0c1801..4ca19c8 100644
+--- c/src/testcases/CWE499_Sensitive_Data_Serializable/CWE499_Sensitive_Data_Serializable__serializable_01_bad.java
++++ w/src/testcases/CWE499_Sensitive_Data_Serializable/CWE499_Sensitive_Data_Serializable__serializable_01_bad.java
+@@ -17,7 +17,7 @@ import testcasesupport.*;
+ public class CWE499_Sensitive_Data_Serializable__serializable_01_bad extends CWE499_Sensitive_Data_Serializable__serializable_Helper
+ {    
+                          
+-    private String passwordHash;
++    private transient String passwordHash;
+     
+     protected void setPassword(String password)
+     {

@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point writes a cookie containing a secret value and then calls setMaxAge with a multi-year lifetime, making the servlet persist sensitive data to the client's disk (CWE-539). The fix keeps the cookie creation feature intact but sets the cookie's max age to -1, which makes it a session-only cookie that is not written to persistent storage, eliminating the information-exposure flow while still delivering the cookie.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE539_Information_Exposure_Through_Persistent_Cookie/CWE539_Information_Exposure_Through_Persistent_Cookie__Servlet_14.java",
+      "old": "            cookie.setMaxAge(60*60*24*365*5);",
+      "new": "            cookie.setMaxAge(-1);"
+    }
+  ]
+}

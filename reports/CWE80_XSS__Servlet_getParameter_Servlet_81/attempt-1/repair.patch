@@ -1,0 +1,14 @@
+diff --git c/src/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getParameter_Servlet_81_bad.java w/src/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getParameter_Servlet_81_bad.java
+index e4ff064..c4cce22 100644
+--- c/src/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getParameter_Servlet_81_bad.java
++++ w/src/testcases/CWE80_XSS/s01/CWE80_XSS__Servlet_getParameter_Servlet_81_bad.java
+@@ -27,7 +27,8 @@ public class CWE80_XSS__Servlet_getParameter_Servlet_81_bad extends CWE80_XSS__S
+         if (data != null)
+         {
+                                                                                                 
+-            response.getWriter().println("<br>bad(): data = " + data);
++            String encodedData = data.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;").replace("'", "&#39;");
++            response.getWriter().println("<br>bad(): data = " + encodedData);
+         }
+ 
+     }

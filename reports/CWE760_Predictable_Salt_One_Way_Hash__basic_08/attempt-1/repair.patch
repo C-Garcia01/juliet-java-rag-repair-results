@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE760_Predictable_Salt_One_Way_Hash/CWE760_Predictable_Salt_One_Way_Hash__basic_08.java w/src/testcases/CWE760_Predictable_Salt_One_Way_Hash/CWE760_Predictable_Salt_One_Way_Hash__basic_08.java
+index 84d8499..ec8274a 100644
+--- c/src/testcases/CWE760_Predictable_Salt_One_Way_Hash/CWE760_Predictable_Salt_One_Way_Hash__basic_08.java
++++ w/src/testcases/CWE760_Predictable_Salt_One_Way_Hash/CWE760_Predictable_Salt_One_Way_Hash__basic_08.java
+@@ -41,7 +41,7 @@ public class CWE760_Predictable_Salt_One_Way_Hash__basic_08 extends AbstractTest
+     {
+         if (privateReturnsTrue())
+         {
+-            Random random = new Random();
++            SecureRandom random = new SecureRandom();
+             MessageDigest hash = MessageDigest.getInstance("SHA-512");
+                                                       
+             hash.update((Integer.toString(random.nextInt())).getBytes("UTF-8"));

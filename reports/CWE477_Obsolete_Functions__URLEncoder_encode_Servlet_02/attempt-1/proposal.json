@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method calls the deprecated single-argument URLEncoder.encode(String), which is an obsolete function (CWE-477) that relies on the platform default charset. Replaced it with the two-argument URLEncoder.encode(String, String) overload specifying \"UTF-8\", preserving the feature (writing the URL-encoded string to the response) while using the non-deprecated API.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE477_Obsolete_Functions/CWE477_Obsolete_Functions__URLEncoder_encode_Servlet_02.java",
+      "old": "            response.getWriter().println(URLEncoder.encode(\"abc|1 $#@<><()\"));",
+      "new": "            response.getWriter().println(URLEncoder.encode(\"abc|1 $#@<><()\", \"UTF-8\"));"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_PropertiesFile_15.java w/src/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_PropertiesFile_15.java
+index 8d37134..1f40fa5 100644
+--- c/src/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_PropertiesFile_15.java
++++ w/src/testcases/CWE197_Numeric_Truncation_Error/s02/CWE197_Numeric_Truncation_Error__short_PropertiesFile_15.java
+@@ -86,7 +86,7 @@ public class CWE197_Numeric_Truncation_Error__short_PropertiesFile_15 extends Ab
+ 
+         {
+                                                                                              
+-            IO.writeLine((byte)data);
++            IO.writeLine(data);
+         }
+ 
+     }

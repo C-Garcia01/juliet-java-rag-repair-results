@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE533_Info_Exposure_Server_Log/CWE533_Info_Exposure_Server_Log__Servlet_09.java w/src/testcases/CWE533_Info_Exposure_Server_Log/CWE533_Info_Exposure_Server_Log__Servlet_09.java
+index 7c27f06..9c43d31 100644
+--- c/src/testcases/CWE533_Info_Exposure_Server_Log/CWE533_Info_Exposure_Server_Log__Servlet_09.java
++++ w/src/testcases/CWE533_Info_Exposure_Server_Log/CWE533_Info_Exposure_Server_Log__Servlet_09.java
+@@ -34,7 +34,7 @@ public class CWE533_Info_Exposure_Server_Log__Servlet_09 extends AbstractTestCas
+             {
+                 HttpSession session = request.getSession(true);
+                                                                
+-                log("Username: " + username + " Session ID:" + session.getId());
++                log("Username: " + username);
+             }
+             else
+             {

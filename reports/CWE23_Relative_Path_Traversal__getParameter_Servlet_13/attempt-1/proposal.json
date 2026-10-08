@@ -1,0 +1,10 @@
+{
+  "summary": "Prevent CWE-23 relative path traversal in the bad() entry point. The servlet builds a file path by concatenating the attacker-controlled `name` request parameter onto a fixed upload root, allowing sequences like `../` to escape the intended directory. The fix canonicalizes the resolved file and verifies it still resides within the canonical upload root before any file access; requests that resolve outside the root are rejected. Legitimate filenames inside the uploads directory continue to work unchanged.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__getParameter_Servlet_13.java",
+      "old": "            File file = new File(root + data);\n            FileInputStream streamFileInputSink = null;",
+      "new": "            File file = new File(root + data);\n            File rootDirectory = new File(root);\n            String canonicalRoot = rootDirectory.getCanonicalPath() + File.separator;\n            String canonicalFile = file.getCanonicalPath();\n            if (!canonicalFile.startsWith(canonicalRoot))\n            {\n                IO.logger.log(Level.WARNING, \"Rejected path outside of the upload directory\");\n                return;\n            }\n            FileInputStream streamFileInputSink = null;"
+    }
+  ]
+}

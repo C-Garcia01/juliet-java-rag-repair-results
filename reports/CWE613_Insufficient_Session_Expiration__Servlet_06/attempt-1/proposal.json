@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-613: The bad() method called setMaxInactiveInterval(-1), which disables session expiration so the session never times out. Changed the argument to a positive value (300 seconds) so the session still functions but expires after a finite period of inactivity, closing the insufficient-session-expiration flow while keeping the feature working.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE613_Insufficient_Session_Expiration/CWE613_Insufficient_Session_Expiration__Servlet_06.java",
+      "old": "            sesssion.setMaxInactiveInterval(-1);",
+      "new": "            sesssion.setMaxInactiveInterval(300);"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE609_Double_Checked_Locking/CWE609_Double_Checked_Locking__Servlet_01.java w/src/testcases/CWE609_Double_Checked_Locking/CWE609_Double_Checked_Locking__Servlet_01.java
+index 6646a22..6c01357 100644
+--- c/src/testcases/CWE609_Double_Checked_Locking/CWE609_Double_Checked_Locking__Servlet_01.java
++++ w/src/testcases/CWE609_Double_Checked_Locking/CWE609_Double_Checked_Locking__Servlet_01.java
+@@ -17,7 +17,7 @@ public class CWE609_Double_Checked_Locking__Servlet_01 extends AbstractTestCaseS
+     private static final long serialVersionUID = 1L;
+ 
+                                                
+-    private static String stringBad = null;
++    private volatile static String stringBad = null;
+     
+                                                                                                                                                  
+                                                                                               

@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "d3930590da77f26f7ddb26aa2fdc816d247da88a",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-681",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "6decf06a75026224b27bb1aa227aa8d813df59c7",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 28182,
+  "summary": "The bad() entry point reads a user-supplied float, computes Math.sqrt(num), and casts the double result directly to int. When num is NaN or negative (e.g. the suggested -2.0), Math.sqrt yields NaN, and (int)NaN silently collapses to 0 \u2014 the CWE-681 unsafe numeric conversion. The fix guards the conversion by checking Double.isNaN on the sqrt result before casting, reporting an error for NaN while leaving all valid (non-negative) inputs producing their correct integer square root.",
+  "exported_files": 1
+}

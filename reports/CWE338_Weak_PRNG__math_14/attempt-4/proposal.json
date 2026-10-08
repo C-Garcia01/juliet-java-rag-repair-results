@@ -1,0 +1,10 @@
+{
+  "summary": "Replaced the insecure Math.random() call in bad() with a cryptographically strong SecureRandom instance, preserving the feature of writing a random double while fixing the CWE-338 weak PRNG flow. SecureRandom is already imported.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE338_Weak_PRNG/CWE338_Weak_PRNG__math_14.java",
+      "old": "            IO.writeLine(\"\" + Math.random());",
+      "new": "            IO.writeLine(\"\" + (new SecureRandom()).nextDouble());"
+    }
+  ]
+}

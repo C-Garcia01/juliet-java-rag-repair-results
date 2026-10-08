@@ -1,0 +1,10 @@
+{
+  "summary": "In a servlet, calling `Runtime.getRuntime().exit(1)` terminates the entire JVM (and thus the whole web container), which is the CWE-382 flaw. The fix replaces the JVM-killing call with a logged error signal so the error-handling branch still runs and reports the condition, but only affects the current request/thread instead of shutting down the server.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE382_Use_of_System_Exit/CWE382_Use_of_System_Exit__Servlet_Runtime_02.java",
+      "old": "        if (true)\n        {\n                                                      \n            Runtime.getRuntime().exit(1);\n        }",
+      "new": "        if (true)\n        {\n                                                      \n            IO.writeLine(\"Exiting due to error condition\");\n        }"
+    }
+  ]
+}

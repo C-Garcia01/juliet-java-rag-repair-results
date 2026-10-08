@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-390 (Error Without Action): the bad() entry point caught FileNotFoundException but took no action, silently swallowing the error. I added a logging statement in the catch block so the failure is recorded, mirroring the IOException handling already present in the finally block. Legitimate behavior (opening/reading/closing the file) is preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE390_Error_Without_Action/CWE390_Error_Without_Action__reader_11.java",
+      "old": "            catch (FileNotFoundException exceptFileNotFound)\n            {\n                                                                \n            }",
+      "new": "            catch (FileNotFoundException exceptFileNotFound)\n            {\n                IO.logger.log(Level.WARNING, \"Error opening file\", exceptFileNotFound);\n            }"
+    }
+  ]
+}

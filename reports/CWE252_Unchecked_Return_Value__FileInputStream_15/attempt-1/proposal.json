@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method ignored the return value of FileInputStream.read(byte[]), which is CWE-252 (Unchecked Return Value). read() can return fewer bytes than requested or -1 at end-of-stream, so decoding the full buffer is incorrect. The fix captures the return value and uses the actual byte count to construct the String (and handles the end-of-stream case), preserving the file-reading feature while honoring the API contract.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE252_Unchecked_Return_Value/CWE252_Unchecked_Return_Value__FileInputStream_15.java",
+      "old": "                streamFileInput.read(byteArray);\n                                                                   \n                IO.writeLine(new String(byteArray, \"UTF-8\"));",
+      "new": "                int bytesRead = streamFileInput.read(byteArray);\n                if (bytesRead < 0)\n                {\n                    IO.writeLine(\"No data read from file\");\n                }\n                else\n                {\n                    IO.writeLine(new String(byteArray, 0, bytesRead, \"UTF-8\"));\n                }"
+    }
+  ]
+}

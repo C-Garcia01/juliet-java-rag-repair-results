@@ -1,0 +1,15 @@
+{
+  "summary": "The bad() entry point seeds the hash salt from java.util.Random, a non-cryptographic PRNG whose output is predictable (CWE-760). Replaced it with a SecureRandom-generated salt while keeping the salted SHA-512 hashing feature and hex output intact.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE760_Predictable_Salt_One_Way_Hash/CWE760_Predictable_Salt_One_Way_Hash__basic_17.java",
+      "old": "            Random random = new Random();\n            MessageDigest hash = MessageDigest.getInstance(\"SHA-512\");",
+      "new": "            SecureRandom secureRandom = new SecureRandom();\n            MessageDigest hash = MessageDigest.getInstance(\"SHA-512\");"
+    },
+    {
+      "path": "src/testcases/CWE760_Predictable_Salt_One_Way_Hash/CWE760_Predictable_Salt_One_Way_Hash__basic_17.java",
+      "old": "            hash.update((Integer.toString(random.nextInt())).getBytes(\"UTF-8\"));",
+      "new": "            byte[] salt = new byte[16];\n            secureRandom.nextBytes(salt);\n            hash.update(salt);"
+    }
+  ]
+}

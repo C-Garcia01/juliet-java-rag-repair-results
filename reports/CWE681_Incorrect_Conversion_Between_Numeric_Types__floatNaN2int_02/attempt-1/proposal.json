@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point reads a user-supplied float, computes Math.sqrt(num), and casts the double result directly to int. When num is NaN or negative (e.g. the suggested -2.0), Math.sqrt yields NaN, and (int)NaN silently collapses to 0 \u2014 the CWE-681 unsafe numeric conversion. The fix guards the conversion by checking Double.isNaN on the sqrt result before casting, reporting an error for NaN while leaving all valid (non-negative) inputs producing their correct integer square root.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE681_Incorrect_Conversion_Between_Numeric_Types/CWE681_Incorrect_Conversion_Between_Numeric_Types__floatNaN2int_02.java",
+      "old": "                IO.writeLine(\"\" + (int)(Math.sqrt(num)));",
+      "new": "                double result = Math.sqrt(num);\n                if (Double.isNaN(result))\n                {\n                    IO.writeLine(\"Cannot compute an integer square root for NaN or negative input\");\n                }\n                else\n                {\n                    IO.writeLine(\"\" + (int)result);\n                }"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+diff --git c/src/testcases/CWE477_Obsolete_Functions/CWE477_Obsolete_Functions__String_getBytes_03.java w/src/testcases/CWE477_Obsolete_Functions/CWE477_Obsolete_Functions__String_getBytes_03.java
+index f3e74b0..5aa09de 100644
+--- c/src/testcases/CWE477_Obsolete_Functions/CWE477_Obsolete_Functions__String_getBytes_03.java
++++ w/src/testcases/CWE477_Obsolete_Functions/CWE477_Obsolete_Functions__String_getBytes_03.java
+@@ -24,9 +24,8 @@ public class CWE477_Obsolete_Functions__String_getBytes_03 extends AbstractTestC
+         if (5 == 5)
+         {
+             String sentence = "Convert this to bytes";
+-            byte[] sentenceAsBytes = new byte[sentence.length()];
++            byte[] sentenceAsBytes = sentence.getBytes();
+                                                                                        
+-            sentence.getBytes(0, sentence.length(), sentenceAsBytes, 0);
+             IO.writeLine(IO.toHex(sentenceAsBytes));                          
+         }
+     }

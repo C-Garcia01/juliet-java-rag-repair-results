@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "0a5ea7ff3dc0a80c3f4fc66d6832417b6d690cdf",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-321",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "5a73b332ab2ec9f65a4c5dbc115c31009b8aa96a",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 27078,
+  "summary": "The bad() entry point hard-codes the AES key as the string literal \"23 ~j;asn!@#/>as\" (CWE-321). The fix replaces the hard-coded literal with a key sourced at runtime from an environment variable, so the key is no longer embedded in the compiled code. The existing null check and the rest of the encryption flow are preserved, so a properly configured key still encrypts data exactly as before.",
+  "exported_files": 1
+}

@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "e53368248a2e3b7d11193de7f2442f9c23c0c825",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-382",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "a9435b06281cfc43f7279751cb0a41140fcca87b",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26092,
+  "summary": "The servlet's bad() entry point calls System.exit(1), which terminates the entire JVM (and thus the servlet container) when the request handler runs \u2014 the CWE-382 unsafe sink. In a servlet/J2EE context, terminating the VM must never happen. I replaced the System.exit(1) call with a plain return so the handler cleanly finishes the request without killing the container. The method's control flow (the if-block structure and request handling path) is preserved; valid requests still complete normally.",
+  "exported_files": 1
+}

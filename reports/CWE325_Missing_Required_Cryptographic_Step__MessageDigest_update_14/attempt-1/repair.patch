@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE325_Missing_Required_Cryptographic_Step/CWE325_Missing_Required_Cryptographic_Step__MessageDigest_update_14.java w/src/testcases/CWE325_Missing_Required_Cryptographic_Step/CWE325_Missing_Required_Cryptographic_Step__MessageDigest_update_14.java
+index 5e91096..fc1c105 100644
+--- c/src/testcases/CWE325_Missing_Required_Cryptographic_Step/CWE325_Missing_Required_Cryptographic_Step__MessageDigest_update_14.java
++++ w/src/testcases/CWE325_Missing_Required_Cryptographic_Step/CWE325_Missing_Required_Cryptographic_Step__MessageDigest_update_14.java
+@@ -26,7 +26,7 @@ public class CWE325_Missing_Required_Cryptographic_Step__MessageDigest_update_14
+         if (IO.staticFive == 5)
+         {
+             MessageDigest messageDigest = MessageDigest.getInstance("SHA-512");
+-                                                                                                              
++            messageDigest.update("Hello, World!".getBytes("UTF-8"));
+             IO.writeLine(IO.toHex(messageDigest.digest()));
+         }
+     }

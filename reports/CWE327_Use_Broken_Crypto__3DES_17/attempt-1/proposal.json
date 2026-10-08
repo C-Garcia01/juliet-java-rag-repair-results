@@ -1,0 +1,20 @@
+{
+  "summary": "Replaced the broken 3DES (DESede) cipher in bad() with AES, a strong modern algorithm, while preserving the encryption feature: it still generates a key, encrypts CIPHER_INPUT, and writes the hex output. Updated the key size to 128 bits (valid for AES) and all three algorithm name references.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE327_Use_Broken_Crypto/CWE327_Use_Broken_Crypto__3DES_17.java",
+      "old": "            KeyGenerator keyGenerator = KeyGenerator.getInstance(\"DESede\");",
+      "new": "            KeyGenerator keyGenerator = KeyGenerator.getInstance(\"AES\");"
+    },
+    {
+      "path": "src/testcases/CWE327_Use_Broken_Crypto/CWE327_Use_Broken_Crypto__3DES_17.java",
+      "old": "            keyGenerator.init(112);",
+      "new": "            keyGenerator.init(128);"
+    },
+    {
+      "path": "src/testcases/CWE327_Use_Broken_Crypto/CWE327_Use_Broken_Crypto__3DES_17.java",
+      "old": "            SecretKeySpec secretKeySpec = new SecretKeySpec(byteKey, \"DESede\");\n            Cipher tripleDesCipher = Cipher.getInstance(\"DESede\");\n            tripleDesCipher.init(Cipher.ENCRYPT_MODE, secretKeySpec);\n            byte[] encrypted = tripleDesCipher.doFinal(CIPHER_INPUT.getBytes(\"UTF-8\"));",
+      "new": "            SecretKeySpec secretKeySpec = new SecretKeySpec(byteKey, \"AES\");\n            Cipher aesCipher = Cipher.getInstance(\"AES/CBC/PKCS5Padding\");\n            aesCipher.init(Cipher.ENCRYPT_MODE, secretKeySpec);\n            byte[] encrypted = aesCipher.doFinal(CIPHER_INPUT.getBytes(\"UTF-8\"));"
+    }
+  ]
+}

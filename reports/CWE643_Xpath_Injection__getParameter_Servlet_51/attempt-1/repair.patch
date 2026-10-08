@@ -1,0 +1,15 @@
+diff --git c/src/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__getParameter_Servlet_51b.java w/src/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__getParameter_Servlet_51b.java
+index 10a10d2..c7c310a 100644
+--- c/src/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__getParameter_Servlet_51b.java
++++ w/src/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__getParameter_Servlet_51b.java
+@@ -60,8 +60,8 @@ public class CWE643_Xpath_Injection__getParameter_Servlet_51b
+                                                                                         
+                                                                                
+                                                                      
+-            String query = "//users/user[name/text()='" + username +
+-                           "' and pass/text()='" + password + "']" +
++            String query = "//users/user[name/text()='" + StringEscapeUtils.escapeXml(username) +
++                           "' and pass/text()='" + StringEscapeUtils.escapeXml(password) + "']" +
+                            "/secret/text()";
+             String secret = (String)xPath.evaluate(query, inputXml, XPathConstants.STRING);
+         }

@@ -1,0 +1,10 @@
+{
+  "summary": "The flow reads an attacker-controlled integer via request.getParameter in the 68a entry point, stores it in the static `data` field, and the 68b sink performs `data++` with no range check. When `data` is Integer.MAX_VALUE the post-increment silently wraps to Integer.MIN_VALUE (CWE-190). I guard the increment in the sink so it only occurs when it will not overflow, preserving correct behavior for every other input and still computing/printing the result.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE190_Integer_Overflow/s06/CWE190_Integer_Overflow__int_getParameter_Servlet_postinc_68b.java",
+      "old": "        data++;\n        int result = (int)(data);",
+      "new": "        if (data != Integer.MAX_VALUE)\n        {\n            data++;\n        }\n        int result = (int)(data);"
+    }
+  ]
+}

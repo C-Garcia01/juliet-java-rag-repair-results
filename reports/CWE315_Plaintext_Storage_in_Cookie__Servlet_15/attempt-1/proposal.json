@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point stored plaintext credentials (\"user:BP@ssw0rd\") directly into the \"auth\" cookie, exposing the password in cleartext (CWE-315). The fix computes a SHA-512 digest of the credential string and stores its hex representation in the cookie instead of the raw plaintext. The cookie is still named \"auth\" and is still added to the response, so the feature continues to work; only the stored value is now a non-reversible hash rather than the plaintext secret.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_15.java",
+      "old": "            response.addCookie(new Cookie(\"auth\", data));",
+      "new": "            MessageDigest messageDigest = MessageDigest.getInstance(\"SHA-512\");\n            byte[] hashedData = messageDigest.digest(data.getBytes(\"UTF-8\"));\n            response.addCookie(new Cookie(\"auth\", IO.toHex(hashedData)));"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method reads a `data` property from a properties file and passes it directly as the format string to `System.out.format(data)`, allowing attacker-controlled format specifiers (CWE-134). Following the reference fix pattern, pass a constant `\"%s\"` format string and supply `data` as the argument, preserving the behavior of printing the property value while preventing format-string interpretation.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__PropertiesFile_format_01.java",
+      "old": "            System.out.format(data);",
+      "new": "            System.out.format(\"%s\", data);"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+diff --git c/src/testcases/CWE113_HTTP_Response_Splitting/s03/CWE113_HTTP_Response_Splitting__Property_setHeaderServlet_51b.java w/src/testcases/CWE113_HTTP_Response_Splitting/s03/CWE113_HTTP_Response_Splitting__Property_setHeaderServlet_51b.java
+index 33002cd..7b32a44 100644
+--- c/src/testcases/CWE113_HTTP_Response_Splitting/s03/CWE113_HTTP_Response_Splitting__Property_setHeaderServlet_51b.java
++++ w/src/testcases/CWE113_HTTP_Response_Splitting/s03/CWE113_HTTP_Response_Splitting__Property_setHeaderServlet_51b.java
+@@ -29,8 +29,7 @@ public class CWE113_HTTP_Response_Splitting__Property_setHeaderServlet_51b
+ 
+         if (data != null)
+         {
+-                                                                               
+-            response.setHeader("Location", "/author.jsp?lang=" + data);
++            response.setHeader("Location", "/author.jsp?lang=" + URLEncoder.encode(data, "UTF-8"));
+         }
+ 
+     }

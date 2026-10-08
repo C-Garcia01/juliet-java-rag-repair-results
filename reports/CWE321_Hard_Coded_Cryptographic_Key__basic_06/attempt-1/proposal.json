@@ -1,0 +1,15 @@
+{
+  "summary": "Fixed CWE-321 (Hard-Coded Cryptographic Key) in bad() by removing the hard-coded AES key literal and instead deriving the key from a securely generated 128-bit key using KeyGenerator. The encryption feature is preserved (data is still encrypted with AES and the hex ciphertext is written), but the key is no longer embedded in source. Added the required KeyGenerator/SecretKey imports.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java",
+      "old": "import javax.crypto.spec.SecretKeySpec;\nimport javax.crypto.Cipher;",
+      "new": "import javax.crypto.spec.SecretKeySpec;\nimport javax.crypto.Cipher;\nimport javax.crypto.KeyGenerator;\nimport javax.crypto.SecretKey;"
+    },
+    {
+      "path": "src/testcases/CWE321_Hard_Coded_Cryptographic_Key/CWE321_Hard_Coded_Cryptographic_Key__basic_06.java",
+      "old": "            SecretKeySpec secretKeySpec = new SecretKeySpec(data.getBytes(\"UTF-8\"), \"AES\");\n            Cipher aesCipher = Cipher.getInstance(\"AES\");\n            aesCipher.init(Cipher.ENCRYPT_MODE, secretKeySpec);",
+      "new": "            KeyGenerator keyGenerator = KeyGenerator.getInstance(\"AES\");\n            keyGenerator.init(128);\n            SecretKey secretKey = keyGenerator.generateKey();\n            Cipher aesCipher = Cipher.getInstance(\"AES\");\n            aesCipher.init(Cipher.ENCRYPT_MODE, secretKey);"
+    }
+  ]
+}

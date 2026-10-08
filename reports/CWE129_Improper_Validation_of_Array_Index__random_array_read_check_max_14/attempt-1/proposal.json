@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point reads a random int into `data` and uses it as an array index after only checking `data < array.length`. A negative random value passes this upper-bound check and causes an out-of-bounds read (CWE-129). Added a lower-bound check (`data >= 0`) so only valid indices index the array, while legitimate in-range values still work and the out-of-bounds branch still handles invalid indices.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__random_array_read_check_max_14.java",
+      "old": "            if (data < array.length)\n            {\n                IO.writeLine(array[data]);\n            }",
+      "new": "            if (data >= 0 && data < array.length)\n            {\n                IO.writeLine(array[data]);\n            }"
+    }
+  ]
+}

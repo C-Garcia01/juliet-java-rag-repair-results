@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-572: The bad() method invoked Thread.run() directly, which executes the run() body synchronously on the calling thread instead of spawning a new thread. Replaced the run() call with start() so the Runnable actually executes on a separate thread, preserving the feature (the thread still runs its body and writes its line). Added a join() so the thread completes before bad() returns, keeping output deterministic.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE572_Call_to_Thread_run_Instead_of_start/CWE572_Call_to_Thread_run_Instead_of_start__basic_03.java",
+      "old": "            threadOne.run();                                                          \n",
+      "new": "            threadOne.start();\n            threadOne.join();\n"
+    }
+  ]
+}

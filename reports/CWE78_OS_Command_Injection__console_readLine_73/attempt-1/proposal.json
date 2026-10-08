@@ -1,0 +1,10 @@
+{
+  "summary": "The flow reads an untrusted line from the console in 73a.bad(), stores it in a LinkedList, and passes it to 73b.badSink(), which concatenates it directly into an OS command string executed via Runtime.exec() (on Windows via cmd.exe /c, where shell metacharacters are interpreted). This allows OS command injection (CWE-78). The fix validates the decoded argument against a strict allowlist of characters valid for a file/directory argument before executing, following the pattern of the Tomcat CVE-2019-0232 repair (validate the decoded argument against a platform-safe pattern and reject otherwise). Legitimate directory/file arguments (letters, digits, '.', '_', '/', '\\\\', ':', '-') still work; inputs containing spaces, ';', '&', '|', '`', '$', redirection or other metacharacters are rejected, neutralizing argument and command injection without disabling the feature.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__console_readLine_73b.java",
+      "old": "        Process process = Runtime.getRuntime().exec(osCommand + data);\n        process.waitFor();\n",
+      "new": "        if (data != null && java.util.regex.Pattern.matches(\"[a-zA-Z0-9._/\\\\\\\\:-]*\", data))\n        {\n            Process process = Runtime.getRuntime().exec(osCommand + data);\n            process.waitFor();\n        }\n"
+    }
+  ]
+}

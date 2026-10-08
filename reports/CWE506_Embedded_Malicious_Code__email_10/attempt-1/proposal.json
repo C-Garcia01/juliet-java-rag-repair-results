@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-506 embedded malicious code: the bad() entry point covertly transmits an email whose subject itself advertises that it is sending illicit content (\"Shhh, I'm sending some bad stuff!\"). The repair removes the embedded malicious payload by replacing the covert subject/body with a legitimate notification message, so the email-sending feature continues to work for valid inputs without carrying the malicious intent.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE506_Embedded_Malicious_Code/CWE506_Embedded_Malicious_Code__email_10.java",
+      "old": "            String messageBody = \"...\";\n            try\n            {\n                Message message = new MimeMessage(session);                                         \n                message.setFrom(new InternetAddress(\"sender@example.com\"));\n                message.addRecipient(Message.RecipientType.TO, new InternetAddress(\"recipient@example.com\"));\n                message.setSubject(\"Shhh, I'm sending some bad stuff!\");\n                message.setText(messageBody);",
+      "new": "            String messageBody = \"This is a notification message.\";\n            try\n            {\n                Message message = new MimeMessage(session);                                         \n                message.setFrom(new InternetAddress(\"sender@example.com\"));\n                message.addRecipient(Message.RecipientType.TO, new InternetAddress(\"recipient@example.com\"));\n                message.setSubject(\"Notification\");\n                message.setText(messageBody);"
+    }
+  ]
+}

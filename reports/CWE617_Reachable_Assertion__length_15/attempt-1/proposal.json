@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point reaches an assertion `assert \"\".length() > 0;` on a value that fails the condition, so running with assertions enabled always throws an AssertionError (CWE-617 Reachable Assertion). The fix replaces the unguarded assertion with a normal runtime length check that handles both the non-empty and empty cases gracefully, preserving the length-inspection behavior without crashing on valid input.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE617_Reachable_Assertion/CWE617_Reachable_Assertion__length_15.java",
+      "old": "            assert \"\".length() > 0;\n            break;",
+      "new": "            String myString = \"\";\n            if (myString.length() > 0)\n            {\n                IO.writeLine(\"String has a positive length\");\n            }\n            else\n            {\n                IO.writeLine(\"String is empty\");\n            }\n            break;"
+    }
+  ]
+}

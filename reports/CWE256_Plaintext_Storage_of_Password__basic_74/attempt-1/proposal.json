@@ -1,0 +1,10 @@
+{
+  "summary": "The flaw (CWE-256) is that a password is read from a configuration file and handed directly to the database sink, implying the credential is kept in plaintext. The fix treats the stored credential as encrypted-at-rest and decrypts it with AES immediately before it is consumed by DriverManager.getConnection in the bad sink (74b). This breaks the direct plaintext source-to-sink flow while preserving the connection feature: a valid (encrypted) stored value is transparently decrypted and used. SecretKeySpec and Cipher were already imported in 74b, so no new imports are needed. Decryption errors are logged and the feature continues to operate.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE256_Plaintext_Storage_of_Password/CWE256_Plaintext_Storage_of_Password__basic_74b.java",
+      "old": "        String password = passwordHashMap.get(2);\n\n                                                                                                      \n\n        Connection dBConnection = null;\n        try\n        {\n            dBConnection = DriverManager.getConnection(\"192.168.105.23\", \"sa\", password);\n        }",
+      "new": "        String password = passwordHashMap.get(2);\n\n        String decryptedPassword = password;\n        if (password != null && password.length() != 0)\n        {\n            try\n            {\n                SecretKeySpec secretKeySpec = new SecretKeySpec(\"ThisIsASecretKey\".getBytes(\"UTF-8\"), \"AES\");\n                Cipher aesCipher = Cipher.getInstance(\"AES\");\n                aesCipher.init(Cipher.DECRYPT_MODE, secretKeySpec);\n                decryptedPassword = new String(aesCipher.doFinal(password.getBytes(\"UTF-8\")), \"UTF-8\");\n            }\n            catch (Exception exceptCrypto)\n            {\n                IO.logger.log(Level.WARNING, \"Error decrypting password\", exceptCrypto);\n            }\n        }\n\n        Connection dBConnection = null;\n        try\n        {\n            dBConnection = DriverManager.getConnection(\"192.168.105.23\", \"sa\", decryptedPassword);\n        }"
+    }
+  ]
+}

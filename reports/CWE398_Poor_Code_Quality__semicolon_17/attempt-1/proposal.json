@@ -1,0 +1,10 @@
+{
+  "summary": "Removed the stray empty statement (lone semicolon) inside the bad() for-loop, which is the CWE-398 poor-code-quality flaw. The loop and its IO.writeLine call are preserved, so the feature still runs exactly as before.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE398_Poor_Code_Quality/CWE398_Poor_Code_Quality__semicolon_17.java",
+      "old": "        for(int j = 0; j < 1; j++)\n        {\n            ;                                                             \n            IO.writeLine(\"Hello from bad()\");\n        }",
+      "new": "        for(int j = 0; j < 1; j++)\n        {\n            IO.writeLine(\"Hello from bad()\");\n        }"
+    }
+  ]
+}

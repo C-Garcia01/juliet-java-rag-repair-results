@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method reads an untrusted line from a network socket and concatenates it directly into an OS command passed to Runtime.exec(), creating a CWE-78 command-injection sink. The fix validates the socket-derived data against a strict allowlist of characters that are legitimate for a filesystem path argument to `ls`/`dir` (letters, digits, and the safe path punctuation `. / _ -`) before it is ever used to build the command. Valid path arguments still flow through to exec() and the feature continues to work; only input containing shell/argument metacharacters (spaces, `;`, `&`, `|`, `$`, backticks, quotes, etc.) is rejected, which neutralizes the injection without disabling functionality or returning a constant result.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__connect_tcp_07.java",
+      "old": "        Process process = Runtime.getRuntime().exec(osCommand + data);\n        process.waitFor();",
+      "new": "        if (data != null && data.matches(\"[a-zA-Z0-9./_-]+\"))\n        {\n            Process process = Runtime.getRuntime().exec(osCommand + data);\n            process.waitFor();\n        }"
+    }
+  ]
+}

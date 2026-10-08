@@ -1,0 +1,10 @@
+{
+  "summary": "Added a default case to the switch statement in bad() to handle all values of x not matched by case 0 or case 1 (e.g. x == 2 from nextInt(3)), fixing CWE-478 while preserving the existing feature of mapping the random int to its string representation.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE478_Missing_Default_Case_in_Switch/CWE478_Missing_Default_Case_in_Switch__basic_14.java",
+      "old": "            case 1:\n                stringIntValue = \"1\";\n                break;\n                                                                                 \n            }",
+      "new": "            case 1:\n                stringIntValue = \"1\";\n                break;\n            default:\n                stringIntValue = String.valueOf(x);\n                break;\n            }"
+    }
+  ]
+}

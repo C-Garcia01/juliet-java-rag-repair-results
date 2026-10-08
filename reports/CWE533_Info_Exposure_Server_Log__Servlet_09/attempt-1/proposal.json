@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point logs the session ID to the server log (CWE-533). Session identifiers are sensitive and must not be written to logs where they could be read by anyone with log access and used to hijack a user's session. The fix removes the session ID from the log message while preserving the legitimate functionality: the validated username is still logged and the session is still created. Valid inputs continue to produce a log entry and invalid inputs still get the error response.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE533_Info_Exposure_Server_Log/CWE533_Info_Exposure_Server_Log__Servlet_09.java",
+      "old": "                HttpSession session = request.getSession(true);\n                                                               \n                log(\"Username: \" + username + \" Session ID:\" + session.getId());",
+      "new": "                HttpSession session = request.getSession(true);\n                                                               \n                log(\"Username: \" + username);"
+    }
+  ]
+}

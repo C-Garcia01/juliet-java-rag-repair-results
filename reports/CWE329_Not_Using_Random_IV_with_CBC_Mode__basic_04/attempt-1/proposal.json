@@ -1,0 +1,10 @@
+{
+  "summary": "Fixed CWE-329 by replacing the hardcoded all-zero IV with a randomly generated 16-byte IV produced by SecureRandom. The encryption feature (AES/CBC/PKCS5Padding of the text) is preserved; only the IV source is made unpredictable, which is the required mitigation for not using a random IV with CBC mode. SecureRandom was already imported.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE329_Not_Using_Random_IV_with_CBC_Mode/CWE329_Not_Using_Random_IV_with_CBC_Mode__basic_04.java",
+      "old": "            byte[] text = \"asdf\".getBytes(\"UTF-8\");\n            byte[] initializationVector =\n            {\n                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,\n                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00\n            };\n            KeyGenerator keyGenerator = KeyGenerator.getInstance(\"AES\");",
+      "new": "            byte[] text = \"asdf\".getBytes(\"UTF-8\");\n            byte[] initializationVector = new byte[16];\n            SecureRandom secureRandom = new SecureRandom();\n            secureRandom.nextBytes(initializationVector);\n            KeyGenerator keyGenerator = KeyGenerator.getInstance(\"AES\");"
+    }
+  ]
+}

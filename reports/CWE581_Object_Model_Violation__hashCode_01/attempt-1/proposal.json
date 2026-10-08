@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-581 (Object Model Violation): the class overrides equals() but fails to override hashCode(), breaking the equals/hashCode contract. Added a hashCode() implementation derived from the same 'message' field used by equals(), so equal objects produce equal hash codes. The feature (equality based on message) is preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE581_Object_Model_Violation/CWE581_Object_Model_Violation__hashCode_01_bad.java",
+      "old": "        else\n        {\n            return false;\n        }\n    }\n    \n    public void bad() ",
+      "new": "        else\n        {\n            return false;\n        }\n    }\n\n    public int hashCode()\n    {\n        return message != null ? message.hashCode() : 0;\n    }\n    \n    public void bad() "
+    }
+  ]
+}

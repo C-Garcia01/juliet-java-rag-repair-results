@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point compares two objects' exact runtime classes with `random.getClass().equals(secureRandom.getClass())`. Because `SecureRandom` is a distinct subclass of `Random`, the two Class objects are never equal, so the condition is always false (CWE-570) and the guarded branch is dead code. The fix preserves the intent of checking the class relationship between the two objects by using `isAssignableFrom`, which correctly evaluates the subclass relationship (SecureRandom extends Random) and allows the branch to execute for valid inputs.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE570_Expression_Always_False/CWE570_Expression_Always_False__class_getClass_equal_01.java",
+      "old": "        if (random.getClass().equals(secureRandom.getClass()))",
+      "new": "        if (random.getClass().isAssignableFrom(secureRandom.getClass()))"
+    }
+  ]
+}

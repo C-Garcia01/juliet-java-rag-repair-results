@@ -1,0 +1,10 @@
+{
+  "summary": "Fixed CWE-396 (overly-broad exception handling) in the bad() entry point by catching the specific NumberFormatException thrown by Integer.parseInt(\"Test\") instead of the generic Exception. The parsing feature and the rethrow behavior are preserved; only the caught type is narrowed to the exception the operation can actually produce.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE396_Catch_Generic_Exception/CWE396_Catch_Generic_Exception__Exception_15.java",
+      "old": "            catch (Exception exception)                                                     \n            {\n                IO.writeLine(\"Caught Exception\");\n                throw exception;              \n            }",
+      "new": "            catch (NumberFormatException exception)\n            {\n                IO.writeLine(\"Caught NumberFormatException\");\n                throw exception;\n            }"
+    }
+  ]
+}

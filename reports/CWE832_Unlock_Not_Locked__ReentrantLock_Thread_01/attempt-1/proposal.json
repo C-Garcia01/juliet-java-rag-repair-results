@@ -1,0 +1,10 @@
+{
+  "summary": "The bad path unlocks REENTRANT_LOCK_BAD inside the finally block without ever acquiring it, causing an IllegalMonitorStateException (CWE-832: Unlock of a Resource that is Not Locked). The fix acquires the lock before entering the try/finally block, mirroring the correct helperGood1() pattern. This preserves the feature (thread-safe doubling of intBad across two threads) while ensuring unlock() is only ever called on a lock held by the current thread.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE832_Unlock_Not_Locked/CWE832_Unlock_Not_Locked__ReentrantLock_Thread_01.java",
+      "old": "    static public void helperBad() \n    {\n                               \n\n                                                               \n                                                                                                  \n        try\n        { \n            intBad = intBad * 2;\n        } ",
+      "new": "    static public void helperBad() \n    {\n        REENTRANT_LOCK_BAD.lock();\n\n                                                               \n                                                                                                  \n        try\n        { \n            intBad = intBad * 2;\n        } "
+    }
+  ]
+}

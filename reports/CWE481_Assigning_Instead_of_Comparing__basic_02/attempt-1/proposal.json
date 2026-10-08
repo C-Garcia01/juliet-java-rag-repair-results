@@ -1,0 +1,10 @@
+{
+  "summary": "Fixed CWE-481 in the bad() method: the if-condition used the assignment operator `=` instead of the equality operator `==`, so `isZero` was always overwritten to `true` and the branch always taken regardless of the random value. Changed `isZero = true` to `isZero == true` so the condition correctly compares the value, preserving the intended behavior of reporting when zeroOrOne is 0.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE481_Assigning_Instead_of_Comparing/CWE481_Assigning_Instead_of_Comparing__basic_02.java",
+      "old": "            if(isZero = true)",
+      "new": "            if(isZero == true)"
+    }
+  ]
+}

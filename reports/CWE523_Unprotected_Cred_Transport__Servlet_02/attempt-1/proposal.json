@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method renders a login form whose action posts the j_username/j_password credentials to an unencrypted http:// endpoint (CWE-523: Unprotected Transport of Credentials). Changing the form action scheme to https:// ensures the submitted credentials are transmitted over an encrypted channel while keeping the login form fully functional.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE523_Unprotected_Cred_Transport/CWE523_Unprotected_Cred_Transport__Servlet_02.java",
+      "old": "                writer.println(\"<form action='http://hostname.com/j_security_check' method='post'>\");",
+      "new": "                writer.println(\"<form action='https://hostname.com/j_security_check' method='post'>\");"
+    }
+  ]
+}

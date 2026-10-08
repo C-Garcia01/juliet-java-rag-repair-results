@@ -1,0 +1,10 @@
+{
+  "summary": "The bad path recurses in helperBad with no terminating base case, so helperBad(level) calls helperBad(level-1) indefinitely, causing uncontrolled recursion and a StackOverflowError. I added a base case that returns 0 when level becomes negative\u2014mirroring the safe helperGood1\u2014so the recursive summation terminates while still computing the same sum for all valid (0..99) inputs produced by the feature.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE674_Uncontrolled_Recursion/CWE674_Uncontrolled_Recursion__missing_base_01.java",
+      "old": "    private static long helperBad(long level)\n    {\n                                     \n        long longSum = level + helperBad(level-1);\n        return longSum;\n    }",
+      "new": "    private static long helperBad(long level)\n    {\n        if (level < 0)\n        {\n            return 0;\n        }\n        \n        long longSum = level + helperBad(level-1);\n        return longSum;\n    }"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-760: the bad() entry point derived the hash salt from java.util.Random, whose output is predictable because it is seeded from the clock and uses a non-cryptographic PRNG. I switched the salt source to java.security.SecureRandom (already imported) and generate the salt from raw random bytes via nextBytes, producing an unpredictable salt. The feature (salting the SHA-512 digest of \"hash me\" and writing the hex) is preserved; valid behavior still runs.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE760_Predictable_Salt_One_Way_Hash/CWE760_Predictable_Salt_One_Way_Hash__basic_04.java",
+      "old": "            Random random = new Random();\n            MessageDigest hash = MessageDigest.getInstance(\"SHA-512\");\n                                                      \n            hash.update((Integer.toString(random.nextInt())).getBytes(\"UTF-8\"));",
+      "new": "            SecureRandom random = new SecureRandom();\n            MessageDigest hash = MessageDigest.getInstance(\"SHA-512\");\n                                                      \n            byte[] salt = new byte[16];\n            random.nextBytes(salt);\n            hash.update(salt);"
+    }
+  ]
+}

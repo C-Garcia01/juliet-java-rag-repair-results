@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-114 Process Control: the bad() entry point calls System.loadLibrary with a bare relative name (\"test.dll\"), which resolves against the JVM's library search path (java.library.path). An attacker who can influence that path or plant a file earlier in the search order can substitute a malicious native library. The fix pins loading to a fixed, trusted directory and loads the library by its canonical absolute path (System.load), rejecting anything that escapes the trusted base. This preserves the feature of loading test.dll from the intended location while removing the search-path substitution flow.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE114_Process_Control/CWE114_Process_Control__basic_03.java",
+      "old": "        if (5 == 5)\n        {\n            String libraryName = \"test.dll\";\n                                                                                \n                                               \n            System.loadLibrary(libraryName);\n        }",
+      "new": "        if (5 == 5)\n        {\n            String libraryName = \"test.dll\";\n            /* Load the library only from a fixed, trusted directory using an\n             * absolute, canonical path so the JVM library search path cannot be\n             * used to substitute an attacker-controlled native library. */\n            java.io.File trustedDir = new java.io.File(\"/usr/lib/testcases\").getCanonicalFile();\n            java.io.File libraryFile = new java.io.File(trustedDir, libraryName).getCanonicalFile();\n            if (libraryFile.getParentFile() != null\n                    && libraryFile.getParentFile().equals(trustedDir)\n                    && libraryFile.isFile())\n            {\n                System.load(libraryFile.getAbsolutePath());\n            }\n        }"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method reads an arbitrary string from a TCP socket and passes it directly to Class.forName()/newInstance(), allowing an attacker to instantiate any class on the classpath (CWE-470 Unsafe Reflection). The fix validates the socket-supplied name against an allow-list of known-safe class names before reflecting on it, preserving the legitimate feature for those inputs while rejecting untrusted class names.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE470_Unsafe_Reflection/CWE470_Unsafe_Reflection__connect_tcp_01.java",
+      "old": "        Class<?> tempClass = Class.forName(data);\n        Object tempClassObject = tempClass.newInstance();\n\n        IO.writeLine(tempClassObject.toString());                                      \n",
+      "new": "        Class<?> tempClass = null;\n\n                                                                                      \n        if (\"java.lang.String\".equals(data)\n                || \"java.lang.Integer\".equals(data)\n                || \"java.lang.Long\".equals(data)\n                || \"java.lang.Object\".equals(data))\n        {\n            tempClass = Class.forName(data);\n        }\n\n        if (tempClass != null)\n        {\n            Object tempClassObject = tempClass.newInstance();\n\n            IO.writeLine(tempClassObject.toString());\n        }\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "f72d26ce51c51fdf1182d97f018b9c2cf74e1c93",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-510",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "7cc0354f363f544d133b5cc69ae9f957288bba23",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26561,
+  "summary": "The bad() entry point contains a CWE-510 trapdoor: a hardcoded covert network connection to the suspicious literal address http://123.123.123.123:80. This is a hidden phone-home/backdoor endpoint baked into the binary with no legitimate, auditable source. The repair removes the hardcoded trapdoor address and instead resolves the endpoint from explicit application configuration (a system property) with a legitimate local default. This preserves the feature (opening and reading a network stream from a URL) while eliminating the hidden, attacker-controlled destination that defines the trapdoor.",
+  "exported_files": 1
+}

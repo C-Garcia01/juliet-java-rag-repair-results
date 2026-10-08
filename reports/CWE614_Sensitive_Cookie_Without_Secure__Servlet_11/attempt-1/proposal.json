@@ -1,0 +1,10 @@
+{
+  "summary": "Set the Secure flag on the sensitive cookie before adding it to the response, so the browser only transmits it over HTTPS. This fixes CWE-614 while preserving the cookie-setting feature for legitimate secure requests.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE614_Sensitive_Cookie_Without_Secure/CWE614_Sensitive_Cookie_Without_Secure__Servlet_11.java",
+      "old": "            if (request.isSecure())\n            {\n                                               \n                response.addCookie(cookie);\n            }",
+      "new": "            if (request.isSecure())\n            {\n                cookie.setSecure(true);\n                response.addCookie(cookie);\n            }"
+    }
+  ]
+}

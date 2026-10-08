@@ -1,0 +1,16 @@
+diff --git c/src/testcases/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__URLConnection_09.java w/src/testcases/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__URLConnection_09.java
+index f248fa2..53420ec 100644
+--- c/src/testcases/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__URLConnection_09.java
++++ w/src/testcases/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__URLConnection_09.java
+@@ -101,7 +101,10 @@ public class CWE15_External_Control_of_System_or_Configuration_Setting__URLConne
+ 
+                                                                           
+                                                                                                    
+-            dbConnection.setCatalog(data);
++            if (data != null && data.matches("[A-Za-z0-9_]+"))
++            {
++                dbConnection.setCatalog(data);
++            }
+         }
+         catch (SQLException exceptSql)
+         {

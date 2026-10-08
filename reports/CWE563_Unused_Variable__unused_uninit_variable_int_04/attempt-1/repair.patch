@@ -1,0 +1,15 @@
+diff --git c/src/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_uninit_variable_int_04.java w/src/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_uninit_variable_int_04.java
+index 21819b8..222f2c9 100644
+--- c/src/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_uninit_variable_int_04.java
++++ w/src/testcases/CWE563_Unused_Variable/CWE563_Unused_Variable__unused_uninit_variable_int_04.java
+@@ -31,6 +31,10 @@ public class CWE563_Unused_Variable__unused_uninit_variable_int_04 extends Abstr
+     {
+         int data;
+ 
++        /* initialize and use data so it is not left unused */
++        data = 2;
++        IO.writeLine("data value: " + data);
++
+                                                           
+         ;                                                    
+ 

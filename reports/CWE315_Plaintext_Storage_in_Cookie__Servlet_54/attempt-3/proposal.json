@@ -1,0 +1,10 @@
+{
+  "summary": "The flow stores a plaintext username:password string in an HTTP cookie (CWE-315). The feature is preserving an 'auth' cookie keyed off the credentials. I fix the sink in Servlet_54e by hashing the data with SHA-512 (MessageDigest is already imported) and storing the hex digest instead of the plaintext credentials, so no readable secret is persisted client-side while the cookie is still set for valid inputs.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_54e.java",
+      "old": "        response.addCookie(new Cookie(\"auth\", data));",
+      "new": "        MessageDigest messageDigest = MessageDigest.getInstance(\"SHA-512\");\n        byte[] hashedData = messageDigest.digest(data.getBytes(\"UTF-8\"));\n        response.addCookie(new Cookie(\"auth\", IO.toHex(hashedData)));"
+    }
+  ]
+}

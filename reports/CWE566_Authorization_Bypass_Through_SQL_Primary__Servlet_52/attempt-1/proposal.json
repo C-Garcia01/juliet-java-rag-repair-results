@@ -1,0 +1,10 @@
+{
+  "summary": "The CWE-566 authorization bypass occurs in the bad entry point (52a), which reads the SQL primary key `id` directly from a user-controlled request parameter and passes it through 52b to 52c, where it is used as `uid` in the invoices query. This lets any requester enumerate other users' invoices by supplying an arbitrary id. The fix derives the identifier from the server-side authenticated session instead of the request parameter, so the query is scoped to the current user's own uid. The downstream query, parameterization, and the lookup feature itself are preserved; valid authenticated requests still retrieve their invoices, and the existing `Integer.parseInt` guard in 52c continues to handle non-numeric values.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_52a.java",
+      "old": "        data = request.getParameter(\"id\");",
+      "new": "        Object authenticatedUserId = request.getSession().getAttribute(\"userId\");\n        data = (authenticatedUserId == null) ? null : authenticatedUserId.toString();"
+    }
+  ]
+}

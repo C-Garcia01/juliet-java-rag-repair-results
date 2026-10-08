@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE523_Unprotected_Cred_Transport/CWE523_Unprotected_Cred_Transport__Servlet_03.java w/src/testcases/CWE523_Unprotected_Cred_Transport/CWE523_Unprotected_Cred_Transport__Servlet_03.java
+index b84c7ec..9f77411 100644
+--- c/src/testcases/CWE523_Unprotected_Cred_Transport/CWE523_Unprotected_Cred_Transport__Servlet_03.java
++++ w/src/testcases/CWE523_Unprotected_Cred_Transport/CWE523_Unprotected_Cred_Transport__Servlet_03.java
+@@ -35,7 +35,7 @@ public class CWE523_Unprotected_Cred_Transport__Servlet_03 extends AbstractTestC
+             {
+                 writer = response.getWriter();
+                                                                                       
+-                writer.println("<form action='http://hostname.com/j_security_check' method='post'>");
++                writer.println("<form action='https://hostname.com/j_security_check' method='post'>");
+                 writer.println("<table>");
+                 writer.println("<tr><td>Name:</td>");
+                 writer.println("<td><input type='text' name='j_username'></td></tr>");

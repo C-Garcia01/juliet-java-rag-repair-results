@@ -1,0 +1,16 @@
+diff --git c/src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_listen_tcp_72b.java w/src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_listen_tcp_72b.java
+index 6b0da51..101e3d3 100644
+--- c/src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_listen_tcp_72b.java
++++ w/src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_listen_tcp_72b.java
+@@ -46,6 +46,11 @@ public class CWE601_Open_Redirect__Servlet_listen_tcp_72b
+                 return;
+             }
+                                                                                                                                            
++            if (uri.isAbsolute() || uri.getAuthority() != null || data.startsWith("//") || !data.startsWith("/"))
++            {
++                response.getWriter().write("Invalid redirect URL");
++                return;
++            }
+             response.sendRedirect(data);
+             return;
+         }

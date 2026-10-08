@@ -1,0 +1,10 @@
+{
+  "summary": "The stray semicolon after `if (x == 0)` terminates the if statement with an empty body (CWE-483), so the following block always runs and sets y=1 regardless of x. Removing the semicolon reattaches the block to the condition so it only executes when x == 0.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE483_Incorrect_Block_Delimitation/CWE483_Incorrect_Block_Delimitation__semicolon_16.java",
+      "old": "            if (x == 0);\n            {",
+      "new": "            if (x == 0)\n            {"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE571_Expression_Always_True/CWE571_Expression_Always_True__static_01.java w/src/testcases/CWE571_Expression_Always_True/CWE571_Expression_Always_True__static_01.java
+index eb64fdb..b02e98c 100644
+--- c/src/testcases/CWE571_Expression_Always_True/CWE571_Expression_Always_True__static_01.java
++++ w/src/testcases/CWE571_Expression_Always_True/CWE571_Expression_Always_True__static_01.java
+@@ -12,7 +12,7 @@ public class CWE571_Expression_Always_True__static_01 extends AbstractTestCase
+     public void bad()
+     {
+                                             
+-        if (IO.staticTrue)
++        if (IO.staticReturnsTrueOrFalse())
+         {
+             IO.writeLine("always prints");
+         }

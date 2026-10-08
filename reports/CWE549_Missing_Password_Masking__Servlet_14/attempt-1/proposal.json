@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-549 (Missing Password Masking): the bad() entry point renders the password field with type=\"text\", so the entered password is displayed in cleartext on screen. Changed the password input's type to \"password\" so the browser masks the characters, while keeping the login form and all fields fully functional.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE549_Missing_Password_Masking/CWE549_Missing_Password_Masking__Servlet_14.java",
+      "old": "            response.getWriter().println(\"Password: <input name=\\\"password\\\" type=\\\"text\\\" tabindex=\\\"10\\\" />\");",
+      "new": "            response.getWriter().println(\"Password: <input name=\\\"password\\\" type=\\\"password\\\" tabindex=\\\"10\\\" />\");"
+    }
+  ]
+}

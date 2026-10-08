@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method opens a JDBC Connection, PreparedStatement, and ResultSet but never releases them, leaking these resources (CWE-772) whenever the method exits. The fix adds a finally block that closes the ResultSet, PreparedStatement, and Connection (in that order, each guarded by a null check and its own try/catch so a close failure on one still attempts the others). This preserves the query functionality while guaranteeing the resources are released on every path.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE772_Missing_Release_of_Resource/CWE772_Missing_Release_of_Resource__db_Connection_01.java",
+      "old": "        catch (SQLException exceptSql)\n        {\n            IO.logger.log(Level.WARNING, \"Error!\", exceptSql);\n        }\n        ",
+      "new": "        catch (SQLException exceptSql)\n        {\n            IO.logger.log(Level.WARNING, \"Error!\", exceptSql);\n        }\n        finally\n        {\n            try\n            {\n                if (resultSet != null)\n                {\n                    resultSet.close();\n                }\n            }\n            catch (SQLException exceptSqlResultSet)\n            {\n                IO.logger.log(Level.WARNING, \"Error closing ResultSet\", exceptSqlResultSet);\n            }\n\n            try\n            {\n                if (preparedStatement != null)\n                {\n                    preparedStatement.close();\n                }\n            }\n            catch (SQLException exceptSqlStatement)\n            {\n                IO.logger.log(Level.WARNING, \"Error closing PreparedStatement\", exceptSqlStatement);\n            }\n\n            try\n            {\n                if (dBConnection != null)\n                {\n                    dBConnection.close();\n                }\n            }\n            catch (SQLException exceptSqlConnection)\n            {\n                IO.logger.log(Level.WARNING, \"Error closing Connection\", exceptSqlConnection);\n            }\n        }\n        "
+    }
+  ]
+}

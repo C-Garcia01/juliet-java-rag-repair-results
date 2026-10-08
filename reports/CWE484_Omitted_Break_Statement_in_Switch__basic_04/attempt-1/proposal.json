@@ -1,0 +1,10 @@
+{
+  "summary": "Added the missing break statement after case 2 in the switch. Without it, execution fell through to the default case, overwriting stringValue = \"two\" with \"Default\" whenever intRandom was 2. Adding break preserves correct per-case behavior for all values (1, 2, and default).",
+  "edits": [
+    {
+      "path": "src/testcases/CWE484_Omitted_Break_Statement_in_Switch/CWE484_Omitted_Break_Statement_in_Switch__basic_04.java",
+      "old": "            case 2:\n                stringValue = \"two\";                                                                                                              \n                                                               \n            default:",
+      "new": "            case 2:\n                stringValue = \"two\";\n                break;\n            default:"
+    }
+  ]
+}

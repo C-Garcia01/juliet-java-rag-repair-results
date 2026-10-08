@@ -1,0 +1,10 @@
+{
+  "summary": "Fixed CWE-481 in bad(): the if-condition used an assignment `isZero = true` instead of a comparison, which always evaluated to true and overwrote the computed value. Changed to a proper comparison so the branch reflects whether zeroOrOne was 0, preserving the intended feature.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE481_Assigning_Instead_of_Comparing/CWE481_Assigning_Instead_of_Comparing__basic_06.java",
+      "old": "            if(isZero = true)",
+      "new": "            if(isZero == true)"
+    }
+  ]
+}

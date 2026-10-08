@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point computes 100 % data where data comes from SecureRandom.nextInt() and can be zero, causing an ArithmeticException (divide by zero). I guard the modulo operation so it only runs when data is non-zero, preserving the legitimate output for all valid (non-zero) random values while avoiding the divide-by-zero.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE369_Divide_by_Zero/s03/CWE369_Divide_by_Zero__int_random_modulo_17.java",
+      "old": "            IO.writeLine(\"100%\" + data + \" = \" + (100 % data) + \"\\n\");",
+      "new": "            if (data != 0)\n            {\n                IO.writeLine(\"100%\" + data + \" = \" + (100 % data) + \"\\n\");\n            }\n            else\n            {\n                IO.writeLine(\"100%\" + data + \" = undefined (divisor is zero)\\n\");\n            }"
+    }
+  ]
+}

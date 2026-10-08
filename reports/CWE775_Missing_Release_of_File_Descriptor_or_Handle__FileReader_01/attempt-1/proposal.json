@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() method opens a FileReader wrapped in a BufferedReader but never releases them, leaking the file descriptor/handle (CWE-775) on both the success and exception paths. I added a finally block that closes the BufferedReader and FileReader (guarded for null and wrapped in their own try/catch so a close failure is logged rather than masking the read), ensuring the descriptor is always released while preserving the read-and-print behavior for valid input.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE775_Missing_Release_of_File_Descriptor_or_Handle/CWE775_Missing_Release_of_File_Descriptor_or_Handle__FileReader_01.java",
+      "old": "        catch (IOException exceptIO)\n        {\n            IO.logger.log(Level.WARNING, \"Error with stream reading\", exceptIO);\n        }\n",
+      "new": "        catch (IOException exceptIO)\n        {\n            IO.logger.log(Level.WARNING, \"Error with stream reading\", exceptIO);\n        }\n        finally\n        {\n            try\n            {\n                if (readerBuffered != null)\n                {\n                    readerBuffered.close();\n                }\n            }\n            catch (IOException exceptIO)\n            {\n                IO.logger.log(Level.WARNING, \"Error closing BufferedReader\", exceptIO);\n            }\n\n            try\n            {\n                if (readerFile != null)\n                {\n                    readerFile.close();\n                }\n            }\n            catch (IOException exceptIO)\n            {\n                IO.logger.log(Level.WARNING, \"Error closing FileReader\", exceptIO);\n            }\n        }\n"
+    }
+  ]
+}

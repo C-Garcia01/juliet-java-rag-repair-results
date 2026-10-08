@@ -1,0 +1,10 @@
+{
+  "summary": "In helperBad(), the ReentrantLock was acquired twice (lock() called two times) but released only once in the finally block. Because ReentrantLock maintains a hold count, each lock() must be paired with an unlock(); acquiring twice and releasing once leaves the lock permanently held by the first thread, so the second thread blocks forever on join (deadlock). The fix removes the redundant second lock() call so the single lock() is balanced by the single unlock(), matching the correct pattern used in helperGood1(). The critical section and the intBad = intBad * 2 computation are preserved, keeping the feature intact.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE764_Multiple_Locks/CWE764_Multiple_Locks__ReentrantLock_Thread_01.java",
+      "old": "        REENTRANT_LOCK_BAD.lock(); \n        REENTRANT_LOCK_BAD.lock();                                                                                                            \n",
+      "new": "        REENTRANT_LOCK_BAD.lock();                                                                                                            \n"
+    }
+  ]
+}

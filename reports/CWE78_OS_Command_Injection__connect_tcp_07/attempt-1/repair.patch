@@ -1,0 +1,18 @@
+diff --git c/src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__connect_tcp_07.java w/src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__connect_tcp_07.java
+index 825c319..2e3d341 100644
+--- c/src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__connect_tcp_07.java
++++ w/src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__connect_tcp_07.java
+@@ -122,8 +122,11 @@ public class CWE78_OS_Command_Injection__connect_tcp_07 extends AbstractTestCase
+         }
+ 
+                                                
+-        Process process = Runtime.getRuntime().exec(osCommand + data);
+-        process.waitFor();
++        if (data != null && data.matches("[a-zA-Z0-9./_-]+"))
++        {
++            Process process = Runtime.getRuntime().exec(osCommand + data);
++            process.waitFor();
++        }
+ 
+     }
+ 

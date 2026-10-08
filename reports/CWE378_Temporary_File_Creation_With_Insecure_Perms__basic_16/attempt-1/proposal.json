@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-378: `File.createTempFile(\"temp\", \"1234\")` creates the temporary file with default, world-readable permissions. I replaced it with `Files.createTempFile(...)` using an explicit POSIX file-attribute of `rw-------` so the temp file is created atomically with owner-only read/write permissions. The file is still created, written to, and deleted exactly as before, preserving the feature.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE378_Temporary_File_Creation_With_Insecure_Perms/CWE378_Temporary_File_Creation_With_Insecure_Perms__basic_16.java",
+      "old": "                tempFile = File.createTempFile(\"temp\", \"1234\");",
+      "new": "                java.util.Set<java.nio.file.attribute.PosixFilePermission> tempFilePermissions =\n                    java.nio.file.attribute.PosixFilePermissions.fromString(\"rw-------\");\n                tempFile = java.nio.file.Files.createTempFile(\"temp\", \"1234\",\n                    java.nio.file.attribute.PosixFilePermissions.asFileAttribute(tempFilePermissions)).toFile();"
+    }
+  ]
+}

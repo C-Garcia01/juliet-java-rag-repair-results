@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "ce0ec9d6897ddf0c27543d0b78dadd01b269a4ea",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-383",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "e6592ba7848a6eab3324ba748e0498560380feec",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26702,
+  "summary": "CWE-383 flags the servlet's direct creation and starting of a new Thread (and the busy-wait on it). Since a servlet container already manages a request thread, I preserve the feature\u2014sleep ~10 seconds, then report 'thread is done!'\u2014by executing the Runnable's work inline in the current request thread via runnable.run() instead of spawning a separate Thread. This removes the direct thread use and the busy-wait polling loop while keeping identical observable behavior and output.",
+  "exported_files": 1
+}

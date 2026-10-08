@@ -1,0 +1,10 @@
+{
+  "summary": "The bad flow takes an attacker-controlled environment variable (ADD) and concatenates it directly onto an uploads root directory to build a File path, allowing relative path traversal (e.g. ../../etc/passwd) out of the intended directory. I added a canonical-path containment check in the sink so that only files resolving inside the uploads root are read; legitimate filenames under the uploads directory continue to work, while traversal sequences are rejected before the file is opened.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE23_Relative_Path_Traversal/CWE23_Relative_Path_Traversal__Environment_73b.java",
+      "old": "            File file = new File(root + data);\n            FileInputStream streamFileInputSink = null;",
+      "new": "            File file = new File(root + data);\n            File rootDir = new File(root);\n            if (!file.getCanonicalPath().startsWith(rootDir.getCanonicalPath() + File.separator))\n            {\n                return;\n            }\n            FileInputStream streamFileInputSink = null;"
+    }
+  ]
+}

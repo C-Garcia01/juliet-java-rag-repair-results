@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-395 is caused by catching NullPointerException to detect a null system property. Replaced the try/catch(NullPointerException) with an explicit null check on the result of System.getProperty(\"CWE395\"), preserving the same behavior: when the property equals \"CWE395\" it writes the matching line, and when it is null it writes the \"is null\" line.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE395_Catch_NullPointerException/CWE395_Catch_NullPointerException__basic_03.java",
+      "old": "            String systemProperty = System.getProperty(\"CWE395\");\n            try\n            {\n                                                                                     \n                if(systemProperty.equals(\"CWE395\"))\n                {\n                    IO.writeLine(\"systemProperty is CWE395\");\n                }\n            }\n            catch (NullPointerException exceptNullPointer)                                                           \n            {\n                IO.writeLine(\"systemProperty is null\");\n            }",
+      "new": "            String systemProperty = System.getProperty(\"CWE395\");\n            if (systemProperty != null)\n            {\n                if(systemProperty.equals(\"CWE395\"))\n                {\n                    IO.writeLine(\"systemProperty is CWE395\");\n                }\n            }\n            else\n            {\n                IO.writeLine(\"systemProperty is null\");\n            }"
+    }
+  ]
+}

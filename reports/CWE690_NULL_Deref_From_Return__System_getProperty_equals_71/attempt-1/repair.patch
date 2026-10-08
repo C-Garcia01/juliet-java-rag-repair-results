@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__System_getProperty_equals_71b.java w/src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__System_getProperty_equals_71b.java
+index 6711de4..cdc00d0 100644
+--- c/src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__System_getProperty_equals_71b.java
++++ w/src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__System_getProperty_equals_71b.java
+@@ -28,7 +28,7 @@ public class CWE690_NULL_Deref_From_Return__System_getProperty_equals_71b
+         String data = (String)dataObject;
+ 
+                                                 
+-        if(data.equals("CWE690"))
++        if(data != null && data.equals("CWE690"))
+         {
+             IO.writeLine("data is CWE690");
+         }

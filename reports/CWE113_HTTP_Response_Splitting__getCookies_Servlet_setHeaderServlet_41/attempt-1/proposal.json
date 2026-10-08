@@ -1,0 +1,10 @@
+{
+  "summary": "The bad entry point reads an attacker-controlled cookie value and concatenates it directly into the HTTP \"Location\" response header via response.setHeader, allowing CR/LF injection (HTTP response splitting). The fix URL-encodes the untrusted value before placing it in the header, which neutralizes CR, LF, and other control characters while preserving legitimate lang values (they round-trip through the server/browser as before). The already-imported java.net.URLEncoder is used, and the enclosing method declares throws Throwable so the checked UnsupportedEncodingException is covered.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE113_HTTP_Response_Splitting/s02/CWE113_HTTP_Response_Splitting__getCookies_Servlet_setHeaderServlet_41.java",
+      "old": "            response.setHeader(\"Location\", \"/author.jsp?lang=\" + data);",
+      "new": "            response.setHeader(\"Location\", \"/author.jsp?lang=\" + URLEncoder.encode(data, \"UTF-8\"));"
+    }
+  ]
+}

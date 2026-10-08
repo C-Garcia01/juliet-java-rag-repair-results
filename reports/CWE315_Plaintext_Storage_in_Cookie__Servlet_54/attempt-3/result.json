@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "9f3081c06455ba0acedf620314f74449857e1c32",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-315",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "c8ea2f61b035d02b29fd0c78f63fbe435734bfa3",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 33592,
+  "summary": "The flow stores a plaintext username:password string in an HTTP cookie (CWE-315). The feature is preserving an 'auth' cookie keyed off the credentials. I fix the sink in Servlet_54e by hashing the data with SHA-512 (MessageDigest is already imported) and storing the hex digest instead of the plaintext credentials, so no readable secret is persisted client-side while the cookie is still set for valid inputs.",
+  "exported_files": 1
+}

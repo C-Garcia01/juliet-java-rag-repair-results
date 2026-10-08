@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-586 is an explicit call to Object.finalize(). The bad() method calls badObj.finalize() directly in the finally block, which runs finalization logic prematurely while the object may still be in use and causes finalize() to run again later during garbage collection. Finalization must be left to the JVM/garbage collector. I remove the explicit finalize() invocation while preserving the sayHello() feature and the surrounding try/catch/finally structure. The Helper's finalize() method is left intact so the JVM can still invoke it normally.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE586_Explicit_Call_to_Finalize/CWE586_Explicit_Call_to_Finalize__basic_02.java",
+      "old": "                badObj.finalize();\n",
+      "new": ""
+    }
+  ]
+}

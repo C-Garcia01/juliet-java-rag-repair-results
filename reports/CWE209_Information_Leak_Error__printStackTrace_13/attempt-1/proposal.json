@@ -1,0 +1,10 @@
+{
+  "summary": "Replaced the information-leaking printStackTrace() call in bad() with a controlled log message via IO.logger. This still handles the UnsupportedOperationException in the exact same code path and control flow, but avoids exposing the full stack trace (which can reveal internal implementation details) to an output channel an attacker could observe. Only the sink statement was changed; the feature (catching and recording the exception) is preserved.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE209_Information_Leak_Error/CWE209_Information_Leak_Error__printStackTrace_13.java",
+      "old": "                exceptUnsupportedOperation.printStackTrace();                                                  ",
+      "new": "                IO.logger.log(java.util.logging.Level.WARNING, \"An UnsupportedOperationException occurred\");"
+    }
+  ]
+}

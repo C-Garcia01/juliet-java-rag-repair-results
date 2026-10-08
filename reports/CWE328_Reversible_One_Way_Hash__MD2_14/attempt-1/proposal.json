@@ -1,0 +1,10 @@
+{
+  "summary": "Replaced the weak MD2 hash algorithm with SHA-256 in the bad() entry point. SHA-256 is a secure, collision-resistant one-way hash, resolving CWE-328 while preserving the hashing feature (same input hashed, hex output still written).",
+  "edits": [
+    {
+      "path": "src/testcases/CWE328_Reversible_One_Way_Hash/CWE328_Reversible_One_Way_Hash__MD2_14.java",
+      "old": "            MessageDigest messageDigest = MessageDigest.getInstance(\"MD2\");",
+      "new": "            MessageDigest messageDigest = MessageDigest.getInstance(\"SHA-256\");"
+    }
+  ]
+}

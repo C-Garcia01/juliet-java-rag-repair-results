@@ -1,0 +1,10 @@
+{
+  "summary": "The bad() entry point reaches a Java assertion whose condition (\"\".length() > 0) is derived from a trivially-evaluable expression, so when assertions are enabled it always throws an AssertionError (CWE-617 Reachable Assertion). I replaced the assertion with an ordinary runtime length check that logs the outcome, preserving the length-validation behavior without using an assertion as a control-flow/validation mechanism.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE617_Reachable_Assertion/CWE617_Reachable_Assertion__length_06.java",
+      "old": "            assert \"\".length() > 0;",
+      "new": "            if (\"\".length() > 0)\n            {\n                IO.writeLine(\"String length is greater than 0\");\n            }\n            else\n            {\n                IO.writeLine(\"String length is 0\");\n            }"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "summary": "Removed the stray semicolon after the `if (x == 0)` condition in bad(). The semicolon made the if-statement body empty, so the following block (setting y = 1) always executed regardless of x. Removing it correctly ties the block to the condition while preserving the feature.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE483_Incorrect_Block_Delimitation/CWE483_Incorrect_Block_Delimitation__semicolon_07.java",
+      "old": "            if (x == 0);\n            {",
+      "new": "            if (x == 0)\n            {"
+    }
+  ]
+}

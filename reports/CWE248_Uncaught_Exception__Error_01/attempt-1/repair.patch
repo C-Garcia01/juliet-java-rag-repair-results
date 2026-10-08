@@ -1,0 +1,20 @@
+diff --git c/src/testcases/CWE248_Uncaught_Exception/CWE248_Uncaught_Exception__Error_01.java w/src/testcases/CWE248_Uncaught_Exception/CWE248_Uncaught_Exception__Error_01.java
+index d0d4254..ba393e5 100644
+--- c/src/testcases/CWE248_Uncaught_Exception/CWE248_Uncaught_Exception__Error_01.java
++++ w/src/testcases/CWE248_Uncaught_Exception/CWE248_Uncaught_Exception__Error_01.java
+@@ -14,7 +14,14 @@ public class CWE248_Uncaught_Exception__Error_01 extends AbstractTestCase
+     public void bad() 
+     {
+                                     
+-        throw new Error("Really bad Error");
++        try
++        {
++            throw new Error("Really bad Error");
++        }
++        catch (Error error)
++        {
++            IO.logger.log(Level.WARNING, "Caught Error in bad()", error);
++        }
+     }
+ 
+     

@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "641d1638b3c9c28fab3aaf33829f93ad6a6ec432",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-329",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "d9db07ca284fdf017f36256ab6ce3b9377ae8d7c",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 26908,
+  "summary": "Replaced the hard-coded all-zero initialization vector with one filled by SecureRandom, so the AES/CBC encryption uses a random IV while still encrypting the same plaintext and emitting the hex ciphertext as before.",
+  "exported_files": 1
+}

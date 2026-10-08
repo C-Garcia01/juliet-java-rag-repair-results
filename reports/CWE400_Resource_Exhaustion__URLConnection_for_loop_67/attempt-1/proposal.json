@@ -1,0 +1,10 @@
+{
+  "summary": "The tainted `count` value read from the URLConnection response flows into `badSink` in the 67b file, where it is used directly as the upper bound of a for loop (`for (i = 0; i < count; i++)`). An attacker-controlled response can supply a very large number, causing the loop to iterate an unbounded number of times and exhaust resources. The fix bounds the loop count to a sane maximum before using it, so legitimate small values still work while malicious large values are capped.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__URLConnection_for_loop_67b.java",
+      "old": "        int count = countContainer.containerOne;\n\n        int i = 0;\n\n                                                                                        \n        for (i = 0; i < count; i++)\n        {\n            IO.writeLine(\"Hello\");\n        }\n",
+      "new": "        int count = countContainer.containerOne;\n\n        int i = 0;\n\n        /* Bound the loop count to a sane maximum so an attacker-controlled value\n         * cannot drive unbounded iteration and exhaust resources. Legitimate small\n         * counts continue to work unchanged. */\n        final int MAX_LOOP_COUNT = 1000;\n        if (count > MAX_LOOP_COUNT)\n        {\n            count = MAX_LOOP_COUNT;\n        }\n\n        for (i = 0; i < count; i++)\n        {\n            IO.writeLine(\"Hello\");\n        }\n"
+    }
+  ]
+}

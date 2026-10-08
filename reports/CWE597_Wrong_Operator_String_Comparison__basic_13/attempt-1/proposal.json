@@ -1,0 +1,10 @@
+{
+  "summary": "Fixed CWE-597 (Wrong Operator for String Comparison) by replacing the reference-identity `==` operator with `String.equals()` for comparing the two user-supplied strings. The `==` operator compares object references rather than string content, so equal-valued strings read from input would be reported as not equal. Since both strings are null-checked immediately before this comparison, calling `.equals()` is safe and preserves the equal/not-equal reporting behavior for all valid inputs.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE597_Wrong_Operator_String_Comparison/CWE597_Wrong_Operator_String_Comparison__basic_13.java",
+      "old": "                    if (string1 == string2)                                                                     ",
+      "new": "                    if (string1.equals(string2))                                                                     "
+    }
+  ]
+}

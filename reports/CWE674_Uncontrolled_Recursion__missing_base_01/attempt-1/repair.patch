@@ -1,0 +1,17 @@
+diff --git c/src/testcases/CWE674_Uncontrolled_Recursion/CWE674_Uncontrolled_Recursion__missing_base_01.java w/src/testcases/CWE674_Uncontrolled_Recursion/CWE674_Uncontrolled_Recursion__missing_base_01.java
+index f2cd5a9..56378f6 100644
+--- c/src/testcases/CWE674_Uncontrolled_Recursion/CWE674_Uncontrolled_Recursion__missing_base_01.java
++++ w/src/testcases/CWE674_Uncontrolled_Recursion/CWE674_Uncontrolled_Recursion__missing_base_01.java
+@@ -14,7 +14,11 @@ public class CWE674_Uncontrolled_Recursion__missing_base_01 extends AbstractTest
+ {
+     private static long helperBad(long level)
+     {
+-                                     
++        if (level < 0)
++        {
++            return 0;
++        }
++        
+         long longSum = level + helperBad(level-1);
+         return longSum;
+     }

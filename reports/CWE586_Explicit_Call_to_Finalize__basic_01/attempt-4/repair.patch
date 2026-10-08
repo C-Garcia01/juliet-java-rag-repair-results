@@ -1,0 +1,17 @@
+diff --git c/src/testcases/CWE586_Explicit_Call_to_Finalize/CWE586_Explicit_Call_to_Finalize__basic_01.java w/src/testcases/CWE586_Explicit_Call_to_Finalize/CWE586_Explicit_Call_to_Finalize__basic_01.java
+index de02c3e..1057ed8 100644
+--- c/src/testcases/CWE586_Explicit_Call_to_Finalize/CWE586_Explicit_Call_to_Finalize__basic_01.java
++++ w/src/testcases/CWE586_Explicit_Call_to_Finalize/CWE586_Explicit_Call_to_Finalize__basic_01.java
+@@ -32,12 +32,6 @@ public class CWE586_Explicit_Call_to_Finalize__basic_01 extends AbstractTestCase
+         {
+             IO.writeLine("An error occurred.");
+         }
+-        finally
+-        {
+-                         
+-                                                                                  
+-            badObj.finalize();
+-        }
+ 
+     }
+ 

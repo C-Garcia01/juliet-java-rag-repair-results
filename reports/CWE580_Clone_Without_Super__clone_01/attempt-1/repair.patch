@@ -1,0 +1,13 @@
+diff --git c/src/testcases/CWE580_Clone_Without_Super/CWE580_Clone_Without_Super__clone_01_bad.java w/src/testcases/CWE580_Clone_Without_Super/CWE580_Clone_Without_Super__clone_01_bad.java
+index a84300c..da9fe05 100644
+--- c/src/testcases/CWE580_Clone_Without_Super/CWE580_Clone_Without_Super__clone_01_bad.java
++++ w/src/testcases/CWE580_Clone_Without_Super/CWE580_Clone_Without_Super__clone_01_bad.java
+@@ -24,7 +24,7 @@ public class CWE580_Clone_Without_Super__clone_01_bad extends AbstractTestCaseCl
+     protected final Object clone() throws CloneNotSupportedException 
+     {
+                                                
+-        CWE580_Clone_Without_Super__clone_01_bad objectBad = new CWE580_Clone_Without_Super__clone_01_bad();     
++        CWE580_Clone_Without_Super__clone_01_bad objectBad = (CWE580_Clone_Without_Super__clone_01_bad) super.clone();
+         objectBad.setDate(new Date(theDate.getTime()));
+         return objectBad;
+     }

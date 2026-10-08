@@ -1,0 +1,10 @@
+{
+  "summary": "CWE-383 flags the servlet's direct creation and starting of a new Thread (and the busy-wait on it). Since a servlet container already manages a request thread, I preserve the feature\u2014sleep ~10 seconds, then report 'thread is done!'\u2014by executing the Runnable's work inline in the current request thread via runnable.run() instead of spawning a separate Thread. This removes the direct thread use and the busy-wait polling loop while keeping identical observable behavior and output.",
+  "edits": [
+    {
+      "path": "src/testcases/CWE383_Direct_Use_of_Threads/CWE383_Direct_Use_of_Threads__Servlet_02.java",
+      "old": "            Thread threadOne = new Thread(runnable);\n            threadOne.start();\n                                                         \n            while(true)\n            {\n                if (!threadOne.isAlive())\n                {\n                    break;\n                }\n                Thread.sleep(1000);\n            }\n",
+      "new": "            runnable.run();\n"
+    }
+  ]
+}

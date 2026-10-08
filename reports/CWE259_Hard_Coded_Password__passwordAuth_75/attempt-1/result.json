@@ -1,0 +1,17 @@
+{
+  "status": "generated_unvalidated",
+  "input_vcc": "99a6190e2f2e90b48596a50b1c396fb6b08409c9",
+  "provider": "claude",
+  "model": "claude-opus-4-8",
+  "cwe": "CWE-259",
+  "repository": "nist/juliet-java-1.3",
+  "review_status": "not_reviewed",
+  "validation_scope": "Generated repair; behavioral validation not run",
+  "generation": "direct_rag_repair",
+  "fixed_commit": "871ff1385faef844d17d8bb578004bbcdddb4882",
+  "retrieved_examples": [],
+  "corpus_sha256": "076a5d9aa0db1820ea18fa9343303c791d3daa3400cbc844505407eeab668e50",
+  "prompt_characters": 30981,
+  "summary": "The flaw is a hard-coded password: the entry point in 75a assigns the literal \"7e5tc4s3\" to `data`, which is then serialized and used to construct a PasswordAuthentication in 75b's sink. I replace the hard-coded literal with a value read from an external source (the `ADD` environment variable), so the credential is supplied at runtime rather than baked into the bytecode. The downstream serialization and the existing null check in badSink continue to work unchanged, preserving the feature for any valid runtime-provided password.",
+  "exported_files": 1
+}
