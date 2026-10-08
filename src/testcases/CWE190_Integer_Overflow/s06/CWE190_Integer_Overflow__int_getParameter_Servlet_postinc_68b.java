@@ -27,7 +27,10 @@ public class CWE190_Integer_Overflow__int_getParameter_Servlet_postinc_68b
         int data = CWE190_Integer_Overflow__int_getParameter_Servlet_postinc_68a.data;
 
                                                                               
-        data++;
+        if (data != Integer.MAX_VALUE)
+        {
+            data++;
+        }
         int result = (int)(data);
 
         IO.writeLine("result: " + result);
