@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE252_Unchecked_Return_Value__FileInputStream_11",
+  "cwe": "CWE-252",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE252_Unchecked_Return_Value/CWE252_Unchecked_Return_Value__FileInputStream_11.java",
+      "repository_path": "src/testcases/CWE252_Unchecked_Return_Value/CWE252_Unchecked_Return_Value__FileInputStream_11.java",
+      "original_sha256": "9da468b7b46e855cc14eb8a22436d38c9875bc854a146817b931ef4cebe44b24",
+      "input_sha256": "ca9545f6802d6d700706ebd5b923e9d043f7f79ddf0f4c71de46c34e9c87ef43"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
