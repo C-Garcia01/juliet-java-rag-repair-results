@@ -27,6 +27,7 @@ public class CWE614_Sensitive_Cookie_Without_Secure__Servlet_02 extends Abstract
         if (true)
         {
             Cookie cookie = new Cookie("SecretMessage", "test");
+            cookie.setSecure(true);
             if (request.isSecure())
             {
                                                
