@@ -17,10 +17,8 @@ public class CWE585_Empty_Sync_Block__Thread_01 extends AbstractTestCase
     {
         synchronized(CWE585_Empty_Sync_Block__Thread_01.class) 
         {
-                                                                            
+            intBad = intBad * 2;
         }
-    
-        intBad = intBad * 2;
     }
 
     public void bad() throws InterruptedException 
