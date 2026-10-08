@@ -24,9 +24,8 @@ public class CWE477_Obsolete_Functions__String_getBytes_03 extends AbstractTestC
         if (5 == 5)
         {
             String sentence = "Convert this to bytes";
-            byte[] sentenceAsBytes = new byte[sentence.length()];
+            byte[] sentenceAsBytes = sentence.getBytes();
                                                                                        
-            sentence.getBytes(0, sentence.length(), sentenceAsBytes, 0);
             IO.writeLine(IO.toHex(sentenceAsBytes));                          
         }
     }
