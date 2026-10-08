@@ -14,7 +14,7 @@ import testcasesupport.*;
 public class CWE500_Public_Static_Field_Not_Final__String_01_bad extends AbstractTestCaseClassIssueBad implements Cloneable 
 {
                                                            
-    public static String DEFAULT_ERROR = "The value you entered was not understood.  Please try again.";
+    public static final String DEFAULT_ERROR = "The value you entered was not understood.  Please try again.";
     
     public void bad() 
     {    
