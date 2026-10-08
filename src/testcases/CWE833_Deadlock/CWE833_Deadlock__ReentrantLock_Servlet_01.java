@@ -45,20 +45,20 @@ public class CWE833_Deadlock__ReentrantLock_Servlet_01 extends AbstractTestCaseS
     static public void helperMultiplyBad()
     {
                                                                            
-        BAD_NUMBER2_REENTRANTLOCK.lock(); 
+        BAD_NUMBER1_REENTRANTLOCK.lock(); 
 
                                                                                                                                                   
                                                                                                
 
-        BAD_NUMBER1_REENTRANTLOCK.lock();
+        BAD_NUMBER2_REENTRANTLOCK.lock();
         try 
         {
             intBadNumber1 = intBadNumber1 * intBadNumber2;
         } 
         finally 
         {
-            BAD_NUMBER1_REENTRANTLOCK.unlock();
             BAD_NUMBER2_REENTRANTLOCK.unlock();
+            BAD_NUMBER1_REENTRANTLOCK.unlock();
         }
     }  
 
