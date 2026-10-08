@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE534_Info_Exposure_Debug_Log__Servlet_13",
+  "cwe": "CWE-534",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE534_Info_Exposure_Debug_Log/CWE534_Info_Exposure_Debug_Log__Servlet_13.java",
+      "repository_path": "src/testcases/CWE534_Info_Exposure_Debug_Log/CWE534_Info_Exposure_Debug_Log__Servlet_13.java",
+      "original_sha256": "d6150e98e1f1e9382eeca0625de0dfb59e27a08b130924b89e9c52e8408e9385",
+      "input_sha256": "0bdb64c45505c419aa9c7bd55818f6d06ba50efacb5b2242bade511249b2ba6a"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
