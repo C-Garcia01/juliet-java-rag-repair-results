@@ -31,6 +31,8 @@ public class CWE325_Missing_Required_Cryptographic_Step__KeyGenerator_init_01 ex
 
         KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
 
+        keyGenerator.init(128);
+
                                                                                      
                                                                                          
                                                                                          
