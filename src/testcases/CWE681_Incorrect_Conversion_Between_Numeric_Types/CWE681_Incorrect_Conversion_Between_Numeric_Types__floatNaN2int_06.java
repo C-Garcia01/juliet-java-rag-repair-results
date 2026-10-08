@@ -55,7 +55,15 @@ public class CWE681_Incorrect_Conversion_Between_Numeric_Types__floatNaN2int_06 
                     IO.writeLine("Error parsing number");
                 }
                                                                                   
-                IO.writeLine("" + (int)(Math.sqrt(num)));
+                double result = Math.sqrt(num);
+                if (Double.isNaN(result))
+                {
+                    IO.writeLine("Unable to compute square root (result is not a number)");
+                }
+                else
+                {
+                    IO.writeLine("" + (int)result);
+                }
             }
             catch (IOException exceptIO)
             {
