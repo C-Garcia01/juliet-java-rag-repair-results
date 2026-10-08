@@ -26,7 +26,7 @@ public class CWE325_Missing_Required_Cryptographic_Step__MessageDigest_update_14
         if (IO.staticFive == 5)
         {
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-512");
-                                                                                                              
+            messageDigest.update("Hello, World!".getBytes("UTF-8"));
             IO.writeLine(IO.toHex(messageDigest.digest()));
         }
     }
