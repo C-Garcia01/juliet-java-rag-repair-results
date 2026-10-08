@@ -1,0 +1,26 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE83_XSS_Attribute__Servlet_listen_tcp_61",
+  "cwe": "CWE-83",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_61a.java",
+      "repository_path": "src/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_61a.java",
+      "original_sha256": "c2737d8c2c73e9189bcdb6801b6bfd1ae07894bf1526e53191fb07573e5ae82b",
+      "input_sha256": "1cf2404c5f62a6fb103aaf0c0f36322438b3638e898f5ea60bc3fcbef9d5719a"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_61b.java",
+      "repository_path": "src/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_listen_tcp_61b.java",
+      "original_sha256": "4e0dd0c498c14b05cf05f2e3d8e5882afe937664457cddf963b80627d3a4bef8",
+      "input_sha256": "44461a381391a6fe848e67dca8bc4d7a80dbba88e25a158915a7d768164bd48b"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
