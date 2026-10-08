@@ -1,0 +1,26 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE601_Open_Redirect__Servlet_listen_tcp_72",
+  "cwe": "CWE-601",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_listen_tcp_72a.java",
+      "repository_path": "src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_listen_tcp_72a.java",
+      "original_sha256": "67e6e257a4e00ac9032e20a7a648c430274a2450161a0736ed44e1200ae35fd5",
+      "input_sha256": "1ab7dc2168f03f92d5e92befadb3187db6e21bac4b78f51c3297efb3b1a2709d"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_listen_tcp_72b.java",
+      "repository_path": "src/testcases/CWE601_Open_Redirect/CWE601_Open_Redirect__Servlet_listen_tcp_72b.java",
+      "original_sha256": "5d8555c3dc1e602dd00fa450f632eaa9f576cc3a1f6743d0f4ae2f3837675b96",
+      "input_sha256": "098238633b1a2acf40e193ef0093059d59c49c016db6e434fedf1f2508e50270"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
