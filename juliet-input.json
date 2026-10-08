@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE129_Improper_Validation_of_Array_Index__negative_fixed_array_read_no_check_10",
+  "cwe": "CWE-129",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__negative_fixed_array_read_no_check_10.java",
+      "repository_path": "src/testcases/CWE129_Improper_Validation_of_Array_Index/s04/CWE129_Improper_Validation_of_Array_Index__negative_fixed_array_read_no_check_10.java",
+      "original_sha256": "c20734a6f167f44d076cb5173ac3dabb0d8805b76fae454cda332c537573b48e",
+      "input_sha256": "0e20c75d52acfd245cbf315cb53461ff15bd69bcfdf7e214bd6bb4563358d772"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
