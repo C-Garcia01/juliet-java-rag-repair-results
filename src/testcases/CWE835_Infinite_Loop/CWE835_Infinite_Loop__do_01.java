@@ -18,8 +18,8 @@ public class CWE835_Infinite_Loop__do_01 extends AbstractTestCase
         do 
         {
             IO.writeLine(i);
-            i = (i + 1) % 256;
-        } while(i >= 0);
+            i = i + 1;
+        } while(i < 256);
     }
     
     
