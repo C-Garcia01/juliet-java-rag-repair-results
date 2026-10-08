@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE90_LDAP_Injection__getQueryString_Servlet_15",
+  "cwe": "CWE-90",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getQueryString_Servlet_15.java",
+      "repository_path": "src/testcases/CWE90_LDAP_Injection/CWE90_LDAP_Injection__getQueryString_Servlet_15.java",
+      "original_sha256": "dfd3f086055b341575f50d4af88b8ff55baf599ccc88fc6347cbf2e298bf74ab",
+      "input_sha256": "d08050f39b9d2c42899cf31744d2005a6741649ea9d4088cdbac80cb1f0686b5"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
