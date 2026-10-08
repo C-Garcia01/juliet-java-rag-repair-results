@@ -40,8 +40,11 @@ public class CWE78_OS_Command_Injection__console_readLine_73b
         }
 
                                                
-        Process process = Runtime.getRuntime().exec(osCommand + data);
-        process.waitFor();
+        if (data != null && java.util.regex.Pattern.matches("[a-zA-Z0-9._/\\\\:-]*", data))
+        {
+            Process process = Runtime.getRuntime().exec(osCommand + data);
+            process.waitFor();
+        }
 
     }
 
