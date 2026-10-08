@@ -53,7 +53,14 @@ public class CWE568_Finalize_Without_Super__empty_01_bad extends AbstractTestCas
     { 
         protected void finalize() 
         {
-                                                                                   
+            try
+            {
+                super.finalize();
+            }
+            catch (Throwable exceptThrowable)
+            {
+                IO.logger.log(Level.WARNING, "caught an exception calling super.finalize() from the BadClass", exceptThrowable);
+            }
         }
     }
     
