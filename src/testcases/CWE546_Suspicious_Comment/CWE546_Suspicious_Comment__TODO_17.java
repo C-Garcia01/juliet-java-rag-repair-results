@@ -23,8 +23,6 @@ public class CWE546_Suspicious_Comment__TODO_17 extends AbstractTestCase
     {
         for(int j = 0; j < 1; j++)
         {
-                                                      
-                                                                           
             IO.writeLine("This a test of the emergency broadcast system");
         }
     }
