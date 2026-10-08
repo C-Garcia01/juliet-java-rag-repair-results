@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE382_Use_of_System_Exit__Servlet_System_13",
+  "cwe": "CWE-382",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE382_Use_of_System_Exit/CWE382_Use_of_System_Exit__Servlet_System_13.java",
+      "repository_path": "src/testcases/CWE382_Use_of_System_Exit/CWE382_Use_of_System_Exit__Servlet_System_13.java",
+      "original_sha256": "6182866cb5d2ef3b60a27f921245a6764f9025fabc8ae712321049afecaeb98b",
+      "input_sha256": "b23dd2eb126a8b7695e0faf2a1b7727190e8e3f67381168d6cabf83a9aaefcce"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
