@@ -1,0 +1,26 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE256_Plaintext_Storage_of_Password__basic_71",
+  "cwe": "CWE-256",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE256_Plaintext_Storage_of_Password/CWE256_Plaintext_Storage_of_Password__basic_71a.java",
+      "repository_path": "src/testcases/CWE256_Plaintext_Storage_of_Password/CWE256_Plaintext_Storage_of_Password__basic_71a.java",
+      "original_sha256": "af370222d0d353d5fa4f652784a200f37b80226c2df93bd1868218a474fcc306",
+      "input_sha256": "fe18c8d6caa9f997ae7ba935e72dca23a81ddcfd09133c71246dc1e2387f4c6b"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE256_Plaintext_Storage_of_Password/CWE256_Plaintext_Storage_of_Password__basic_71b.java",
+      "repository_path": "src/testcases/CWE256_Plaintext_Storage_of_Password/CWE256_Plaintext_Storage_of_Password__basic_71b.java",
+      "original_sha256": "99ed20a139fb6f84da3c068eaacdbb804761860c6f40c275ce4d2c0b15acccb1",
+      "input_sha256": "50945eb4a20ef585d5d83b72cc026ca4824d4c8de2bd91d5fdb6eac75b8d9279"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
