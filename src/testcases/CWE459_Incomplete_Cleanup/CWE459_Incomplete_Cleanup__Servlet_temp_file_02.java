@@ -56,6 +56,13 @@ public class CWE459_Incomplete_Cleanup__Servlet_temp_file_02 extends AbstractTes
             {
                 IO.logger.log(Level.WARNING, "Could not create temporary file", exceptIO);
             }
+            finally
+            {
+                if (tempFile != null && tempFile.exists() && !tempFile.delete())
+                {
+                    IO.logger.log(Level.WARNING, "Could not delete temporary file");
+                }
+            }
         }
     }
 
