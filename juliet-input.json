@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE383_Direct_Use_of_Threads__Servlet_03",
+  "cwe": "CWE-383",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE383_Direct_Use_of_Threads/CWE383_Direct_Use_of_Threads__Servlet_03.java",
+      "repository_path": "src/testcases/CWE383_Direct_Use_of_Threads/CWE383_Direct_Use_of_Threads__Servlet_03.java",
+      "original_sha256": "ed6655e1908166d5add3959025fa35015d8eeef1a75da8f4a3124f816fe7e216",
+      "input_sha256": "3bd990b68e16e9bb2a50910e76edfa97ccb1ef11a4849ba2383eb391ede38306"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
