@@ -23,6 +23,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
 
+import java.nio.file.Files;
+
 import java.util.logging.Level;
 
 public class CWE378_Temporary_File_Creation_With_Insecure_Perms__basic_04 extends AbstractTestCase
@@ -44,7 +46,7 @@ public class CWE378_Temporary_File_Creation_With_Insecure_Perms__basic_04 extend
             File tempFile = null;
             try
             {
-                tempFile = File.createTempFile("temp", "1234");
+                tempFile = Files.createTempFile("temp", "1234").toFile();
                                                          
                                                  
                 streamFileOutput = new FileOutputStream(tempFile);
