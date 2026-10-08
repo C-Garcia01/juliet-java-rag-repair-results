@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE546_Suspicious_Comment__BUG_10",
+  "cwe": "CWE-546",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE546_Suspicious_Comment/CWE546_Suspicious_Comment__BUG_10.java",
+      "repository_path": "src/testcases/CWE546_Suspicious_Comment/CWE546_Suspicious_Comment__BUG_10.java",
+      "original_sha256": "7de1b44f188c16c96c1f3be6a23d0637965f0d74c1c3fdb7eb7a2120bcf3e51b",
+      "input_sha256": "adbefa09d20c98e38e3e13ceefc8df77d5d536a3f46c99eae83d1fbca7fbecc3"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
