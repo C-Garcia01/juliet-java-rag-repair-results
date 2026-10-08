@@ -36,7 +36,7 @@ public class CWE534_Info_Exposure_Debug_Log__Servlet_13 extends AbstractTestCase
             {
                 HttpSession session = request.getSession(true);
                                                               
-                logger.log(Level.FINEST, "Username: " + username + " Session ID:" + session.getId());
+                logger.log(Level.FINEST, "Username: " + username + " has an active session");
             }
             else
             {
