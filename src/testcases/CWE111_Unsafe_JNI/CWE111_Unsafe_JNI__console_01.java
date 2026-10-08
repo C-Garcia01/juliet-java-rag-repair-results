@@ -52,6 +52,16 @@ public class CWE111_Unsafe_JNI__console_01 extends AbstractTestCaseBadOnly
             IO.writeLine("How long was your string? (200) ");
             intNumber = Integer.parseInt(readerBuffered.readLine());
         
+            if (stringLine == null)
+            {
+                return;
+            }
+
+            if (intNumber < 0 || intNumber > stringLine.length())
+            {
+                intNumber = stringLine.length();
+            }
+
             IO.writeLine("Result from native method: " + test(stringLine, intNumber));                                       
         }
         catch (IOException exceptIO)
