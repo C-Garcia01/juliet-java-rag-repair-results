@@ -1,0 +1,26 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE690_NULL_Deref_From_Return__Class_String_09",
+  "cwe": "CWE-690",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_Helper.java",
+      "repository_path": "src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_Helper.java",
+      "original_sha256": "e964c715a29838f8efef46475557ccfd67408fcdbc80b10c682995f9cd593cd7",
+      "input_sha256": "9fbcfa6b67a580efed2aea4ddbda8018e82987b1630d25a22a4b9945a48108bc"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_09.java",
+      "repository_path": "src/testcases/CWE690_NULL_Deref_From_Return/CWE690_NULL_Deref_From_Return__Class_String_09.java",
+      "original_sha256": "85d2ed599127d8dc30c448b6219d685b162ab1ee930ac3f6e1a12240dfaa61a7",
+      "input_sha256": "0fb2890683d908b98bd6ed12c54936ed9f1832fe1c06e77785b4606e3e6434dc"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
