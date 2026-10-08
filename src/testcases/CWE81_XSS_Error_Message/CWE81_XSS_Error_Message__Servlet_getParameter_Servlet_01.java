@@ -36,7 +36,8 @@ public class CWE81_XSS_Error_Message__Servlet_getParameter_Servlet_01 extends Ab
                                                                                     
                                                                                                                     
               
-            response.sendError(404, "<br>bad() - Parameter name has value " + data);
+            String safeData = data.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;").replace("'", "&#39;");
+            response.sendError(404, "<br>bad() - Parameter name has value " + safeData);
         }
 
     }
