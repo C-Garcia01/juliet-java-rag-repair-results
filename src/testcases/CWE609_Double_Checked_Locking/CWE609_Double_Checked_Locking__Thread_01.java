@@ -13,7 +13,7 @@ import testcasesupport.IO;
 public class CWE609_Double_Checked_Locking__Thread_01 extends AbstractTestCase 
 {
                                                
-    private static String stringBad = null;
+    private volatile static String stringBad = null;
     
                                                                                                                                                  
                                                                                               
