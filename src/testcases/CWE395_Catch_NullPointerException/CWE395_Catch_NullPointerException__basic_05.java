@@ -31,7 +31,7 @@ public class CWE395_Catch_NullPointerException__basic_05 extends AbstractTestCas
         if (privateTrue)
         {
             String systemProperty = System.getProperty("CWE395");
-            try
+            if (systemProperty != null)
             {
                                                                                      
                 if(systemProperty.equals("CWE395"))
@@ -39,7 +39,7 @@ public class CWE395_Catch_NullPointerException__basic_05 extends AbstractTestCas
                     IO.writeLine("systemProperty is CWE395");
                 }
             }
-            catch (NullPointerException exceptNullPointer)                                                           
+            else                                                           
             {
                 IO.writeLine("systemProperty is null");
             }
