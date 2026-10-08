@@ -93,7 +93,13 @@ public class CWE83_XSS_Attribute__Servlet_URLConnection_02 extends AbstractTestC
         if (data != null)
         {
                                                                                             
-            response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
+            String encodedData = data
+                .replace("&", "&amp;")
+                .replace("<", "&lt;")
+                .replace(">", "&gt;")
+                .replace("\"", "&quot;")
+                .replace("'", "&#39;");
+            response.getWriter().println("<br>bad() - <img src=\"" + encodedData + "\">");
         }
 
     }
