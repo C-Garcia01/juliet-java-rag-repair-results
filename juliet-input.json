@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE481_Assigning_Instead_of_Comparing__basic_02",
+  "cwe": "CWE-481",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE481_Assigning_Instead_of_Comparing/CWE481_Assigning_Instead_of_Comparing__basic_02.java",
+      "repository_path": "src/testcases/CWE481_Assigning_Instead_of_Comparing/CWE481_Assigning_Instead_of_Comparing__basic_02.java",
+      "original_sha256": "8eb2b984fd7bb02d86e86fce29af2c44c13de027fb8c7c4236c9169ec2d7921b",
+      "input_sha256": "fc21d529177a61de090ed5a9aad60acd8e7add74de566a47f0d7de95ca6a21b9"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
