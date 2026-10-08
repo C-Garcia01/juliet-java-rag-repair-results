@@ -1,0 +1,44 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE315_Plaintext_Storage_in_Cookie__Servlet_54",
+  "cwe": "CWE-315",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_54a.java",
+      "repository_path": "src/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_54a.java",
+      "original_sha256": "d881f108ed1835a71748082448bd3d4766d03fc096455dc7840b571c34ca177c",
+      "input_sha256": "5a243c8e5f8752be6ca1b3cc7bfeef03e35c2c1dad98e675c85605fac14547b2"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_54b.java",
+      "repository_path": "src/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_54b.java",
+      "original_sha256": "7b8c80b1702352d67a6b2b0cc92cef0709b7fc107629b7d7502b7663abbcb170",
+      "input_sha256": "7ba43339786eb76ac757576cf5cd5a593f80aac57b84aa88961e639e333aec1d"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_54c.java",
+      "repository_path": "src/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_54c.java",
+      "original_sha256": "7359f0a9c16a577c1fa61f3f0738e185ee29103b8f8e3e6fe5fea62a23e466f4",
+      "input_sha256": "f94720fe795365e2d722ee534488f42f2eeeedd23511666fdacca04cd6d81122"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_54d.java",
+      "repository_path": "src/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_54d.java",
+      "original_sha256": "285aef852366487920eaf2957bef09c903402454c93231d26bd3ab72021bea4c",
+      "input_sha256": "fa6b48d32999e43fa180771f13fafd149d33a2b86bfab964f9e2a7bfc596c779"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_54e.java",
+      "repository_path": "src/testcases/CWE315_Plaintext_Storage_in_Cookie/CWE315_Plaintext_Storage_in_Cookie__Servlet_54e.java",
+      "original_sha256": "735d14ef66cd3e8180a5a3b16faed841c006c7d213ca3604a7a3f8b9e06b2360",
+      "input_sha256": "b56f6e4b15868ea77973ce593e6e9b58fd251499591ca4924449cc6be1570d3d"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
