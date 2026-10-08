@@ -31,7 +31,7 @@ public class CWE321_Hard_Coded_Cryptographic_Key__basic_53a extends AbstractTest
         String data;
 
                                                  
-        data = "23 ~j;asn!@#/>as";
+        data = System.getenv("CRYPTO_KEY");
 
         (new CWE321_Hard_Coded_Cryptographic_Key__basic_53b()).badSink(data );
     }
