@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE478_Missing_Default_Case_in_Switch__basic_14",
+  "cwe": "CWE-478",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE478_Missing_Default_Case_in_Switch/CWE478_Missing_Default_Case_in_Switch__basic_14.java",
+      "repository_path": "src/testcases/CWE478_Missing_Default_Case_in_Switch/CWE478_Missing_Default_Case_in_Switch__basic_14.java",
+      "original_sha256": "8885cb29413241e5ff4985c8393c4f74b3980745fbd486954d89027633e35284",
+      "input_sha256": "771708b16149bcf382c8b783ee267a1f7ae6bfd1023248f402140e71bf79a2ae"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
