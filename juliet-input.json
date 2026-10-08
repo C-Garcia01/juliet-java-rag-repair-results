@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE483_Incorrect_Block_Delimitation__semicolon_14",
+  "cwe": "CWE-483",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE483_Incorrect_Block_Delimitation/CWE483_Incorrect_Block_Delimitation__semicolon_14.java",
+      "repository_path": "src/testcases/CWE483_Incorrect_Block_Delimitation/CWE483_Incorrect_Block_Delimitation__semicolon_14.java",
+      "original_sha256": "692ccccfc2f454fd1ab4115a8be6f3bfe7777bf69323bb6912625479d4d5cfcc",
+      "input_sha256": "0aae6164287bf8da3a981f92f6b5c650fe027b4a96831ed013a2e54b28aa34ea"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
