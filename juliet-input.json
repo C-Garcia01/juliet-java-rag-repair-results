@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE336_Same_Seed_in_PRNG__basic_01",
+  "cwe": "CWE-336",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE336_Same_Seed_in_PRNG/CWE336_Same_Seed_in_PRNG__basic_01.java",
+      "repository_path": "src/testcases/CWE336_Same_Seed_in_PRNG/CWE336_Same_Seed_in_PRNG__basic_01.java",
+      "original_sha256": "30e55d47c03e98fe201e6f5ca733754813750433a20f94e0575439e010e6356c",
+      "input_sha256": "2112cfa8a1695fffd54f84831f1273e89298b7a231fabd848ccc354fafc79010"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
