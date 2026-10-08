@@ -1,0 +1,32 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE89_SQL_Injection__getParameter_Servlet_executeBatch_52",
+  "cwe": "CWE-89",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE89_SQL_Injection/s02/CWE89_SQL_Injection__getParameter_Servlet_executeBatch_52a.java",
+      "repository_path": "src/testcases/CWE89_SQL_Injection/s02/CWE89_SQL_Injection__getParameter_Servlet_executeBatch_52a.java",
+      "original_sha256": "34123ff4941fdc530e41e9da5edf2d1480fa6969a369a3d344114c91536d8296",
+      "input_sha256": "b064053a7e296c9d233283abdac4c56b2fac2e5ddb2c83b3bee46a734877f598"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE89_SQL_Injection/s02/CWE89_SQL_Injection__getParameter_Servlet_executeBatch_52b.java",
+      "repository_path": "src/testcases/CWE89_SQL_Injection/s02/CWE89_SQL_Injection__getParameter_Servlet_executeBatch_52b.java",
+      "original_sha256": "eaa37ffb3023113fb24438cc1a805b21a860ac14c970092bdd1f4df497597858",
+      "input_sha256": "82754f06515875643f2fb951549a7cd8665db8606956203953beb368cbdb7303"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE89_SQL_Injection/s02/CWE89_SQL_Injection__getParameter_Servlet_executeBatch_52c.java",
+      "repository_path": "src/testcases/CWE89_SQL_Injection/s02/CWE89_SQL_Injection__getParameter_Servlet_executeBatch_52c.java",
+      "original_sha256": "ea0dc669dbd289dbe4fc9e4526f4daa7967d40cbcd0217373851956887cec74f",
+      "input_sha256": "2065d1317799577c68bab3237f83339e71e25155bd372c8195a1cfe1a4a9c9a9"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
