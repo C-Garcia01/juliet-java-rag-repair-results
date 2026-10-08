@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_06",
+  "cwe": "CWE-566",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_06.java",
+      "repository_path": "src/testcases/CWE566_Authorization_Bypass_Through_SQL_Primary/CWE566_Authorization_Bypass_Through_SQL_Primary__Servlet_06.java",
+      "original_sha256": "18727b802c000b9686a06c859f4834296ffbabeb0e3c3fdee7d08f9b39ea89ff",
+      "input_sha256": "9ab44ddc5aac777ac561e5b30c404b51a0addf847d9602063a9aa70255215716"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
