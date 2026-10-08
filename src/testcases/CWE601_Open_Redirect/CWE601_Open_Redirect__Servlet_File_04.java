@@ -130,6 +130,11 @@ public class CWE601_Open_Redirect__Servlet_File_04 extends AbstractTestCaseServl
                 return;
             }
                                                                                                                                            
+            if (uri.isAbsolute() || uri.getScheme() != null || uri.getAuthority() != null || uri.getHost() != null)
+            {
+                response.getWriter().write("Invalid redirect URL");
+                return;
+            }
             response.sendRedirect(data);
             return;
         }
