@@ -1,0 +1,26 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE134_Uncontrolled_Format_String__connect_tcp_printf_61",
+  "cwe": "CWE-134",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_61a.java",
+      "repository_path": "src/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_61a.java",
+      "original_sha256": "cfc2499e22ac964bee8e1904ade454b3b51f91900b000dc282a8b922ca049e3b",
+      "input_sha256": "e53eb06edc41747dc6ee2dbcda7ac7cf9be0dab793622c59fa75b32046f7e0c9"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_61b.java",
+      "repository_path": "src/testcases/CWE134_Uncontrolled_Format_String/s01/CWE134_Uncontrolled_Format_String__connect_tcp_printf_61b.java",
+      "original_sha256": "34f496491c7ec0c0dfaa06c40149ecdd9d8e67dea4136092eea2f02682966484",
+      "input_sha256": "f3aff50915fe045e693fa198d2100926cf03bf49d084689894955b15b691b7e0"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
