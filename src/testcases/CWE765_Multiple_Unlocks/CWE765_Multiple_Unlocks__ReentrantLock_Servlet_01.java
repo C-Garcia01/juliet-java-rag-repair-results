@@ -32,7 +32,6 @@ public class CWE765_Multiple_Unlocks__ReentrantLock_Servlet_01 extends AbstractT
         finally 
         {
             REENTRANT_LOCK_BAD.unlock(); 
-            REENTRANT_LOCK_BAD.unlock();                                                                                                         
         }
     }
 
