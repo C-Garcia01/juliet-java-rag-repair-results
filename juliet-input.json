@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE15_External_Control_of_System_or_Configuration_Setting__getCookies_Servlet_11",
+  "cwe": "CWE-15",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__getCookies_Servlet_11.java",
+      "repository_path": "src/testcases/CWE15_External_Control_of_System_or_Configuration_Setting/CWE15_External_Control_of_System_or_Configuration_Setting__getCookies_Servlet_11.java",
+      "original_sha256": "e4eeb67dbd9ee93312788e8ea9f0fbb2994b5da1931b4d792c4a2d78a67d8606",
+      "input_sha256": "7c7590c60b74c23a31825fae671a88fd0c6ab01c1b541004a02186eded001e63"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
