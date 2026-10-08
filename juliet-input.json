@@ -1,0 +1,26 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE789_Uncontrolled_Mem_Alloc__random_HashMap_66",
+  "cwe": "CWE-789",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE789_Uncontrolled_Mem_Alloc/s03/CWE789_Uncontrolled_Mem_Alloc__random_HashMap_66a.java",
+      "repository_path": "src/testcases/CWE789_Uncontrolled_Mem_Alloc/s03/CWE789_Uncontrolled_Mem_Alloc__random_HashMap_66a.java",
+      "original_sha256": "6a1fb4da1fc40caf34cee6d0d6b0df8cde0550ba346beabc7ebb3e1fef70855a",
+      "input_sha256": "1e015b37efcf971f687fed78d47f14e9f32dd2ebd40c994dd2973e284b3a4bf0"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE789_Uncontrolled_Mem_Alloc/s03/CWE789_Uncontrolled_Mem_Alloc__random_HashMap_66b.java",
+      "repository_path": "src/testcases/CWE789_Uncontrolled_Mem_Alloc/s03/CWE789_Uncontrolled_Mem_Alloc__random_HashMap_66b.java",
+      "original_sha256": "1b9f4e07b5376523005f1cac63eaa3691825e7fe8eefa88b30cbf32d2786cc00",
+      "input_sha256": "beccdee5f62589fb9c12a54ba02090152cba71440c25358f4b1346263c4b0836"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
