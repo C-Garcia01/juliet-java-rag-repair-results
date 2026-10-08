@@ -57,6 +57,15 @@ public class CWE226_Sensitive_Information_Uncleared_Before_Release__basic_11 ext
             {
                                                                                                            
 
+                if (password != null)
+                {
+                    for (int clearIndex = 0; clearIndex < password.length(); clearIndex++)
+                    {
+                        password.setCharAt(clearIndex, '0');
+                    }
+                    password.setLength(0);
+                }
+
                 try
                 {
                     if (dBConnection != null)
