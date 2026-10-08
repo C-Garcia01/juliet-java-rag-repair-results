@@ -29,7 +29,7 @@ public class CWE690_NULL_Deref_From_Return__getParameter_Servlet_equals_74b
         String data = dataHashMap.get(2);
 
                                                 
-        if(data.equals("CWE690"))
+        if(data != null && data.equals("CWE690"))
         {
             IO.writeLine("data is CWE690");
         }
