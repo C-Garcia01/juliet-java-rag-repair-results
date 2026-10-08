@@ -23,8 +23,6 @@ public class CWE546_Suspicious_Comment__BUG_10 extends AbstractTestCase
     {
         if (IO.staticTrue)
         {
-                                                      
-                                                                          
             IO.writeLine("This a test of the emergency broadcast system");
         }
     }
