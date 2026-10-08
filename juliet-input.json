@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE191_Integer_Underflow__byte_min_multiply_42",
+  "cwe": "CWE-191",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_min_multiply_42.java",
+      "repository_path": "src/testcases/CWE191_Integer_Underflow/s01/CWE191_Integer_Underflow__byte_min_multiply_42.java",
+      "original_sha256": "303ee3c553c34b508b8a4a76a1532d68951cfb90039924d3def9339bee078f48",
+      "input_sha256": "b7ccfa080614f85f363ec360ff94bf9ae8032c340fdc39dc534946ac5430bb89"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
