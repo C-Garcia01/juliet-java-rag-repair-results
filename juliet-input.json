@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE325_Missing_Required_Cryptographic_Step__MessageDigest_update_14",
+  "cwe": "CWE-325",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE325_Missing_Required_Cryptographic_Step/CWE325_Missing_Required_Cryptographic_Step__MessageDigest_update_14.java",
+      "repository_path": "src/testcases/CWE325_Missing_Required_Cryptographic_Step/CWE325_Missing_Required_Cryptographic_Step__MessageDigest_update_14.java",
+      "original_sha256": "78770e5f83e10a2e0154dcb587be4da35ec54d4a75878611be434cf216743567",
+      "input_sha256": "801678ddbe6760057c7eecf7a809a0db81c582636c654ea5bb66ee53b0db0154"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
