@@ -17,7 +17,7 @@ public class CWE570_Expression_Always_False__class_getClass_equal_01 extends Abs
         Random random = new Random();
         SecureRandom secureRandom = new SecureRandom();
 
-        if (random.getClass().equals(secureRandom.getClass()))
+        if (random.getClass().isAssignableFrom(secureRandom.getClass()))
         {
             IO.writeLine("never prints");
         }
