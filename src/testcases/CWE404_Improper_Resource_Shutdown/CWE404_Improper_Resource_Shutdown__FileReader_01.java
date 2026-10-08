@@ -32,6 +32,13 @@ public class CWE404_Improper_Resource_Shutdown__FileReader_01 extends AbstractTe
             IO.writeLine(readString);
 
                                                                                    
+        }
+        catch (IOException exceptIO)
+        {
+            IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO);
+        }
+        finally
+        {
             try
             {
                 if (readerBuffered != null)
@@ -54,11 +61,7 @@ public class CWE404_Improper_Resource_Shutdown__FileReader_01 extends AbstractTe
             catch (IOException exceptIO)
             {
                 IO.logger.log(Level.WARNING, "Error closing FileReader", exceptIO);
-            }        
-        }
-        catch (IOException exceptIO)
-        {
-            IO.logger.log(Level.WARNING, "Error with stream reading", exceptIO);
+            }
         }
     }
     
