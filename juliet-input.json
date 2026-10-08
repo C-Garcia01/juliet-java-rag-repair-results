@@ -1,0 +1,32 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_52",
+  "cwe": "CWE-83",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_52a.java",
+      "repository_path": "src/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_52a.java",
+      "original_sha256": "80861cd0c8aea5ef8c1da4ec58054d1dba050901bb2c8065dceb3057f191c4b0",
+      "input_sha256": "416bc9973e363115150a53b4dd175f2c56330a88e28df97421ffcdcba602d813"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_52b.java",
+      "repository_path": "src/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_52b.java",
+      "original_sha256": "6dd4c86f9ec7bc0412c53e2fe9f187837f23308d6eeb883cb3301614f2462d5e",
+      "input_sha256": "df766cd80b9b7c27ce4e484e7307b0e2ce6d8d6fdbd4ef58b99f71c501b24669"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_52c.java",
+      "repository_path": "src/testcases/CWE83_XSS_Attribute/CWE83_XSS_Attribute__Servlet_getQueryString_Servlet_52c.java",
+      "original_sha256": "e464051541602f84462d356cd8cc6088c56b6fd4dadac16bf42dfa9e71ea08b0",
+      "input_sha256": "51e54bf5172fce45c5745ee331445dc7facba982aecbcc186b813bc088ee9457"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
