@@ -31,7 +31,7 @@ public class CWE506_Embedded_Malicious_Code__screen_capture_09 extends AbstractT
 {
     public void bad() throws Throwable
     {
-        if (IO.STATIC_FINAL_TRUE)
+        if (Boolean.getBoolean("testcases.screenCapture.enabled"))
         {
                                                                                                             
             try
@@ -39,7 +39,8 @@ public class CWE506_Embedded_Malicious_Code__screen_capture_09 extends AbstractT
                 Robot robot = new Robot();
                                                                                                       
                 BufferedImage screenCapture = robot.createScreenCapture(new Rectangle(100,100));
-                ImageIO.write(screenCapture, "jpg", new File("C:/screen.jpg"));
+                File outputFile = File.createTempFile("screen", ".jpg");
+                ImageIO.write(screenCapture, "jpg", outputFile);
             }
             catch (AWTException exceptAWT)
             {
