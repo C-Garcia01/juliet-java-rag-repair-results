@@ -14,10 +14,7 @@ public class CWE571_Expression_Always_True__private_static_final_01 extends Abst
     public void bad()
     {
                                             
-        if (PRIVATE_STATIC_FINAL_TRUE)
-        {
-            IO.writeLine("always prints");
-        }
+        IO.writeLine("always prints");
     }
     
     public void good()
