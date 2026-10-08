@@ -31,7 +31,9 @@ public class CWE315_Plaintext_Storage_in_Cookie__Servlet_54e
                                                                                         
 
                                                            
-        response.addCookie(new Cookie("auth", data));
+        MessageDigest messageDigest = MessageDigest.getInstance("SHA-512");
+        byte[] hashedData = messageDigest.digest(data.getBytes("UTF-8"));
+        response.addCookie(new Cookie("auth", IO.toHex(hashedData)));
 
     }
 
