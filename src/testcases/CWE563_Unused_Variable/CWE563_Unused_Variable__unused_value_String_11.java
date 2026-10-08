@@ -38,8 +38,6 @@ public class CWE563_Unused_Variable__unused_value_String_11 extends AbstractTest
 
         if(IO.staticReturnsTrue())
         {
-                                                                                               
-            data = "Reinitialize";
             IO.writeLine(data);
         }
     }
