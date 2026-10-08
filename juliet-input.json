@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE549_Missing_Password_Masking__Servlet_12",
+  "cwe": "CWE-549",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE549_Missing_Password_Masking/CWE549_Missing_Password_Masking__Servlet_12.java",
+      "repository_path": "src/testcases/CWE549_Missing_Password_Masking/CWE549_Missing_Password_Masking__Servlet_12.java",
+      "original_sha256": "b882b7c1ed0e7dd02837255b59b82feaadfd0f9ee77d3f782f4f145a969cc557",
+      "input_sha256": "b9d331b08c7d66ef1d2c02e6dcec82eae9fd9a3bcac4382701614cbbf8726e18"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
