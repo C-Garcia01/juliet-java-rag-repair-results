@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE398_Poor_Code_Quality__semicolon_17",
+  "cwe": "CWE-398",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE398_Poor_Code_Quality/CWE398_Poor_Code_Quality__semicolon_17.java",
+      "repository_path": "src/testcases/CWE398_Poor_Code_Quality/CWE398_Poor_Code_Quality__semicolon_17.java",
+      "original_sha256": "0297cb3c937701097cb8c29de67914eb7c6fbdad359b59dbce8d40b5bca299dd",
+      "input_sha256": "f2dc41b0d6443f486e681cad9a96ba532afa956b84a0194175a9a8c55dc411df"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
