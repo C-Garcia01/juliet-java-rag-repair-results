@@ -37,8 +37,17 @@ public class CWE404_Improper_Resource_Shutdown__ZipFile_01 extends AbstractTestC
             zFile = new ZipFile(filename);          
             
             IO.writeLine("File contains " + zFile.size() + " entries.");
-
-                                                                                    
+        }
+        catch (ZipException exceptZip)
+        {
+            IO.logger.log(Level.WARNING, "Error with ZIP format", exceptZip);
+        }
+        catch (IOException exceptIO)
+        {
+            IO.logger.log(Level.WARNING, "Error reading file", exceptIO);
+        }
+        finally
+        {
             try 
             {
                 if (zFile != null)
@@ -50,14 +59,6 @@ public class CWE404_Improper_Resource_Shutdown__ZipFile_01 extends AbstractTestC
             {
                 IO.logger.log(Level.WARNING, "Error closing ZipFile", exceptIO);
             }        
-        }
-        catch (ZipException exceptZip)
-        {
-            IO.logger.log(Level.WARNING, "Error with ZIP format", exceptZip);
-        }
-        catch (IOException exceptIO)
-        {
-            IO.logger.log(Level.WARNING, "Error reading file", exceptIO);
         }
     }
     
