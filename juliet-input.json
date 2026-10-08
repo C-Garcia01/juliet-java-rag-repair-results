@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE36_Absolute_Path_Traversal__Environment_07",
+  "cwe": "CWE-36",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_07.java",
+      "repository_path": "src/testcases/CWE36_Absolute_Path_Traversal/CWE36_Absolute_Path_Traversal__Environment_07.java",
+      "original_sha256": "72999f0a502c697c5de49203b7a341e20c505211519cf23b8ffd34cd6f7deadb",
+      "input_sha256": "f262e43338de29d07ea937c198a4af15a7badfc5ef44212771489828e853ef45"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
