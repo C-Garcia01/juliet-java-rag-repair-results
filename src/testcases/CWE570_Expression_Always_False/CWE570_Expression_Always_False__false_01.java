@@ -12,9 +12,9 @@ public class CWE570_Expression_Always_False__false_01 extends AbstractTestCase
     public void bad()
     {
                                              
-        if (false)
+        if (IO.staticReturnsTrueOrFalse())
         {
-            IO.writeLine("never prints");
+            IO.writeLine("conditionally prints");
         }
     }
     
