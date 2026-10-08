@@ -23,16 +23,11 @@ public class CWE546_Suspicious_Comment__HACK_12 extends AbstractTestCase
     {
         if (IO.staticReturnsTrueOrFalse())
         {
-                                                      
-                                                                           
             IO.writeLine("This a test of the emergency broadcast system");
         }
         else
         {
-
-                                                            
             IO.writeLine("This a test of the emergency broadcast system");
-
         }
     }
 
