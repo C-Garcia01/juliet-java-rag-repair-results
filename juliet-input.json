@@ -1,0 +1,26 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE643_Xpath_Injection__PropertiesFile_22",
+  "cwe": "CWE-643",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__PropertiesFile_22a.java",
+      "repository_path": "src/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__PropertiesFile_22a.java",
+      "original_sha256": "4b9a623a43d175e82940a171319e21a3af6db3add62575fe31d419642ed1667c",
+      "input_sha256": "ce290a50aadb4886b9cd0cb46447337c416766262676f24b99da43833cbf0f82"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__PropertiesFile_22b.java",
+      "repository_path": "src/testcases/CWE643_Xpath_Injection/CWE643_Xpath_Injection__PropertiesFile_22b.java",
+      "original_sha256": "759935614e0d5ea39733d624232eb4dbd883b8320cb50d4d1a85856f8a2ebaf1",
+      "input_sha256": "071ee52ea469fb944a852bbc3b112d74eb8c6d554c981a76124834c6deb0f027"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
