@@ -31,10 +31,7 @@ public class CWE336_Same_Seed_in_PRNG__basic_06 extends AbstractTestCase
     {
         if (PRIVATE_STATIC_FINAL_FIVE == 5)
         {
-            final byte[] SEED = new byte[] {0x01, 0x02, 0x03, 0x04, 0x05};
             SecureRandom secureRandom = new SecureRandom();
-                                                                                                       
-            secureRandom.setSeed(SEED);
             IO.writeLine("" + secureRandom.nextInt());                                                                                
             IO.writeLine("" + secureRandom.nextInt());
         }
