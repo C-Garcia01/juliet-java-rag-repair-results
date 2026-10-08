@@ -101,7 +101,10 @@ public class CWE15_External_Control_of_System_or_Configuration_Setting__URLConne
 
                                                                           
                                                                                                    
-            dbConnection.setCatalog(data);
+            if (data != null && data.matches("[A-Za-z0-9_]+"))
+            {
+                dbConnection.setCatalog(data);
+            }
         }
         catch (SQLException exceptSql)
         {
