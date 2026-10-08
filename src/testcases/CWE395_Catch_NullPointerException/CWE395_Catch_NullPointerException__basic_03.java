@@ -24,15 +24,14 @@ public class CWE395_Catch_NullPointerException__basic_03 extends AbstractTestCas
         if (5 == 5)
         {
             String systemProperty = System.getProperty("CWE395");
-            try
+            if (systemProperty != null)
             {
-                                                                                     
                 if(systemProperty.equals("CWE395"))
                 {
                     IO.writeLine("systemProperty is CWE395");
                 }
             }
-            catch (NullPointerException exceptNullPointer)                                                           
+            else
             {
                 IO.writeLine("systemProperty is null");
             }
