@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE190_Integer_Overflow__int_listen_tcp_add_16",
+  "cwe": "CWE-190",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE190_Integer_Overflow/s03/CWE190_Integer_Overflow__int_listen_tcp_add_16.java",
+      "repository_path": "src/testcases/CWE190_Integer_Overflow/s03/CWE190_Integer_Overflow__int_listen_tcp_add_16.java",
+      "original_sha256": "f6b96f29c7b85a35fe417def67bf4c8f469020aeb738d6dd19a7579b663835ba",
+      "input_sha256": "3b5d13351117430a457191c22234099d83ea7c936cb9ea735a0e5b14efd6563e"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
