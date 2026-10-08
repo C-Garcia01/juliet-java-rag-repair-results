@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE81_XSS_Error_Message__Servlet_PropertiesFile_13",
+  "cwe": "CWE-81",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_PropertiesFile_13.java",
+      "repository_path": "src/testcases/CWE81_XSS_Error_Message/CWE81_XSS_Error_Message__Servlet_PropertiesFile_13.java",
+      "original_sha256": "a909c656f9dc92157eea2e19c645b03b656f690740df357c33abc5f7e2a4d0c6",
+      "input_sha256": "ae4ce19935d39ef6079cfc0cae68789b858d21fd77c18ebcc1a363c3b9caae2d"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
