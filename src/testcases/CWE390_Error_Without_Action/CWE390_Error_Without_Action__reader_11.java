@@ -54,7 +54,7 @@ public class CWE390_Error_Without_Action__reader_11 extends AbstractTestCase
             }
             catch (FileNotFoundException exceptFileNotFound)
             {
-                                                                
+                IO.logger.log(Level.WARNING, "Error opening file", exceptFileNotFound);
             }
             finally
             {
