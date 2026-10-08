@@ -26,7 +26,7 @@ public class CWE382_Use_of_System_Exit__Servlet_System_02 extends AbstractTestCa
         if (true)
         {
                                           
-            System.exit(1);
+            return;
         }
     }
 
