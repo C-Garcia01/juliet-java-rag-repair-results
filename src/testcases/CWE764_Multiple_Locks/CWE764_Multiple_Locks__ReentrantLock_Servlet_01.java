@@ -21,8 +21,7 @@ public class CWE764_Multiple_Locks__ReentrantLock_Servlet_01 extends AbstractTes
 
     static public void helperBad() 
     {
-        REENTRANT_LOCK_BAD.lock(); 
-        REENTRANT_LOCK_BAD.lock();                                                                                                          
+        REENTRANT_LOCK_BAD.lock();
 
                                                                
                                                                                                   
