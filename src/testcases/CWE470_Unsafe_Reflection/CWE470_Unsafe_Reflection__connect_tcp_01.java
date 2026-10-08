@@ -101,10 +101,23 @@ public class CWE470_Unsafe_Reflection__connect_tcp_01 extends AbstractTestCase
         }
 
                                                                                                           
-        Class<?> tempClass = Class.forName(data);
-        Object tempClassObject = tempClass.newInstance();
+        Class<?> tempClass = null;
 
-        IO.writeLine(tempClassObject.toString());                                      
+                                                                                      
+        if ("java.lang.String".equals(data)
+                || "java.lang.Integer".equals(data)
+                || "java.lang.Long".equals(data)
+                || "java.lang.Object".equals(data))
+        {
+            tempClass = Class.forName(data);
+        }
+
+        if (tempClass != null)
+        {
+            Object tempClassObject = tempClass.newInstance();
+
+            IO.writeLine(tempClassObject.toString());
+        }
 
     }
 
