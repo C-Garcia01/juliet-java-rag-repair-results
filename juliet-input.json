@@ -1,0 +1,26 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE580_Clone_Without_Super__clone_01",
+  "cwe": "CWE-580",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE580_Clone_Without_Super/CWE580_Clone_Without_Super__clone_01_bad.java",
+      "repository_path": "src/testcases/CWE580_Clone_Without_Super/CWE580_Clone_Without_Super__clone_01_bad.java",
+      "original_sha256": "7cb624f00fda9463bbeb3c67d301771932e3cb8f37e37d319b0affe022b6b90e",
+      "input_sha256": "877b06470bbc4d05df6407dff87d75d2eb34b98afeffeac5368193c8775088d9"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE580_Clone_Without_Super/CWE580_Clone_Without_Super__clone_01a.java",
+      "repository_path": "src/testcases/CWE580_Clone_Without_Super/CWE580_Clone_Without_Super__clone_01a.java",
+      "original_sha256": "5926559f18a2b2c1b3c211b70971d7a1d26c14cffb4459436455563a7ed2dfda",
+      "input_sha256": "1532ac03af3defb03f9b14052c205c7f1ef5db7657721f94fd56d62edf456239"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
