@@ -1,0 +1,32 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE400_Resource_Exhaustion__sleep_PropertiesFile_81",
+  "cwe": "CWE-400",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_PropertiesFile_81_bad.java",
+      "repository_path": "src/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_PropertiesFile_81_bad.java",
+      "original_sha256": "f66046de089c0a4edf74918830ce00c29f8f99e2d961a063c2f2e1e700e283cc",
+      "input_sha256": "2dfdca28c22d05c58d3655ec58244423af072863d623ffdd30039cbe7269cf41"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_PropertiesFile_81_base.java",
+      "repository_path": "src/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_PropertiesFile_81_base.java",
+      "original_sha256": "df9ede2750b9bbc6a9f9d3260b00a94fdc478b24e403a6c78db492e67b9316f0",
+      "input_sha256": "8401752928b610d203ab8bdc7e6dd78df8d45e9c472ca5f784a832690f295768"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_PropertiesFile_81a.java",
+      "repository_path": "src/testcases/CWE400_Resource_Exhaustion/s03/CWE400_Resource_Exhaustion__sleep_PropertiesFile_81a.java",
+      "original_sha256": "73cd866f2acc478d47ea119ecdf883da1fa051c066ae73865d945bda2c6c1e0c",
+      "input_sha256": "f85178f5628b1a24262c43fa1f6039af35c050da4e336ccb859f46a597bc3ace"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
