@@ -1,0 +1,26 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE80_XSS__CWE182_Servlet_URLConnection_75",
+  "cwe": "CWE-80",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_URLConnection_75a.java",
+      "repository_path": "src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_URLConnection_75a.java",
+      "original_sha256": "f8a67b8f15e687b986ce96dd569dc6085d74e01bb7e949c006a5a434516d6076",
+      "input_sha256": "c04c079790de5c88425f094367535f9de232d1c8ba0dafc4766eb0093d167952"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_URLConnection_75b.java",
+      "repository_path": "src/testcases/CWE80_XSS/s01/CWE80_XSS__CWE182_Servlet_URLConnection_75b.java",
+      "original_sha256": "1786a479d6be1d394863b8b62c0ceb40946bf3cec358db828b966026db0c1f0c",
+      "input_sha256": "eeb1071368794d9c5d9e0e4e1cc1fa3f68d59a32795dc36c47046c99c4413bd4"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
