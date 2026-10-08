@@ -37,7 +37,9 @@ public class CWE478_Missing_Default_Case_in_Switch__basic_13 extends AbstractTes
             case 1:
                 stringIntValue = "1";
                 break;
-                                                                                 
+            default:
+                stringIntValue = Integer.toString(x);
+                break;
             }
             IO.writeLine(stringIntValue);
         }
