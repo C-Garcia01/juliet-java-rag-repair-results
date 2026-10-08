@@ -1,0 +1,26 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE78_OS_Command_Injection__getQueryString_Servlet_74",
+  "cwe": "CWE-78",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__getQueryString_Servlet_74a.java",
+      "repository_path": "src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__getQueryString_Servlet_74a.java",
+      "original_sha256": "2226a8ed6b85c7cfc427a1661c6d2ac9262d91fbbe2a88f8c3d1aaaeb8ddbbe9",
+      "input_sha256": "7d475e33413c1496c9623fd6eb26f19264d42f25afcd6ce15dffc966e8574443"
+    },
+    {
+      "archive_path": "Java/src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__getQueryString_Servlet_74b.java",
+      "repository_path": "src/testcases/CWE78_OS_Command_Injection/CWE78_OS_Command_Injection__getQueryString_Servlet_74b.java",
+      "original_sha256": "0b92c04c68d08036b43e2bd812a0642ddf8c4bbcda9113eb0dcffacbb16174a1",
+      "input_sha256": "fdd0d9420eb3ff617016e66a6a3da121515fb4f590d4b7b398ca80fdd482a6bb"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
