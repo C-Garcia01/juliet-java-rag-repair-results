@@ -29,7 +29,8 @@ public class CWE83_XSS_Attribute__Servlet_listen_tcp_61a extends AbstractTestCas
         if (data != null)
         {
                                                                                             
-            response.getWriter().println("<br>bad() - <img src=\"" + data + "\">");
+            String encoded = data.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;").replace("'", "&#39;");
+            response.getWriter().println("<br>bad() - <img src=\"" + encoded + "\">");
         }
 
     }
