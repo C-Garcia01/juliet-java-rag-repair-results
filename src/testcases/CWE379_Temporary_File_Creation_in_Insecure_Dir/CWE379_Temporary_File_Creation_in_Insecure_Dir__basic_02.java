@@ -35,26 +35,12 @@ public class CWE379_Temporary_File_Creation_in_Insecure_Dir__basic_02 extends Ab
             OutputStreamWriter writerOutputStream = null;
             BufferedWriter writerBuffered = null;
             File tempFile = null;
-            String directoryName;
-            if(System.getProperty("os.name").toLowerCase().indexOf("win") >= 0)
-            {
-                                        
-                directoryName = "C:\\testcases\\insecureDir";
-            }
-            else
-            {
-                                            
-                directoryName = "/home/user/testcases/insecureDir/";
-            }
             try
             {
-                File newDirectory = new File(directoryName);
-                                                              
-                boolean isSuccessful = newDirectory.mkdir();
-                if (isSuccessful)
+                tempFile = File.createTempFile("temp", "1234");
+                if (tempFile != null)
                 {
-                    IO.writeLine("Directory created");
-                    tempFile = File.createTempFile("temp", "1234", newDirectory);
+                    IO.writeLine("Temporary file created");
                                                                                                                        
                     if (!tempFile.setWritable(true, true))
                     {
