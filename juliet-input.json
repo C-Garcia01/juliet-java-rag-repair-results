@@ -1,0 +1,20 @@
+{
+  "kind": "juliet_synthetic_vulnerable_snapshot",
+  "historical_vcc": false,
+  "id": "CWE614_Sensitive_Cookie_Without_Secure__Servlet_08",
+  "cwe": "CWE-614",
+  "archive_sha256": "d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60",
+  "files": [
+    {
+      "archive_path": "Java/src/testcases/CWE614_Sensitive_Cookie_Without_Secure/CWE614_Sensitive_Cookie_Without_Secure__Servlet_08.java",
+      "repository_path": "src/testcases/CWE614_Sensitive_Cookie_Without_Secure/CWE614_Sensitive_Cookie_Without_Secure__Servlet_08.java",
+      "original_sha256": "d48f47385b9ee56740a88d0e844cdd5a20fd8699b7ca0e7b1d815e60648ddf5d",
+      "input_sha256": "6090bef07d7d3ec655aeb8becc560c93ffbd93736a250170912866a7e3141850"
+    }
+  ],
+  "adaptations": [
+    "LF normalization",
+    "remove testcase comments and supplied good-method implementations",
+    "retain empty good() compatibility stubs; exclude separate good implementation classes"
+  ]
+}
