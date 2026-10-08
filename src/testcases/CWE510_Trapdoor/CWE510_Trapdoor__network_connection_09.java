@@ -32,7 +32,8 @@ public class CWE510_Trapdoor__network_connection_09 extends AbstractTestCaseBadO
             try
             {
                                                
-                URL url = new URL("http://123.123.123.123:80");
+                String endpoint = System.getProperty("testcase.network.endpoint", "http://localhost:80");
+                URL url = new URL(endpoint);
                 streamInput = url.openStream();
             }
             catch (IOException exceptIO)
